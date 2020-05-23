@@ -1,0 +1,73 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #7986cb;
+  --ifm-color-primary-dark: #6271c2;
+  --ifm-color-primary-darker: #5666bd;
+  --ifm-color-primary-darkest: #3f4fa3;
+  --ifm-color-primary-light: #909bd4;
+  --ifm-color-primary-lighter: #9ca6d9;
+  --ifm-color-primary-lightest: #bfc5e6;
+  --ifm-footer-background-color: var(--ifm-background-color);
+
+  --ifm-font-color-secondary: #607D8B;
+  --ifm-code-font-size: 95%;
+}
+
+html[data-theme=dark] {
+  --ifm-background-color: #202225;
+  --ifm-footer-background-color: var(--ifm-background-color);
+
+  --ifm-color-primary: #ff9800;
+  --ifm-color-primary-dark: #e68900;
+  --ifm-color-primary-darker: #d98100;
+  --ifm-color-primary-darkest: #b36a00;
+  --ifm-color-primary-light: #ffa21a;
+  --ifm-color-primary-lighter: #ffa726;
+  --ifm-color-primary-lightest: #ffb74d;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.svg-inline--fa.fa-w-16 {
+  width: 1.5em;
+}
+
+.svg-inline--fa.fa-w-14 {
+  width: 1.3125em;
+}
+
+.footer__links {
+  margin: 0;
+}
+
+.footer__item {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+.footer__items {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__col {
+  margin-bottom: 0;
+}

@@ -1,0 +1,17 @@
+---
+id: name
+title: Name
+author: Tinaël Devresse
+author_title: Analyst-Developer at PwC
+author_url: https://github.com/hunteroi
+author_image_url: /img/me.jpg
+tags: [template, name]
+---
+
+![Name](/img/name.png 'Name')
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+
+<!--truncate-->
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet

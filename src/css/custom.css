@@ -71,3 +71,20 @@ html[data-theme=dark] {
 .footer__col {
   margin-bottom: 0;
 }
+
+hr {
+  margin-top: 30px;
+  border: none;
+  font-size: 28px;
+  text-align: center;
+  font-weight: 300;
+  font-family: medium-content-slab-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+hr::before {
+  line-height: 2.4;
+  text-indent: 0.6em;
+  letter-spacing: 0.6em;
+  content: '...';
+  display: block;
+}

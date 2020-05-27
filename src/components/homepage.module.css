@@ -41,6 +41,14 @@
   border-top: 0.01rem solid;
 }
 
+.divider::before {
+  line-height: 0;
+  text-indent: 0;
+  letter-spacing: 0;
+  content: '';
+  display: block;
+}
+
 .description>p {
   margin: 0;
   text-align: center;

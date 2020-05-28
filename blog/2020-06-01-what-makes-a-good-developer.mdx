@@ -6,7 +6,7 @@ tags: [best practices, careers, tech]
 import Figure from '../src/components/figure';
 
 <Figure data={{src:'/img/what-makes-a-good-developer.jpg', type:'image'}}>
-  Photo by <a target='_blank' href='https://unsplash.com/@anniespratt'>Annie Spratt</a> on <a href='https://unsplash.com/'>Unsplash</a>
+  Photo by <a target="_blank" href="https://unsplash.com/@anniespratt">Annie Spratt</a> on <a target="_blank" href="https://unsplash.com/">Unsplash</a>
 </Figure>
 Hey there! Welcome to my new blog website. For my first start here, I'd like to introduce you to the key points which I think are the most important for a developer in their daily job!
 
@@ -22,7 +22,7 @@ I sometimes see young developers jump right into programming their application w
 
 <Figure data={{ id: '1', src:'https://giphy.com/embed/Ph6mVLp87pCVCkHOBQ', type: 'html', width: '100%', height: '100%', 
 title: 'Looking Logan Lerman GIF By Hunters', style: {position:'absolute'}, allowFullScreen: true, frameBorder:"0", className: 'giphy-embed' }}>
-  From <a href="https://giphy.com/gifs/HuntersOnPrime-entertainment-monkeypaw-monkeypawproductions-Ph6mVLp87pCVCkHOBQ">GIPHY</a>
+  From <a target="_blank" href="https://giphy.com/gifs/HuntersOnPrime-entertainment-monkeypaw-monkeypawproductions-Ph6mVLp87pCVCkHOBQ">GIPHY</a>
 </Figure>
 
 A lot of applications are somehow unmaintenable due to the lack of analysis or poor analysis. And trust me, I have seen many projects falling apart because of that. **Beware, fellow developers!** You always want the best for your work.
@@ -42,26 +42,33 @@ This point is kinda related to the previous. As soon as you identify standards a
 Although, don't fear to look for ways to improve the process if you think it can increase productivity and effiency of everyone.
 
 ## 4. Be lazy
-The first principle you should always follow when doing your dev job is to be lazy. But watch out, I'm not saying that you should chill out any time of the day. Nah! I mean that you should focus on delivering the strictly minimum asked product. Don't implement something that hasn't been asked by the client because "it will be useful one day". That is bullshit. 
+The first principle you should always follow when doing your dev job is to be lazy. But watch out, I'm not saying that you should chill out any time of the day. Nah! I mean that you should **focus on delivering the minimum asked product**. Don't implement something that hasn't been asked by the client because "it will be useful one day". That is bullshit. You're most likely to have an unused class which nobody wants to remove because they don't know its purpose and if its removal is gonna break anything. Ew.
 
 <Figure data={{src: 'https://i.imgur.com/qbDVKh7.png', type:'image'}}>
-  From <a href='https://www.reddit.com/r/ProgrammerHumor/comments/cgtk7s/theres_no_need_to_reinvent_the_wheel_oc/'>r/ProgrammerHummor</a>
+  From <a target="_blank" href="https://www.reddit.com/r/ProgrammerHumor/comments/cgtk7s/theres_no_need_to_reinvent_the_wheel_oc/">r/ProgrammerHummor</a>
 </Figure>
 
 `Don't Reinvent The Wheel` is a beautiful example of being lazy. Don't spend your time doing something someone has already been doing far better than you. Just use their work! If you need to change a few things, you can still come back and edit it later.
 
-## 4. Write clean & working code and test it
+## 4. Write code
 ### Write clean & working code
-This could sound silly but you are paid to make things work. But don't just throw instructions in a file and hope that they work properly. The sooner you make things good, the better the application will be. Navdeep Singh wrote a story about <a href="https://medium.com/better-programming/good-code-vs-bad-code-35624b4e91bc">why writing good code matters, and how to do it</a>. Check it out, it's neat!
+This could sound silly but you are paid to **make things work**. But don't just throw instructions in a file and hope that they work properly. The sooner you make things good, the better the application will be. Navdeep Singh wrote a story about [why writing good code matters, and how to do it](https://medium.com/better-programming/good-code-vs-bad-code-35624b4e91bc 'Good Code vs Bad Code'). Check it out, it's neat!
+
+### Write easily maintenable & enhanceable code
+It's cool to have a code that works and does what it's expected to do. 
+However even if your code is understood by the computer, is it by hymans? At some point, there will be another developer who will have to read your code and edit it. And it should be cristal clear for them.
+
+Always think about how obvious is your code when writing it. Company's standards and best practices won't help you write understandable code. It's more or less the same situation when you're explaining your job to someone who's not IT: you **make things simple**.
+Keep in mind that you are actually writing a part of an app that will someday be refactored by someone else. And you obviously don't want people to curse your name when they stumble on your code.
 
 ### Test your code
 Why should you test your code? You're sure it works fine but still! You really don't know your end users...
 
 <Figure data={{src: 'https://i.imgur.com/mva14iu.jpg', type: 'image', style: {margin: '0 auto'} }}>
-  From <a href='https://imgur.com/gallery/Zc1BDHB'>Imgur</a>
+  From <a target="_blank" href="https://imgur.com/gallery/Zc1BDHB">Imgur</a>
 </Figure>
 
-Testing in software development is in my humble opinion the most important step in the process of product development. And there are many reasons to support this obviousness. Here are a few examples:
+Testing in software development is in my humble opinion the most important step in the process of product development. And there are many reasons to support this fact. Here are a few examples:
 - **it ensures the product quality**: it prevents introducing avoidable bugs in the production environment;
 - **it saves money and time**: you can build things and be sure changes (e.g. optimization) won't break working stuff thus forcing you to check why feature X is not doing things as expected while you only edited feature Y;
 - **it helps secure the app**: it makes sure there are as little breaches as possible (everybody knows "zero risk" is a myth).
@@ -72,7 +79,7 @@ Empathy is really a bonus for developers. To put yourself in the place of the cu
 Talk with UX designers if you think your app feels too complicated to use when its purpose is as simple as drinking coffee from a cup...
 
 <Figure data={{src:'https://i.redd.it/fb6xxzrrtfr21.png', type: 'image' }}>
-  From <a href='https://www.reddit.com/r/UI_Design/comments/bblxum/ui_vs_ux/'>/r/UI_Design</a>
+  From <a target="_blank" href="https://www.reddit.com/r/UI_Design/comments/bblxum/ui_vs_ux/">r/UI_Design</a>
 </Figure>
 
 ## 6. Be curious and improve your knowledge and skills
@@ -80,10 +87,10 @@ This is the last bit of my post and I wanted to share the best advice someone ga
 - I try to always choose the challenging and hard work over the easy and already-done-several-times tasks.
 
 - I go to events and meet people. 
-For example, a lot of the ones I attend are organized by the <a target='_blank' href='http://www.mic-belgique.be/'>Microsoft Innovation Center Belgique</a>.
+For example, a lot of the ones I attend are organized by the [Microsoft Innovation Center Belgique](http://www.mic-belgique.be/ 'MIC').
 
 - I get involved in communities. 
-For example, I'm an active member of <a target='_blank' href="https://github.com/wearespacey">We Are SpaceY</a>!
+For example, I'm an active member of [SpaceY](https://github.com/wearespacey 'We Are SpaceY')!
 
 - I try to help people (e.g. lend a hand in open source projects).
 

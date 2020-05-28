@@ -37,13 +37,13 @@ function getTagAccordingToDataType(data) {
   }
 }
 
-export default function Figure({data, children, style}) {
+export default function Figure({data, children}) {
   if (!data && !children) return <></>;
 
   return (
     <figure>
       {data && getTagAccordingToDataType(data)}
-      
+
       <figcaption className={styles.legend}>{children}</figcaption>
     </figure>
   );

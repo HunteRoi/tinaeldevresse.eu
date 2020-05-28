@@ -19,6 +19,7 @@ function Home() {
     <Layout
       title={siteConfig.title}
       description={siteConfig.customFields.description}
+      permalink="/"
     >
       <main className={styles.heroContainer}>
         <HomePage {...siteConfig} descriptionLines={lines} />

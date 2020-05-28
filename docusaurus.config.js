@@ -82,7 +82,7 @@ module.exports = {
       {
         blog: {
           showReadingTime: true,
-          editUrl: `https://github.com/${config.GITHUB_USER}/${config.REPOSITORY_NAME}/tree/master/blog/`,
+          editUrl: `https://github.com/${config.GITHUB_USER}/${config.REPOSITORY_NAME}/tree/master/`,
           feedOptions: {
             type: 'all',
             copyright: `Copyright ©${new Date().getFullYear()}-present Tinaël Devresse. Built with Docusaurus.`,

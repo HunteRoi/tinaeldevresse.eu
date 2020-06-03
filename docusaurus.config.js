@@ -3,7 +3,7 @@ const config = require('./website_config.json');
 module.exports = {
   title: 'Tinaël Devresse',
   tagline: 'Young Developer from Belgium',
-  url: 'http://tinaeldevresse.eu',
+  url: 'https://tinaeldevresse.eu',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   customFields: {

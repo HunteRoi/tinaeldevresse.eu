@@ -15,6 +15,7 @@
   --ifm-color-primary-lighter: #9ca6d9;
   --ifm-color-primary-lightest: #bfc5e6;
   --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-border-color: #202225;
 
   --ifm-font-color-secondary: #607D8B;
   --ifm-code-font-size: 95%;
@@ -31,6 +32,8 @@ html[data-theme=dark] {
   --ifm-color-primary-light: #ffa21a;
   --ifm-color-primary-lighter: #ffa726;
   --ifm-color-primary-lightest: #ffb74d;
+
+  --ifm-border-color: #ffffff;
 }
 
 .docusaurus-highlight-code-line {
@@ -87,4 +90,8 @@ hr::before {
   letter-spacing: 0.6em;
   content: '...';
   display: block;
+}
+
+.italic {
+  font-style: italic;
 }

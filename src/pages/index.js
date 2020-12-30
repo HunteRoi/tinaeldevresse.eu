@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './styles.module.css';
 
+import styles from './styles.module.css';
 import HomePage from '../components/homepage';
 
 const lines = [
-  'Student, developer, tech lover.',
-  'I maintain a blog about things I learn.',
+  'Developer, dreamer & tech lover.',
+  'I maintain a blog about things I learn or I want to share.',
   'I love participating at dev events',
   'and I am also an open-source enthusiast.',
 ];
@@ -19,7 +19,7 @@ function Home() {
     <Layout
       title={siteConfig.title}
       description={siteConfig.customFields.description}
-      permalink="/"
+      permalink='/'
     >
       <main className={styles.heroContainer}>
         <HomePage {...siteConfig} descriptionLines={lines} />
@@ -29,3 +29,4 @@ function Home() {
 }
 
 export default Home;
+

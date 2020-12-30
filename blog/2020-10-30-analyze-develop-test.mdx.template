@@ -1,0 +1,30 @@
+---
+slug: analyze-develop-test
+title: Analyze, develop, test
+tags: [development, environment, programming]
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+image: img/analyze-develop-test.jpg
+---
+import Figure from '../src/components/figure';
+import SEO from '../src/components/seo';
+import Reminder from '../src/components/reminder';
+
+<Figure data={{src:'/img/img/analyze-develop-test.jpg', alt: 'Development environments', type:'image'}} />
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+
+<!--truncate-->
+
+<SEO 
+  uri='blog/analyze-develop-test' 
+  image='img/analyze-develop-test.jpg'
+  type='article'
+/>
+
+___
+
+<Reminder />
+
+___
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet

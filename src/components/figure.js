@@ -5,7 +5,7 @@ function getTagAccordingToDataType(data) {
   if (typeof data !== 'object' || !data.type) return <></>;
 
   switch (data.type) {
-    case 'image':
+    case 'image': case 'img':
       return <img {...data} />;
 
     case 'video':

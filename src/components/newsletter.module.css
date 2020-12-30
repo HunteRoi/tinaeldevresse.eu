@@ -1,0 +1,48 @@
+.formContainer {
+  padding: 1em;
+  padding-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  background-color: whitesmoke;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--ifm-border-color);
+  padding: .6em;
+  padding-right: 1.5em;
+  font-size: larger;
+}
+
+.input:focus {
+  outline: none !important;
+}
+
+.submit {
+  margin-left: .5em;
+  color: var(--ifm-footer-link-color);
+  font-size: small;
+}
+
+.statusSuccess {
+  color: green;
+}
+
+.statusSending {
+  color: blue;
+}
+
+.statusError {
+  color: red;
+}

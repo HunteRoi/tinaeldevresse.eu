@@ -59,7 +59,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `<span style="font-size: 10px;">Copyright ©${new Date().getFullYear()}-present Tinaël Devresse. Built with Docusaurus.</span>`,
+      copyright: `<span style="font-size: 10px;">Copyright ©2020-present Tinaël Devresse. Built with Docusaurus.</span>`,
     },
 
     googleAnalytics: {
@@ -85,7 +85,7 @@ module.exports = {
           editUrl: `https://github.com/${config.GITHUB_USER}/${config.REPOSITORY_NAME}/tree/master/`,
           feedOptions: {
             type: 'all',
-            copyright: `Copyright ©${new Date().getFullYear()}-present Tinaël Devresse. Built with Docusaurus.`,
+            copyright: `Copyright ©2020-present Tinaël Devresse. Built with Docusaurus.`,
           },
           postsPerPage: 3
         },

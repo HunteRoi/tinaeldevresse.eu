@@ -14,7 +14,8 @@
     "classnames": "^2.2.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-mailchimp-subscribe": "^2.1.0"
+    "react-mailchimp-subscribe": "^2.1.0",
+    "validator": "^13.5.2"
   },
   "browserslist": {
     "production": [

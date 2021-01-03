@@ -1,10 +1,11 @@
 import React from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import styles from './newsletter.module.css';
+import isEmail from 'validator/lib/isEmail';
 
 const CustomForm = ({ status, message, onValidated }) => {
   let email;
-  const submit = () => email && email.value.indexOf('@') > -1 && onValidated({ EMAIL: email.value });
+  const submit = () => email && email.value.indexOf('@') > -1 && isEmail(email.value) && onValidated({ EMAIL: email.value });
 
   return (
     <div className={styles.formContainer}>

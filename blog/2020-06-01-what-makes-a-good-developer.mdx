@@ -9,10 +9,10 @@ import Figure from '../src/components/figure';
 import SEO from '../src/components/seo';
 import Reminder from '../src/components/reminder';
 import Newsletter from '../src/components/newsletter';
-import config from '../website_config.json';
+import { MAILCHIMP_URL } from '../website_config.json';
 
 <a href="/blog/what-makes-a-good-developer">
-  <Figure data={{src:'/img/what-makes-a-good-developer.jpg', alt: 'post banner image', type:'image'}}>
+  <Figure data={{src:'/img/what-makes-a-good-developer.jpg', alt: 'What Makes a Good Developer', type:'image'}}>
     Photo by <a target="_blank" href="https://unsplash.com/@anniespratt" rel="noreferrer noopener nofollow">Annie Spratt</a> on <a target="_blank" href="https://unsplash.com/photos/QckxruozjRg" rel="noreferrer noopener nofollow">Unsplash</a>
   </Figure>
 </a>
@@ -127,4 +127,4 @@ Developers are not common resources. Good developer are even more rare. Stay inv
 
 **What about you? What do you think is valuable to be a good developer?**
 
-<Newsletter url={config.MAILCHIMP_URL} />
+<Newsletter url={MAILCHIMP_URL} />

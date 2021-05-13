@@ -20,6 +20,7 @@
 }
 
 img {
+  border-radius: 2%;
   display:flex;
   justify-self: center;
 }

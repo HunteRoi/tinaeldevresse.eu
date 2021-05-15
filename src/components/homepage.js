@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import styles from './homepage.module.css';
 import classnames from 'classnames';
-import Newsletter from './newsletter';
 
+import styles from './homepage.module.css';
+import Newsletter from './newsletter';
 import config from '../../website_config.json';
 
 export default function HomePage({ title, tagline, descriptionLines }) {
@@ -14,7 +14,7 @@ export default function HomePage({ title, tagline, descriptionLines }) {
         className={classnames('footer__link-item', styles.title)}
         to='/blog'
       >
-        <img src='/img/me.jpg' />
+        <img src={require('@site/static/img/me.jpg').default} />
         <span>{title}</span>
       </Link>
       <span className={styles.subtitle}>{tagline}</span>

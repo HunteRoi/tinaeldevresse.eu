@@ -1,0 +1,10 @@
+{
+  "link.title. ": {
+    "message": " ",
+    "description": "The title of the footer links column with title=  in the footer"
+  },
+  "copyright": {
+    "message": "<span style=\"font-size: 10px;\">Copyright ©2020-présent Tinaël Devresse. Fait avec Docusaurus.</span>",
+    "description": "The footer copyright"
+  }
+}

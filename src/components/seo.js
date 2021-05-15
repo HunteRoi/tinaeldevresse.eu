@@ -14,16 +14,16 @@ export default function SEO({uri, image, type}) {
   return (
     <>
       <Head>
-        <link rel='canonical' href={metaUrl} />
+        {metaUrl && <link rel='canonical' href={metaUrl} />}
 
-        <meta property='og:url' content={metaUrl} />
-        <meta property='og:image' content={metaImage} />
-        
+        {metaUrl && <meta property='og:url' content={metaUrl} />}
+        {metaImage && <meta property='og:image' content={metaImage} />}
         {metaType && <meta property='og:type' content={metaType} />}
         {projectName && <meta property='og:site_name' content={projectName} />}
 
-        <meta name="twitter:image:alt" content="Banner image" />
         {twitterName && <meta property='twitter:site' content={`@${twitterName}`} /> }
+        {metaImage && <meta name="twitter:image" content={metaImage} />}
+        {metaImage && <meta name="twitter:image:alt" content="Banner image" />}
       </Head>
     </>
   );

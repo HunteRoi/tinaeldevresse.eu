@@ -7,8 +7,7 @@ module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   customFields: {
-    description:
-      "Personal website of Tinaël Devresse, a blog about anything that cross my mind which I think could interest y'all.",
+    description: "Personal website of Tinaël Devresse, a blog about anything that cross my mind which I think could interest y'all.",
     mType: 'website',
     twitter: config.TWITTER_NAME,
     linkedIn: config.LINKEDIN_NAME,
@@ -36,10 +35,16 @@ module.exports = {
           to: '/blog',
         },
         {
+          type: 'localeDropdown',
+          position: 'right',
+          //dropdownItemsBefore: [],
+          //dropdownItemsAfter: []
+        },
+        {
           href: `https://github.com/${config.GITHUB_USER}/${config.REPOSITORY_NAME}`,
           label: 'GitHub',
           position: 'right',
-        },
+        }
       ],
     },
     footer: {
@@ -96,4 +101,12 @@ module.exports = {
       },
     ],
   ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr'],
+    localeConfigs: {
+      'en': { label: 'English' },
+      'fr': { label: 'Français' },
+    }
+  }
 };

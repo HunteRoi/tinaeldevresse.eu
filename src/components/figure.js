@@ -3,6 +3,8 @@ import styles from './figure.module.css';
 
 function getTagAccordingToDataType(data) {
   if (typeof data !== 'object' || !data.type) return <></>;
+  // if (data.src.startsWith('/')) data.src = require(`@site/static${data.src}`).default;
+  // if (data.sources.some(s => s.startsWith('/'))) data.sources = data.sources.map(s => s.startsWith('/') ? require(`@site/static${s}`).default : s);
 
   switch (data.type) {
     case 'image': case 'img':

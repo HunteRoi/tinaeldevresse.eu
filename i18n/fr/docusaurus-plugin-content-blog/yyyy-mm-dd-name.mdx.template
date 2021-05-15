@@ -1,0 +1,41 @@
+---
+slug: name
+title: Name
+author: Tinaël Devresse
+author_title: Analyst-Developer at PwC
+author_url: https://github.com/hunteroi
+author_image_url: /img/me.jpg
+tags: [template, name]
+description: description
+image: /img/hunte.png
+hide_table_of_contents: false
+---
+import Figure from '../../../src/components/figure';
+import SEO from '../../../src/components/seo';
+import Reminder from '../../../src/components/reminder';
+import Newsletter from '.../.././src/components/newsletter';
+import { MAILCHIMP_URL } from '../../../website_config.json';
+
+<a href="/blog/name">
+  <Figure data={{src:'/img/name.jpg', alt: 'name', type:'image'}} />
+</a>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+
+<!--truncate-->
+
+<SEO 
+  uri='blog/name' 
+  image='img/name.jpg'
+  type='article'
+/>
+
+___
+
+<Reminder />
+
+___
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+
+<Newsletter url={MAILCHIMP_URL} />

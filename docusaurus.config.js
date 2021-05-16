@@ -7,7 +7,7 @@ module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   customFields: {
-    description: "Personal website of Tinaël Devresse, a blog about anything that cross my mind which I think could interest y'all.",
+    description: "Personal website of Tinaël Devresse, a blog about anything that crosses my mind which I think could interest y'all.",
     mType: 'website',
     twitter: config.TWITTER_NAME,
     linkedIn: config.LINKEDIN_NAME,

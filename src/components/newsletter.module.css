@@ -1,10 +1,23 @@
 .formContainer {
+  margin: auto;
+  margin-top: 5em;
   padding: 1em;
-  padding-top: 5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.formContainer:hover {
+  margin-top: 4,9em;
+  border: .1em solid var(--ifm-color-primary);
+}
+
+.formContainer > h3 {
+  text-align: center;
 }
 
 .inputContainer {
@@ -14,15 +27,24 @@
   align-items: center;
 }
 
+.inputContainer > a > svg {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
 .input {
   background-color: whitesmoke;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   border: 1px solid var(--ifm-border-color);
+
+  width: 100%;
   padding: .6em;
   padding-right: 1.5em;
   font-size: larger;
+  
+  resize: vertical;
 }
 
 .input:focus {
@@ -35,14 +57,18 @@
   font-size: small;
 }
 
-.statusSuccess {
+.status {
+  text-align: center;
+}
+
+.success {
   color: green;
 }
 
-.statusSending {
+.sending {
   color: blue;
 }
 
-.statusError {
+.error {
   color: red;
 }

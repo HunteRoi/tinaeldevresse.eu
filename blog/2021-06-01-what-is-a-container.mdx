@@ -1,8 +1,8 @@
 ---
 slug: what-is-a-container
-title: What Is A Container And Why Use It?
+title: What is a Container?
 tags: [container, docker, docusaurus, i18n]
-description: Hello! Today, we are talking about two things: 1) the last update of the Docusaurus library which now allows m..
+description: Hello! Today, we are talking about two things&#58; 1. the last update of the Docusaurus library which now allows m..
 image: img/what-is-a-container.jpg
 ---
 import Figure from '../src/components/figure';
@@ -12,12 +12,12 @@ import Newsletter from '../src/components/newsletter';
 import { MAILCHIMP_URL } from '../website_config.json';
 
 <a href="/blog/what-is-a-container">
-  <Figure data={{src:'/img/what-is-a-container.jpg', alt: 'What Is A Container', type:'image'}} />
+  <Figure data={{src:'/img/what-is-a-container.jpg', alt: 'What is a Container', type:'image'}} />
 </a>
 
 Hello! Today, we are talking about two things:
-1) the last update of the Docusaurus library which now allows me to provide you my blog in 2 languages!
-2) the containers and their usefulness in software development.
+1. the last update of the Docusaurus library which now allows me to provide you with my blog in 2 languages!
+2. the containers and their usefulness in software development.
 
 <!--truncate-->
 
@@ -30,25 +30,25 @@ Hello! Today, we are talking about two things:
 ___
 
 <Reminder />
+
 ___
 
 ## Docusaurus
 
-### What Is It?
-[Docusaurus](https://docusaurus.io) is a optimized website generator packaging several interesting features for online content creators:
-- documentation and blog posts are written in [Markdown](https://www.markdownguide.org/getting-started/)
-- internationalization is possible
-- versioning is possible
-- content search is highly adapted, thanks to the integration of [Algolia](https://www.algolia.com/)
-- it's [open-source](https://github.com/facebook/docusaurus)
+### What is it?
+[Docusaurus](https://docusaurus.io) is an open-source optimized website generator packaging several interesting features for online content creators:
+- documentation and blog posts are written in [Markdown](https://www.markdownguide.org/getting-started/) ;
+- internationalization is possible ;
+- versioning is possible ;
+- content search is highly adapted, thanks to the integration of [Algolia](https://www.algolia.com/).
 
 ### Why Docusaurus?
-Indeed, you might ask the question. Why choosing Docusaurus when there are plenty of other site generators such as Wix, Shopify, Weebly, ... or more axed on developer mindset such as Next.js, Hugo, Gatsby, and so on...
+Indeed, you might ask the question. Why choosing Docusaurus when there are plenty of other site generators such as Wix, Shopify, Weebly, ... or more axed on a developer mindset such as Next.js, Hugo, Gatsby, and so on...
 
 Well, I kind of discovered it by pure chance when looking for a documentation generator for .NET (by the way, I found it: [Docfx](https://dotnet.github.io/docfx/)).
 However, I personnaly chose Docusaurus for my personal projects for 3 reasons:
-- it is open-source, so I contribute if I want to.
-- it is developed in React, and I love this library.
+- it is [open-source](https://github.com/facebook/docusaurus), so I can contribute to it,
+- it is developed in React and I love this library,
 - it is easily usable: in around 3 minutes, you can have functional and customized website.
 
 ### This website is generated with Docusaurus
@@ -62,16 +62,12 @@ Okay, let's move on to the next and main topic: our introduction to containers.
 ### What are we talking about?
 One of the many problems in software development is that we are highly coupled to the machine on which we write code.
 Whether it is for development or when it comes to deploy a web service for clients, there is always a machine somewhere hosting the app.
-And the issue is that the systems and configurations are different!
+And the issue is that the systems and configurations are different..!
 
 <Figure data={{src: "/img/it-works-on-my-machine.jpg", alt: "It Works On My Machine - meme", type: "image" }}></Figure>
 
 A container is a standard unit of software packaging code and its dependencies to quickly and reliably run an application from one isolated environnement to another.
 It's just like you let the client use your own computer.
-
-<Figure data={{ src: "https://i.imgur.com/PnvK7v6.png", alt: "It Works On My Computer", type: "image" }}>
-  From [Don't Hit Save](https://donthitsave.com/comic/2016/07/15/it-works-on-my-computer)
-</Figure>
 
 ### What are the differences with a Virtual Machine?
 It is true that containers are often compared to virtual machines (VM) in that they have the same goal: run an app in an embedded environment.
@@ -80,19 +76,19 @@ The big difference between each is that a container makes use of the host machin
 <Figure data={{ src: "/img/container_against_VM.jpg", alt: "Container VS Virtual Machine", type: "image" }}></Figure>
 
 These are the arguments that Docker (world leader of the IT container market) uses:
-- lightweight and fast
-- secure
-- portable and standard, thus cross-platform
+- lightweight and fast,
+- secure,
+- portable and standard, thus cross-platform.
 
 ### How does it work?
 I'm gonna lay the foundations, so that we speak with the same language. By the way, I am referencing Docker specically.
 Docker is made up of 3 components:
-1) the software, called Docker daemon, is a process managing Docker containers and resulting objects ;
-2) the objects, themselves seperated in 3 categories, are entities which allow to build an application with Docker:
-  - a **container** is a standard environment running an application.
-  - an **image** is a read-only template used to build a container. We can then say that an instance of an image is a container.
-  - a **service** is a system which orchestrates the operations of several containers maanged by multiple daemons. It is also called a _swarm_ (a set of Docker daemons which communicate via Docker).
-3) the registries are repositories for Docker images.
+1. the software, called Docker daemon, is a process managing Docker containers and resulting objects (eg: Docker Engine, ...)
+2. the objects, themselves seperated in 3 categories, are entities which allow to build an application with Docker:
+    - a **container** is a standard environment running an application.
+    - an **image** is a read-only template used to build a container. We can then say that an instance of an image is a container.
+    - a **service** is a system which orchestrates the operations of several containers maanged by multiple daemons. It is also called a _swarm_ (a set of Docker daemons which communicate via Docker - eg: Docker Swarm, Kubernetes, ...).
+3. the registries are repositories for Docker images (eg: Docker Hub, Google Cloud Platform, ...)
 
 To create a container, you must follow some principles:
 - a container only runs one process ;
@@ -103,18 +99,18 @@ These 3 principles are just the most important in my humble opinion, but you may
 
 Once you have an image locally (whether you took it from a registry or built it locally), you can create a container. I could show it to you, but as I don't reinvent the wheel, you will find a small video which explains it very well!
 
-<Figure data={{ type: "html", width: "560", height: "315", src: "https://www.youtube.com/embed/iqqDU2crIEQ", title: "YouTube video player of Docker tutorial", frameborder: "0", allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: true }}>
-  Found on [docs.docker.com](https://docs.docker.com/get-started)
+<Figure data={{ align: "center", type: "html", width: "560", height: "315", src: "https://www.youtube.com/embed/iqqDU2crIEQ", title: "YouTube video player of Docker tutorial", allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowFullScreen: true }}>
+  Found on <a href="https://docs.docker.com/get-started">docs.docker.com</a>
 </Figure>
 
 ### Why would you use Docker or any of its competitors?
 The principle of containerisation brings significant benefits. Here's a non-exhaustive list:
-- Faster & easier onboarding of new human resources
-- Certitude that you and your colleagues work on the same environment (including the same version of tools)
-- Enforcement of the "Do Not Reinvent The Wheel" principle since an access to open-source images is possible
-- Faster building and destroying compared to VM
-- Consistency environmenet and isolation
-- Broad compatibiltiy (the OS does not matter, so each developer can work on their favorite one)
+- faster & easier onboarding of new human resources ;
+- certitude that you and your colleagues work on the same environment (including the same version of tools) ;
+- enforcement of the "Do Not Reinvent The Wheel" principle since an access to open-source images is possible ;
+- faster building and destroying compared to VM ;
+- consistency environmenet and isolation ;
+- broad compatibiltiy (the OS does not matter, so each developer can work on their favorite one).
 
 Containerizing applications is more and more common. We can even find a reason for this evolution in the growth undergone by the DevOps movement.
 

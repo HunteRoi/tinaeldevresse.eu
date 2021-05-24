@@ -1,6 +1,6 @@
 .formContainer {
   margin: auto;
-  margin-top: 5em;
+  margin-top: 4.9em;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -9,10 +9,10 @@
   
   border-radius: 10px;
   width: fit-content;
+  border: .1em solid transparent;
 }
 
 .formContainer:hover {
-  margin-top: 4,9em;
   border: .1em solid var(--ifm-color-primary);
 }
 

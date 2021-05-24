@@ -43,6 +43,22 @@
     "message": "Reste à jour, inscrive-toi à ma newsletter!",
     "description":"The newsletter title"
   },
+  "notfound.title": {
+    "message": "Oups! Page non-trouvée.",
+    "description": "The title of the Not Found page"
+  },
+  "notfound.description": {
+    "message": "Désolé, nous nous sommes perdu en chemin. Peut-être devrions-nous...",
+    "description": "The description of the Not Found page"
+  },
+  "notfound.buttons.goback": {
+    "message": "Faire demi-tour",
+    "description": "The go-back button of the Not Found page"
+  },
+  "notfound.buttons.reload": {
+    "message": "Réessayer",
+    "description": "The reload button of the Not Found page"
+  },
   "reminder": {
     "message": "Un simple petit rappel: les opinions exprimées ici sont strictement les miennes. Elles ne représentent pas les opinions ou vues de mon employeur actuel ni aucun des précédents.",
     "description": "The text stating that what is written in this website is my own opinions and only mine"

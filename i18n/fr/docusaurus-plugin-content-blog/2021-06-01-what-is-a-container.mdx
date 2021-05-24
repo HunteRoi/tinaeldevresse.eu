@@ -1,0 +1,122 @@
+---
+slug: what-is-a-container
+title: Qu'est-ce qu'un conteneur et pourquoi en utiliser?
+tags: [conteneur, docker, docusaurus, i18n]
+description: Salut tout le monde! Aujourd'hui, on va parler de deux choses&#58; 1. la dernière mise à jour de la librairie Docusaurus qui me permet désormais d..
+image: img/what-is-a-container.jpg
+---
+import Figure from '../src/components/figure';
+import SEO from '../src/components/seo';
+import Reminder from '../src/components/reminder';
+import Newsletter from '../src/components/newsletter';
+import { MAILCHIMP_URL } from '../website_config.json';
+
+<a href="/blog/what-is-a-container">
+  <Figure data={{src:'/img/what-is-a-container.jpg', alt: 'What Is A Container', type:'image'}} />
+</a>
+
+Salut! Aujourd'hui, on va parler de deux choses:
+1. la dernière mise à jour de la librairie Docusaurus qui me permet désormais de te fournir mon blog en deux langues!
+2. les conteneurs et leur utilité dans le cadre du développement d'applications.
+
+<!--truncate-->
+
+<SEO
+  uri='blog/what-is-a-container'
+  image='img/what-is-a-container.jpg'
+  type='article'
+/>
+
+___
+
+<Reminder />
+
+___
+
+## Docusaurus
+
+### Qu'est-ce que c'est?
+[Docusaurus](https://docusaurus.io), c'est un générateur de sites web optimisés open-source qui embarque plusieurs fonctionnalités intéressantes pour les créateurs de contenu en ligne:
+- la documentation et les articles de blog sont écrits en [Markdown](https://www.markdownguide.org/getting-started/) ;
+- le multi-linguisme est possible ;
+- le versionage est possible ;
+- la recherche de contenu est fortement développée grâce à une intégration d'[Algolia](https://www.algolia.com/).
+
+### Pourquoi Docusaurus?
+En effet, la question peut se poser. Pourquoi Docusaurus alors qu'il existe d'autres générateurs de sites comme Wix, Shopify, Weebly, ... ou plus axés développeur comme Next.js, Hugo, Gatsby, etc.
+
+Je suis tombé sur Docusaurus par pur hasard en cherchant un générateur de documentations spécifique à .NET ([Docfx](https://dotnet.github.io/docfx/) d'ailleurs, si ça t'intéresse).
+Cependant, j'ai personnellement choisi Docusaurus pour mes projets personnels pour 3 raisons:
+- il est [open-source](https://github.com/facebook/docusaurus), je peux donc y contribuer si j'en ressens l'envie,
+- il est développé en React et j'aime beaucoup de cette librairie,
+- il est facilement utilisable: en 2-3 minutes, tu peux avoir un site fonctionnel et personnalisé.
+
+### Ce site web est généré avec Docusaurus
+Si tu ne l'as pas encore remarqué, ce site web est généré avec Docusaurus. Tu peux d'ailleurs retrouver les sources sur [Github](https://github.com/hunteroi/tinaeldevresse.eu). 
+Si tu vois une faute, n'hésitez pas à le mentionner en ouvrant une issue!
+
+Passons au sujet principal maintenant! Notre introduction aux conteneurs (ou _containers_ en anglais).
+
+## Les conteneurs
+
+### De quoi parle-t-on?
+Un des problèmes dans le développement, c'est qu'on est fortement liés à la machine sur laquelle tourne notre produit.
+Que cela soit en plein développement, ou quand il s'agit de distribuer un service web à des clients, il y a toujours une machine quelque part.
+Et le soucis principal, c'est que les systèmes et leurs configurations diffèrent..!
+
+<Figure data={{src: "/img/it-works-on-my-machine.jpg", alt: "It Works On My Machine - meme", type: "image" }}></Figure>
+
+Tu l'auras compris. Un conteneur, c'est une unité logiciel qui embarque du code et toutes ses dépendances afin de faire tourner une application d'un environnement à l'autre de manière rapide et fiable.
+C'est comme si, finalement, tu envoyais ton propre ordinateur au client.
+
+### Quelles différences avec une Machine Virtuelle?
+Il est vrai que les conteneurs sont souvent comparés aux machines virtuelles (en anglais, _virtual machine (VM)_) en ça qu'ils ont tous deux le même but: faire tourner une application dans un environnement embarqué.
+La grosse différence entre les 2, c'est qu'un conteneur fait appel au système d'exploitation (en anglais, _operating system (OS)_) du serveur hôte tandis qu'une VM héberge son propre OS. Et de fait, c'est largement plus lourd et moins rapide.
+
+<Figure data={{ src: "/img/container_against_VM.jpg", alt: "Container VS Virtual Machine", type: "image" }}></Figure>
+
+Ce sont d'ailleurs les arguments que Docker (leader mondial du marché des conteneurs informatiques) utilise:
+- léger et rapide,
+- sécurisé,
+- portable et standard, donc multi-plateforme.
+
+### Comment ça fonctionne?
+Je vais poser les bases, histoire que tu parles en se basant sur un même lexique. On va parler de Docker spécifiquement. Docker se compose de 3 parties distinctes:
+1. le logiciel, appelé Docker daemon, est un processus qui gère les conteneurs Docker et les objets en résultant (ex: Docker Engine, ...)
+2. les objets, divisés eux-mêmes en 3 catégories, sont des entités qui permettent de construire une application dans Docker:
+    - un **conteneur** est un environnement standardisé qui contient les applications.
+    - une **image** est un modèle en lecture seule qui permet de générer un conteneur. On peut donc dire que l'instance d'une image est un conteneur.
+    - un **service** est un système qui permet d'orchestrer les opérations de plusieurs conteneurs gérés par plusieurs daemons. Ca porte aussi le nom de _Swarm_ (un ensemble de Docker daemons qui communiquent entre eux grâce à Docker - ex: Docker Swarm, Kubernetes, ...).
+3. les registres sont des entrepôts pour les images Docker (ex: Docker Hub, Google Cloud Platform, ...)
+
+Pour créer un conteneur, il faut respecter quelques principes:
+- un conteneur ne contient qu'un seul processus ;
+- un conteneur est immutable (ça signife qu'avec les mêmes variables d'environnement, le conteneur tournera le _même processus_) ;
+- un conteneur est disposable (ça signifie qu'on peut le supprimer, le remplacer, etc. comme on veut).
+
+Ces 3 principes ne sont que les plus importants selon moi, mais tu trouveras la méthodologie complète sur le site ["The Twelve Factors"](https://12factor.net/).
+
+Une fois une image récupérée depuis un registre ou construite localement, tu peux créer un conteneur. Je te le montrerais bien, mais comme je ne réinvente pas la roue, tu trouveras une petite vidéo qui explique pas mal ces principes-ci!
+
+<Figure data={{ type: "html", width: "560", height: "315", src: "https://www.youtube.com/embed/iqqDU2crIEQ", title: "YouTube video player of Docker tutorial", allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowFullScreen: true }}>
+  Trouvé sur [docs.docker.com](https://docs.docker.com/get-started)
+</Figure>
+
+### Pourquoi utiliser Docker ou ses concurrents?
+Le principe de conteneurisation amène différents avantages considérables. En voici une petite liste non-exhaustive:
+- embarquement de nouvelles ressources humaines plus rapide et facile ;
+- certitude de travailler dans le même environnement que ses collègues (même version des outils notamment) ;
+- application du principe "Do Not Reinvent The Wheel" puisqu'un accès aux images open-source est possible ;
+- plus grande rapidité de compilation et de destruction en comparaison à une VM ;
+- environnement cohérent et isolation ;
+- grande compatibilité (l'OS importe peu, donc chaque développeur peut travailler sur l'OS qu'iel préfère).
+
+Conteneuriser ses applications est de plus en plus courant. On peut d'ailleurs trouver une raison à cette évolution dans la croissance que subit le mouvement DevOps.
+
+## Conclusion
+Si tu n'as de cesse d'avoir des problèmes de configuration d'environnement, que tu dois toujours attendre au moins 1 semaine pour déployer un test dans un environnement client, que c'est toujours compliqué d'embarquer de nouveaux collègues sur un projet... alors considère peut-être l'emploi de conteneurs dans ton quotidien.
+Cela dit, je t'avoue que nous n'avons que gratter la surface des possibilités qu'offre Docker. Je te conseille vivement de continuer à te documenter.
+
+Et si tu cherches à générer de la documentation en ligne ou à écrire un blog, tu peux aussi essayer Docusaurus! 😁
+
+<Newsletter url={MAILCHIMP_URL} />

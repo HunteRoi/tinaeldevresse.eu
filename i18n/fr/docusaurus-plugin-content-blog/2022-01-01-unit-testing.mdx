@@ -1,0 +1,60 @@
+---
+slug: unit-testing
+title: Les tests unitaires
+tags: [test, test unitaire, programmation]
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+image: img/unit-testing.jpg
+---
+import Figure from '../src/components/figure';
+import SEO from '../src/components/seo';
+import Reminder from '../src/components/reminder';
+import Newsletter from '../src/components/newsletter';
+import { MAILCHIMP_URL } from '../website_config.json';
+
+<a href="/blog/unit-testing">
+  <Figure data={{src:'/img/unit-testing.jpg', alt: 'Tests unitaires', type:'image'}} />
+</a>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+
+<!--truncate-->
+
+<SEO
+  uri='blog/unit-testing'
+  image='img/unit-testing.jpg'
+  type='article'
+/>
+
+___
+
+<Reminder />
+
+___
+
+L'article du jour est fait en effort conjoint avec mon collègue <a href="https://www.linkedin.com/in/guillaumefaas/" target="_blank" rel="noreferrer noopener nofollow">Guillaume Faas</a> sous la forme d'une conversation entre 2 développeurs.
+S'il te plaît, remercie-le avec moi pour son incroyable implication sur ce sujet.
+
+Nous espérons tous les 2 que tu vas adorer cette article, autant que nous avons adorer l'écrire!
+
+## De quoi parle-t-on?
+— Hey Guillaume! Le sujet du jour est "les tests unitaires". J'espère que tu as du temps pour en discuter mais d'abord, permets-moi de l'introduire.
+
+Le testing unitaire (anglais, _unit testing_) est une partie d'une stratégie plus grosse appelée "test de logiciel" (anglais, _software testing_). L'idée derrière ces mots est de simplement tester les fonctionnalités designées par des analystes et développeurs par des ingénieurs.
+Il a pas mal de types de testing, et comme tu vas le remarquer dans l'arbre si-dessous, les types sont divisées en 2 branches:
+- les tests fonctionnels – ça signifie que leur objectif cible le code lui-même
+- les tests non-fonctionnels – leur but est plus global, c'est du testing de l'application de manière générale ou tous les sujets qui gravitent autour comme la sécurité, les environnements, la documentation, etc.
+
+<Figure data={{src: '/img/software-testing-types.png', alt: 'Types de Software Testing', type: 'image'}} />
+
+Avec Guillaume, nous allons parler de tests unitaires parce que c'est une bonne première étape quand on veut mettre un pied dans le testing de logiciel. Mais n'aie pas peur de regarder aux autres sur le net!
+
+## Quels sont les avantages et inconvénients?
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+
+## Comment tu t'y prends?
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+
+## Conclusion
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+
+<Newsletter url={MAILCHIMP_URL} />

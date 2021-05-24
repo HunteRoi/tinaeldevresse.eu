@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import isEmail from 'validator/lib/isEmail';
 import Translate, { translate } from '@docusaurus/Translate';
@@ -8,6 +8,11 @@ import styles from './newsletter.module.css';
 const CustomForm = ({ status, message, onValidated }) => {
   let email;
   const submit = () => email && email.value.indexOf('@') > -1 && isEmail(email.value) && onValidated({ EMAIL: email.value });
+
+  useEffect(() => {
+    if (status && status === 'success')
+      this.email.text = '';
+  }, [status]);
 
   return (
     <div className={styles.formContainer}>
@@ -43,9 +48,9 @@ const CustomForm = ({ status, message, onValidated }) => {
 
 export default function Newsletter ({ url }) {
   return (
-    <MailchimpSubscribe 
-      url={url} 
-      render={({subscribe, status, message }) => 
+    <MailchimpSubscribe
+      url={url}
+      render={({subscribe, status, message }) =>
         <CustomForm
           status={status}
           message={message}

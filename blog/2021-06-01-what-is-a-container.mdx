@@ -71,14 +71,29 @@ It's just like you let the client use your own computer.
 
 ### What are the differences with a Virtual Machine?
 It is true that containers are often compared to virtual machines (VM) in that they have the same goal: run an app in an embedded environment.
-The big difference between each is that a container makes use of the host machine operating system (OS) whereas a VM loads its own OS. And obviously, it is heavier and slower.
+The big difference between each is that a container makes use of the host machine operating system (OS) whereas a VM loads its own OS.
 
-<Figure data={{ src: "/img/container_against_VM.jpg", alt: "Container VS Virtual Machine", type: "image" }}></Figure>
-
-These are the arguments that Docker (world leader of the IT container market) uses:
+In fact, a machine with Docker installed brings the following advantages:
 - lightweight and fast,
-- secure,
-- portable and standard, thus cross-platform.
+- portable and standard, thus cross-platform (at some extent).
+
+In reality, it is understandable. Let's take a look at this drawing:
+
+<Figure data={{ src: "/img/container_against_VM.png", alt: "Container VS Virtual Machine", type: "image" }}></Figure>
+
+It is a schema comparing a server with Docker installed to a server that handles VMs.
+Thanks to my excellent drawing skills, we can quickly understand why Docker offers lightweight and speed as assets: Docker is based on the host machine's installed OS and reuses its binaries.
+This means that the machine only has to load the containers packaging code, environment variables, etc. (so to speak, a few light things).
+
+On the other hand, a system which uses VMs has a hypervisor which handles everything. This hypervisor indeed uses the host machine's installed OS.
+However, each VM ships with its own OS and binaries.
+
+In conclusion, we can have a machine easily running 500 containers with a single OS. But it's not the same story with 500 VMs... 
+Eventhough it's actually more complex to efficiently manage several containers simultaneously.
+
+Yet, the power of Docker can also reveal itself as a weakness: it is not possible to run a container which depends on Windows on a Linux machine (and vice versa).
+Another important problem that arises when using Docker is obviously the security!
+The containers may be isolated... but if even one of them is compromised, it is likely that the whole machine (and thus the entire set of containers) represents a threat.
 
 ### How does it work?
 I'm gonna lay the foundations, so that we speak with the same language. By the way, I am referencing Docker specically.
@@ -110,7 +125,7 @@ The principle of containerisation brings significant benefits. Here's a non-exha
 - enforcement of the "Do Not Reinvent The Wheel" principle since an access to open-source images is possible ;
 - faster building and destroying compared to VM ;
 - consistency environmenet and isolation ;
-- broad compatibiltiy (the OS does not matter, so each developer can work on their favorite one).
+- broad compatibility (the development machine OS does not matter, so everyone can work on their favorite station).
 
 Containerizing applications is more and more common. We can even find a reason for this evolution in the growth undergone by the DevOps movement.
 

@@ -37,7 +37,7 @@ ___
 
 ### Qu'est-ce que c'est?
 [Docusaurus](https://docusaurus.io), c'est un générateur de sites web optimisés open-source qui embarque plusieurs fonctionnalités intéressantes pour les créateurs de contenu en ligne:
-- documentation et les articles de blog en [Markdown](https://www.markdownguide.org/getting-started/) ;
+- documentation et articles de blog en [Markdown](https://www.markdownguide.org/getting-started/) ;
 - multi-linguisme ;
 - versionage ;
 - recherche de contenu fortement développée (grâce à une intégration d'[Algolia](https://www.algolia.com/)).
@@ -46,8 +46,8 @@ ___
 En effet, la question peut se poser. Pourquoi Docusaurus alors qu'il existe d'autres générateurs de sites comme Wix, Shopify, Weebly, ... ou plus axés développeur comme Next.js, Hugo, Gatsby, etc.
 
 Je suis tombé sur Docusaurus par pur hasard en cherchant un générateur de documentations spécifique à .NET ([Docfx](https://dotnet.github.io/docfx/) d'ailleurs, si ça t'intéresse).
-Cependant, j'ai personnellement choisi Docusaurus pour mes projets personnels pour 3 raisons:
-- [open-source](https://github.com/facebook/docusaurus),
+Cependant, j'ai personnellement choisi Docusaurus pour mes projets personnels pour 3 raisons: il est...
+- [open-source](https://github.com/facebook/docusaurus) (ce qui signifie que je peux y contribuer, consulter son code source, etc.),
 - développé en React (j'aime beaucoup de cette librairie),
 - facilement utilisable (en 2-3 minutes, tu peux avoir un site fonctionnel et personnalisé).
 
@@ -74,8 +74,8 @@ Il est vrai que les conteneurs sont souvent comparés aux machines virtuelles (e
 La grosse différence entre les 2, c'est qu'un conteneur fait appel au système d'exploitation (en anglais, _operating system (OS)_) du serveur hôte tandis qu'une VM héberge son propre OS. 
 
 En fait, une machine avec Docker installée apporte les avantages suivants:
-- léger et rapide,
-- portable et standard, donc multi-plateforme (dans une certaine mesure).
+- légèreté et rapidité,
+- portabilité et standardisation, donc multi-plateforme (dans une certaine mesure).
 
 En réalité, c'est compréhensible. Regardons de plus près à ce schéma:
 
@@ -92,11 +92,13 @@ En conclusion donc, on peut avoir une machine qui fait facilement tourner 500 co
 Mais ce ne sera pas la même histoire si on doit faire tourner 500 VMs... Même si, en réalité, il reste complexe de gérer de façon efficiente plusieurs conteneurs en simultané.
 
 Pourtant, la force de Docker peut également se révéler une faiblesse : il n'est pas possible de faire tourner un conteneur qui dépend de Windows sur une machine Linux (et inversément).
-Un problème important qui se pose lors de l'utilisation de Docker est évidemment la sécurité!
+
+Un autre problème important qui se pose lors de l'utilisation de Docker est évidemment la sécurité!
 Les conteneurs ont beau être isolés... si un seul est compromis, il est fort à parié que l'entièreté de la machine (et donc tous les autres conteneurs) représente un risque.
 
 ### Comment ça fonctionne?
-Je vais poser les bases, histoire que tu parles en se basant sur un même lexique. On va parler de Docker spécifiquement. Docker se compose de 3 parties distinctes:
+Je vais poser les bases, histoire qu'on parle avec le langage. On va parler de Docker spécifiquement. 
+Il se compose de 3 parties distinctes:
 1. le logiciel, appelé Docker daemon, est un processus qui gère les conteneurs Docker et les objets en résultant (ex: Docker Engine, ...)
 2. les objets, divisés eux-mêmes en 3 catégories, sont des entités qui permettent de construire une application dans Docker:
     - un **conteneur** est un environnement standardisé qui contient les applications.

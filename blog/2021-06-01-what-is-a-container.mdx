@@ -46,10 +46,10 @@ ___
 Indeed, you might ask the question. Why choosing Docusaurus when there are plenty of other site generators such as Wix, Shopify, Weebly, ... or more axed on a developer mindset such as Next.js, Hugo, Gatsby, and so on...
 
 Well, I kind of discovered it by pure chance when looking for a documentation generator for .NET (by the way, I found it: [Docfx](https://dotnet.github.io/docfx/)).
-However, I personnaly chose Docusaurus for my personal projects for 3 reasons:
-1. [open-source](https://github.com/facebook/docusaurus),
+However, I personnaly chose Docusaurus for my personal projects for 3 reasons: it is...
+1. [open-source](https://github.com/facebook/docusaurus) (it means I can contribute, consult its source code, etc.),
 2. developed in React (I love this library),
-3. easy to use (in around 3 minutes, you can have functional and customized website).
+3. easy to use (in around 3 minutes, you can have a functional and customized website).
 
 ### This website is generated with Docusaurus
 If you haven't noticed it yet, this blog is generated with Docusaurus v2. You can even find the source code here on [Github](https://github.com/hunteroi/tinaeldevresse.eu).
@@ -74,8 +74,8 @@ It is true that containers are often compared to virtual machines (VM) in that t
 The big difference between each is that a container makes use of the host machine operating system (OS) whereas a VM loads its own OS.
 
 In fact, a machine with Docker installed brings the following advantages:
-- lightweight and fast,
-- portable and standard, thus cross-platform (at some extent).
+- lightweightness and speed,
+- portability and standardization, thus cross-platform (at some extent).
 
 In reality, it is understandable. Let's take a look at this drawing:
 
@@ -92,12 +92,13 @@ In conclusion, we can have a machine easily running 500 containers with a single
 Eventhough it's actually more complex to efficiently manage several containers simultaneously.
 
 Yet, the power of Docker can also reveal itself as a weakness: it is not possible to run a container which depends on Windows on a Linux machine (and vice versa).
+
 Another important problem that arises when using Docker is obviously the security!
 The containers may be isolated... but if even one of them is compromised, it is likely that the whole machine (and thus the entire set of containers) represents a threat.
 
 ### How does it work?
 I'm gonna lay the foundations, so that we speak with the same language. By the way, I am referencing Docker specically.
-Docker is made up of 3 components:
+It is made up of 3 components:
 1. the software, called Docker daemon, is a process managing Docker containers and resulting objects (eg: Docker Engine, ...)
 2. the objects, themselves seperated in 3 categories, are entities which allow to build an application with Docker:
     - a **container** is a standard environment running an application.

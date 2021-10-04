@@ -13,9 +13,9 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.0",
-    "@docusaurus/plugin-ideal-image": "^2.0.0-beta.0",
-    "@docusaurus/preset-classic": "^2.0.0-beta.0",
+    "@docusaurus/core": "^2.0.0-beta.ff31de0ff",
+    "@docusaurus/plugin-ideal-image": "^2.0.0-beta.ff31de0ff",
+    "@docusaurus/preset-classic": "^2.0.0-beta.ff31de0ff",
     "classnames": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -35,6 +35,6 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/lqip-loader": "^2.0.0-beta.0"
+    "@docusaurus/lqip-loader": "^2.0.0-beta.6"
   }
 }

@@ -1,74 +1,78 @@
 .formContainer {
-  margin: auto;
-  margin-top: 4.9em;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  border-radius: 10px;
-  width: fit-content;
-  border: .1em solid transparent;
+	margin: auto;
+	margin-top: 4.9em;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: 10px;
+	width: fit-content;
+	border: 0.1em solid transparent;
 }
 
 .formContainer:hover {
-  border: .1em solid var(--ifm-color-primary);
+	border: 0.1em solid var(--ifm-color-primary);
 }
 
 .formContainer > h3 {
-  text-align: center;
+	text-align: center;
 }
 
 .inputContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .inputContainer > a > svg {
-  margin-left: 1rem;
-  cursor: pointer;
+	margin-left: 1rem;
+	cursor: pointer;
 }
 
 .input {
-  background-color: whitesmoke;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  border: 1px solid var(--ifm-border-color);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 0.1em solid var(--ifm-border-color);
 
-  width: 100%;
-  padding: .6em;
-  padding-right: 1.5em;
-  font-size: larger;
-  
-  resize: vertical;
+	width: 100%;
+	padding: 0.6em;
+	padding-right: 1.5em;
+	font-size: larger;
+	color: var(--ifm-color-primary);
+
+	resize: vertical;
+}
+
+.input::placeholder {
+	color: var(--ifm-color-primary);
 }
 
 .input:focus {
-  outline: none !important;
+	outline: none !important;
 }
 
 .submit {
-  margin-left: .5em;
-  color: var(--ifm-footer-link-color);
-  font-size: small;
+	margin-left: 0.5em;
+	color: var(--ifm-footer-link-color);
+	font-size: small;
 }
 
 .status {
-  text-align: center;
+	text-align: center;
 }
 
 .success {
-  color: green;
+	color: green;
 }
 
 .sending {
-  color: blue;
+	color: blue;
 }
 
 .error {
-  color: red;
+	color: red;
 }

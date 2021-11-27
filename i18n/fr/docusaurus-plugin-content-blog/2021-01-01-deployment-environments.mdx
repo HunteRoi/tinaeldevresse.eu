@@ -1,49 +1,65 @@
 ---
 slug: deployment-environments
 title: Environnements de déploiement
-tags: [déployement, environnement, environnement d'application, environnement de pipeline, CI/CD]
+tags:
+  [
+    déployement,
+    environnement,
+    environnement d'application,
+    environnement de pipeline,
+    CI/CD,
+  ]
 description: Aux études, les professeurs se focalisent souvent sur les langages, l'algorithmique et le "code propre". Les environnements de déploiement, c'est une des choses que les étudiants IT n''apprennent pas durant leurs études. À mon avi...
 image: img/deployment-environments.png
 ---
+
 import Figure from '../../../src/components/figure';
 import SEO from '../../../src/components/seo';
 import Reminder from '../../../src/components/reminder';
 import Newsletter from '../../../src/components/newsletter';
 import { MAILCHIMP_URL } from '../../../website_config.json';
 
-<a href="/blog/deployment-environments">
-  <Figure data={{src:'/img/deployment-environments.png', alt: 'Deployment Environments', type:'image'}} />
+<a href='/blog/deployment-environments'>
+	<Figure
+		data={{
+			src: '/img/deployment-environments.png',
+			alt: 'Deployment Environments',
+			type: 'image',
+		}}
+	/>
 </a>
 
-Aux études, les professeurs se focalisent souvent sur les langages, l'algorithmique et le "code propre". Les environnements de déploiement, c'est une des choses que les étudiants IT n'apprennent pas durant leurs études. 
+Aux études, les professeurs se focalisent souvent sur les langages, l'algorithmique et le "code propre". Les environnements de déploiement, c'est une des choses que les étudiants IT n'apprennent pas durant leurs études.
 À mon avis, c'est une connaissance importante à posséder quand on commence à travailler pour de plus grosses entreprises comme elles tendent à ajouter plusieurs couches à leur pipeline.
 
 <!--truncate-->
 
-<SEO 
-  uri='blog/deployment-environments' 
-  image='/img/deployment-environments.png'
-  type='article'
+<SEO
+	uri='blog/deployment-environments'
+	image='/img/deployment-environments.png'
+	type='article'
 />
 
-___
+---
 
 <Reminder />
 
-___
+---
 
 Cet article est plus précis et cible un certain type de personnes. J'espère que tu le trouveras intéressant! J'ai hâte de lire ton opinion sur les réseaux sociaux.
 
 ## Qu'est-ce qu'un environnement de déploiement?
+
 Si tu es ici, c'est probablement parce que tu te demandes ce qu'est un environnement de déploiement (à ne pas confondre avec un environnement de développement qui est un sujet totalement différent).
-**Un environnement dans le monde du déploiement d'application est "un système informatique dans lequel un programme ou un composant applicatif est déployé et exécuté".** 
-C'est d'ailleurs pas moi qui le dis, mais bien [Wikipédia](https://fr.wikipedia.org/wiki/Environnement_(informatique)). Et cette définition est plutôt pas mal, je dois dire.
+**Un environnement dans le monde du déploiement d'application est "un système informatique dans lequel un programme ou un composant applicatif est déployé et exécuté".**
+C'est d'ailleurs pas moi qui le dis, mais bien [Wikipédia](<https://fr.wikipedia.org/wiki/Environnement_(informatique)>). Et cette définition est plutôt pas mal, je dois dire.
 
 Comme les systèmes applicatifs, les processus de développement et les ressources informatiques tendent à être plus distribués, ils deviennent également beaucoup plus complexes et spécialisés.
 Quand tu travailles sur un projet, tu vas typiquement à travers un _cycle_ de développement, de testing et de release ; cycle qui évolue souvent sur différentes plateformes avec des ressources différentes et une complexité croissante.
 C'est ce qu'on appelle le "release management". Ce processus permet de déployer, testing et de faire marche arrière si nécessaire (c'est-à-dire "retirer une version nouvellement déployée").
 
 Pour la compréhension du reste de la publication, je vais brièvement expliquer les différentes étapes du développement qu'une application traverse. Permets-moi donc de te présenter les étapes communes:
+
 1. Analyse le problème et réfléchis à une solution numérique.
 2. [Pas mal de trucs de marketing impliquant de la validation, des études de marché, etc.]
 3. Design l'application.
@@ -53,86 +69,120 @@ Pour la compréhension du reste de la publication, je vais brièvement expliquer
 7. Maintiens-la/corrige ses bugs.
 
 ## Pourquoi déployer peut être difficile?
+
 Tu sais, quand on travaille en IT, on répète souvent ce cycle des étapes 3 à 7 (plus ou moins).
 Ce qui est important à comprendre, c'est que l'on déploie habituellement des versions différentes d'une application sur des machines différentes, à des étapes différentes du processus de développement et en suivant des règles différentes.
 Quand tu commences le développement d'une applicaiton, tu connais déjà ton process management (enfin j'espère aha!). Et dans beaucoup de cas, tu vas utiliser la [méthodologie Agile](https://fr.wikipedia.org/wiki/M%C3%A9thode_agile).
 
-<Figure data={{src: "https://www.marketing91.com/wp-content/uploads/2020/06/Introduction-to-Agile-Methodology.jpg", alt: "Processus Agile", type: "image" }}>
-  Fait par <a href="https://www.shutterstock.com/g/Tartila" target="_blank">Tartila</a>
+<Figure
+	data={{
+		src: 'https://www.marketing91.com/wp-content/uploads/2020/06/Introduction-to-Agile-Methodology.jpg',
+		alt: 'Processus Agile',
+		type: 'image',
+	}}
+>
+	Fait par{' '}
+	<a href='https://www.shutterstock.com/g/Tartila' target='_blank'>
+		Tartila
+	</a>
 </Figure>
 
-J'aimerais mettre une remarque sur le fait que le cycle en cache un autre quand tu es dans le métier: tu dois déplacer différentes versions d'une application d'environnements en environnements. Mais un environnement, c'est pas juste une machine sur laquelle ton application tourne! Ca signifie souvent aussi des données différentes, des limites différentes, des buts différents, des processus différents, et plein d'autres trucs avec l'adjectif "différent".
+J'aimerais mettre une remarque sur le fait que le cycle en cache un autre quand tu es dans le métier: tu dois déplacer différentes versions d'une application d'environnements en environnements. Mais un environnement, c'est pas juste une machine sur laquelle ton application tourne! Ça signifie souvent aussi des données différentes, des limites différentes, des buts différents, des processus différents, et plein d'autres trucs avec l'adjectif "différent".
 En gros, pendant que ton application mature à une certaine étape (appellons ça la version la plus jeune), tu as d'autres versions plus anciennes qui doivent bouger. Si ton entreprise n'a pas de sysadmins ou que tu travailles avec le Cloud, le développeur doit gérer les déploiements et les possibles rollbacks (sans oublier de rappeler qu'on ne fait pas juste que déplacer l'app).
 
-<Figure data={{src:'/img/small-fix.jpg', alt: 'Ne déploie jamais un vendredi', type:'image'}} />
+<Figure
+	data={{
+		src: '/img/small-fix.jpg',
+		alt: 'Ne déploie jamais un vendredi',
+		type: 'image',
+	}}
+/>
 
 Même si je sais que tu peux maintenant comprendre ô combien ça peut devenir complexe, je me permets de mentionner qu'il existe des outils d'automation pour faciliter notre travail (et Dieu merci!).
 
 ## Les différentes types d'environnement
-Chaque organisation a sa propre manière de s'arranger sur ce sujet, et habituellement c'est même précisé par projet car tous les logiciels ne se basent pas sur les mêmes besoins. 
 
-Voici les quelques environnements standards que tu pourrais rencontrer: 
+Chaque organisation a sa propre manière de s'arranger sur ce sujet, et habituellement c'est même précisé par projet car tous les logiciels ne se basent pas sur les mêmes besoins.
 
-| Nom             	| Utilité par                  	| Données                  	      |
-|------------------	|-----------------------------	|-------------------------------  |
-| Local             | Toi                         	| Pas de données client    	      |
-| **Dév**eloppement | Développeurs                 	| Pas de données client    	      |
-| **Test**ing       | Ingénieurs QA                	| Pas de données client         	|
-| **Staging**       | Ingénieurs QA et/ou clients 	| Données de production limitées	|
-| **Prod**uction    | Utilisateurs finaux         	| Toutes les données de production|
+Voici les quelques environnements standards que tu pourrais rencontrer:
+
+| Nom               | Utilité par                 | Données                          |
+| ----------------- | --------------------------- | -------------------------------- |
+| Local             | Toi                         | Pas de données client            |
+| **Dév**eloppement | Développeurs                | Pas de données client            |
+| **Test**ing       | Ingénieurs QA               | Pas de données client            |
+| **Staging**       | Ingénieurs QA et/ou clients | Données de production limitées   |
+| **Prod**uction    | Utilisateurs finaux         | Toutes les données de production |
 
 ### L'environnement local
+
 C'est _ton ordinateur_. Le premier endroit où tout le travail est réalisé. Il est évidemment cassé 80% du temps.
 
 #### Objectifs
+
 - Travailler sur tes propres tâches
 - Voir le résultat et faire ton petit bonhomme de chemin
 - Lancer une première batterie de tests avant d'envoyer ton code à tes collègues
 
 ### L'environnement de développement
+
 C'est l'endroit où tout le travail des développeurs repose. C'est acceptable qu'il soit cassé de temps à autre (bien que tu devrais l'éviter si tu ne veux pas recevoir des plaintes de tes collègues à propos de "dev qui est cassé").
 Personne mis à part l'équipe de développement du produit ne devrait jamais avoir accès à cet environnement.
 
 #### Objectifs
+
 - Lancer et tester avec des données de développement
 - Vérifier que ton code fonctionne bien avec celui des autres
 
 ### L'environnement de test
+
 Aussi appelé QA (pour "Quality Assurance"), c'est l'endroit où tout le reste de l'entreprise entre en jeu. C'est théoriquement l'environnement qui précède le déploiement de nouvelles fonctionnalités à de vrais utilisateurs finaux.
 
 #### Objectifs
+
 - Vérifier qu'il n'y a aucun problème qui aurait passé les tests manuels et automatiques précédents
 - Prouver que des critères spécifiques sont remplis (en général, valider le côté technique d'une feature)
 
 ### L'environnement de staging
+
 Cet environnement a plusieurs noms. Les gens l'appellent "pré-prod" ou même "User Acceptance Testing" (UAT).
 C'est en réalité un environnement qui a pour but de simuler l'environnement de production de plusieurs manières. Il peut être utilisé pour faire des démos de nouvelles fonctionnalités, demander des retours de la part d'utilisateurs triés sur le volet pour valider le flux business de bout en bout, ou pour habituer les clients à de nouveaux changements.
 
 #### Objectifs
+
 - Empêcher de déployer des bugs en production
 - Valider le flux commercial intégral
 - Entrainer les clients por de nouveaux changements
 
 ### L'environnement de production
+
 C'est un environnement sacré qui ne devrait jamais casser. Les utilisateurs finaux l'utilisent. Si tu le casses, tu perds de l'argent, ok?
 
 #### Objectifs
+
 - Être le dernier dépositaire de tous les autres environnements
 - Donner aux clients la solution à leur(s) problème(s) sur un certain sujet
 - Être fiable, "bug-free", toujours opérationnel
 
-
 ## Comment choisir sa pipeline?
-Tu ne peux pas choisir aléatoirement entre des pipelines gravées dans la pierre qui répondront à tes besoins. Les pipelines sont spécifiques construire pour répondre aux besoins __d'un projet spécifique__.
+
+Tu ne peux pas choisir aléatoirement entre des pipelines gravées dans la pierre qui répondront à tes besoins. Les pipelines sont spécifiques construire pour répondre aux besoins **d'un projet spécifique**.
 J'ai vu pas mal de choses ici et là, et il y a beaucoup de compagnies d'hébergement comme Heroku qui offrent d'aider à la mise en place de pipelines de déploiement.
 
 L'image suivante schématise quelques pipelines dont j'ai entendu parler, avec lesquelles j'ai pu travailler ou que j'utilise même actuellement. Disons qu'elles sont les pipelines par défaut des entreprises A, B & C.
 
-<Figure data={{src:'/img/deployment-environments.svg', alt: 'Deployment Environments', type:'img'}}>
-  Schema des pipelines de déploiement des compagnies A, B & C
+<Figure
+	data={{
+		src: '/img/deployment-environments.svg',
+		alt: 'Deployment Environments',
+		type: 'img',
+	}}
+>
+	Schéma des pipelines de déploiement des compagnies A, B & C
 </Figure>
 
 ### Compagnie A
+
 Cette entreprise utilise un design bien connu appelé l'approche DTAP (Development - Testing - Acceptance - Production).
 C'est la pipeline la plus standard qui soit. Elle est souvent utilisée (pas comme telle mais largement modifiée) dans les grandes entreprises.
 
@@ -142,15 +192,17 @@ L'image montre que tu peux choisir d'avoir une instance unique de ton applicatio
 Évidemment, choisir entre plusieurs instances qui tournent en même temps coûte plus cher et apportent autant son lot d'avantages que d'inconvénients:
 
 - Tu peux déployer une fonctionnalités spécifique dans une instance spécifique.
-- Ca permet à l'équipe de développement de travailler en plus petits groupes (ex: équipe 1 travaille sur liste 1 de fonctionnalités dans l'instance 1 ; équipe 2 liste 2 dans instance 2; ...).
+- Ça permet à l'équipe de développement de travailler en plus petits groupes (ex: équipe 1 travaille sur liste 1 de fonctionnalités dans l'instance 1 ; équipe 2 liste 2 dans instance 2; ...).
 - C'est sympa de voir que ton instance tourne tranquillement alors que celle des autres est cassée parce qu'ils se sont embrouillés (bien qu'il ne faut pas prendre la grosse tête, ça t'arrivera aussi!).
 
 ### Compagnie B & Compagnie C
-Ces entreprises se sont débarassé de l'environnement de test. Ca arrive souvent quand tu peux te permettre de tester tes fonctions dans l'environnement de développement ou dans l'environnement de staging. C'est aussi une possibilité pour les petites équipes (moins de déploiements à effectuer, en somme).
+
+Ces entreprises se sont débarassé de l'environnement de test. Ça arrive souvent quand tu peux te permettre de tester tes fonctions dans l'environnement de développement ou dans l'environnement de staging. C'est aussi une possibilité pour les petites équipes (moins de déploiements à effectuer, en somme).
 
 La seule différence entre les 2 entreprises est le nombre d'instances à chaque étape du processus. Quand tu construis un petit projet, tu utilises habituellement une pipeline identique à celle de la compagnie C car il y a moins d'étapes pour déployer et aller d'un environnement à l'autre.
 
 Personnellement, j'aime le schéma C mais je le simplifierai mais encore un peu plus. Par exemple, je travaille sur un bot Discord ([si tu ne sais pas ce qu'est Discord, clique-ici](https://discord.com)), j'utilise:
+
 - mon environnement local qui tourne et qui se connecte à des ressources du Cloud (base de données, service web de Discord, autres services web),
 - l'environnement dev/staging (un seul environnement ici!) déploie et tourne la version "beta" du bot, et
 - l'environnement de production héberge la version finale disponible pour les utilisateurs Discord.
@@ -161,6 +213,7 @@ Tu dois créer ton propre plan personnalisé. Mais ces schémas "par défaut" se
 **Et vous les gens, quelle est votre pipeline de déploiement favorite?**
 
 ## Conclusion
+
 Les environnements de déploiement sont une grosse histoire et cet article a pour but de gentiment entrouvrir la partie vers ce monde.
 Comme le mouvement "DevOps" devient de plus en plus intriguant aux yeux des organisations, c'est toujours un plus de savoir des choses concernant cela.
 

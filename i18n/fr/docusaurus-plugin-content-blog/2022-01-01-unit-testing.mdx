@@ -45,7 +45,7 @@ _tldr; fais des katas en appliquant le Test Driven Development!_
 
 <AnchoredP>🔸 Salut Guillaume! Tu sais te présenter s'il te plaît?</AnchoredP>
 
-🔹 Salut Tinaël! Merci de m'avoir invité à parler sur ton site. Mon nom est Guillaume Faas et je suis un expert .NET / Software Craftsman, employé chez Squaremiled S.A. Je construis des logiciels depuis presque 10 ans, dans des environnements et secteurs business variés.
+🔹 Salut Tinaël! Merci de m'avoir invité à parler sur ton site. Mon nom est Guillaume Faas et je suis un expert .NET / Software Craftsman, employé chez [Squaremiled S.A.](https://squaremiled.com/). Je construis des logiciels depuis presque 10 ans, dans des environnements et secteurs business variés.
 
 <AnchoredH2 id='topic'>Le sujet!</AnchoredH2>
 
@@ -61,7 +61,7 @@ _tldr; fais des katas en appliquant le Test Driven Development!_
 En règle générale, lorsqu'on commence à travailler pour la première fois, on s'attend à ce que les entreprises fassent des produits à la pointe, juste parce qu'ils sont professionnels. Donc, notre premier réflexe n'est pas toujours de regarder ailleurs comment les autres font.
 Enfin, ça, c'était mon cas.
 
-De retour à l'histoire! Je commençais à regarder en ligne à des guides, des pratiques, des _patterns_, etc. Je suis tombé sur plein de sujets excitants. C'était comme si j'avais ouvert une fenêtre sur un tout nouveau monde. Le _testing_ était un de ces sujets.
+De retour à l'histoire! Je commençais à regarder en ligne à des guides, des pratiques, des _patterns_, etc. Je suis tombé sur plein de sujets excitants. C'était comme si j'avais ouvert une fenêtre sur un tout nouveau monde. Le _testing_ était l'un de ces sujets.
 Et ce n'était pas une adoption immédiate de ma part! Bien que je comprenais pourquoi c'était fait et tous les bénéfices en conséquence, je pensais que c'était trop dur parce que je ne voyais pas comment introduire des tests dans mon projet du moment. La vérité? OUI, c'était dur.
 Mais pas parce que c'était du _testing_: le produit sur lequel je travaillais était en fait un monolithe extrèmement couplé.
 
@@ -132,17 +132,6 @@ Du coup, les tests d'intégration sont importants. Mais je considère, à tort o
 	}}
 />
 
-<AnchoredP>
-	🔸 Et pourtant, tu peux également trouver des projets qui possèdent des tests
-	unitaires mais pas obligatoirement des tests d'intégration.
-</AnchoredP>
-
-🔹 C'est une question de besoin. Dans une approche TDD (ndlr: on en parle plus bas!), tu sais que ton application va être robuste. Parce que si jamais tous tes composants sont robustes, il y a de grandes chances pour que ton application le soit aussi.
-Ça ne veut pas dire que tu n'auras pas de problème lorsqu'ils vont travailler les uns avec les autres, mais en ayant du testing de façon globale sur ton application, tu réduis la quantité d'erreurs qu'il te reste et donc, tu peux facilement trouver le problème.
-
-Et donc, après, c'est une question de "quel est le coût de le faire, quel est le coût de ne pas le faire". Et des fois, ça vaut pas le coup. Potentiellement, on sait que l'on va avoir quelques bugs et qu'on arrivera à les gérer, mais la majorité des bugs seront
-gérés en amont grâce à des tests unitaires.
-
 <AnchoredP id='objective'>
 	🔸 C'est quoi le but du testing unitaire et quand est-ce que ça devrait être
 	appliqué?
@@ -163,7 +152,7 @@ Pour ce qui est du "quand", et bien c'est simple: ça doit être appliqué à pa
 1. Une suite de tests devient ce qu'on appelle une **documentation vivante**.
 
    Notamment lorsque quelqu'un arrive sur ton projet. Il voit une méthode qui peut être complexe (ou pas, peu importe). Il n'est pas forcément sensé connaître ou deviner tous les tenants et aboutissants de la méthode. Par contre, il y a une façon très simple pour lui de savoir quels sont les résultats attendus et comment la méthode devrait fonctionner:
-   c'est de regarder le nom des 4-5 tests qui passent sur ta méthode. Ça facilite donc l'_onboarding_!
+   c'est de regarder le nom des 4-5 tests qui passent sur ta méthode. **Ça facilite donc l'_onboarding_!**
 
    De plus, là où un commentaire ne reste jamais à jour avec le reste du code, le test unitaire sera toujours up to date. Si ce n'est pas le cas, alors ta compilation ne passe pas.
 
@@ -199,9 +188,7 @@ Pour ce qui est des inconvénients, je dirais que:
 5. il y a un manque de compréhension du côté des autres départements (non-IT) sur le sujet.
 
 On entend souvent dire que "ça prend du temps et que ça sera planifié plus tard" ou que "les développeurs n'ont pas le temps" mais ces inconvénients n'en sont pas vraiment.
-En effet, le premier indique clairement un manque de vision long terme sur le produit alors que le second indique un problème d'organisation (les tests devraient être inclus dans l'estimation de développement d'une fonctionnalité).
-
-<AnchoredH2 id='details'>En détails</AnchoredH2>
+En effet, le premier indique clairement un manque de vision long terme sur le produit alors que le second indique un problème d'organisation (les tests unitaires devraient être inclus dans l'estimation de développement d'une fonctionnalité et pas comme un travail supplémentaire à réaliser).
 
 <AnchoredP id='bugs-still-occur'>
 	🔸 Parfois, tu as quand même des problèmes qui surviennent dans des
@@ -219,7 +206,7 @@ Admettons: tu prends le cas d'un _refactoring_ qui te génère 10 bugs. Le même
 	ça?
 </AnchoredP>
 
-Donc d'accord, le test unitaire n'a pas réponse à tout. Et c'est là qu'on arrive sur le _coverage_. C'est une métrique informative sur la progression de couverture de tests de ton application.
+🔹 Donc d'accord, le test unitaire n'a pas réponse à tout. Et c'est là qu'on arrive sur le _coverage_. C'est une métrique informative sur la progression de couverture de tests de ton application.
 Cependant, c'est mal de mesurer la qualité de la suite de tests sur base de sa couverture. Tu peux avoir un _coverage_ à 100% avec absolument rien qui est testé. Il suffit de faire uniquement des tests qui ne vérifient rien, ou qui font des vérifications bidons (0 est égal à 0 → toujours vrai).
 Tu as un coverage complet, mais la stabilité de ton application n'est absolument pas vérifiée.
 
@@ -231,94 +218,6 @@ Le seul moyen de vérifier la qualité d'une suite unitaire d'un projet, c'est d
 - est-ce que les développeurs ont confiance en leur code quand ils terminent une fonctionnalité?
 
 Le soucis, c'est que c'est dur de faire de la métrique sur tous ces points...
-
-<AnchoredP id='black-and-white-boxes'>
-	🔸 Ok! Et si on parlait maintenant de black-box et white-box testing?
-</AnchoredP>
-
-🔹 C'est le moment pour moi de montrer mes talents insoupçonnés de dessinateur!
-
-<Figure
-	data={{
-		src: '/img/black-white-box-testing.png',
-		alt: 'Black and white box testing',
-		type: 'image',
-		style: { border: '.5em solid black' },
-	}}
-/>
-
-Le **black box testing**, c'est donner une information d'entrée à l'_unit of code_, et vérifier l'information de sortie. C'est aussi simple que ça: on ne prend pas en compte ce qu'il se passe à l'intérieur de la méthode.
-C'est pas mal, c'est un début, mais je trouve que c'est dommage de s'arrêter là. C'est typiquement le genre de tests ajoutés en cours de route sur une application _legacy_ où c'est compliqué de vérifier tout ce qu'il se passe parce qu'il y a déjà beaucoup.
-
-Prenons par exemple une classe `Calculator`:
-
-```csharp title='src/Calculator.cs'
-public class Calculator
-{
-	public int Sum(int x, int y)
-	{
-		return x + y;
-	}
-}
-```
-
-Cette classe n'a pas de dépendance. Et bien, un test sur une méthode pure (sans dépendance ou qui n'accède qu'à des variables partagées) est obligatoirement un _black box test_:
-
-```csharp title='tests/CalculatorTests.cs'
-[TestClass]
-public class CalculatorTests
-{
-	[TestMethod]
-	public int Sum_Should_ReturnTheSumOfTheTwoNumbers()
-	{
-		Calculator calculator = new();
-
-		int result = calculator.Sum(2,3);
-
-		Assert.AreEqual(expected: 5, actual: result);
-	}
-}
-```
-
-Par contre, de l'autre côté, on a le **white box testing**. C'est concrètement la même chose: on donne un _input_ et on vérifie l'_output_ (c'est le but d'un test unitaire, finalement). Mais on va aussi vérifier ce qu'il se passe à l'intérieur de l'_unit of code_.
-Et donc potentiellement vérifier que ta méthode a bien fait appel à sa dépendance, que la valeur a bien été mise dans un cache, sauvegardée dans un repo, qu'un event a bien été émis, etc. et là, tout de suite, ça donne plus de valeurs à ton test.
-Parce qu'on va définir le _behavior_ de ton test de façon plus précise, plus complète, en vérifiant ce qu'il se passe à l'intérieur.
-
-<AnchoredP id='why-not-popular'>
-	🔸 Ah d'accord! Mais du coup, pourquoi ce n'est pas plus adopté par les
-	développeurs?
-</AnchoredP>
-
-🔹 C'est vraiment une interprétation personnelle parce que je ne détiens pas la sainte vérité.
-Je pense que dans notre cas, malgré le fait que l'on fait du développement de logiciels depuis plusieurs décennies, on n'est pas encore sur un développement logiciel "mature": si tu regardes en détails, tu verras exactement les mêmes problèmes dans tous les projets sur lesquels on peut travailler.
-Rajoute à ça le fait que le testing unitaire n'est pas forcément (bien) enseigné quand on est à l'école, et de ce fait pas appliqué en entreprise.
-
-Par conséquent, tu n'as pas d'apprentissage continu sur le sujet, et donc tu tombes dans un cercle vicieux : personne n'en fait donc personne n'en fait.
-Puis, combien de fois n'as-tu pas entendu "on fera les tests à la fin" quand tu proposes d'en faire? Alors que faire ça, c'est perdre pratiquement tous les avantages!
-
-<AnchoredP>
-	🔸 Personnellement, j'ai eu la chance de faire mes études dans une institution
-	qui tenait à coeur d'enseigner en étant alignée avec le monde professionel
-	mais aussi vis-à-vis des nouvelles technologies. Et pourtant, nous n'avons eu
-	qu'une introduction aux tests unitaires. En tant qu'étudiant, ça te tombe
-	dessus et tu n'as pas forcément le bagage nécessaire pour comprendre tout ce
-	que l'on te demande. Pour ma part, à l'époque, je n'avais absolument pas
-	compris l'utilité du testing unitaire, et j'avais bâclé la question à
-	l'examen!
-</AnchoredP>
-
-🔹 La nivellation par le bas est perpétuelle. C'est d'autant plus embêtant pour les gens qui sont de bonne volonté et qui veulent mettre des tests unitaires en place.
-Dans l'industrie (sauf sur les projets qui sont chapeautés par des boîtes qui ont plutôt bonne conscience), tu vas être fortement incité à faire du _quick and dirty_.
-Le problème, c'est que tu es sur des solutions qui n'ont déjà pas de tests unitaires. Comme je le disais avant, quand tu n'as pas de tests et que ton système grandit à tous les niveaux:
-
-- tes développements te prennent beaucoup plus de temps ;
-- t'as de plus en plus de bugs à régler ;
-- comme ça te génère plus de bugs, t'as plus de travail et donc t'as moins de temps pour écrire des tests sur ta solution existante...
-
-  ...en sachant qu'il y a une courbe de progression. Tu ne peux pas dire à ton équipe du jour au lendemain : "allez hop, aujourd'hui tout le monde écrit des tests unitaires" et t'as 100% de coverage. Ça, ça n'existe pas.
-
-Tu es déjà sur un flux tendu parce que tu n'as pas fait tes tests en amont, ce qui fait que tu te tapes toutes les conséquences dans la figure.
-Et donc, inciter une adoption aux tests unitaires et à TDD devient d'autant plus compliqué parce que les gens sont déjà totalement noyés.
 
 <AnchoredP id='cost'>
 	🔸 Bon sinon... question coût, qu'est-ce qu'il en est? Parce que finalement,
@@ -355,13 +254,104 @@ dans un _sprint_, puis il sera assigné à un développeur. Ensuite, il va y avo
 
 Alors qu'un test en quelques lignes de code aurait empêché tout ça.
 
-_ndlr: pour en savoir plus sur les raisons qui font qu'un logiciel a des bugs, n'hésitez pas à consulter [cette page](https://www.softwaretestinghelp.com/why-does-software-have-bugs)!_
+_ndlr: pour en savoir plus sur les raisons qui font qu'un logiciel a des bugs, n'hésitez pas à consulter [cette page](https://www.softwaretestinghelp.com/why-does-software-have-bugs) et [d'autres sur le web](https://www.google.com/search?q=why+do+softwares+have+bugs)!_
+
+<AnchoredH2 id='details'>En détails</AnchoredH2>
+
+<AnchoredP id='black-and-white-boxes'>
+	🔸 Ok! Et si on parlait maintenant de{' '}
+	<span style={{ fontStyle: 'italic' }}>black box</span> et{' '}
+	<span style={{ fontStyle: 'italic' }}>white box testing</span>?
+</AnchoredP>
+
+🔹 C'est le moment pour moi de montrer mes talents insoupçonnés de dessinateur!
+
+<Figure
+	data={{
+		src: '/img/black-white-box-testing.png',
+		alt: 'Black and white box testing',
+		type: 'image',
+		style: { border: '.5em solid black' },
+	}}
+>
+	Les différences entre _black & white box testing_
+</Figure>
+
+Le **black box testing**, c'est donner une information d'entrée à l'_unit of code_, et vérifier l'information de sortie. C'est aussi simple que ça: on ne prend pas en compte ce qu'il se passe à l'intérieur de la méthode.
+C'est pas mal, c'est un début, mais je trouve que c'est dommage de s'arrêter là. C'est typiquement le genre de tests ajoutés en cours de route sur une application _legacy_ où c'est compliqué de vérifier tout ce qu'il se passe parce qu'il y a déjà beaucoup.
+
+Prenons par exemple une méthode `Sum` d'une classe `Calculator`. Cette classe n'a pas de dépendance. Le test sur une méthode pure (sans dépendance ou qui n'accède qu'à des variables partagées) est obligatoirement un _black box test_:
+
+```csharp title='tests/CalculatorTests.cs'
+[TestClass]
+public class CalculatorTests
+{
+	[TestMethod]
+	public int Sum_Should_ReturnTheSumOfTheTwoNumbers()
+	{
+		Calculator calculator = new();
+
+		int result = calculator.Sum(2,3);
+
+		Assert.AreEqual(expected: 5, actual: result);
+	}
+}
+```
+
+On ne connaît pas l'implémentation de la méthode, mais on a écrit un test. On lui donne des valeurs en entrée, et on vérifie la valeur de sortie.
+
+De l'autre côté, on a le **white box testing**. C'est concrètement la même chose: on donne un _input_ et on vérifie l'_output_ (c'est le but d'un test unitaire, finalement). Mais on va aussi vérifier ce qu'il se passe à l'intérieur de l'_unit of code_.
+Et donc potentiellement vérifier que ta méthode a bien fait appel à sa dépendance, que la valeur a bien été mise dans un cache, sauvegardée dans un repo, qu'un event a bien été émis, etc. et là, tout de suite, ça donne plus de valeurs à ton test.
+Parce qu'on va définir le _behavior_ de ton test de façon plus précise, plus complète, en vérifiant ce qu'il se passe à l'intérieur.
+
+<AnchoredP id='why-not-popular'>
+	🔸 Ah d'accord! Mais du coup, pourquoi est-ce que ce n'est pas plus adopté par
+	les développeurs?
+</AnchoredP>
+
+🔹 C'est vraiment une interprétation personnelle parce que je ne détiens pas la sainte vérité.
+Je pense que dans notre cas, malgré le fait que l'on fasse du développement de logiciels depuis plusieurs décennies, on n'est pas encore sur un développement logiciel "mature": si tu regardes en détails, tu verras exactement les mêmes problèmes dans tous les projets sur lesquels on peut travailler.
+Rajoute à ça le fait que le testing unitaire n'est pas forcément (bien) enseigné quand on est à l'école, et de ce fait pas appliqué en entreprise.
+
+Par conséquent, tu n'as pas d'apprentissage continu sur le sujet, et donc tu tombes dans un cercle vicieux : personne n'en fait donc personne n'en fait.
+Puis, combien de fois n'as-tu pas entendu "on fera les tests à la fin" quand tu proposes d'en faire? Alors que faire ça, c'est perdre pratiquement tous les avantages!
+
+<AnchoredP>
+	🔸 Personnellement, j'ai eu la chance de faire mes études dans une institution
+	qui tenait à coeur d'enseigner en étant alignée avec le monde professionel
+	mais aussi vis-à-vis des nouvelles technologies. Et pourtant, nous n'avons eu
+	qu'une introduction aux tests unitaires. En tant qu'étudiant, ça te tombe
+	dessus et tu n'as pas forcément le bagage nécessaire pour comprendre tout ce
+	que l'on te demande. Pour ma part, à l'époque, je n'avais absolument pas
+	compris l'utilité du testing unitaire, et j'avais bâclé la question à
+	l'examen!
+</AnchoredP>
+
+🔹 La nivellation par le bas est perpétuelle. C'est d'autant plus embêtant pour les gens qui sont de bonne volonté et qui veulent mettre des tests unitaires en place.
+Dans l'industrie (sauf sur les projets qui sont chapeautés par des boîtes qui ont plutôt bonne conscience), tu vas être fortement incité à faire du _quick and dirty_.
+Le problème, c'est que tu es sur des solutions qui n'ont déjà pas de tests unitaires. Comme je le disais avant, quand tu n'as pas de tests et que ton système grandit à tous les niveaux:
+
+- tes développements te prennent beaucoup plus de temps ;
+- t'as de plus en plus de bugs à régler ;
+- comme ça te génère plus de bugs, t'as plus de travail et donc t'as moins de temps pour écrire des tests sur ta solution existante...
+
+  ...en sachant qu'il y a une courbe de progression. Tu ne peux pas dire à ton équipe du jour au lendemain : "allez hop, aujourd'hui tout le monde écrit des tests unitaires" et t'as 100% de coverage. Ça, ça n'existe pas.
+
+Tu es déjà sur un flux tendu parce que tu n'as pas fait tes tests en amont, ce qui fait que tu te tapes toutes les conséquences dans la figure.
+Et donc, inciter une adoption aux tests unitaires et à TDD devient d'autant plus compliqué parce que les gens sont déjà totalement noyés.
 
 <AnchoredP id='how-to-write'>
 	🔸 La question que tous se posent... Comment écrire de bons tests unitaires?
 </AnchoredP>
 
-🔹 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+🔹 Il faut réfléchir avant sur ce que tu veux faire. Ca peut paraître bête, mais _think before you do_. Quand j'expliquais que les tests unitaires te rendent meilleurs, c'est parce qu'ils te forcent à réfléchir sur les relations entre tes composants.
+Si tu veux faire des tests unitaires efficaces, alors il faut réfléchir sur comment tes composants vont communiquer entre eux. En fait, tes tests seront efficaces à partir du moment où ils seront faciles à faire. Et si tu te rends compte qu'ils ne le sont pas, c'est qu'il y a un soucis dans ton code.
+
+Exemple: j'ai un _command handler_ qui doit me créer une utilisateur dans une base de données. **Avant d'écrire mon test**, je dois réfléchir: qu'est-ce que je veux que mon _handler_ fasse et ne fasse pas?
+Est-ce que je veux que mon _handler_ envoie une requête HTTP à un fournisseur externe pour récupérer des informations? Est-ce que je veux que ça soit directement lui qui fasse la sauvegarde en DB? Est-ce que je veux que ça soit lui qui s'occupe du logging dans un fichier? Peut-être pas.
+Une dépendance ici, là, et là... Au final, qu'est-ce qu'il reste dans mon _command handler_ ? L'exécution des différentes dépendances, peut-être une modification du statut de l'état d'une entité, et voilà.
+
+Mais finalement, un test unitaire efficace, c'est un test qui est fiable qui apporte de la valeur à ta solution et qui te protège des effets de bord pour plus tard. C'est ainsi qu'on mesure l'efficacité de ta suite de tests.
 
 <AnchoredH2 id='more-stuff'>Pour aller plus loin</AnchoredH2>
 
@@ -386,46 +376,125 @@ Pour ma part:
 🔸 Sur ce point-ci particulièrement, j'aimerais mettre en avant le fait qu'il existe aussi des librairies de test pour le _front-end_. En fait, le testing unitaire n'est pas réservé aux développeurs
 _back-end_. On citera notamment [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), [Cypress](https://www.npmjs.com/package/cypress) et [Jasmine](https://www.npmjs.com/package/jasmine) comme librairies fortement liées au testing dans des applications JavaScript.
 
-<AnchoredP id='what-is-tdd'>
-	Oh d'ailleurs, on entend beaucoup parler du{' '}
-	<span style={{ fontStyle: 'italic' }}>Test Driven Development</span> (TDD).
-	C'est quoi?
+<AnchoredP id='tips-to-start'>
+	🔸 T'as des conseils pour se lancer dans le testing unitaire?
 </AnchoredP>
 
-🔹 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+🔹 Je recommande aux personnes qui veulent faire du testing unitaire de commencer avec TDD. Il n'y a pas meilleur pied à l'étrier parce que c'est vraiment là que tu vas mettre ton _behavior_ en avant.
+Faire ton test après l'implémentation, c'est pas objectif car tu connais déjà l'implémentation donc ton test est fortement lié à ton implémentation. Ce qui n'est pas forcément le cas avec TDD (que ça soit du _black_ ou du _white box testing_), tu peux avoir une infinité de tests différents.
+
+Un autre conseil, c'est de les faire. Vraiment. De faire l'effort de les commencer et de les terminer!
+Et être critique vis-à-vis de son code. Si c'est compliqué de tester, ce n'est pas à cause des tests, mais probablement à cause de la manière dont ton projet est structuré.
+
+Et comme dernier conseil, je dirais: fais des katas. Fais plein de katas en TDD et fais-en à plusieurs. C'est très formateur! Tu peux en trouver plein sur [Code Wars](https://www.codewars.com/) et [TDD Buddy](http://www.tddbuddy.com/).
+
+Et concernant la manière dont on les écrit, on peut se référer à ce qu'on appelle le triple A (AAA), qui signifie _Arrange, Act, Assert_. En gros, c'est diviser son test unitaire en 3 parties distinces:
+
+1. _arrange_ : la partie où tu prépares les données _input_ de ta méthode.
+2. _act_ : le fait de réaliser l'appel à la méthode que tu vas tester.
+3. _assert_ : le moment de vérité, c'est-à-dire la partie où tu vas vérifier l'_output_ de ta méthode.
+
+<AnchoredP id='what-is-tdd'>
+	🔸 Du coup, tu n'arrêtes pas d'en parler. C'est quoi le{' '}
+	<span style={{ fontStyle: 'italic' }}>Test Driven Development</span> (TDD)?
+</AnchoredP>
+
+🔹 C'est la vie, la joie, le bonheur, c'est tout ça! Non, je rigole. En fait, c'est une façon de mettre les tests au centre de ce que tu fais. On a parlé de tous les points positifs de faire des tests unitaires, et on a aussi parlé du fait qu'on les perdait si on faisait les tests à la fin.
+En fait, la meilleure façon de bénéficier des avantages des tests, c'est de les faire au début d'un projet. Ce n'est pas que ça. Ce n'est pas d'abord faire tous les tests puis ensuite faire l'implémentation. Non, il y vraiment un côté incrémental. Tu y vas étape par étape en faisant en sorte qu'à chaque fois que tu avances, tu utilises tous les tests que tu as fait avant comme filet de sécurité qui s'agrandit petit à petit.
+C'est plus facile de monter une échelle où chaque marche fait 10cm que de monter une échelle où chaque marche fait 1m.
+
+<Figure
+	data={{
+		src: '/img/test-driven-development.png',
+		alt: 'Black and white box testing',
+		type: 'image',
+		style: { border: '.5em solid black' },
+	}}
+>
+	Le cycle de développement sous TDD
+</Figure>
+
+La première étape, c'est d'écrire **un** test unitaire. Normalement, ce test doit _obligatoirement_ échoué d'emblée, puisqu'aucune autre ligne de code n'a été écrite pour qu'il réussise (deuxième étape).
+L'étape suivante, c'est donc d'écrire le code qui permet de faire passer le test au vert. Et là, c'est très important de savoir que ce passage de rouge vers le vert doit être **le plus court possible**. Il ne faut écrire que le code qui fait passer le test au vert, ni plus ni moins.
+L'étape suivante, c'est de modifier le code afin qu'il s'adapte au mieux aux _requirements_ du projet.
+
+🔸 Je vais fournir un petit exemple pour que tout le monde se situe! Je vais faire ça avec un calculateur de longueur de chaîne de caractères tiens, c'est simple à réaliser.
+Donc, on commence par écrire le test unitaire:
+
+```csharp title='tests/StringCalculatorTests.cs'
+[TestClass]
+public class StringCalculatorTests
+{
+	[TestMethod]
+	public int Length_ShouldReturn_CorrectLength()
+	{
+		StringCalculator calculator = new();
+
+		int result = calculator.Length("string")
+
+		Assert.AreEqual(expected: 6, actual: result);
+	}
+}
+```
+
+Le test échoue parce que nous n'avons pas encore créé la classe `StringCalculator`. Prochaine étape!
+
+```csharp title='src/StringCalculator.cs'
+public class StringCalculator
+{
+	public int Length (string str)
+	{
+		return 6;
+	}
+}
+```
+
+Ici, nous sommes donc à l'étape verte. On doit donc passer à l'étape bleue. La plus longue: réaliser un refactoring du code qui nous permet de répondre au besoin demandé (calculer la longueur d'une chaîne de caractères) tout en ne cassant pas le test:
+
+```csharp title='src/StringCalculator.cs'
+public class StringCalculator
+{
+	public int Length (string str)
+	{
+		return str.Length;
+	}
+}
+```
+
+Et voilà! Nous pouvons commencer l'écriture d'un nouveau test unitaire.
+
+🔹 C'est un exemple assez simple mais tu y es. Il faut bien noter qu'il y a des règles dans le TDD, mais on peut en parler pendant des heures alors on va s'arrêter ici!
 
 <AnchoredP id='what-is-tcr'>
-	🔸 J'ai ouïe dire que t'as récemment appris le{' '}
-	<span style={{ fontStyle: 'italic' }}>Test && Commit || Revert</span> (TCC).
+	🔸 D'accord! D'ailleurs, j'ai ouïe dire que t'as récemment appris le{' '}
+	<span style={{ fontStyle: 'italic' }}>Test && Commit || Revert</span> (TCR).
 	Tu sais expliquer en quoi ça consiste?
 </AnchoredP>
 
-🔹 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+🔹 Alors grosso modo, TCR, c'est une facon d'aller plus loin avec TDD. Le meilleur moyen d'utiliser ça est avec un script séparé.
+Ce script va analyser ta solution à chaque sauvegarde, et va exécuter tous tes tests. Si tous tes tests sont vert, il crée un commit qui represente un état stable de ta branche (Test && Commit).
+Si tu as un seul test qui foire, il fait un rollback pour revenir à l'état du dernier commit, stable du coup (Revert).
+Ça te force à avancer en _baby steps_ et ça part du principe que c'est ton dernier changement qui t'a fait foirer le truc.
 
-<AnchoredP id='tips-to-start'>
-	🔸 T'as des tips pour se lancer dans le testing unitaire?
-</AnchoredP>
-
-🔹 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
-<AnchoredP id='how-to-convince-to-use'>
-	🔸 Comment convaincre quelqu'un d'écrire des tests unitaires?
-</AnchoredP>
-
-🔹 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+Tu passes par une période de frustration parce que tu peux perdre du code mais justement, ça t'incite à avancer petit à petit pour limiter tes pertes. C'est un super enseignement pour TDD.
+Et quand tu es relativement à l'aise avec tout ça, ça te fait aller plus vite car tu as toujours une branche qui fonctionne.
 
 <AnchoredP id='bad-smells'>
 	🔸 Quels sont les "bad smells" dans l'unit testing?
 </AnchoredP>
 
-🔹 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+🔹 Il y en a quelques-uns...
+
+- Typiquement, le fait que la partie _arrange_ fasse 15 lignes... C'est trop compliqué. On voit clairement que la méthode testée fait trop de choses!
+- On dit qu'**un test ne doit avoir qu'une et une seule raison d'échouer**. Donc ton test ne doit contenir qu'un seul _assert_.
+- Le fait que tu aies du mal à écrire des tests unitaires, non pas à cause du fait que tu n'aies pas la connaissance nécessaire mais plutôt en rapport au code à tester... c'est qu'il y a un soucis au niveau de ton composant.
+  Alors, repense à ton architecture, repense à tes liens.
 
 <AnchoredH2 id='conclusion'>Conclusion</AnchoredH2>
 
 <AnchoredP>🔸 Un dernier mot pour clôturer cette interview?</AnchoredP>
 
-🔹 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit ame
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+🔹 J'ai une question à poser aux lecteurs du coup... Vous allez en faire oui ou merde?
 
 <Newsletter url={MAILCHIMP_URL} />
 
@@ -470,13 +539,6 @@ export const toc = [
 				children: [],
 				level: 3,
 			},
-		],
-		level: 2,
-	},
-	{
-		value: 'Plus en détails',
-		id: 'details',
-		children: [
 			{
 				value: 'Y toujours des bugs',
 				id: 'bugs-still-occur',
@@ -490,7 +552,20 @@ export const toc = [
 				level: 3,
 			},
 			{
-				value: 'Black-box & white-box, késako',
+				value: 'Le coût',
+				id: 'cost',
+				children: [],
+				level: 3,
+			},
+		],
+		level: 2,
+	},
+	{
+		value: 'Plus en détails',
+		id: 'details',
+		children: [
+			{
+				value: 'Black box & white box, késako',
 				id: 'black-and-white-boxes',
 				children: [],
 				level: 3,
@@ -498,12 +573,6 @@ export const toc = [
 			{
 				value: 'Problème de popularité',
 				id: 'why-not-popular',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Le coût',
-				id: 'cost',
 				children: [],
 				level: 3,
 			},
@@ -527,6 +596,12 @@ export const toc = [
 				level: 3,
 			},
 			{
+				value: 'Tips pour se lancer',
+				id: 'tips-to-start',
+				children: [],
+				level: 3,
+			},
+			{
 				value: 'Le Test Driven Development',
 				id: 'what-is-tdd',
 				children: [],
@@ -535,18 +610,6 @@ export const toc = [
 			{
 				value: 'Le Test && Commit || Revert ',
 				id: 'what-is-tcr',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Tips pour se lancer',
-				id: 'tips-to-start',
-				children: [],
-				level: 3,
-			},
-			{
-				value: "Comment convaincre d'en écrire",
-				id: 'how-to-convince-to-use',
 				children: [],
 				level: 3,
 			},

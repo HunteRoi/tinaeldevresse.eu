@@ -45,7 +45,7 @@ _tldr; fais des katas en appliquant le Test Driven Development!_
 
 <AnchoredP>🔸 Salut Guillaume! Tu sais te présenter s'il te plaît?</AnchoredP>
 
-🔹 Salut Tinaël! Merci de m'avoir invité à parler sur ton site. Mon nom est Guillaume Faas et je suis un expert .NET / Software Craftsman, employé chez [Squaremiled S.A.](https://squaremiled.com/). Je construis des logiciels depuis presque 10 ans, dans des environnements et secteurs business variés.
+🔹 Salut Tinaël! Merci de m'avoir invité à parler sur ton site. Mon nom est Guillaume Faas et je suis un expert .NET / Software Craftsman, actuellement employé chez [Squaremiled S.A.](https://squaremiled.com/). Je développe des logiciels depuis presque 10 ans, en ayant évolué dans des environnements et secteurs d'activités variés.
 
 <AnchoredH2 id='topic'>Le sujet!</AnchoredH2>
 
@@ -57,40 +57,39 @@ _tldr; fais des katas en appliquant le Test Driven Development!_
 	🔸 Quand est-ce que t'y as touché pour la première fois?
 </AnchoredP>
 
-🔹 C'était il y a longtemps. Je pense que j'avais 3-4 ans d'expérience à l'époque. J'ai travaillé pour la même compagnie durant une grosse partie de ma carrière et, par rapport à mon job habituel là-bas, je pensais que j'avais tout vu.
-En règle générale, lorsqu'on commence à travailler pour la première fois, on s'attend à ce que les entreprises fassent des produits à la pointe, juste parce qu'ils sont professionnels. Donc, notre premier réflexe n'est pas toujours de regarder ailleurs comment les autres font.
-Enfin, ça, c'était mon cas.
+🔹 C'était il y a longtemps. J'avais à peine quelques années d'expérience à l'époque. J'étais employé par la même société pendant une majeure partie de ma carrière et, par rapport à mon day-to-day, je pensais que j'avais déjà tout vu.
+En règle générale, lorsqu'on commence à travailler pour la première fois, on s'attend à ce que les entreprises réalisent des produits dans les règles de l'art juste parce qu'il s'agit du milieu professionnel. Donc, notre premier réflexe n'était pas de regarder ailleurs pour découvrir d'autres pratiques.
+Enfin, c'était mon cas.
 
-De retour à l'histoire! Je commençais à regarder en ligne à des guides, des pratiques, des _patterns_, etc. Je suis tombé sur plein de sujets excitants. C'était comme si j'avais ouvert une fenêtre sur un tout nouveau monde. Le _testing_ était l'un de ces sujets.
-Et ce n'était pas une adoption immédiate de ma part! Bien que je comprenais pourquoi c'était fait et tous les bénéfices en conséquence, je pensais que c'était trop dur parce que je ne voyais pas comment introduire des tests dans mon projet du moment. La vérité? OUI, c'était dur.
-Mais pas parce que c'était du _testing_: le produit sur lequel je travaillais était en fait un monolithe extrèmement couplé.
+Revenons en au sujet principal! Je commençais à regarder des guidelines, des best-practices, des _patterns_, etc. Je suis tombé sur plein de sujets excitants et surtout nouveaux. C'était comme si j'avais mis les pieds dans un nouveau monde qui n'avait rien à voir avec la routine dans laquelle j'étais ancré. Le _testing_ était évidemment l'un de ces sujets.
+Evidemment, cela n'aura pas été une adoption immédiate de ma part! Bien que je comprenais pourquoi le testing était important ainsi que tous les bénéfices associés, je pensais que c'était trop dur parce que je ne voyais pas comment introduire des tests dans le projet sur lequel j'étais assigné. Pour être tout à fait honnête: OUI, c'était dur.
+Mais pas parce que c'était du _testing_: le produit sur lequel je travaillais était en fait un monolithe avec énormément de couplage et le testing aurait intégré un (trop) gros refactoring.
 
-Je savais que je devais apprendre des principes et des _patterns_ (principalement sur comment construire une application maintenable) avant d'être capable d'introduire des tests. Ça m'a pris du temps avant que je ne sois vraiment apte à travailler avec une approche conduite par les tests.
+Je savais que je devais d'abord apprendre des principes et des _patterns_ (principalement sur les façons de construire une application maintenable) avant d'être capable d'introduire des tests. Ça m'a pris du temps avant que je ne sois vraiment apte à travailler avec une approche test-driven.
 
 <AnchoredP id='what-is-it'>
 	🔸 Ok! Par contre, histoire de ne pas perdre les lecteurs... tu sais expliquer
 	ce qu'est test unitaire s'il te plaît?
 </AnchoredP>
 
-🔹 Oui, bien sûr! Un test unitaire, c'est un test qui vérifie un _unit of code_. Et c'est là que les interprétations divergent.
-Certaines personnes vont voir ça comme un bout de code (ce qui est mon cas). Une méthode, c'est un _unit of code_ et donc quelque chose que l'on peut tester.
-Puis d'autres personnes peuvent voir ça comme un _behavior_. Ce qui n'est pas faux non plus mais ça dépend de comment tu vois la chose.
+🔹 Oui, bien sûr! Un test unitaire, c'est un test qui vérifie un _unit of code_. La notion de _unit of code_ varie en fonction des écoles de testing.
+L'école London (ou Mockist) vont voir cela comme le plus petit _chunk_, typiquement une classe ou une méthode.
+Par contre, l'école Detroit (ou Classicist) vont voir cela comme un ensemble de classes ou de méthodes. La variation tient surtout de la taille de ton SUT (System Under Test) et de la relation entre les différents collaborateurs.
 
-Mais à la fin, un test unitaire, c'est simplement **un morceau de code qui valide qu'un autre morceau de code a le résultat attendu par rapport à un scénario donné**.
+Mais à la fin, un test unitaire est simplement **un morceau de code qui valide qu'un autre morceau de code a le résultat et/ou side-effect attendu par rapport à un scénario donné**.
 
 <AnchoredP id='hierarchy-position'>
 	🔸 D'accord, mais du coup, ça se situe où dans la "hiérachie des tests"? Ne me
 	dis pas « tout à gauche » sinon je vais être fâché!
 </AnchoredP>
 
-🔹 Sur ton graphe, ça se situe tout à fait à gauche <img style={{ display: "inline" }} src="https://www.pinclipart.com/picdir/big/524-5246191_troll-face-meme-png-troll-face-clipart.png" width="16" height="16" />
-mais la réponse que tu attends, j'imagine que c'est pourquoi. Je ne suis pas entièrement sûr... mais je dirais que l'ordre de gauche à droite n'est pas annodin.
-À mon sens, plus tu avances vers la droite, plus la portée fonctionnelle de ton test est grande.
+🔹 Je vois que tu es observateur. En effet, sur ce schéma, ça se situe tout à fait à gauche <img style={{ display: "inline" }} src="https://www.pinclipart.com/picdir/big/524-5246191_troll-face-meme-png-troll-face-clipart.png" width="16" height="16" />
+mais la réponse que tu attends, j'imagine que c'est pourquoi. Je suppose qu'ils ont suivi l'ordre de la pyamide de testing mais de gauche à droite au lieux de bas en haut. Plus tu seras situé vers la gauche, plus tes tests seront nombreux et rapides. La logique inverse est appliquée lorsque tu vas dans l'autre sens.
 
-Nous, on se situe sur la partie "unit" puisque techniquement, il n'y a pas plus petit qu'une _unit_. On va absolument pas tester ce qu'il y a autour. Le test unitaire doit être exécuté de façon _standalone_ et tu dois te trouver dans un environnement _sandbox_.
-C'est-à-dire que ton test unitaire n'a aucun impact sur l'extérieur du test, et si tu en lances plusieurs en parallèle, ils ne doivent pas se court-circuiter les uns les autres.
+Nous, on se situe sur la partie "unit" puisque techniquement, il n'y a pas plus petit qu'un _unit_. On va absolument pas tester ce qu'il y a autour. Le test unitaire doit être exécuté de façon _standalone_ et tu dois te trouver dans un environnement _sandbox_.
+C'est-à-dire que ton test unitaire n'a aucun impact sur l'extérieur du test, et si tu en lances plusieurs en parallèle, ils ne doivent pas avoir de side-effects les uns les autres.
 
-Ça signifie donc que, dans un test unitaire: on ne contacte pas de DB, on évite de faire une requête web, d'accéder à un fichier du système, etc. De la même façon, on ne va pas contacter les autres dépendances de la solution.
+Cela signifie donc que dans un test unitaire: on ne contacte pas de DB, on évite de faire une requête HTTP, d'accéder à un fichier du système, etc. De la même façon, on ne va pas contacter les autres dépendances de la solution.
 On reste vraiment "interne" à la fonction.
 
 <Figure
@@ -106,19 +105,19 @@ Si je regarde l'image et que je parle de chaque point de la partie _functional t
 - l'_unit testing_, c'est vérifier qu'un composant fonctionne bien ;
 - l'_integration testing_, c'est vérifier que certains composants fonctionnent bien entre eux ;
 - et ça continue ainsi en augmentant la portée des tests jusqu'à l'_user acceptance testing_ qui consiste à vérifier l'entièreté de l'application tout en évitant de contacter les dépendances externes (ex: des requêtes vers des fournisseurs de données extérieurs à ton application).
-  Ce qui signifie qu'on est sur la portée globale de l'application, et donc que potentiellement, on va aller tester jusqu'à la base de données.
+  Ce qui signifie que l'on est sur le scope global de l'application et donc que potentiellement, on va aller jusqu'à tester la base de données.
 
 <AnchoredP>
 	🔸 D'accord! Mais pourquoi le testing, c'est pas réalisé dans le monde
 	professionnel? Aussi bien les tests unitaires que les tests d'intégration...
 </AnchoredP>
 
-🔹 En réalité, peu de gens font des tests. Et comme peu de gens font déjà des tests unitaires, encore une petite partie de ces gens-là font des tests d'intégration.
-Pour la simple et bonne raison, que pour pouvoir faire de bons tests d'intégration, il faut déjà faire de bons tests unitaires avant. Alors, ce n'est pas "obligatoire", tu peux faire des tests d'intégration sans forcément avoir des tests unitaires.
-Mais ça n'a pas la même portée, ce n'est pas exécuté en même temps, ... Maintenant, le problème, c'est que si tu ne fais pas de tests unitaires et que tu ne fais que des tests d'intégration et qu'un test d'intégration échoue... Bah tu ne sauras pas si
-ça provient d'un problème au niveau d'une méthode ou au niveau de l'intégration entre 2 composants.
-
-Du coup, les tests d'intégration sont importants. Mais je considère, à tort ou à raison, que les tests unitaires sont un pré-requis pour faire des tests d'intégration efficaces.
+🔹 En réalité, la majeure partie des développeurs n'écrivent pas ou peu de tests. De plus, les tests d'intégrations sont moins répandus que les tests unitaires car ils sont plus complexes à écrire. Au final, cette tâche est souvent vue comme une corvée ou alors une extra-step que l'on fera uniquement si on a le temps.
+Il est important de séparer test unitaire et test d'intégration car ils n'ont pas la même portée ni la même utilité.
+Comme on en parlait avant, un test unitaire est _rapide_, il s'agit de notre _feedback loop_ la plus rapide. On va donc les executer souvent et il nous permettrons de savoir si un composant a subi une régression.
+Par contre, un test d'intégration sera plus lent mais couvrira un scope plus large et plus représentatif d'un environnement réel. Il aura donc plus de _valeur_. 
+ 
+A noter qu'il n'y a pas d'obligation d'implémenter les deux, on pourrait très bien avoir une _test suite_ composée uniquement de tests d'une seule de ces categories. Mais il convient de garder à l'esprit que notre _test suite_ ne sera pas des plus efficaces.
 
 <Figure
 	data={{
@@ -137,8 +136,7 @@ Du coup, les tests d'intégration sont importants. Mais je considère, à tort o
 	appliqué?
 </AnchoredP>
 
-🔹 Le but est assez simple: c'est de montrer qu'une méthode fonctionne comme tu l'attends. C'est-à-dire que tu vas avoir un requirement, par exemple ta méthode `doSomething` doit te retourner quelque chose, et tu dois vérifier que sur différents scénarios que tu lui donnes,
-elle se comporte toujours de la bonne façon.
+🔹 Le but est assez simple: c'est de montrer qu'une méthode fonctionne comme tu l'attends. C'est-à-dire que tu vas avoir un comportement attendu, par exemple ta méthode `getSomething` doit te retourner quelque chose. Tu vas donc tester différents scénarios et vérifier qu'elle se comporte toujours de la bonne façon.
 
 Pour ce qui est du "quand", et bien c'est simple: ça doit être appliqué à partir du moment où tu as de la logique quelque part.
 
@@ -147,14 +145,14 @@ Pour ce qui est du "quand", et bien c'est simple: ça doit être appliqué à pa
 	place de tests unitaires?
 </AnchoredP>
 
-🔹 Comme dit précédemment, tu écris du code pour vérifier du code. Oui, mais il existe d'autres intérêts derrière!
+🔹 Comme dit précédemment, tu écris du code pour tester du code. Vu comme cela, on dirait surtout une charge de travail supplémentaire. Sauf qu'il existe de réels intérêts derrière.
 
-1. Une suite de tests devient ce qu'on appelle une **documentation vivante**.
+1. Une suite de tests devient ce qu'on appelle une **living documentation**.
 
-   Notamment lorsque quelqu'un arrive sur ton projet. Il voit une méthode qui peut être complexe (ou pas, peu importe). Il n'est pas forcément sensé connaître ou deviner tous les tenants et aboutissants de la méthode. Par contre, il y a une façon très simple pour lui de savoir quels sont les résultats attendus et comment la méthode devrait fonctionner:
-   c'est de regarder le nom des 4-5 tests qui passent sur ta méthode. **Ça facilite donc l'_onboarding_!**
+    Lorsque l'on parle de documentation, on a tous à l'esprit les commentaires ou XmlDocumentation. Le problème est qu'ils ne sont jamais à jour avec le reste du code. Le code évolue, la documentation non. Par contre, ton test unitaire sera toujours up-to-date. Si ce n'est pas le cas, alors ta _test suite_ ne te donnera pas le feu vert pour aller plus loin.
 
-   De plus, là où un commentaire ne reste jamais à jour avec le reste du code, le test unitaire sera toujours up to date. Si ce n'est pas le cas, alors ta compilation ne passe pas.
+    C'est d'autant plus intéressant dans le cadre d'une arrivée d'un nouveau développeur sur le projet. Plutôt que de lire tout le code d'une méthode pour savoir ce qu'elle fait, il lui suffit de regarder les différents tests de cette methode. Chaque comportement sera représenté par un test avec un naming explicite sur le scénario et résultat attendu. **Ça facilite donc l'_onboarding_!**
+
 
 2. Le test unitaire sert aussi de **filet de sécurité contre la régression**.
 

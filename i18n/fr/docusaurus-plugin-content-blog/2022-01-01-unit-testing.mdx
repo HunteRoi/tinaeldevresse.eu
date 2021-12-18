@@ -222,7 +222,7 @@ Le soucis, c'est que c'est dur de faire une métrique sur tous ces points. Tu re
 	écrire un test unitaire, c'est tout de même écrire du code. Ça coûte!
 </AnchoredP>
 
-🔹 Je vois là où tu veux en venir. Non, cela ne coute pas plus sauf si factures au caractère!
+🔹 Je vois là où tu veux en venir. Non, cela ne coute pas plus sauf si tu factures au caractère!
 Même si tu écris plus de code, tu es vraiment gagnant et pas que sur l'aspect temps. Je t'ai dis qu'on devait parler de TDD? Parce que cela te fait même gagner du temps à court-terme. Bref.
 Développer une fonctionnalité peut te prendre un peu plus de temps en sachant que cela dépendra surtout de ton aisance avec l'écriture de tests. D'un autre côté, cela va surtout te "sauver la vie" pas mal de fois parce que tu vas éviter énormement de bugs qui, en temps normal,
 seraient arrivés bien plus tard dans ton _process_, lors des tests utilisateur sur un environnement de QA ou en production. 
@@ -244,13 +244,14 @@ Toi qui voulait parler d'argent, **plus un bug est découvert tard, plus il coû
 	!
 </Figure>
 
-C'est normal: un bug découvert par un test unitaire, il est découvert directement sur ta machine, en local. Tu le corriges toi-même et c'est terminé.
+Et c'est tout à fait normal. 
 
-A contrario, un bug qui passe en production... il est découvert par un utilisateur qui doit ouvrir un ticket. Ce ticket, il va être gérer par ton _Product Owner_. Il va être inclus
-dans un _sprint_, puis il sera assigné à un développeur. Ensuite, il va y avoir une phase d'investigation (reproduction du bug), une phase de correction de bug et après
+On peut repaler de la _fast feedback loop_: si un bug est découvert par un test unitaire, c'est en local sur ta machine, juste après le changement (_rebuild_ + _rerun test suite_). Il est identifié rapidement et corrigé rapidement.
+A contrario, un bug qui passe en production... il est découvert par un utilisateur qui remonte le problème à ta _product team_ qui elle doit ouvrir un ticket dans ton backlog. Ce ticket, il va être prioritisé par ton _Product Owner_ pour être inclu dans la prochaine itération puis il sera assigné à un développeur. En admettant que ce ne soit pas toi, il y aura une phase d'investigation (reproduction du bug), une phase de correction de bug et après
 ça doit repartir sur tous les environnements et être validé par des _Quality Assurance Users_.
 
-Alors qu'un test en quelques lignes de code aurait empêché tout ça.
+J'ai volontairement pris un cas extrême pour montrer le pire scénario envisageable mais c'est aussi la façon d'être le plus explicite sur le problème.
+Ce qu'il est important de retenir, c'est qu'un test peut faire gagner beaucoup de temps à beaucoup de personnes, aussi simple soit-il.
 
 _ndlr: pour en savoir plus sur les raisons qui font qu'un logiciel a des bugs, n'hésitez pas à consulter [cette page](https://www.softwaretestinghelp.com/why-does-software-have-bugs) et [d'autres sur le web](https://www.google.com/search?q=why+do+softwares+have+bugs)!_
 
@@ -262,7 +263,7 @@ _ndlr: pour en savoir plus sur les raisons qui font qu'un logiciel a des bugs, n
 	<span style={{ fontStyle: 'italic' }}>white box testing</span>?
 </AnchoredP>
 
-🔹 C'est le moment pour moi de montrer mes talents insoupçonnés de dessinateur!
+🔹 C'est le moment pour moi de te montrer mes talents insoupçonnés de dessinateur!
 
 <Figure
 	data={{
@@ -275,7 +276,7 @@ _ndlr: pour en savoir plus sur les raisons qui font qu'un logiciel a des bugs, n
 	Les différences entre _black & white box testing_
 </Figure>
 
-Le **black box testing**, c'est donner une information d'entrée à l'_unit of code_, et vérifier l'information de sortie. C'est aussi simple que ça: on ne prend pas en compte ce qu'il se passe à l'intérieur de la méthode.
+Le **black box testing**, c'est donner une information d'entrée au SUT et vérifier l'information de sortie. C'est aussi simple que ça: on ne prend pas en compte ce qu'il se passe à l'intérieur de la méthode.
 C'est pas mal, c'est un début, mais je trouve que c'est dommage de s'arrêter là. C'est typiquement le genre de tests ajoutés en cours de route sur une application _legacy_ où c'est compliqué de vérifier tout ce qu'il se passe parce qu'il y a déjà beaucoup.
 
 Prenons par exemple une méthode `Sum` d'une classe `Calculator`. Cette classe n'a pas de dépendance. Le test sur une méthode pure (sans dépendance ou qui n'accède qu'à des variables partagées) est obligatoirement un _black box test_:

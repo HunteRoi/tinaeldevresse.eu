@@ -58,27 +58,26 @@ _tldr; fais des katas en appliquant le Test Driven Development!_
 </AnchoredP>
 
 🔹 C'était il y a bien longtemps, dans une galaxie lointaine... J'avais à peine quelques années d'expérience à l'époque. J'étais dans la même société pendant une majeure partie de ma carrière et, par rapport à mon _day-to-day_, je pensais que j'avais déjà tout vu.
-Je commençais à regarder des _guidelines_, des _best practices_, des _patterns_, etc. Je suis tombé sur plein de sujets excitants et surtout nouveaux. C'était comme si j'avais mis les pieds dans un nouveau monde qui n'avait rien à voir avec la routine dans laquelle j'étais ancré. Le _testing_ était évidemment l'un de ces sujets. Cependant, j'ai vite réalisé que je devais progresser sur d'autres sujets avant d'être capable d'introduire des tests. Cela m'a pris du temps avant que je ne sois vraiment apte à travailler avec une approche _test-driven_.
+Je commençais à regarder en ligne à des _guidelines_, des _best practices_, des _patterns_, etc. Je suis tombé sur plein de sujets excitants et surtout nouveaux. C'était comme si j'avais mis les pieds dans un nouveau monde qui n'avait rien à voir avec la routine dans laquelle j'étais ancré. Le _testing_ était évidemment l'un de ces sujets. Cependant, j'ai vite réalisé que je devais progresser sur d'autres sujets avant d'être capable d'introduire des tests. Cela m'a pris du temps avant que je ne sois vraiment apte à travailler avec une approche _test-driven_.
 
 <AnchoredP id='what-is-it'>
 	🔸 Ok! Par contre, histoire de ne pas perdre les lecteurs... tu sais
-	expliquer ce qu'est test unitaire s'il te plaît?
+	expliquer ce qu'est un test unitaire s'il te plaît?
 </AnchoredP>
 
 🔹 Oui, bien sûr! Un test unitaire, c'est un test qui vérifie un _unit of code_. La notion de _unit of code_ varie en fonction des écoles de testing.
-L'école London (ou Mockist) va voir cela comme le plus petit _chunk of code_, on parlera d'une classe ou d'une méthode. Par contre, l'école Detroit (ou Classicist) va voir cela comme un ensemble de classes ou de méthodes. Pour les plus curieux, voici un [article](https://medium.com/@adrianbooth/test-driven-development-wars-detroit-vs-london-classicist-vs-mockist-9956c78ae95f) qui détaille les différences entre les deux écoles. Je précise qu'une école n'est pas meilleure que l'autre, chacune a ses avatanges et inconénients. C'est une histoire de préférence et de compromis.
+L'école London (ou Mockist) va voir cela comme le plus petit _chunk of code_, on parlera d'une classe ou d'une méthode. Par contre, l'école Detroit (ou Classicist) va voir cela comme un ensemble de classes ou de méthodes. Pour les plus curieux, voici un [article](https://medium.com/@adrianbooth/test-driven-development-wars-detroit-vs-london-classicist-vs-mockist-9956c78ae95f) qui détaille les différences entre les deux écoles. Je précise qu'une école n'est pas meilleure que l'autre, chacune a ses avatanges et inconvénients. C'est une histoire de préférence et de compromis.
 La différence principale tient surtout de la taille de ton _System Under Test_ (SUT) et de la relation entre les différents collaborateurs. Je tiens à préciser qu'une approche n'est pas forcément meilleure que l'autre, chacune vient avec ses avantages et ses compromis. C'est avant tout une question de préférence et de choix.
 
 Mais à la fin, un test unitaire est simplement **un morceau de code qui valide qu'un autre morceau de code a le résultat et/ou _side effect_ attendu par rapport à un scénario donné**.
 
 <AnchoredP id='hierarchy-position'>
-	🔸 D'accord, mais du coup, ça se situe où dans la "hiérachie des tests"? Ne
-	me dis pas « tout à gauche » sinon je vais être fâché!
+	🔸 D'accord, mais ça se situe où dans la "hiérachie des tests"?
 </AnchoredP>
 
-🔹 Il s'agit de la pyramide de testing (_Agile Testing Pyramid_) mais de gauche à droite au lieu de bas en haut. Plus tu seras situé vers la gauche, plus ton scope est petit et plus tes tests seront nombreux et rapides. La logique inverse est appliquée lorsque tu vas dans l'autre sens.
+🔹 Il s'agit de la pyramide de testing (_Agile Testing Pyramid_) mais de gauche à droite au lieu de bas en haut. Plus tu seras situé vers la gauche, plus ton _scope_ est petit et plus tes tests seront nombreux et rapides. La logique inverse est appliquée lorsque tu vas dans l'autre sens.
 
-Nous, on se situe sur la partie "unit" puisque techniquement, il n'y a pas plus petit qu'un _unit_. Le test unitaire doit être exécuté de façon _standalone_ et tu dois te trouver dans un environnement _sandbox_.
+Nous, on se situe sur la partie "unit" puisque techniquement, il n'y a pas plus petit qu'une _unit_. Le test unitaire doit être exécuté de façon _standalone_ et tu dois te trouver dans un environnement _sandbox_.
 C'est-à-dire qu'un test unitaire n'a aucun impact sur l'extérieur du test, et si tu en lances plusieurs en parallèle, ils ne doivent pas avoir de _side effects_ entre eux.
 
 Cela signifie donc que dans un test unitaire: on ne contacte pas de DB, on évite de faire une requête HTTP, d'accéder à un fichier du système, etc. De la même façon, on ne va pas contacter les autres dépendances de la solution.
@@ -207,8 +206,8 @@ Le seul moyen de vérifier la qualité d'une _test suite_ d'un projet, c'est de 
 -   Est-ce que tu arrives à facilement accueillir une nouvelle ressource au sein de l'équipe de développement?
 -   Est-ce que les développeurs ont confiance en leur _test suite_? Est-ce qu'elle est représentative de l'état de santé de la solution? Est-ce qu'un rond vert garantit vraiment qu'un composant fonctionne?
 
-Si tu est en mesure de répondre "Oui" à toutes ces questions, félicitations! Tu peux être fier de la _test suite_ que tu as mis en place.
-Le souci, c'est difficile d'avoir une réponse à ces questions alors que tu dois rendre des comptes _day one_. Tu remarques d'ailleurs que les trois premières font référence au **temps**.
+Si tu es en mesure de répondre "oui" à toutes ces questions, félicitations! Tu peux être fier de la _test suite_ que tu as mis en place.
+Le souci? C'est difficile d'avoir une réponse à ces questions alors que tu dois rendre des comptes _day one_... Tu remarques d'ailleurs que les trois premières font référence au **temps**.
 
 <AnchoredP id='cost'>
 	🔸 Bon sinon... question coût, qu'est-ce qu'il en est? Parce que finalement,
@@ -314,6 +313,39 @@ Au final, un "bon" test doit:
 -   te donner un feedback rapide ;
 -   être maintenable.
 
+<AnchoredP id='tips-to-start'>
+	Et, sinon... T'as des conseils pour se lancer dans le testing unitaire?
+</AnchoredP>
+
+🔹 Je recommande aux personnes qui veulent démarrer le testing de commencer directement avec le _Test Driven Development_.
+Si le test est écrit après l'implémentation, c'est pas vraiment objectif car tu connais déjà l'implémentation donc ton test est fortement lié à ton implémentation. De plus, le code fonctionne déjà donc le test sera perçu comme une perte de temps. Mais surtout: on a bénéficié d'aucun avantage du testing lors de la phase d'implémentation.
+
+Pour cela, vous n'êtes pas seul. Il existe des tonnes de resources disponibles pour vous aider.
+Voici plusieurs livres que j'aurais aimé avoir lus au début de ma carrière:
+
+-   "Test Driven Development - By Example" par Kent Beck.
+-   "Unit Testing - Principles, Practices and Patterns" par Vladimir Khorikov.
+    Également, voici un site rempli de conseils et astuces sur TDD avec un grand nombre de katas pour progresser: [TDD Buddy](http://www.tddbuddy.com/).
+
+En parlant de katas, faites des katas. Faites pleins de katas et faites en à plusieurs (_pair_ et/ou _mob programming_) si vous en avez la possibilité. C'est fun et c'est très formatteur, notamment sur le fait de démarrer avec des exercices simples et progressivement augmenter la difficulté jusqu'à se retrouver avec des situations similaires à ce que l'on peut trouver dans des projets réels. En plus de [TDD Buddy](http://www.tddbuddy.com/), je pourrais recommander [Code Wars](https://www.codewars.com/) si vous êtes en manque d'inspiration.
+Sans forcément faire de l'auto-promotion, vous pouvez aussi trouver quelques katas sur mon [GitHub](https://github.com/Tr00d/).
+
+Un dernier conseil pour démarrer le testing, on peut se référer à ce qu'on appelle le triple A (AAA), qui signifie _Arrange, Act, Assert_, pour rendre les tests plus clairs et organisés. Le but est de diviser son test unitaire en 3 parties distinctes:
+
+1. _arrange_ : c'est le scénario, la partie où tu prépares les données _input_ de ta méthode ;
+2. _act_ : c'est l'action, le fait de réaliser l'appel à la méthode que tu vas tester ;
+3. _assert_ : c'est la vérification du _behavior_, là partie où tu vérifies l'_output_ ou les _side effects_.
+
+<AnchoredP id='bad-smells'>
+	🔸 Quels sont les "bad smells" dans l'unit testing?
+</AnchoredP>
+
+🔹 J'en vois quelques-uns...
+
+-   une partie _arrange_ qui fait 15 lignes... C'est trop compliqué. On voit clairement que la méthode testée fait trop de choses car le scénario est trop compliqué à mettre en place!
+-   On dit qu'**un test ne doit avoir qu'une et une seule raison d'échouer**. Un test ne devrait contenir qu'un seul _assert_.
+-   Le fait que tu aies du mal à écrire des tests unitaires, non pas à cause du fait que tu n'aies pas la connaissance nécessaire mais plutôt en rapport au code à tester... c'est qu'il y a un soucis au niveau de ton composant. Alors, prends du recul et penses aux responsabilités.
+
 <AnchoredH2 id='more-stuff'>Pour aller plus loin</AnchoredH2>
 
 <AnchoredP id='libraries'>
@@ -336,29 +368,6 @@ Pour ma part:
 
 🔸 Sur ce point-ci particulièrement, j'aimerais mettre en avant le fait qu'il existe aussi des librairies de test pour le _front-end_. En fait, le testing unitaire n'est pas réservé aux développeurs
 _back-end_. On citera notamment [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), [Cypress](https://www.npmjs.com/package/cypress) et [Jasmine](https://www.npmjs.com/package/jasmine) comme librairies fortement liées au testing dans des applications JavaScript.
-
-<AnchoredP id='tips-to-start'>
-	Bref, sinon... T'as des conseils pour se lancer dans le testing unitaire?
-</AnchoredP>
-
-🔹 Je recommande aux personnes qui veulent démarrer le testing de commencer directement avec le _Test Driven Development_.
-Si le test est écrit après l'implémentation, c'est pas vraiment objectif car tu connais déjà l'implémentation donc ton test est fortement lié à ton implémentation. De plus, le code fonctionne déjà donc le test sera perçu comme une perte de temps. Mais surtout: on a bénéficié d'aucun avantage du testing lors de la phase d'implémentation.
-
-Pour cela, vous n'êtes pas seul. Il existe des tonnes de resources disponibles pour vous aider.
-Voici plusieurs livres que j'aurais aimé avoir lus au début de ma carrière:
-
--   "Test Driven Development - By Example" par Kent Beck.
--   "Unit Testing - Principles, Practices and Patterns" par Vladimir Khorikov.
-    Également, voici un site rempli de conseils et astuces sur TDD avec un grand nombre de katas pour progresser: [TDD Buddy](http://www.tddbuddy.com/).
-
-En parlant de katas, faites des katas. Faites pleins de katas et faites en à plusieurs (_pair_ et/ou _mob programming_) si vous en avez la possibilité. C'est fun et c'est très formatteur, notamment sur le fait de démarrer avec des exercices simples et progressivement augmenter la difficulté jusqu'à se retrouver avec des situations similaires à ce que l'on peut trouver dans des projets réels. En plus de [TDD Buddy](http://www.tddbuddy.com/), je pourrais recommander [Code Wars](https://www.codewars.com/) si vous êtes en manque d'inspiration.
-Sans forcément faire de l'auto-promotion, vous pouvez aussi trouver quelques katas sur mon [GitHub](https://github.com/Tr00d/).
-
-Un dernier conseil pour démarrer le testing, on peut se référer à ce qu'on appelle le triple A (AAA), qui signifie _Arrange, Act, Assert_, pour rendre les tests plus clairs et organisés. Le but est de diviser son test unitaire en 3 parties distinctes:
-
-1. _arrange_ : c'est le scénario, la partie où tu prépares les données _input_ de ta méthode ;
-2. _act_ : c'est l'action, le fait de réaliser l'appel à la méthode que tu vas tester ;
-3. _assert_ : c'est la vérification du _behavior_, là partie où tu vérifies l'_output_ ou les _side effects_.
 
 <AnchoredP id='what-is-tdd'>
 	🔸 Du coup, tu n'arrêtes pas d'en parler. C'est quoi le{' '}
@@ -453,16 +462,6 @@ Cela te force à avancer en _baby steps_ et une chose est mise en évidence: c'e
 Au début, tu passes par une phase de frustration parce que tu peux perdre du code mais justement, cela t'incite à avancer petit à petit pour limiter tes pertes. Plus tes _steps_ sont petites, moins tu risques de perdre du code. C'est un super enseignement en complément de TDD.
 Losque tu deviens relativement à l'aise avec tout ça, tu remarques que tu avances de plus en plus vite et surtout, tu as toujours une branche qui fonctionne.
 
-<AnchoredP id='bad-smells'>
-	🔸 Quels sont les "bad smells" dans l'unit testing?
-</AnchoredP>
-
-🔹 J'en vois quelques-uns...
-
--   une partie _arrange_ qui fait 15 lignes... C'est trop compliqué. On voit clairement que la méthode testée fait trop de choses car le scénario est trop compliqué à mettre en place!
--   On dit qu'**un test ne doit avoir qu'une et une seule raison d'échouer**. Un test ne devrait contenir qu'un seul _assert_.
--   Le fait que tu aies du mal à écrire des tests unitaires, non pas à cause du fait que tu n'aies pas la connaissance nécessaire mais plutôt en rapport au code à tester... c'est qu'il y a un soucis au niveau de ton composant. Alors, prends du recul et penses aux responsabilités.
-
 <AnchoredH2 id='conclusion'>Conclusion</AnchoredH2>
 
 <AnchoredP>🔸 Un dernier mot pour clôturer cette interview?</AnchoredP>
@@ -524,12 +523,6 @@ export const toc = [
 				level: 3,
 			},
 			{
-				value: 'Y toujours des bugs',
-				id: 'bugs-still-occur',
-				children: [],
-				level: 3,
-			},
-			{
 				value: 'Test Coverage',
 				id: 'test-coverage',
 				children: [],
@@ -555,14 +548,20 @@ export const toc = [
 				level: 3,
 			},
 			{
-				value: 'Problème de popularité',
-				id: 'why-not-popular',
+				value: 'Comment en écrire efficacement',
+				id: 'how-to-write',
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Comment en écrire efficacement',
-				id: 'how-to-write',
+				value: 'Tips pour se lancer',
+				id: 'tips-to-start',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'Les "Bad Smells"',
+				id: 'bad-smells',
 				children: [],
 				level: 3,
 			},
@@ -580,12 +579,6 @@ export const toc = [
 				level: 3,
 			},
 			{
-				value: 'Tips pour se lancer',
-				id: 'tips-to-start',
-				children: [],
-				level: 3,
-			},
-			{
 				value: 'Le Test Driven Development',
 				id: 'what-is-tdd',
 				children: [],
@@ -594,12 +587,6 @@ export const toc = [
 			{
 				value: 'Le Test && Commit || Revert ',
 				id: 'what-is-tcr',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Les "Bad Smells"',
-				id: 'bad-smells',
 				children: [],
 				level: 3,
 			},

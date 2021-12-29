@@ -58,13 +58,7 @@ _tldr; fais des katas en appliquant le Test Driven Development!_
 </AnchoredP>
 
 🔹 C'était il y a bien longtemps, dans une galaxie lointaine... J'avais à peine quelques années d'expérience à l'époque. J'étais dans la même société pendant une majeure partie de ma carrière et, par rapport à mon _day-to-day_, je pensais que j'avais déjà tout vu.
-En règle générale, lorsqu'on commence à travailler pour la première fois, on s'attend à ce que les entreprises travaillent toutes de la même manière, juste parce qu'il s'agit du milieu professionnel. Donc, notre premier réflexe n'était pas de regarder ailleurs pour découvrir d'autres pratiques. Enfin, c'était mon cas.
-
-Revenons en au sujet principal! Je commençais à regarder des _guidelines_, des _best practices_, des _patterns_, etc. Je suis tombé sur plein de sujets excitants et surtout nouveaux. C'était comme si j'avais mis les pieds dans un nouveau monde qui n'avait rien à voir avec la routine dans laquelle j'étais ancré. Le _testing_ était évidemment l'un de ces sujets.
-Évidemment, cela n'aura pas été une adoption immédiate de ma part! Bien que je comprenais pourquoi le testing était important ainsi que tous les bénéfices associés, je pensais que c'était trop dur parce que je ne voyais pas comment introduire des tests dans le projet sur lequel j'étais assigné. Pour être tout à fait honnête: OUI, c'était dur.
-Mais pas parce que c'était du testing: le produit sur lequel je travaillais était en fait un monolithe avec énormément de couplage et le testing aurait intégré un (trop) gros _refactoring_.
-
-J'ai vite réalisé que je devais progresser sur d'autres sujets avant d'être capable d'introduire des tests. Cela m'a pris du temps avant que je ne sois vraiment apte à travailler avec une approche _test-driven_.
+Je commençais à regarder des _guidelines_, des _best practices_, des _patterns_, etc. Je suis tombé sur plein de sujets excitants et surtout nouveaux. C'était comme si j'avais mis les pieds dans un nouveau monde qui n'avait rien à voir avec la routine dans laquelle j'étais ancré. Le _testing_ était évidemment l'un de ces sujets. Cependant, j'ai vite réalisé que je devais progresser sur d'autres sujets avant d'être capable d'introduire des tests. Cela m'a pris du temps avant que je ne sois vraiment apte à travailler avec une approche _test-driven_.
 
 <AnchoredP id='what-is-it'>
 	🔸 Ok! Par contre, histoire de ne pas perdre les lecteurs... tu sais
@@ -82,8 +76,7 @@ Mais à la fin, un test unitaire est simplement **un morceau de code qui valide 
 	me dis pas « tout à gauche » sinon je vais être fâché!
 </AnchoredP>
 
-🔹 Monsieur est observateur, cela se situe en effet tout à fait à gauche <img style={{ display: "inline" }} src="https://www.pinclipart.com/picdir/big/524-5246191_troll-face-meme-png-troll-face-clipart.png" width="16" height="16" /> mais j'imagine que tu te demanbes pourquoi.
-Je ne suis pas familier avec ce schéma pour être honnête mais je comprends la classification. Il s'agit de la pyramide de testing (_Agile Testing Pyramid_) mais de gauche à droite au lieu de bas en haut. Plus tu seras situé vers la gauche, plus ton scope est petit et plus tes tests seront nombreux et rapides. La logique inverse est appliquée lorsque tu vas dans l'autre sens.
+🔹 Il s'agit de la pyramide de testing (_Agile Testing Pyramid_) mais de gauche à droite au lieu de bas en haut. Plus tu seras situé vers la gauche, plus ton scope est petit et plus tes tests seront nombreux et rapides. La logique inverse est appliquée lorsque tu vas dans l'autre sens.
 
 Nous, on se situe sur la partie "unit" puisque techniquement, il n'y a pas plus petit qu'un _unit_. Le test unitaire doit être exécuté de façon _standalone_ et tu dois te trouver dans un environnement _sandbox_.
 C'est-à-dire qu'un test unitaire n'a aucun impact sur l'extérieur du test, et si tu en lances plusieurs en parallèle, ils ne doivent pas avoir de _side effects_ entre eux.
@@ -198,15 +191,6 @@ On entend souvent dire que "cela prend du temps et que cela sera planifié plus 
 En effet, le premier indique clairement un manque de vision et de compréhension du testing. Déjà parce que "plus tard" n'arrive jamais. Mais surtout, faire les tests à la fin du développement n'a aucun sens. On perd tous les avantages qu'apporte le testing. Je l'ai déjà dit mais on en parlera avec l'approche TDD.
 Ensuite, le second indique un problème d'organisation. Les tests devraient être inclus dans les estimations et pas comme un travail supplémentaire à réaliser.
 
-<AnchoredP id='bugs-still-occur'>
-	🔸 Parfois, tu as quand même des problèmes qui surviennent dans des
-	applications couvertes par des tests unitaires. Pourquoi?
-</AnchoredP>
-
-🔹 Évidemment, le risque zéro n'existe pas. On parle de _test efficiency_. Tu peux très bien avoir des scenarios non-couverts ou des _corner-case_ qui n'ont pas été pensés.
-Mais tout va bien, on ne perd pas le contrôle pour autant! La solution est toute simple: crée un test qui couvre le scope de ton bug (et donc qui échoue), corrige ton bug et vérifie que ton test passe.
-Au final, même si tu auras tout de même des bugs, penses surtout à la quantité de bugs/régressions qui aura été filtrée et corrigée en amont d'un merge.
-
 <AnchoredP id='test-coverage'>
 	🔸 Et le <span style={{ fontStyle: 'italic' }}>test coverage</span>, dans
 	tout ça?
@@ -310,41 +294,6 @@ Pour le reste des scénarios, je trouve dommage de s'arrêter là. C'est une pr�
 De l'autre côté, on a donc ce **white box testing**. À première vue, c'est la même chose: on donne un _input_ et on vérifie l'_output_. Mais on va aussi vérifier ce qu'il se passe à l'intérieur du SUT.
 On peut donc vérifier que le SUT a bien fait appel à sa dépendance, que la valeur a bien été mise dans un cache, sauvegardée dans un repo, qu'un event a bien été émis, etc.
 Cela nous permet de vérifier chaque _behavior_ avec ses _side effects_.
-
-<AnchoredP id='why-not-popular'>
-	🔸 Ah d'accord! Mais du coup, pourquoi est-ce que ce n'est pas plus adopté
-	par les développeurs?
-</AnchoredP>
-
-🔹 Je ne sais pas si c'est la seule et unique raison mais j'ai mon opinion là dessus.
-Je pense que dans notre cas, malgré le fait que le développement de logiciels soit démocratisé depuis plusieurs décennies, on n'est pas encore sur un processus "mature": si tu regardes en détails, tu trouveras des problèmes similaires sur les différents projets auxquels tu participeras. Spoilers: on recontre maintenant les mêmes problèmes que l'on rencontrait il y a 10 ans. De même, certains principes reconnus ne sont toujours pas maitrisés alors qu'ils datent de 20 ans ou plus.
-De plus, le testing n'est pas forcément enseigné à l'école et, de ce fait, pas appliqué en entreprise. Par conséquent, tu n'as pas d'apprentissage continu sur le sujet, et tu tombes dans un cercle vicieux : les développeurs qui arrivent sur un projet ne connaissent pas le testing, mais le projet ne leur demande pas non plus de se mettre à jour car les tests ne font pas partie des requirements.
-
-<AnchoredP>
-	🔸 Personnellement, j'ai eu la chance de faire mes études dans une
-	institution qui tenait à coeur d'enseigner en étant alignée avec le monde
-	professionel mais aussi vis-à-vis des nouvelles technologies. Et pourtant,
-	nous n'avons eu qu'une introduction aux tests unitaires. En tant
-	qu'étudiant, ça te tombe dessus et tu n'as pas forcément le bagage
-	nécessaire pour comprendre tout ce que l'on te demande. Pour ma part, à
-	l'époque, je n'avais absolument pas compris l'utilité du testing unitaire,
-	et j'avais bâclé la question à l'examen!
-</AnchoredP>
-
-🔹 Le nivellement par le bas est perpétuel. C'est d'autant plus dommage pour les gens qui sont de bonne volonté et qui veulent mettre des tests en place.
-Malheureusement, tu seras souvent incité à faire du _quick and dirty_ sauf si les sociétés ont compris les métiers qui gravitent autour du développement ou que tu sois assez fort pour imposer tes choix.
-Le plus difficile, c'est lorsque tu es sur des solutions qui n'ont pas de tests en place. Ta solution grandit avec le temps et les problèmes s'accumulent:
-
--   tes développements te prennent de plus en plus de temps ;
--   t'as de plus en plus de bugs à régler (Hello _bug backlog_!) ;
--   la _technical debt_ s'accumule ;
--   cela devient de plus en plus compliqué d'ajouter des tests même sur des nouveaux développements.
-
-Pour couronner le tout, il y a cette courbe de progression dont on a parlé. Tu ne peux pas dire à ton équipe du jour au lendemain : "allez hop, à partir d'aujourd'hui, TDD pour tout le monde!". Ce n'est pas réaliste.
-
-Donc, tenter une adoption aux tests et à TDD tard dans un développement devient d'autant plus compliqué parce que les gens sont déjà totalement étouffés par le travail et la pression. Le testing sera malheureusement placé tout en bas de la liste des priorités.
-
-Je pense que je suis en train de faire fuir tes lecteurs ou de les démoraliser. J'ai l'air extrêmement pessimiste mais tout n'est pas perdu. J'ai simplement croisé plus de projets sans tests qu'avec. Le changement de dynamique doit venir de nous, développeurs, et cela passe par une prise de conscience de la majorité.
 
 <AnchoredP id='how-to-write'>
 	🔸 La question que tous se posent... Comment écrire de bons tests unitaires?

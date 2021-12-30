@@ -25,7 +25,7 @@ import randomChoose from '../../../src/utils/randomChoose';
 </a>
 
 L'article du jour est fait en effort conjoint avec mon ancien collègue et mentor <a href="https://www.linkedin.com/in/guillaumefaas/" target="_blank" rel="noreferrer noopener nofollow">Guillaume Faas</a>
-(🔹) sous la forme d'une conversation entre 2 développeurs.
+(🔹) sous la forme d'une interview d'un développeur.
 
 Joins-toi à moi pour le remercier pour son incroyable implication dans l'écriture de cet article! Nous espérons tous les 2 que tu vas l'adorer, autant que nous avons adorer l'écrire.
 
@@ -39,13 +39,14 @@ Joins-toi à moi pour le remercier pour son incroyable implication dans l'écrit
 
 ---
 
-_tldr; fais des katas en appliquant le Test Driven Development!_
+_tldr; fais des katas en appliquant la méthodologie "Test Driven Development" !_
 
 <AnchoredH2 id='presentation'>Présentation</AnchoredH2>
 
 <AnchoredP>🔸 Salut Guillaume! Tu sais te présenter s'il te plaît?</AnchoredP>
 
-🔹 Salut Tinaël! Merci de m'avoir invité à parler sur ton site. Je m'appelle Guillaume Faas et je suis un expert .NET / Software Craftsman, actuellement employé chez [Squaremiled S.A.](https://squaremiled.com/). Je développe des logiciels depuis une dizaine d'années en ayant évolué dans des environnements et secteurs d'activités variés.
+🔹 Salut Tinaël! Merci de m'avoir invité à parler sur ton site. Je m'appelle Guillaume Faas et je suis un expert .NET / Software Craftsman, actuellement employé chez [Squaremiled S.A.](https://squaremiled.com/).
+Je développe des logiciels depuis une dizaine d'années en ayant évolué dans des environnements et secteurs d'activités variés.
 
 <AnchoredH2 id='topic'>Le sujet!</AnchoredH2>
 
@@ -58,7 +59,9 @@ _tldr; fais des katas en appliquant le Test Driven Development!_
 </AnchoredP>
 
 🔹 C'était il y a bien longtemps, dans une galaxie lointaine... J'avais à peine quelques années d'expérience à l'époque. J'étais dans la même société pendant une majeure partie de ma carrière et, par rapport à mon _day-to-day_, je pensais que j'avais déjà tout vu.
-Je commençais à regarder en ligne à des _guidelines_, des _best practices_, des _patterns_, etc. Je suis tombé sur plein de sujets excitants et surtout nouveaux. C'était comme si j'avais mis les pieds dans un nouveau monde qui n'avait rien à voir avec la routine dans laquelle j'étais ancré. Le _testing_ était évidemment l'un de ces sujets. Cependant, j'ai vite réalisé que je devais progresser sur d'autres sujets avant d'être capable d'introduire des tests. Cela m'a pris du temps avant que je ne sois vraiment apte à travailler avec une approche _test-driven_.
+Je commençais à regarder en ligne à des _guidelines_, des _best practices_, des _patterns_, etc. Je suis tombé sur plein de sujets excitants et surtout nouveaux.
+C'était comme si j'avais mis les pieds dans un nouveau monde qui n'avait rien à voir avec la routine dans laquelle j'étais ancré. Le _testing_ était évidemment l'un de ces sujets.
+Cependant, j'ai vite réalisé que je devais progresser sur d'autres sujets avant d'être capable d'introduire des tests. Cela m'a pris du temps avant que je ne sois vraiment apte à travailler avec une approche _test-driven_.
 
 <AnchoredP id='what-is-it'>
 	🔸 Ok! Par contre, histoire de ne pas perdre les lecteurs... tu sais
@@ -77,7 +80,7 @@ Mais à la fin, un test unitaire est simplement **un morceau de code qui valide 
 
 🔹 Il s'agit de la pyramide de testing (_Agile Testing Pyramid_) mais de gauche à droite au lieu de bas en haut. Plus tu seras situé vers la gauche, plus ton _scope_ est petit et plus tes tests seront nombreux et rapides. La logique inverse est appliquée lorsque tu vas dans l'autre sens.
 
-Nous, on se situe sur la partie "unit" puisque techniquement, il n'y a pas plus petit qu'une _unit_. Le test unitaire doit être exécuté de façon _standalone_ et tu dois te trouver dans un environnement _sandbox_.
+Nous, on se situe sur la partie "unit" puisque techniquement, il n'y a pas plus petit qu'une _unit_. Un test unitaire doit être exécuté de façon _standalone_ dans un environnement _sandbox_.
 C'est-à-dire qu'un test unitaire n'a aucun impact sur l'extérieur du test, et si tu en lances plusieurs en parallèle, ils ne doivent pas avoir de _side effects_ entre eux.
 
 Cela signifie donc que dans un test unitaire: on ne contacte pas de DB, on évite de faire une requête HTTP, d'accéder à un fichier du système, etc. De la même façon, on ne va pas contacter les autres dépendances de la solution.
@@ -95,13 +98,14 @@ Voici quelques points de la partie _functional testing_:
 
 -   l'_unit testing_, c'est vérifier qu'un composant fonctionne bien. Il s'agit du test le plus rapide, on parlera de _fast feedback loop_ ;
 -   l'_integration testing_, c'est vérifier que plusieurs composants fonctionnent bien entre eux ;
--   le _user acceptance testing_ qui consiste à vérifier l'entièreté de l'application tout en évitant de contacter les dépendances externes (ex: des requêtes vers des fournisseurs de données extérieurs à ton application). Il s'agit du test le plus représentatif, probablement celui qui a le plus de valeur à l'échelle du produit car il vérifie des _business requirements_. ;
+-   le _user acceptance testing_ qui consiste à vérifier l'entièreté de l'application tout en évitant de contacter les dépendances externes (ex: des requêtes vers des fournisseurs de données extérieurs à ton application).
+    Il s'agit du test le plus représentatif, probablement celui qui a le plus de valeur à l'échelle du produit car il vérifie des _business requirements_.
 
 À noter qu'il n'y a pas d'obligation de tous les implémenter. On pourrait très bien avoir une _test suite_ composée uniquement de tests d'une seule de ces catégories. Mais il convient de garder à l'esprit que notre _test suite_ ne sera pas des plus efficaces.
 
 <AnchoredP>
 	🔸 D'accord! Mais pourquoi le testing, c'est pas réalisé dans le monde
-	professionnel? Aussi bien les tests unitaires que les tests d'intégration...
+	professionnel?
 </AnchoredP>
 
 🔹 En réalité, une grande partie des développeurs n'écrivent pas ou peu de tests. De plus, les tests d'intégrations sont moins répandus que les tests unitaires car ils sont plus complexes à écrire. Au final, cette tâche est souvent vue comme une corvée ou alors une _extra step_ que l'on fera uniquement si on a le temps.
@@ -126,7 +130,7 @@ Uncle Bob en a également parlé à une conférence à Londre en 2018:
 		width: '560',
 		height: '315',
 		src: 'https://www.youtube.com/embed/17vTLSkXTOo?start=552&end=720',
-		title: 'YouTube video player of Docker tutorial',
+		title: 'YouTube video player of SC London Conference 2018',
 		allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
 		allowFullScreen: true,
 	}}
@@ -139,7 +143,7 @@ Uncle Bob en a également parlé à une conférence à Londre en 2018:
 
 🔹 Le but est assez simple: c'est de montrer qu'une méthode fonctionne comme tu l'attends. C'est-à-dire que tu vas avoir un comportement attendu, par exemple ta méthode `getSomething` doit te retourner quelque chose. Tu vas donc tester différents scénarios et vérifier qu'elle se comporte toujours de la bonne façon.
 
-Pour ce qui est du "quand", c'est assez simple: ça doit être appliqué à partir du moment où tu as de la logique quelque part.
+Pour ce qui est du "quand", c'est encore plus simple: ça doit être appliqué à partir du moment où tu as de la logique quelque part.
 
 <AnchoredP id='pros-and-cons'>
 	🔸 Bah du coup, quels en sont les avantages et inconvénients de la mise en
@@ -160,9 +164,9 @@ Si tu es couvert par une _test suite_, tu n'as pas peur du refactoring. C'est m�
 
 3. Une suite de tests devient ce qu'on appelle une **living documentation**.
 
-    Lorsque l'on parle de documentation, on a tous à l'esprit des commentaires. Le problème est qu'ils ne sont jamais à jour avec le reste du code. Le code évolue, la documentation non. Par contre, ton test unitaire sera toujours _up-to-date_. Si ce n'est pas le cas, alors ta suite de tests ne te donnera pas le feu vert pour aller plus loin.
+Lorsque l'on parle de documentation, on a tous à l'esprit des commentaires. Le problème est qu'ils ne sont jamais à jour avec le reste du code. Le code évolue, la documentation non. Par contre, ton test unitaire sera toujours _up-to-date_. Si ce n'est pas le cas, alors ta suite de tests ne te donnera pas le feu vert pour aller plus loin.
 
-    C'est d'autant plus intéressant dans le cadre d'une arrivée d'un nouveau développeur sur le projet. Plutôt que de lire tout le code d'une méthode pour savoir ce qu'elle fait, il lui suffit de regarder les différents tests de cette méthode. Chaque comportement sera représenté par un test avec un _naming_ explicite sur le scénario et résultat attendu (ex: _GetItem_ShouldReturnNotFoundResult_GivenItemIsMissing_). **Ça facilite donc l'_onboarding_!**
+C'est d'autant plus intéressant dans le cadre d'une arrivée d'un nouveau développeur sur le projet. Plutôt que de lire tout le code d'une méthode pour savoir ce qu'elle fait, il lui suffit de regarder les différents tests de cette méthode. Chaque comportement sera représenté par un test avec un _naming_ explicite sur le scénario et résultat attendu (ex: `GetItem_ShouldReturnNotFoundResult_GivenItemIsMissing`). **Ça facilite donc l'_onboarding_!**
 
 4. Cela **réduit le temps de détection des bugs**.
 
@@ -171,8 +175,8 @@ Cela a déjà un intérêt pour nous en tant que développeurs mais ce n'est pas
 
 5. Ce n'est pas un avantage direct mais plutôt un effet secondaire: **faire du testing te rend meilleur**.
 
-    Pour faire en sorte que tu puisses écrire des tests apportant une réelle valeur, tu dois respecter certains principes. Tu dois toujours avoir une certaine couche d'abstraction pour _mocker_ tes dépendances, tu dois pouvoir les injecter, tu dois limiter les responsabilités de tes composants, etc... en fait tu vas te forcer à appliquer plusieurs principes régulièrement (SOLID par exemple).
-    Du coup, cela te force à casser tes composants, à les découpler, à penser à leurs interations et responsabilités. Bref, à réfléchir et à te poser beaucoup de questions. Mine de rien, on parle de _code design_! Et donc, action-réaction: tu deviens meilleur au fil du temps. Cela fait très _Happy End_ mais tu vois où je veux en venir.
+Pour faire en sorte que tu puisses écrire des tests apportant une réelle valeur, tu dois respecter certains principes. Tu dois toujours avoir une certaine couche d'abstraction pour _mocker_ tes dépendances, tu dois pouvoir les injecter, tu dois limiter les responsabilités de tes composants, etc... en fait tu vas te forcer à appliquer plusieurs principes régulièrement (SOLID par exemple).
+Du coup, cela te force à casser tes composants, à les découpler, à penser à leurs interations et responsabilités. Bref, à réfléchir et à te poser beaucoup de questions. Mine de rien, on parle de _code design_! Et donc, action-réaction: tu deviens meilleur au fil du temps. Cela fait très _Happy End_ mais tu vois où je veux en venir.
 
 🔸 Et comme c'est peu mis en place dans les entreprises, c'est vu comme "nouveau" et ça motive à en apprendre plus!
 
@@ -195,7 +199,7 @@ Ensuite, le second indique un problème d'organisation. Les tests devraient êtr
 	tout ça?
 </AnchoredP>
 
-🔹 Tester, c'est super et on ressent les bénéfices. Cependant, il faut aussi faire un status sur l'état de la _test suite_. C'est là qu'on arrive sur le _code coverage_. C'est une métrique informative sur la progression de couverture de tests de ton application.
+🔹 Tester, c'est super et on ressent les bénéfices. Cependant, il faut aussi faire un statut sur l'état de la _test suite_. C'est là qu'on arrive sur le _code coverage_. C'est une métrique informative sur la progression de couverture de tests de ton application.
 J'insiste vraiment sur le côté **informatif**. Ce serait une erreur de mesurer la qualité de la suite de tests sur base de sa couverture. C'est une métrique de quantité et non de qualité.
 J'ai déjà lu des articles sur des sociétés qui ont intégré la valeur de _code coverage_ dans les objectifs des développeurs et cela a incité les développeurs à utiliser de faux tests pour faire gonfler le coverage.
 
@@ -237,7 +241,7 @@ Toi qui voulais parler d'argent, **plus un bug est découvert tard, plus il coû
 
 Et c'est tout à fait normal.
 
-On peut reparler de la _fast feedback loop_: si un bug est découvert par un test unitaire, c'est en local sur ta machine, juste après le changement (_rebuild_ + _rerun test suite_). Il est identifié rapidement et corrigé rapidement.
+On peut reparler de la _fast feedback loop_: si un bug est découvert par un test unitaire, c'est en local sur ta machine, juste après le changement (n'oublie pas de _rebuild_ et de _rerun_ ta suite de tests). Il est identifié rapidement et corrigé rapidement.
 À contrario, un bug qui passe en production... il est découvert par un utilisateur qui remonte le problème à ta _product team_ qui elle doit analyser le _feedback_ et ouvrir un ticket dans ton _backlog_. Ce ticket, il va être priorisé par ton _Product Owner_ pour être inclus dans la prochaine itération puis il sera assigné à un développeur. En admettant que ce ne soit pas toi, il y aura une phase d'investigation (reproduction du bug), une phase de correction de bug et après il doit repartir sur tous les environnements et être validé par des _Quality Assurance Users_.
 
 J'ai volontairement pris un cas extrême pour montrer le pire scénario mais c'est aussi la façon d'être le plus explicite sur le problème.

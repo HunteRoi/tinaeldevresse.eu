@@ -1,60 +1,622 @@
 ---
 slug: unit-testing
-title: Unit Testing
+title: Unit testing
 tags: [test, unit test, programming]
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+description: Today's article is done in joint effort with my former colleague and mentor <a href="https://www.linkedin.com/in/guillaumefaas/" target="_blank" rel="noreferrer noopener nofollow">Guillaume Faas</a> (🔹) in the form of an interview of a developer. Please join me to thank him for his incredible involvement in the writing of this post! We both hope you are gonna love it as much as we loved writing it.
 image: img/unit-testing.jpg
 ---
+
 import Figure from '../src/components/figure';
 import SEO from '../src/components/seo';
 import Reminder from '../src/components/reminder';
 import Newsletter from '../src/components/newsletter';
 import { MAILCHIMP_URL } from '../website_config.json';
+import { AnchoredH2, AnchoredP } from '../src/components/AnchoredHeading';
+import randomChoose from '../src/utils/randomChoose';
 
-<a href="/blog/unit-testing">
-  <Figure data={{src:'/img/unit-testing.jpg', alt: 'Unit Testing', type:'image'}} />
+<a href='/blog/unit-testing'>
+	<Figure
+		data={{
+			src: '/img/unit-testing.jpg',
+			alt: 'Unit tests',
+			type: 'image',
+		}}
+	/>
 </a>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+Today's article is done in joint effort with my former colleague and mentor <a href="https://www.linkedin.com/in/guillaumefaas/" target="_blank" rel="noreferrer noopener nofollow">Guillaume Faas</a>
+(🔹) in the form of an interview of a developer.
+
+Please join me to thank him for his incredible involvement in the writing of this post! We both hope you are gonna love it as much as we loved writing it.
 
 <!--truncate-->
 
-<SEO
-  uri='blog/unit-testing'
-  image='img/unit-testing.jpg'
-  type='article'
-/>
+<SEO uri='blog/unit-testing' image='img/unit-testing.jpg' type='article' />
 
-___
+---
 
 <Reminder />
 
-___
+---
 
-Today's article is done in joint effort with my colleague <a href="https://www.linkedin.com/in/guillaumefaas/" target="_blank" rel="noreferrer noopener nofollow">Guillaume Faas</a> in the form of a quick chat between two developers.
-Please join me to thank him for his incredible involvement on this topic.
+_tldr; Do katas with the "Test Driven Development" methodology!_
 
-We both hope you will enjoy reading this article, as much as we enjoyed writing it!
+<AnchoredH2 id='presentation'>Presentation</AnchoredH2>
 
-## What are we talking about?
-— Hey Guillaume! The topic for this article is the unit testing. I guess you've got spare time to discuss about it but if you allow me, I'll introduce it first!
+<AnchoredP>🔸 Hey Guillaume ! Can you introduce yourself please?</AnchoredP>
 
-Unit testing is part of a bigger strategy called "software testing". The idea behind these words is simply to test the features designed by analysts and developed by engineers.
-There are a lot of testing types, and as you can see in the below tree, the types are divided between two big branches:
-- functional testing – this means the goal is aimed on the code itself
-- non-functional testing – this means the goal is aimed on the overall application or all the topics gravitating around like security, environment, documentation, etc.
+🔹 Hello Tinaël! Thank you for inviting me to speak on your blog. My name is Guillaume Faas and I am a .NET expert / Software Craftsman, actually working at [Squaremiled S.A.](https://squaremiled.com/).
+I've been building softwares since 10 years or so, in various environments and business sectors.
 
-<Figure data={{src: '/img/software-testing-types.png', alt: 'Types of Software Testing', type: 'image'}} />
+<AnchoredH2 id='topic'>The topic!</AnchoredH2>
 
-With Guillaume, we talk about unit testing as this is a good first step when you walk into the software testing area. But don't be afraid to check for the others!
+<AnchoredP>🔸 What are we going to talk about today?</AnchoredP>
 
-## What are the pros and cons?
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+🔹 What do you think? It seems someone did not read the post's title. We are going to talk about **unit testing**!
 
-## How do you do it?
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+<AnchoredP id='first-encounter'>
+	🔸 When did you first encounter unit testing?
+</AnchoredP>
 
-## Conclusion
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+🔹 It was a long time ago in a galaxy far, far away... I barely had a few years of experience.
+I've been working in the same company for most of my career, and compared to my day-to-day, I thought I had seen it all.
+I started looking online in guideliens, best practices, patterns and so on... I came across a lot of exciting and above all new topics.
+I seemed like I stepped in a new world that had nothing to do with my daily life in which I was stuck. The _testing_ was obviously one of those topics.
+However, I quickly realised that I had to progress in other subjets before I could introduce tests in my projects. It took me quite a long time before I was really fit to work in a test-driven approach.
+
+<AnchoredP id='what-is-it'>
+	🔸 Ok! However, just not to lose our readers... can you explain what a unit
+	test is please?
+</AnchoredP>
+
+🔹 Yes, of course! A unit test is a test that checks a _unit of code_. This concept of unit of code varies according to the testing schools.
+The London (or Mockist) School will see it as the smallest chunk of code so we are talking about a class or a method.
+On the other hand, the Detroit (or Classicist) School will see it as a group of classes or methods.
+For the most curious of you, here's an [article](https://medium.com/@adrianbooth/test-driven-development-wars-detroit-vs-london-classicist-vs-mockist-9956c78ae95f) which gives details on the differences between both schools. I want to clarify that no school is better than the other, each one having its pros and cons.
+It's only a matter of preference and compromise.
+The main difference is mainly the size of your _System Under Test_ (SUT) and the relationship between the different collaborators.
+
+But in the end, a unit test is simply **a piece of code validating that another piece of code has the expected result and/or side effect against a given scenario**.
+
+<AnchoredP id='hierarchy-position'>
+	🔸 Alright. Where is it in this "test hierarchy"?
+</AnchoredP>
+
+🔹 It looks like the Agile Testing Pyramid but from left to right instead of bottom to top.
+The more on the left, the smaller your scope is and the most numerous and faster your tests will be.
+If you read it the other way and apply a reverse logic, it works too.
+
+We are on the "unit" part for this topic since there is technically nothing smaller than a unit. A unit test should be executed on a standalone basis in a sandboxed environment.
+That is, a unit test has no impact on the outside of its scope, and if you run several of them in parallel, they must not have any side effect between them.
+
+This finally means that in a unit test: we do not contact a database, we avoid making HTTP requests, access file system, etc. In the same way, we are not going to contact the other dependencies of the solution.
+We strictly stay "internal" to the unit.
+
+<Figure
+	data={{
+		src: '/img/software-testing-types.png',
+		alt: 'Types of Software Testing',
+		type: 'image',
+	}}
+/>
+
+Here are a few points on the _functional testing_ part:
+
+-   the unit testing is to check that a component works well. It is the fastest, we will talk about "fast feedback loop" ;
+-   the integration testing is to check that several components work well together ;
+-   the user acceptance testing consists of verifying the whole application while avoiding contact with external dependencies (eg: requests to external providers).
+    This is the most representative test, probably the one that has the most value on the product scale as it validates business requirements.
+
+Note that you don't have to implement them all. We could have a test suite only composed of tests from a single category.
+But it should be borne in mind that our test suite will not be the most effective.
+
+<AnchoredP>
+	🔸 Nice! But why is testing not used everywhere in the profesionnal world?
+</AnchoredP>
+
+🔹 In reality, a large part of developers write little to no tests. In addition, integration tests are less common than unit tests because they are more complex to write.
+In the end, this task is often seen as a chore or an extra step that we will only do if we have time.
+
+<Figure
+	data={{
+		src: randomChoose(
+			'https://miro.medium.com/max/600/1*xHibbXdcePT0GtpeZRgxSA.gif',
+			'https://media4.giphy.com/media/hqq505vU9iHCOGySD5/giphy.gif',
+			'https://media1.giphy.com/media/VXmWbcDSj2yqnsXUrF/giphy.gif'
+		),
+		alt: 'GIF on integration tests',
+		type: 'image',
+	}}
+/>
+
+Uncle Bob also spoke about it at a conference in London in 2018:
+
+<Figure
+	data={{
+		type: 'html',
+		width: '560',
+		height: '315',
+		src: 'https://www.youtube.com/embed/17vTLSkXTOo?start=552&end=720',
+		title: 'YouTube video player of SC London Conference 2018',
+		allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+		allowFullScreen: true,
+	}}
+/>
+
+<AnchoredP id='objective'>
+	🔸 What is the objective of unit testing and when should it be applied?
+</AnchoredP>
+
+🔹 The goal is quite simple: it's to show that a method works as expected. That is, you are going to have an expected behavior. For example, a method `getSomething` should return you something.
+You are thus going to test different scenarios and check that the method always behaves the right way.
+
+As for the "when", it's even simpler: you need to apply unit testing whenever you have some logic somewhere.
+
+<AnchoredP id='pros-and-cons'>
+	🔸 Alrighty! What are the pros and cons of such thing?
+</AnchoredP>
+
+🔹 As previously said, you write code to test code. Seen like this, it surely looks like additional workload but there are realy interests behind!
+
+1. The unit test acts as a **safety net against regressions**.
+
+The refactoring stage systematically occurs in a projet. The problem is, when you start changing something, there is always **a risk of regression**.
+We talk about regression when something that used to work does not anymore due to some changes.
+It's precisely here that a unit test intervene: it guarantees that your components always work as expected. If anything does not work anymore after a refactoring, the test suite is going to display erroneous code with a beautiful red dot.
+And that, in the point of view of a developer, it's huge! It means you can be much more relaxed and spend less time checking that your changes did not have undesirable effect on the rest of the features.
+
+2. Writing tests improves the **code quality** of your app.
+
+It is related to the above that we have just discussed. It is likely that the readers have already encountered a similar situation:
+when talking about refactoring to a Product Owner or a Product Manager, the first fear is always that is not working anymore.
+If you are covered by a test suite, you are not afraid of refactoring. It's even the opposite, **you are encouraged to refactor regularly** while being protected.
+
+3. A test suite becomes what we call **a living documentation**.
+
+When we talk about documentation, we might all have commentaries in mind. The problem is that they are never up to date with the rest of the code. The code evolves, the documentation does not.
+However, your unit test will always be up to date. If it wasn't, your test suite wouldn't give you the green light to go further.
+
+It's even more interesting when^in the context of the arrival of a new developer on the project. Rather than reading all the code of a method to know what it does, they can just look at the different tests for that specific method.
+Each behavior will be represented by a test with an explicit naming on the scenario and expected result (eg: `GetItem_ShouldReturnNotFoundResult_GivenItemIsMissing`). **It makes the onboarding process easier!**
+
+4. It **reduces the bug detection time**.
+
+We mentioned the concept of "short feedback loop" earlier. Unit tests are really fast to execute, they give an almost instantaneous feedback on the health of the solution.
+This means that we need to regularly execute them. Let's say we have a button (or a shortcut) that gives us a Green/Red status in a few seconds. Activating this button must become systematic.
+
+It already has an interest for us developers but that's not all. We'll talk about it later!
+
+5. It is not a direct advantage but more like a side effect: **testing makes you better**.
+
+To ensure you write tests that provide real value, there are certain principles that you need to follow. You must always have a certain layer of abstraction to _mock_ your dependencies, you must be able to inject them, you must limit the responsibilities of your components, etc.
+In fact, you will force yourself to apply several principles regularly (eg: SOLID). Suddenly, it forces you to break your components, to decouple them, to think about their interactions and responsibilities. In short, to think and ask yourself a lot of questions.
+Casually, we are talking about _code design_! And so, action-reaction: you get better over time. Sounds very "Happy End" but you know where I'm going with this.
+
+🔸 And as it is not that much introduced in companies, it's kinda "new" and motivates to learn more!
+
+🔹 I agree with you on the novelty aspect but it only remains present when the subject is discovered. And there's an interpretive part to it all: some (like you) see it as something interesting. Others see it as a chore or extra pressure.
+You will always find people resistant to testing for a variety of reasons. Perhaps we will have the opportunity to address the reasons that are generally mentioned...
+
+To get back to the question, here are the cons that come to my mind:
+
+1. Already mentioned, but there are pre-requisites: you have to understand the foundation of the Object-Oriented, dependency injection, [SOLID](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) principles, etc.
+2. The fact that there are few projects with real test suites makes learning less accessible. The same goes for a coach passionate about this subject.
+3. There's a fairly steep learning/progression curve. Everyone goes through a phase of frustration at the beginning because we are not comfortable and we have the impression of being slower.
+   We must resist and persevere because the tests will actually make us go faster in the long go. We will talk about it with the TDD approach.
+4. It requires preparation: you have to think about the project's architecture, the relationships between the different components, etc. Seen like this, it isn't really a disadvantage but we can't (won't anymore?) go headlong in a development without a minimum of thought.
+5. There is a lack of comprehension on the side of other teams involved in the proect development, especially non-IT's. We always fall back on discussions about the "Return On Investment" (ROI) or the impact on velocity.
+
+We often hear that "it takes time" or "it will be planned later" or "developers don't have time" but those arguments are not really valid.
+Indeed, the first one clearly indicates a lack of long term vision and understanding of testing. Because "later" never happens but above all, writing the tests at the end of a product's development doesn't make any sense. We lose all benefits of testing. I already said it but we will talk about it with the TDD approach.
+Then, the second indicates an organizational problem. The tests should be included in the time estimates of developping a feature and not as additional work to be done.
+
+<AnchoredP id='test-coverage'>🔸 What about the test coverage?</AnchoredP>
+
+🔹 Testing is great, we feel the benefits. However, we is also necessary to make a status on the state of the test suite. This is when we start talking about "code coverage". It is an informative metric about your app's test coverage process.
+I really insist on the "informative" side. It would be a mistake to measure the quality of the test suite based on its coverage. It is a metric of quantity, not quality.
+I have already read articles about companies that have incorporated the value of code coverage into developer goals and this has prompted developers to use mock tests to boost the coverage.
+
+The only way to check the quality of a test suite of a project is to ask yourself a few questions:
+
+-   Does the general feature development time stay approximately the same over time?
+-   Does the quantity of bugs found in production decrease over time?
+-   Do you easily manage to welcome new resource within the development team?
+-   Do the developers trust their test suite? Is it representative of the state of health of the solution? Does a green circle really guarantee that a component is working?
+
+If you are able to answer "yes" to all these questions, congrats! You can be proud of the test suite that you have put in place.
+The problem? It is really difficult to have an answer to all these questions when you have to report _day one_... You also notice that the first three refer to **time**.
+
+<AnchoredP id='cost'>
+	🔸 Well... Cost wise, where are we? Because ultimately, writing a test means
+	writing code. It costs!
+</AnchoredP>
+
+🔹 I see where you are going with this. No, it does not cost more unless you charge to characters!
+Even if you write more code, you really win and not only on the time aspect. Did I tell you we had to talk about the TDD approach? Because it even saves you time in short term. Anyway!
+
+Developing a feature may take you a little longer, knowing that it will mostly depend on your ease to write tests.
+On the other hand, it will especially "save your life" a lot of times because you will avoid a lot of bugs which, in normal times, would have arrived much later in your process, during user testing on a QA environment or in production.
+
+But you wanted to talk about money! **The later a bug is discovered, the more it costs**:
+
+<Figure
+	data={{
+		src: 'https://assets.deepsource.io/995f56d/images/blog/cost-of-fixing-bugs/chart.jpg',
+		alt: 'Cost of bug fix',
+		type: 'image',
+		url: 'https://deepsource.io/blog/exponential-cost-of-fixing-bugs/',
+	}}>
+	Cost of bug fix based on the moment it was detected, sourced from{' '}
+	<a href='https://deepsource.io/blog/exponential-cost-of-fixing-bugs/'>
+		DeepSource
+	</a>
+	!
+</Figure>
+
+And is totally normal.
+
+We can talk again about the "fast feedback loop": if a bug is found by a unit test, it's in local, on your machine, just after a change (don't forget to rebuild and rerun your test suite!). The bug is quickly identified and fixed.
+
+In contrast, a bug that goes to production... is discovered by a user who must report the problem to your product team who must analyze the feedback and open a ticket in your backlog.
+This ticket will be prioritized by your Product Owner to be included in the next iteration and then it will be assigned to a developer. Assuming that it is not you, there will be an investigation phase (reproduction of the bug), a bug correction phase and after that it goes through all environments and be validated by Quality Assurance Users.
+
+I deliberately took an extreme case scenario to show the worst possible but it's also the best way to be explicit about the problem.
+The important thing to remember is that **a test can save a lot of people a lot of time, no matter how simple it is**.
+
+_Ed: to learn more about the reasons that softwares have bugs, do not hesitate to consult [this page](https://www.softwaretestinghelp.com/why-does-software-have-bugs) and [others on the web](https://www.google.com/search?q=why+do+softwares+have+bugs)!_
+
+<AnchoredH2 id='details'>In depth</AnchoredH2>
+
+<AnchoredP id='black-and-white-boxes'>
+	🔸 Ok! Et si on parlait maintenant de{' '}
+	<span style={{ fontStyle: 'italic' }}>black box</span> et{' '}
+	<span style={{ fontStyle: 'italic' }}>white box testing</span>?
+</AnchoredP>
+
+🔹 J'aime les schémas, tu aimes les schémas? C'est bien les schémas!
+
+<Figure
+	data={{
+		src: '/img/black-white-box-testing.png',
+		alt: 'Black and white box testing',
+		type: 'image',
+		style: { border: '.5em solid black' },
+	}}>
+	Les différences entre <span style={{ fontStyle: 'italic' }}>black box</span>{' '}
+	et <span style={{ fontStyle: 'italic' }}>white box testing</span>
+</Figure>
+
+Le **black box testing**, c'est donner une information d'entrée au SUT et vérifier l'information de sortie. C'est aussi simple que ça: on ne prend pas en compte ce qu'il se passe à l'intérieur de la méthode.
+Il y a un cas précis où ce type de testing sera obligatoire: les méthodes pures. Ces méthodes n'ayant aucune dépendance ou variables partagées, elles n'ont donc aucun _side effect_. Le **black box testing** est donc une évidence mais cela rend aussi le test extrêmement robuste car rien ne vient impacter le résultat du test.
+
+Prenons par exemple une méthode `Sum` d'une classe `Calculator`. On est exactement sur le scénario mentionné plus haut:
+
+```csharp title='tests/CalculatorTests.cs'
+[TestClass]
+public class CalculatorTests
+{
+	[TestMethod]
+	public int Sum_Should_ReturnTheSumOfTheTwoNumbers()
+	{
+		Calculator calculator = new();
+
+		int result = calculator.Sum(2,3);
+
+		Assert.AreEqual(expected: 5, actual: result);
+	}
+}
+```
+
+On ne connaît pas l'implémentation de la méthode, mais on a écrit un test. On lui donne des valeurs en entrée, et on vérifie la valeur de sortie.
+Pour le reste des scénarios, je trouve dommage de s'arrêter là. C'est une préférence personnelle, je trouve le **white box testing** plus pertinent en tant que _Mockist_.
+
+De l'autre côté, on a donc ce **white box testing**. À première vue, c'est la même chose: on donne un _input_ et on vérifie l'_output_. Mais on va aussi vérifier ce qu'il se passe à l'intérieur du SUT.
+On peut donc vérifier que le SUT a bien fait appel à sa dépendance, que la valeur a bien été mise dans un cache, sauvegardée dans un repo, qu'un event a bien été émis, etc.
+Cela nous permet de vérifier chaque _behavior_ avec ses _side effects_.
+
+<AnchoredP id='how-to-write'>
+	🔸 La question que tous se posent... Comment écrire de bons tests unitaires?
+</AnchoredP>
+
+🔹 Je ne pense pas qu'il y ait de bons ou de mauvais tests unitaires... Evidemment que si!
+Il faut réfléchir avant sur ce que tu veux faire. Ça peut paraître bête dit comme ça mais _think before you do_. C'est que j'expliquais lorsque je parlais du fait que faire des tests te rend meilleur.
+Si tu veux faire des tests efficaces, il faut réfléchir sur la façon dont tes composants vont communiquer entre eux. En fait, tes tests seront efficaces à partir du moment où ils seront faciles à faire. Et si tu te rends compte qu'ils ne le sont pas, c'est qu'il y a un soucis dans ton code.
+
+Exemple: j'ai un _service_ qui doit créer un utilisateur. **Avant d'écrire mon test**, je dois me poser quelques questions: quelles sont les responsabilités de mon service?
+Est-il responsable d'envoyer une requête HTTP à un fournisseur externe pour récupérer des informations? Est-il responsable de la persistence en base de données? Est-il responsable du _logging_?
+_Divide & Conquer_: une dépendance ici, une là, et une autre là... Au final, que reste-t-il dans mon service? L'orchestration d'un processus délégué à différentes dépendances (ex: client http, repository, logger, etc) et éventuellement une modification de l'état d'une entité. C'est tout.
+
+Au final, un "bon" test doit:
+
+-   te protéger contre les régressions ;
+-   être résistant au refactoring ;
+-   te donner un feedback rapide ;
+-   être maintenable.
+
+<AnchoredP id='tips-to-start'>
+	Et, sinon... T'as des conseils pour se lancer dans le testing unitaire?
+</AnchoredP>
+
+🔹 Je recommande aux personnes qui veulent démarrer le testing de commencer directement avec le _Test Driven Development_.
+Si le test est écrit après l'implémentation, c'est pas vraiment objectif car tu connais déjà l'implémentation donc ton test est fortement lié à ton implémentation. De plus, le code fonctionne déjà donc le test sera perçu comme une perte de temps. Mais surtout: on a bénéficié d'aucun avantage du testing lors de la phase d'implémentation.
+
+Pour cela, vous n'êtes pas seul. Il existe des tonnes de resources disponibles pour vous aider.
+Voici plusieurs livres que j'aurais aimé avoir lus au début de ma carrière:
+
+-   "Test Driven Development - By Example" par Kent Beck.
+-   "Unit Testing - Principles, Practices and Patterns" par Vladimir Khorikov.
+    Également, voici un site rempli de conseils et astuces sur TDD avec un grand nombre de katas pour progresser: [TDD Buddy](http://www.tddbuddy.com/).
+
+En parlant de katas, faites des katas. Faites pleins de katas et faites en à plusieurs (_pair_ et/ou _mob programming_) si vous en avez la possibilité. C'est fun et c'est très formatteur, notamment sur le fait de démarrer avec des exercices simples et progressivement augmenter la difficulté jusqu'à se retrouver avec des situations similaires à ce que l'on peut trouver dans des projets réels. En plus de [TDD Buddy](http://www.tddbuddy.com/), je pourrais recommander [Code Wars](https://www.codewars.com/) si vous êtes en manque d'inspiration.
+Sans forcément faire de l'auto-promotion, vous pouvez aussi trouver quelques katas sur mon [GitHub](https://github.com/Tr00d/).
+
+Un dernier conseil pour démarrer le testing, on peut se référer à ce qu'on appelle le triple A (AAA), qui signifie _Arrange, Act, Assert_, pour rendre les tests plus clairs et organisés. Le but est de diviser son test unitaire en 3 parties distinctes:
+
+1. _arrange_ : c'est le scénario, la partie où tu prépares les données _input_ de ta méthode ;
+2. _act_ : c'est l'action, le fait de réaliser l'appel à la méthode que tu vas tester ;
+3. _assert_ : c'est la vérification du _behavior_, là partie où tu vérifies l'_output_ ou les _side effects_.
+
+<AnchoredP id='bad-smells'>
+	🔸 Quels sont les "bad smells" dans l'unit testing?
+</AnchoredP>
+
+🔹 J'en vois quelques-uns...
+
+-   une partie _arrange_ qui fait 15 lignes... C'est trop compliqué. On voit clairement que la méthode testée fait trop de choses car le scénario est trop compliqué à mettre en place!
+-   On dit qu'**un test ne doit avoir qu'une et une seule raison d'échouer**. Un test ne devrait contenir qu'un seul _assert_.
+-   Le fait que tu aies du mal à écrire des tests unitaires, non pas à cause du fait que tu n'aies pas la connaissance nécessaire mais plutôt en rapport au code à tester... c'est qu'il y a un soucis au niveau de ton composant. Alors, prends du recul et penses aux responsabilités.
+
+<AnchoredH2 id='to-go-further'>Pour aller plus loin</AnchoredH2>
+
+<AnchoredP id='libraries'>
+	🔸 Tu as des librairies intéressantes en tête pour faciliter le travail?
+</AnchoredP>
+
+🔹 Oui. Pour moi, on peut considérer trois groupes de librairies:
+
+1. les librairies de testing qui permettent de générer des tests ;
+2. les librairies de mocking qui permettent de surcharger le comportement de tes dépendances et de les monitorer ;
+3. les librairies de génération de données.
+
+Pour ma part:
+
+|                     **Frameworks de test**                     |                **Librairies de mocking**                 |          **Librairies de génération de données**           |
+| :------------------------------------------------------------: | :------------------------------------------------------: | :--------------------------------------------------------: |
+| [MSTest](https://www.nuget.org/packages/MSTest.TestFramework/) |        [Moq](https://www.nuget.org/packages/Moq/)        | [AutoFixture](https://www.nuget.org/packages/AutoFixture/) |
+|         [NUnit](https://www.nuget.org/packages/NUnit/)         |    [NInject](https://www.nuget.org/packages/Ninject/)    |
+|         [XUnit](https://www.nuget.org/packages/xunit/)         | [WireMock](https://www.nuget.org/packages/WireMock.Net/) |
+
+🔸 Sur ce point-ci particulièrement, j'aimerais mettre en avant le fait qu'il existe aussi des librairies de test pour le _front-end_. En fait, le testing unitaire n'est pas réservé aux développeurs
+_back-end_. On citera notamment [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), [Cypress](https://www.npmjs.com/package/cypress) et [Jasmine](https://www.npmjs.com/package/jasmine) comme librairies fortement liées au testing dans des applications JavaScript.
+
+<AnchoredP id='what-is-tdd'>
+	🔸 Du coup, tu n'arrêtes pas d'en parler. C'est quoi le{' '}
+	<span style={{ fontStyle: 'italic' }}>Test Driven Development</span> (TDD)?
+</AnchoredP>
+
+🔹 Je suis content que tu poses enfin la question! C'est pas comme si je t'avais tendu la perche plus d'une fois... C'est la joie, le bonheur, la réponse ultime au sens de la vie, c'est tout ça!
+Non, je rigole. En fait, c'est une façon de mettre les tests au centre de ce que tu fais. On a parlé de tous les points positifs de faire des tests unitaires et aussi du fait qu'on les perdait si on faisait les tests à la fin sans forcément aller dans le détail.
+En fait, la meilleure façon de bénéficier des avantages des tests, c'est de les faire en premier mais ce n'est pas que ça. Ce n'est pas d'abord faire tous les tests puis ensuite faire l'implémentation.
+Non, il y vraiment un aspect itératif que l'on retrouve d'ailleurs dans l'Agilité. Tu y vas étape par étape (_baby steps_), tu ajoutes de nouveaux _behaviors_ en garantissant que ceux précédemment ajoutés fonctionnent toujours. Le filet de sécurité s'agrandit petit à petit naturellement.
+On peut présenter cela différemment: imaginons une échelle. Cela sera toujours plus facile de la monter marche par marche que de les monter trois par trois.
+
+J'ajouterais que contrairement aux idées reçues, TDD ne rend pas la durée de développement plus longue, bien au contraire. Par exemple, il n'est pas nécessaire d'exécuter la solution pour savoir que le code fonctionne car il a entièrement été développé sur base de tests.
+
+<Figure
+	data={{
+		src: '/img/test-driven-development.png',
+		alt: 'Cycle du TDD',
+		type: 'image',
+		style: { border: '.5em solid black' },
+	}}>
+	Le cycle de développement sous TDD
+</Figure>
+
+La première étape, c'est l'écriture d'**un** test unitaire. Normalement, ce test doit _obligatoirement_ échouer puisqu'aucune implémentation n'a été écrite pour qu'il réussise.
+L'étape suivante, c'est donc d'écrire le code qui permet de faire passer le test au vert. Et là, c'est très important de savoir que ce passage de rouge vers le vert doit être **le plus court possible**. C'est le moment où on à le droit d'écrire du code "moche", d'_hardcoder_ un résultat, de dupliquer, de coller une réponse de StackOverflow, etc. Cela peut paraître bizarre au début mais il y a un vrai intérêt: vérifier que l'ajout d'un nouveau _behavior_ est possible sans casser tout ce qui a été fait auparavant.
+L'étape suivante, c'est le refactoring. On a fait un code horrible, il faut maintenant faire quelque chose de propre. J'ai parlé plus tôt de refactoring plus simple et sécurisé: on y est! On a notre _green light_ et le _behavior_ est garanti tant que cette _light_ reste _green_. On a notre _fast feedback loop_ à portée de main (ou de clic, ou de raccourci) pour savoir si tout est ok. Tu me suis?
+Ensuite, on atteint la fin du cycle. Cela veut dire une chose: on recommence.
+
+🔸 Je vais fournir un petit exemple pour que tout le monde se situe! Je vais faire ça avec un calculateur de longueur de chaîne de caractères tiens, c'est simple à réaliser.
+Donc, on commence par écrire le test unitaire:
+
+```csharp title='tests/StringCalculatorTests.cs'
+[TestClass]
+public class StringCalculatorTests
+{
+	[TestMethod]
+	public int Length_ShouldReturn_CorrectLength()
+	{
+		StringCalculator calculator = new();
+
+		int result = calculator.Length("string")
+
+		Assert.AreEqual(expected: 6, actual: result);
+	}
+}
+```
+
+Le test échoue parce que nous n'avons pas encore créé la classe `StringCalculator`. Prochaine étape!
+
+```csharp title='src/StringCalculator.cs'
+public class StringCalculator
+{
+	public int Length (string str)
+	{
+		return 6;
+	}
+}
+```
+
+Ici, nous sommes donc à l'étape verte. On doit donc passer à l'étape bleue.
+
+🔹 J'ajouterais que ton code est super moche vu que tu as _hardcodé_ la valeur. Mais c'est bien! C'est le but!
+
+🔸 La plus longue: réaliser un refactoring du code qui nous permet de répondre au besoin demandé (calculer la longueur d'une chaîne de caractères) tout en ne cassant pas le test:
+
+```csharp title='src/StringCalculator.cs'
+public class StringCalculator
+{
+	public int Length (string str)
+	{
+		return str.Length;
+	}
+}
+```
+
+Et voilà! Nous pouvons commencer l'écriture d'un nouveau test unitaire.
+
+🔹 C'est un exemple assez simple mais tu y es. Il faut bien noter qu'il y a tout de même des règles à respecter avec TDD mais je pourrais en parler pendant des heures alors on va s'arrêter ici!
+
+<AnchoredP id='what-is-tcr'>
+	🔸 D'accord! D'ailleurs, j'ai ouïe dire que t'as récemment appris le{' '}
+	<span style={{ fontStyle: 'italic' }}>Test && Commit || Revert</span> (TCR).
+	Tu sais expliquer en quoi ça consiste?
+</AnchoredP>
+
+🔹 Exact, j'ai eu la chance de prendre connaissance de cette pratique via un _workshop_. Pour schématiser, disons que c'est une vision extrême de TDD. Le meilleur moyen de l'utiliser est avec un script séparé.
+Ce script va analyser ta solution à chaque sauvegarde et va ensuite exécuter tous tes tests. Si tous tes tests sont vert, il crée un commit qui représente un état stable de ta branche (Test && Commit).
+Si tu as un seul test qui ne passe plus, il fait un rollback pour revenir à l'état du dernier commit (Revert), qui lui est stable.
+Cela te force à avancer en _baby steps_ et une chose est mise en évidence: c'est ton dernier changement qui a cassé quelque chose.
+
+Au début, tu passes par une phase de frustration parce que tu peux perdre du code mais justement, cela t'incite à avancer petit à petit pour limiter tes pertes. Plus tes _steps_ sont petites, moins tu risques de perdre du code. C'est un super enseignement en complément de TDD.
+Losque tu deviens relativement à l'aise avec tout ça, tu remarques que tu avances de plus en plus vite et surtout, tu as toujours une branche qui fonctionne.
+
+<AnchoredH2 id='conclusion'>Conclusion</AnchoredH2>
+
+<AnchoredP>🔸 Un dernier mot pour clôturer cette interview?</AnchoredP>
+
+🔹 "Victoriae mundis et mundis lacrima", ca ne veut absolument rien dire mais je trouve que c'est assez dans le ton.
+Plus sérieusement, ça fait déjà un moment qu'on discute mais on a seulement gratté la surface. Il reste beaucoup de points à aborder sur le testing. Je conseillerais donc vivement aux lecteurs d'être curieux sur le sujet, de lire et surtout de pratiquer. N'hésitez pas à demander de l'aide autour de vous.
+Et sinon le testing, ça vous tente?
+
+<Figure
+	data={{
+		src: '/img/developers-deliver-working-solutions.jpg',
+		alt: 'Developers deliver working solutions, not testable code',
+		type: 'image',
+		style: { width: '50%', border: '.1em grey solid' },
+	}}
+/>
 
 <Newsletter url={MAILCHIMP_URL} />
+
+export const toc = [
+	{
+		value: 'Presentation',
+		id: 'presentation',
+		children: [],
+		level: 2,
+	},
+	{
+		value: 'The topic',
+		id: 'topic',
+		children: [
+			{
+				value: 'First encounter',
+				id: 'first-encounter',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'What is it',
+				id: 'what-is-it',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'Where is it in the tests hierarchy',
+				id: 'hierarchy-position',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'Objective of unit testing',
+				id: 'objective',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'Pros and cons',
+				id: 'pros-and-cons',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'Test Coverage',
+				id: 'test-coverage',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'The cost',
+				id: 'cost',
+				children: [],
+				level: 3,
+			},
+		],
+		level: 2,
+	},
+	{
+		value: 'In depth',
+		id: 'details',
+		children: [
+			{
+				value: 'Black box & white box, what is that',
+				id: 'black-and-white-boxes',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'How to write them efficiently',
+				id: 'how-to-write',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'Tips to start',
+				id: 'tips-to-start',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'Bad Smells',
+				id: 'bad-smells',
+				children: [],
+				level: 3,
+			},
+		],
+		level: 2,
+	},
+	{
+		value: 'To go further',
+		id: 'to-go-further',
+		children: [
+			{
+				value: 'Librairies to simplify the work',
+				id: 'libraries',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'Test Driven Development',
+				id: 'what-is-tdd',
+				children: [],
+				level: 3,
+			},
+			{
+				value: 'Test && Commit || Revert ',
+				id: 'what-is-tcr',
+				children: [],
+				level: 3,
+			},
+		],
+		level: 2,
+	},
+	{
+		value: 'Conclusion',
+		id: 'conclusion',
+		children: [],
+		level: 2,
+	},
+];

@@ -6,20 +6,20 @@ description: Today's article is done in joint effort with my former colleague an
 image: img/unit-testing.jpg
 ---
 
-import Figure from '../src/components/figure';
-import SEO from '../src/components/seo';
-import Reminder from '../src/components/reminder';
-import Newsletter from '../src/components/newsletter';
-import { MAILCHIMP_URL } from '../website_config.json';
-import { AnchoredH2, AnchoredP } from '../src/components/AnchoredHeading';
-import randomChoose from '../src/utils/randomChoose';
+import Figure from "../src/components/figure";
+import SEO from "../src/components/seo";
+import Reminder from "../src/components/reminder";
+import Newsletter from "../src/components/newsletter";
+import { MAILCHIMP_URL } from "../website_config.json";
+import { AnchoredH2, AnchoredP } from "../src/components/AnchoredHeading";
+import randomChoose from "../src/utils/randomChoose";
 
 <a href='/blog/unit-testing'>
 	<Figure
 		data={{
-			src: '/img/unit-testing.jpg',
-			alt: 'Unit tests',
-			type: 'image',
+			src: "/img/unit-testing.jpg",
+			alt: "Unit tests",
+			type: "image",
 		}}
 	/>
 </a>
@@ -94,18 +94,18 @@ We strictly stay "internal" to the unit.
 
 <Figure
 	data={{
-		src: '/img/software-testing-types.png',
-		alt: 'Types of Software Testing',
-		type: 'image',
+		src: "/img/software-testing-types.png",
+		alt: "Types of Software Testing",
+		type: "image",
 	}}
 />
 
 Here are a few points on the _functional testing_ part:
 
--   the unit testing is to check that a component works well. It is the fastest, we will talk about "fast feedback loop" ;
--   the integration testing is to check that several components work well together ;
--   the user acceptance testing consists of verifying the whole application while avoiding contact with external dependencies (eg: requests to external providers).
-    This is the most representative test, probably the one that has the most value on the product scale as it validates business requirements.
+- the unit testing is to check that a component works well. It is the fastest, we will talk about "fast feedback loop" ;
+- the integration testing is to check that several components work well together ;
+- the user acceptance testing consists of verifying the whole application while avoiding contact with external dependencies (eg: requests to external providers).
+  This is the most representative test, probably the one that has the most value on the product scale as it validates business requirements.
 
 Note that you don't have to implement them all. We could have a test suite only composed of tests from a single category.
 But it should be borne in mind that our test suite will not be the most effective.
@@ -120,12 +120,12 @@ In the end, this task is often seen as a chore or an extra step that we will onl
 <Figure
 	data={{
 		src: randomChoose(
-			'https://miro.medium.com/max/600/1*xHibbXdcePT0GtpeZRgxSA.gif',
-			'https://media4.giphy.com/media/hqq505vU9iHCOGySD5/giphy.gif',
-			'https://media1.giphy.com/media/VXmWbcDSj2yqnsXUrF/giphy.gif'
+			"https://miro.medium.com/max/600/1*xHibbXdcePT0GtpeZRgxSA.gif",
+			"https://media4.giphy.com/media/hqq505vU9iHCOGySD5/giphy.gif",
+			"https://media1.giphy.com/media/VXmWbcDSj2yqnsXUrF/giphy.gif"
 		),
-		alt: 'GIF on integration tests',
-		type: 'image',
+		alt: "GIF on integration tests",
+		type: "image",
 	}}
 />
 
@@ -133,12 +133,13 @@ Uncle Bob also spoke about it at a conference in London in 2018:
 
 <Figure
 	data={{
-		type: 'html',
-		width: '560',
-		height: '315',
-		src: 'https://www.youtube.com/embed/17vTLSkXTOo?start=552&end=720',
-		title: 'YouTube video player of SC London Conference 2018',
-		allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+		type: "html",
+		width: "560",
+		height: "315",
+		src: "https://www.youtube.com/embed/17vTLSkXTOo?start=552&end=720",
+		title: "YouTube video player of SC London Conference 2018",
+		allow:
+			"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
 		allowFullScreen: true,
 	}}
 />
@@ -218,10 +219,10 @@ I have already read articles about companies that have incorporated the value of
 
 The only way to check the quality of a test suite of a project is to ask yourself a few questions:
 
--   Does the general feature development time stay approximately the same over time?
--   Does the quantity of bugs found in production decrease over time?
--   Do you easily manage to welcome new resource within the development team?
--   Do the developers trust their test suite? Is it representative of the state of health of the solution? Does a green circle really guarantee that a component is working?
+- Does the general feature development time stay approximately the same over time?
+- Does the quantity of bugs found in production decrease over time?
+- Do you easily manage to welcome new resource within the development team?
+- Do the developers trust their test suite? Is it representative of the state of health of the solution? Does a green circle really guarantee that a component is working?
 
 If you are able to answer "yes" to all these questions, congrats! You can be proud of the test suite that you have put in place.
 The problem? It is really difficult to have an answer to all these questions when you have to report _day one_... You also notice that the first three refer to **time**.
@@ -241,12 +242,13 @@ But you wanted to talk about money! **The later a bug is discovered, the more it
 
 <Figure
 	data={{
-		src: 'https://assets.deepsource.io/995f56d/images/blog/cost-of-fixing-bugs/chart.jpg',
-		alt: 'Cost of bug fix',
-		type: 'image',
-		url: 'https://deepsource.io/blog/exponential-cost-of-fixing-bugs/',
-	}}>
-	Cost of bug fix based on the moment it was detected, sourced from{' '}
+		src: "https://assets.deepsource.io/995f56d/images/blog/cost-of-fixing-bugs/chart.jpg",
+		alt: "Cost of bug fix",
+		type: "image",
+		url: "https://deepsource.io/blog/exponential-cost-of-fixing-bugs/",
+	}}
+>
+	Cost of bug fix based on the moment it was detected, sourced from{" "}
 	<a href='https://deepsource.io/blog/exponential-cost-of-fixing-bugs/'>
 		DeepSource
 	</a>
@@ -275,11 +277,12 @@ _Ed: to learn more about the reasons that softwares have bugs, do not hesitate t
 
 <Figure
 	data={{
-		src: '/img/black-white-box-testing.png',
-		alt: 'Black and white box testing',
-		type: 'image',
-		style: { border: '.5em solid black' },
-	}}>
+		src: "/img/black-white-box-testing.png",
+		alt: "Black and white box testing",
+		type: "image",
+		style: { border: ".5em solid black" },
+	}}
+>
 	The differences between black and white box testing
 </Figure>
 
@@ -333,10 +336,10 @@ The orchestration of a process delegated to different dependencies (eg: http cli
 
 In the end, a "good" test must:
 
--   protect you against regressions ;
--   be resistant to refactoring ;
--   give you a quick feedback ;
--   be maintainable.
+- protect you against regressions ;
+- be resistant to refactoring ;
+- give you a quick feedback ;
+- be maintainable.
 
 <AnchoredP id='tips-to-start'>
 	What about you give us some tips to start our journey?
@@ -349,83 +352,91 @@ In addition, your code already works so the test would probably be seen as a tim
 You are not alone. There are tons of resources available to help you out.
 Here are some books that I wish I have read early in my career:
 
--   "Test Driven Development - By Example" by Kent Beck ;
--   "Unit Testing - Principles, Practices and Patterns" by Vladimir Khorikov.
+- "Test Driven Development - By Example" by Kent Beck ;
+- "Unit Testing - Principles, Practices and Patterns" by Vladimir Khorikov.
 
-Également, voici un site rempli de conseils et astuces sur TDD avec un grand nombre de katas pour progresser: [TDD Buddy](http://www.tddbuddy.com/).
+And here's a website filled with tips and tricks on TDD with a large number of katas to progress: [TDD Buddy](http://www.tddbuddy.com/).
 
-En parlant de katas, faites des katas. Faites pleins de katas et faites en à plusieurs (_pair_ et/ou _mob programming_) si vous en avez la possibilité. C'est fun et c'est très formatteur, notamment sur le fait de démarrer avec des exercices simples et progressivement augmenter la difficulté jusqu'à se retrouver avec des situations similaires à ce que l'on peut trouver dans des projets réels. En plus de [TDD Buddy](http://www.tddbuddy.com/), je pourrais recommander [Code Wars](https://www.codewars.com/) si vous êtes en manque d'inspiration.
-Sans forcément faire de l'auto-promotion, vous pouvez aussi trouver quelques katas sur mon [GitHub](https://github.com/Tr00d/).
+Speaking of katas, do katas. Do a lot of katas and do them with other (pair and/or mob programming) if you can.
+It is fun and very educational, especially when starting with simple exercises and gradually increasing the difficulty until you end up with situations similar to what you can find in real projects.
+In addition to TDD Buddy, I would also suggest people to check out [Code Wars](https://www.codewars.com/) if you are hungry for inspiration.
+And without necessarily doing self-promotion, you can also find some katas on my [GitHub profile](https://github.com/Tr00d/).
 
-Un dernier conseil pour démarrer le testing, on peut se référer à ce qu'on appelle le triple A (AAA), qui signifie _Arrange, Act, Assert_, pour rendre les tests plus clairs et organisés. Le but est de diviser son test unitaire en 3 parties distinctes:
+Last but not least piece of advice to start testing: we can refer to what is called the triple A (AAA), which means "Arrange, Act, Assert", in order to make the tests more clear and organized.
+The goal is to divide a unit test in 3 distinct parts:
 
-1. _arrange_ : c'est le scénario, la partie où tu prépares les données _input_ de ta méthode ;
-2. _act_ : c'est l'action, le fait de réaliser l'appel à la méthode que tu vas tester ;
-3. _assert_ : c'est la vérification du _behavior_, là partie où tu vérifies l'_output_ ou les _side effects_.
+1. **arrange**: this is the scenario, the part where you prepare the input data of your method ;
+2. **act**: it is the action, the fact of carrying out the call to the method that you are going to test ;
+3. **assert**: this is the behavior check, the part where you check the output or the side effects.
 
 <AnchoredP id='bad-smells'>
-	🔸 Quels sont les "bad smells" dans l'unit testing?
+	🔸 What are the "bad smells" in unit testing?
 </AnchoredP>
 
-🔹 J'en vois quelques-uns...
+🔹 I see a few of them...
 
--   une partie _arrange_ qui fait 15 lignes... C'est trop compliqué. On voit clairement que la méthode testée fait trop de choses car le scénario est trop compliqué à mettre en place!
--   On dit qu'**un test ne doit avoir qu'une et une seule raison d'échouer**. Un test ne devrait contenir qu'un seul _assert_.
--   Le fait que tu aies du mal à écrire des tests unitaires, non pas à cause du fait que tu n'aies pas la connaissance nécessaire mais plutôt en rapport au code à tester... c'est qu'il y a un soucis au niveau de ton composant. Alors, prends du recul et penses aux responsabilités.
+- an "arrange" part that has like 15 lines... It is way too complicated. We clearly see that the tested method does too many things because the scenario is tough to prepare!
+- We say that **a test should have one and only one reason to fail**. A test should contain a single assertion.
+- The fact that you have trouble writing unit tests, not because you don't have the necessary knowledge but rather in relation to the code to be tested... this means there is a problem at the level of your component.
+  So take a step back and think about the responsibilities.
 
-<AnchoredH2 id='to-go-further'>Pour aller plus loin</AnchoredH2>
+<AnchoredH2 id='to-go-further'>To go further</AnchoredH2>
 
 <AnchoredP id='libraries'>
-	🔸 Tu as des librairies intéressantes en tête pour faciliter le travail?
+	🔸 Do you have interesting libraries in mind to ease our work?
 </AnchoredP>
 
-🔹 Oui. Pour moi, on peut considérer trois groupes de librairies:
+🔹 Yes. We can consider 3 groups of libraries:
 
-1. les librairies de testing qui permettent de générer des tests ;
-2. les librairies de mocking qui permettent de surcharger le comportement de tes dépendances et de les monitorer ;
-3. les librairies de génération de données.
+1. testing ones which allow to generate tests ;
+2. mocking ones which allow to overload the behavior of your dependencies and monitor them ;
+3. data generation ones.
 
-Pour ma part:
+For me:
 
-|                     **Frameworks de test**                     |                **Librairies de mocking**                 |          **Librairies de génération de données**           |
+|                      **Test Frameworks**                       |                  **Mocking Libraries**                   |               **Data Generation Libraries**                |
 | :------------------------------------------------------------: | :------------------------------------------------------: | :--------------------------------------------------------: |
 | [MSTest](https://www.nuget.org/packages/MSTest.TestFramework/) |        [Moq](https://www.nuget.org/packages/Moq/)        | [AutoFixture](https://www.nuget.org/packages/AutoFixture/) |
 |         [NUnit](https://www.nuget.org/packages/NUnit/)         |    [NInject](https://www.nuget.org/packages/Ninject/)    |
 |         [XUnit](https://www.nuget.org/packages/xunit/)         | [WireMock](https://www.nuget.org/packages/WireMock.Net/) |
 
-🔸 Sur ce point-ci particulièrement, j'aimerais mettre en avant le fait qu'il existe aussi des librairies de test pour le _front-end_. En fait, le testing unitaire n'est pas réservé aux développeurs
-_back-end_. On citera notamment [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), [Cypress](https://www.npmjs.com/package/cypress) et [Jasmine](https://www.npmjs.com/package/jasmine) comme librairies fortement liées au testing dans des applications JavaScript.
+🔸 I would like to retain the attention of the readers on this particular point... but there are librairies for the front-end too. In fact, unit testing is not reserved for back-end developers.
+We'll mention [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), [Cypress](https://www.npmjs.com/package/cypress) and [Jasmine](https://www.npmjs.com/package/jasmine) as wellknown librairies for JavaScrit applications.
 
 <AnchoredP id='what-is-tdd'>
-	🔸 Du coup, tu n'arrêtes pas d'en parler. C'est quoi le{' '}
-	<span style={{ fontStyle: 'italic' }}>Test Driven Development</span> (TDD)?
+	Well anyways! You can't stop mentioning it so here it is: what is Test Driven
+	Development (TDD)?
 </AnchoredP>
 
-🔹 Je suis content que tu poses enfin la question! C'est pas comme si je t'avais tendu la perche plus d'une fois... C'est la joie, le bonheur, la réponse ultime au sens de la vie, c'est tout ça!
-Non, je rigole. En fait, c'est une façon de mettre les tests au centre de ce que tu fais. On a parlé de tous les points positifs de faire des tests unitaires et aussi du fait qu'on les perdait si on faisait les tests à la fin sans forcément aller dans le détail.
-En fait, la meilleure façon de bénéficier des avantages des tests, c'est de les faire en premier mais ce n'est pas que ça. Ce n'est pas d'abord faire tous les tests puis ensuite faire l'implémentation.
-Non, il y vraiment un aspect itératif que l'on retrouve d'ailleurs dans l'Agilité. Tu y vas étape par étape (_baby steps_), tu ajoutes de nouveaux _behaviors_ en garantissant que ceux précédemment ajoutés fonctionnent toujours. Le filet de sécurité s'agrandit petit à petit naturellement.
-On peut présenter cela différemment: imaginons une échelle. Cela sera toujours plus facile de la monter marche par marche que de les monter trois par trois.
+🔹 Glad you finally asked! It's not like I gave you multiple openings... TDD is joy, happiness, the ultimate answer to the meaning of life, it's all of that!
+No, just kidding. In fact, it's more of a way of putting tests at the center of what you do. We talked about positive points of unit testing, and we also said that we would lose them by doing tests at the end, but we did not go into details.
 
-J'ajouterais que contrairement aux idées reçues, TDD ne rend pas la durée de développement plus longue, bien au contraire. Par exemple, il n'est pas nécessaire d'exécuter la solution pour savoir que le code fonctionne car il a entièrement été développé sur base de tests.
+The best way to benefit all the advantages of doing tests is to do them first but it is not just that. It doesn't mean first doing all the tests and then implementing all the methods.
+No, there's a kind of iterative aspect which we also find in Agility. You go _step by step_ (baby steps), you add new behaviors ensuring the previously added ones still work. The safety net grows little by little naturally.
+We can even present this differently: think about a ladder. It will always be easier to climb it step by step instead of three by three.
+
+I would add that contrary to popular belief, TDD does not make the development time longer.
+For example, it is not necessary to run the whole solution to know that the code is working because it has been developed entirely on a tests basis.
 
 <Figure
 	data={{
-		src: '/img/test-driven-development.png',
-		alt: 'Cycle du TDD',
-		type: 'image',
-		style: { border: '.5em solid black' },
-	}}>
-	Le cycle de développement sous TDD
+		src: "/img/test-driven-development.png",
+		alt: "Cycle du TDD",
+		type: "image",
+		style: { border: ".5em solid black" },
+	}}
+>
+	The TDD cycle
 </Figure>
 
-La première étape, c'est l'écriture d'**un** test unitaire. Normalement, ce test doit _obligatoirement_ échouer puisqu'aucune implémentation n'a été écrite pour qu'il réussise.
-L'étape suivante, c'est donc d'écrire le code qui permet de faire passer le test au vert. Et là, c'est très important de savoir que ce passage de rouge vers le vert doit être **le plus court possible**. C'est le moment où on à le droit d'écrire du code "moche", d'_hardcoder_ un résultat, de dupliquer, de coller une réponse de StackOverflow, etc. Cela peut paraître bizarre au début mais il y a un vrai intérêt: vérifier que l'ajout d'un nouveau _behavior_ est possible sans casser tout ce qui a été fait auparavant.
-L'étape suivante, c'est le refactoring. On a fait un code horrible, il faut maintenant faire quelque chose de propre. J'ai parlé plus tôt de refactoring plus simple et sécurisé: on y est! On a notre _green light_ et le _behavior_ est garanti tant que cette _light_ reste _green_. On a notre _fast feedback loop_ à portée de main (ou de clic, ou de raccourci) pour savoir si tout est ok. Tu me suis?
-Ensuite, on atteint la fin du cycle. Cela veut dire une chose: on recommence.
+First thing first, you need to write **one** unit test. This test should normally _have to_ fail since no implementation has been written for it to pass.
+The second step is to write the code which will make the test go green (pass). It is very important that this _passage_ from red to green must be **as short as possible**.
+It's the moment when we have the right to write "ugly" code (hardcoding a value, to duplicate code, to paste a response from StackOverflow, etc.). It may seem weird at first but there is a real benefit: checking that adding a new behavior is possible without breaking everything that has been done before.
+The next step is the refactoring phase. We did write some horrible code, so now we need to make it clean. I spoke about refactoring being easier and safer: here we are! We have our "green light" and the behavior is guaranteed as long as the light remains green. We have our fast feedback loop at hand (or click, or shortcut) to know if everything's OK. Got it?
+And after that, we reach the end of the cycle. That means one thing: we start over again.
 
-🔸 Je vais fournir un petit exemple pour que tout le monde se situe! Je vais faire ça avec un calculateur de longueur de chaîne de caractères tiens, c'est simple à réaliser.
-Donc, on commence par écrire le test unitaire:
+🔸 I'm gonna give a little example so that everyone fits! I am going to do it with a string length calculator because it's easy to do.
+So, we start by writing a unit test:
 
 ```csharp title='tests/StringCalculatorTests.cs'
 [TestClass]
@@ -436,73 +447,74 @@ public class StringCalculatorTests
 	{
 		StringCalculator calculator = new();
 
-		int result = calculator.Length("string")
+		int result = calculator.Length("string"); // "string" is 6 characters long, right?
 
 		Assert.AreEqual(expected: 6, actual: result);
 	}
 }
 ```
 
-Le test échoue parce que nous n'avons pas encore créé la classe `StringCalculator`. Prochaine étape!
+The test fails because I haven't created the `StringCalculator` class yet. Next step!
 
 ```csharp title='src/StringCalculator.cs'
 public class StringCalculator
 {
 	public int Length (string str)
 	{
-		return 6;
+		return 6; // hardcoding the value for the shortest test resolution possible
 	}
 }
 ```
 
-Ici, nous sommes donc à l'étape verte. On doit donc passer à l'étape bleue.
+Here, I'm passing at the green stage. So now, only the blue one remains.
 
-🔹 J'ajouterais que ton code est super moche vu que tu as _hardcodé_ la valeur. Mais c'est bien! C'est le but!
+🔹 I would like to say that this is a very ugly code because you hardcoded the value. And this is great! It's the goal!
 
-🔸 La plus longue: réaliser un refactoring du code qui nous permet de répondre au besoin demandé (calculer la longueur d'une chaîne de caractères) tout en ne cassant pas le test:
+🔸 Now the longest: carry out a code refactinrg which allows us to meet the requested need (calculate the length of a string) without breaking the test:
 
 ```csharp title='src/StringCalculator.cs'
 public class StringCalculator
 {
 	public int Length (string str)
 	{
-		return str.Length;
+		return str.Length; // cleanest way to return the length of a string in C#
 	}
 }
 ```
 
-Et voilà! Nous pouvons commencer l'écriture d'un nouveau test unitaire.
+Voilà! We can now start the writing of another unit test.
 
-🔹 C'est un exemple assez simple mais tu y es. Il faut bien noter qu'il y a tout de même des règles à respecter avec TDD mais je pourrais en parler pendant des heures alors on va s'arrêter ici!
+🔹 It's a really simple example but you did it. It should be noted that there are some rules to respect with TDD but I could talk about it for hours so we will stop here!
 
 <AnchoredP id='what-is-tcr'>
-	🔸 D'accord! D'ailleurs, j'ai ouïe dire que t'as récemment appris le{' '}
-	<span style={{ fontStyle: 'italic' }}>Test && Commit || Revert</span> (TCR).
-	Tu sais expliquer en quoi ça consiste?
+	🔸 Nice! By the way, I heard you recently learnt about "Test &amp;&amp; Commit
+	|| Revert" (TCR). What is it?
 </AnchoredP>
 
-🔹 Exact, j'ai eu la chance de prendre connaissance de cette pratique via un _workshop_. Pour schématiser, disons que c'est une vision extrême de TDD. Le meilleur moyen de l'utiliser est avec un script séparé.
-Ce script va analyser ta solution à chaque sauvegarde et va ensuite exécuter tous tes tests. Si tous tes tests sont vert, il crée un commit qui représente un état stable de ta branche (Test && Commit).
-Si tu as un seul test qui ne passe plus, il fait un rollback pour revenir à l'état du dernier commit (Revert), qui lui est stable.
-Cela te force à avancer en _baby steps_ et une chose est mise en évidence: c'est ton dernier changement qui a cassé quelque chose.
+🔹 Exact, I had the chance to get to know about this practice via a workshop. To schematize, let's say it is an extreme vision of TDD. The best way to apply it is with a separated script.
+This script will analyze your solution at each save and then execute your test suite. If all the tests pass, it creates a commit representing a stable state of your branch (Test &amp;&amp; Commit).
+If a single test does not pass anymore, it will roll back to the former commit (Revert), which is stable.
+This forces you to go in baby steps, and one thing is highlighted: it is your last change which broke something.
 
-Au début, tu passes par une phase de frustration parce que tu peux perdre du code mais justement, cela t'incite à avancer petit à petit pour limiter tes pertes. Plus tes _steps_ sont petites, moins tu risques de perdre du code. C'est un super enseignement en complément de TDD.
-Losque tu deviens relativement à l'aise avec tout ça, tu remarques que tu avances de plus en plus vite et surtout, tu as toujours une branche qui fonctionne.
+At the beginning, you go through a frustration phase because you lose some code but precisely this encourages you to go forward little step by step to limit your losses. The smaller your steps are, the less you risk to lose. It's a great teaching in addition to TDD.
+When you become relatively comfortable with all of this, you notice that you go faster and faster and above all: you always have a working branch.
 
 <AnchoredH2 id='conclusion'>Conclusion</AnchoredH2>
 
-<AnchoredP>🔸 Un dernier mot pour clôturer cette interview?</AnchoredP>
+<AnchoredP>🔸 Do you have a last word for this interview?</AnchoredP>
 
-🔹 "Victoriae mundis et mundis lacrima", ca ne veut absolument rien dire mais je trouve que c'est assez dans le ton.
-Plus sérieusement, ça fait déjà un moment qu'on discute mais on a seulement gratté la surface. Il reste beaucoup de points à aborder sur le testing. Je conseillerais donc vivement aux lecteurs d'être curieux sur le sujet, de lire et surtout de pratiquer. N'hésitez pas à demander de l'aide autour de vous.
-Et sinon le testing, ça vous tente?
+🔹 "Victoriae mundis et mundis lacrima", which does not make any sense but I feel it's relatively cool.
+More seriously, we have been discussing for a while now but we've only scratched the surface. There are still a lot of things to discuss about testing. I would urge your readers to be curious and the topic and to read **and** practice.
+And do not hesitate to ask for help around you!
+
+And now, are you interested in testing?
 
 <Figure
 	data={{
-		src: '/img/developers-deliver-working-solutions.jpg',
-		alt: 'Developers deliver working solutions, not testable code',
-		type: 'image',
-		style: { width: '50%', border: '.1em grey solid' },
+		src: "/img/developers-deliver-working-solutions.jpg",
+		alt: "Developers deliver working solutions, not testable code",
+		type: "image",
+		style: { width: "50%", border: ".1em grey solid" },
 	}}
 />
 
@@ -510,54 +522,54 @@ Et sinon le testing, ça vous tente?
 
 export const toc = [
 	{
-		value: 'Presentation',
-		id: 'presentation',
+		value: "Presentation",
+		id: "presentation",
 		children: [],
 		level: 2,
 	},
 	{
-		value: 'The topic',
-		id: 'topic',
+		value: "The topic",
+		id: "topic",
 		children: [
 			{
-				value: 'First encounter',
-				id: 'first-encounter',
+				value: "First encounter",
+				id: "first-encounter",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'What is it',
-				id: 'what-is-it',
+				value: "What is it",
+				id: "what-is-it",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Where is it in the tests hierarchy',
-				id: 'hierarchy-position',
+				value: "Where is it in the tests hierarchy",
+				id: "hierarchy-position",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Objective of unit testing',
-				id: 'objective',
+				value: "Objective of unit testing",
+				id: "objective",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Pros and cons',
-				id: 'pros-and-cons',
+				value: "Pros and cons",
+				id: "pros-and-cons",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Test Coverage',
-				id: 'test-coverage',
+				value: "Test Coverage",
+				id: "test-coverage",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'The cost',
-				id: 'cost',
+				value: "The cost",
+				id: "cost",
 				children: [],
 				level: 3,
 			},
@@ -565,30 +577,30 @@ export const toc = [
 		level: 2,
 	},
 	{
-		value: 'In depth',
-		id: 'details',
+		value: "In depth",
+		id: "details",
 		children: [
 			{
-				value: 'Black box & white box, what is that',
-				id: 'black-and-white-boxes',
+				value: "Black box &amp; white box, what is that",
+				id: "black-and-white-boxes",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'How to write them efficiently',
-				id: 'how-to-write',
+				value: "How to write them efficiently",
+				id: "how-to-write",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Tips to start',
-				id: 'tips-to-start',
+				value: "Tips to start",
+				id: "tips-to-start",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Bad Smells',
-				id: 'bad-smells',
+				value: "Bad Smells",
+				id: "bad-smells",
 				children: [],
 				level: 3,
 			},
@@ -596,24 +608,24 @@ export const toc = [
 		level: 2,
 	},
 	{
-		value: 'To go further',
-		id: 'to-go-further',
+		value: "To go further",
+		id: "to-go-further",
 		children: [
 			{
-				value: 'Librairies to simplify the work',
-				id: 'libraries',
+				value: "Librairies to simplify the work",
+				id: "libraries",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Test Driven Development',
-				id: 'what-is-tdd',
+				value: "Test Driven Development",
+				id: "what-is-tdd",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Test && Commit || Revert ',
-				id: 'what-is-tcr',
+				value: "Test &amp;&amp; Commit || Revert ",
+				id: "what-is-tcr",
 				children: [],
 				level: 3,
 			},
@@ -621,8 +633,8 @@ export const toc = [
 		level: 2,
 	},
 	{
-		value: 'Conclusion',
-		id: 'conclusion',
+		value: "Conclusion",
+		id: "conclusion",
 		children: [],
 		level: 2,
 	},

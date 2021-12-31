@@ -6,20 +6,20 @@ description: L'article du jour est fait en effort conjoint avec mon ancien coll�
 image: img/unit-testing.jpg
 ---
 
-import Figure from '../../../src/components/figure';
-import SEO from '../../../src/components/seo';
-import Reminder from '../../../src/components/reminder';
-import Newsletter from '../../../src/components/newsletter';
-import { MAILCHIMP_URL } from '../../../website_config.json';
-import { AnchoredH2, AnchoredP } from '../../../src/components/AnchoredHeading';
-import randomChoose from '../../../src/utils/randomChoose';
+import Figure from "../../../src/components/figure";
+import SEO from "../../../src/components/seo";
+import Reminder from "../../../src/components/reminder";
+import Newsletter from "../../../src/components/newsletter";
+import { MAILCHIMP_URL } from "../../../website_config.json";
+import { AnchoredH2, AnchoredP } from "../../../src/components/AnchoredHeading";
+import randomChoose from "../../../src/utils/randomChoose";
 
 <a href='/blog/unit-testing'>
 	<Figure
 		data={{
-			src: '/img/unit-testing.jpg',
-			alt: 'Tests unitaires',
-			type: 'image',
+			src: "/img/unit-testing.jpg",
+			alt: "Tests unitaires",
+			type: "image",
 		}}
 	/>
 </a>
@@ -64,8 +64,8 @@ C'était comme si j'avais mis les pieds dans un nouveau monde qui n'avait rien �
 Cependant, j'ai vite réalisé que je devais progresser sur d'autres sujets avant d'être capable d'introduire des tests. Cela m'a pris du temps avant que je ne sois vraiment apte à travailler avec une approche _test-driven_.
 
 <AnchoredP id='what-is-it'>
-	🔸 Ok! Par contre, histoire de ne pas perdre les lecteurs... tu sais
-	expliquer ce qu'est un test unitaire s'il te plaît?
+	🔸 Ok! Par contre, histoire de ne pas perdre les lecteurs... tu sais expliquer
+	ce qu'est un test unitaire s'il te plaît?
 </AnchoredP>
 
 🔹 Oui, bien sûr! Un test unitaire, c'est un test qui vérifie un _unit of code_. La notion de _unit of code_ varie en fonction des écoles de testing.
@@ -88,18 +88,18 @@ On reste vraiment "interne" à la fonction.
 
 <Figure
 	data={{
-		src: '/img/software-testing-types.png',
-		alt: 'Types de Software Testing',
-		type: 'image',
+		src: "/img/software-testing-types.png",
+		alt: "Types de Software Testing",
+		type: "image",
 	}}
 />
 
 Voici quelques points de la partie _functional testing_:
 
--   l'_unit testing_, c'est vérifier qu'un composant fonctionne bien. Il s'agit du test le plus rapide, on parlera de _fast feedback loop_ ;
--   l'_integration testing_, c'est vérifier que plusieurs composants fonctionnent bien entre eux ;
--   le _user acceptance testing_ qui consiste à vérifier l'entièreté de l'application tout en évitant de contacter les dépendances externes (ex: des requêtes vers des fournisseurs de données extérieurs à ton application).
-    Il s'agit du test le plus représentatif, probablement celui qui a le plus de valeur à l'échelle du produit car il vérifie des _business requirements_.
+- l'_unit testing_, c'est vérifier qu'un composant fonctionne bien. Il s'agit du test le plus rapide, on parlera de _fast feedback loop_ ;
+- l'_integration testing_, c'est vérifier que plusieurs composants fonctionnent bien entre eux ;
+- le _user acceptance testing_ qui consiste à vérifier l'entièreté de l'application tout en évitant de contacter les dépendances externes (ex: des requêtes vers des fournisseurs de données extérieurs à ton application).
+  Il s'agit du test le plus représentatif, probablement celui qui a le plus de valeur à l'échelle du produit car il vérifie des _business requirements_.
 
 À noter qu'il n'y a pas d'obligation de tous les implémenter. On pourrait très bien avoir une _test suite_ composée uniquement de tests d'une seule de ces catégories. Mais il convient de garder à l'esprit que notre _test suite_ ne sera pas des plus efficaces.
 
@@ -113,12 +113,12 @@ Voici quelques points de la partie _functional testing_:
 <Figure
 	data={{
 		src: randomChoose(
-			'https://miro.medium.com/max/600/1*xHibbXdcePT0GtpeZRgxSA.gif',
-			'https://media4.giphy.com/media/hqq505vU9iHCOGySD5/giphy.gif',
-			'https://media1.giphy.com/media/VXmWbcDSj2yqnsXUrF/giphy.gif'
+			"https://miro.medium.com/max/600/1*xHibbXdcePT0GtpeZRgxSA.gif",
+			"https://media4.giphy.com/media/hqq505vU9iHCOGySD5/giphy.gif",
+			"https://media1.giphy.com/media/VXmWbcDSj2yqnsXUrF/giphy.gif"
 		),
 		alt: "GIF sur les tests d'intégration",
-		type: 'image',
+		type: "image",
 	}}
 />
 
@@ -126,12 +126,13 @@ Uncle Bob en a également parlé à une conférence à Londre en 2018:
 
 <Figure
 	data={{
-		type: 'html',
-		width: '560',
-		height: '315',
-		src: 'https://www.youtube.com/embed/17vTLSkXTOo?start=552&end=720',
-		title: 'YouTube video player of SC London Conference 2018',
-		allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+		type: "html",
+		width: "560",
+		height: "315",
+		src: "https://www.youtube.com/embed/17vTLSkXTOo?start=552&end=720",
+		title: "YouTube video player of SC London Conference 2018",
+		allow:
+			"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
 		allowFullScreen: true,
 	}}
 />
@@ -195,8 +196,8 @@ En effet, le premier indique clairement un manque de vision et de compréhension
 Ensuite, le second indique un problème d'organisation. Les tests devraient être inclus dans les estimations et pas comme un travail supplémentaire à réaliser.
 
 <AnchoredP id='test-coverage'>
-	🔸 Et le <span style={{ fontStyle: 'italic' }}>test coverage</span>, dans
-	tout ça?
+	🔸 Et le <span style={{ fontStyle: "italic" }}>test coverage</span>, dans tout
+	ça?
 </AnchoredP>
 
 🔹 Tester, c'est super et on ressent les bénéfices. Cependant, il faut aussi faire un statut sur l'état de la _test suite_. C'est là qu'on arrive sur le _code coverage_. C'est une métrique informative sur la progression de couverture de tests de ton application.
@@ -205,10 +206,10 @@ J'ai déjà lu des articles sur des sociétés qui ont intégré la valeur de _c
 
 Le seul moyen de vérifier la qualité d'une _test suite_ d'un projet, c'est de se poser quelques questions:
 
--   Est-ce que le temps de développement général des fonctionnalités reste approximativement le même avec le temps?
--   Est-ce que la quantité de bugs trouvés en production diminue avec le temps?
--   Est-ce que tu arrives à facilement accueillir une nouvelle ressource au sein de l'équipe de développement?
--   Est-ce que les développeurs ont confiance en leur _test suite_? Est-ce qu'elle est représentative de l'état de santé de la solution? Est-ce qu'un rond vert garantit vraiment qu'un composant fonctionne?
+- Est-ce que le temps de développement général des fonctionnalités reste approximativement le même avec le temps?
+- Est-ce que la quantité de bugs trouvés en production diminue avec le temps?
+- Est-ce que tu arrives à facilement accueillir une nouvelle ressource au sein de l'équipe de développement?
+- Est-ce que les développeurs ont confiance en leur _test suite_? Est-ce qu'elle est représentative de l'état de santé de la solution? Est-ce qu'un rond vert garantit vraiment qu'un composant fonctionne?
 
 Si tu es en mesure de répondre "oui" à toutes ces questions, félicitations! Tu peux être fier de la _test suite_ que tu as mis en place.
 Le souci? C'est difficile d'avoir une réponse à ces questions alors que tu dois rendre des comptes _day one_... Tu remarques d'ailleurs que les trois premières font référence au **temps**.
@@ -226,13 +227,14 @@ Toi qui voulais parler d'argent, **plus un bug est découvert tard, plus il coû
 
 <Figure
 	data={{
-		src: 'https://assets.deepsource.io/995f56d/images/blog/cost-of-fixing-bugs/chart.jpg',
-		alt: 'Coût de correction des bugs',
-		type: 'image',
-		url: 'https://deepsource.io/blog/exponential-cost-of-fixing-bugs/',
-	}}>
-	Le coût de correction d'un bug sur base du moment où il a été détecté,
-	sourcé chez{' '}
+		src: "https://assets.deepsource.io/995f56d/images/blog/cost-of-fixing-bugs/chart.jpg",
+		alt: "Coût de correction des bugs",
+		type: "image",
+		url: "https://deepsource.io/blog/exponential-cost-of-fixing-bugs/",
+	}}
+>
+	Le coût de correction d'un bug sur base du moment où il a été détecté, sourcé
+	chez{" "}
 	<a href='https://deepsource.io/blog/exponential-cost-of-fixing-bugs/'>
 		DeepSource
 	</a>
@@ -252,22 +254,23 @@ _ndlr: pour en savoir plus sur les raisons qui font qu'un logiciel a des bugs, n
 <AnchoredH2 id='details'>En détails</AnchoredH2>
 
 <AnchoredP id='black-and-white-boxes'>
-	🔸 Ok! Et si on parlait maintenant de{' '}
-	<span style={{ fontStyle: 'italic' }}>black box</span> et{' '}
-	<span style={{ fontStyle: 'italic' }}>white box testing</span>?
+	🔸 Ok! Et si on parlait maintenant de{" "}
+	<span style={{ fontStyle: "italic" }}>black box</span> et{" "}
+	<span style={{ fontStyle: "italic" }}>white box testing</span>?
 </AnchoredP>
 
 🔹 J'aime les schémas, tu aimes les schémas? C'est bien les schémas!
 
 <Figure
 	data={{
-		src: '/img/black-white-box-testing.png',
-		alt: 'Black and white box testing',
-		type: 'image',
-		style: { border: '.5em solid black' },
-	}}>
-	Les différences entre <span style={{ fontStyle: 'italic' }}>black box</span>{' '}
-	et <span style={{ fontStyle: 'italic' }}>white box testing</span>
+		src: "/img/black-white-box-testing.png",
+		alt: "Black and white box testing",
+		type: "image",
+		style: { border: ".5em solid black" },
+	}}
+>
+	Les différences entre <span style={{ fontStyle: "italic" }}>black box</span>{" "}
+	et <span style={{ fontStyle: "italic" }}>white box testing</span>
 </Figure>
 
 Le **black box testing**, c'est donner une information d'entrée au SUT et vérifier l'information de sortie. C'est aussi simple que ça: on ne prend pas en compte ce qu'il se passe à l'intérieur de la méthode.
@@ -308,14 +311,14 @@ Si tu veux faire des tests efficaces, il faut réfléchir sur la façon dont tes
 
 Exemple: j'ai un _service_ qui doit créer un utilisateur. **Avant d'écrire mon test**, je dois me poser quelques questions: quelles sont les responsabilités de mon service?
 Est-il responsable d'envoyer une requête HTTP à un fournisseur externe pour récupérer des informations? Est-il responsable de la persistence en base de données? Est-il responsable du _logging_?
-_Divide & Conquer_: une dépendance ici, une là, et une autre là... Au final, que reste-t-il dans mon service? L'orchestration d'un processus délégué à différentes dépendances (ex: client http, repository, logger, etc) et éventuellement une modification de l'état d'une entité. C'est tout.
+_Divide &amp; Conquer_: une dépendance ici, une là, et une autre là... Au final, que reste-t-il dans mon service? L'orchestration d'un processus délégué à différentes dépendances (ex: client http, repository, logger, etc) et éventuellement une modification de l'état d'une entité. C'est tout.
 
 Au final, un "bon" test doit:
 
--   te protéger contre les régressions ;
--   être résistant au refactoring ;
--   te donner un feedback rapide ;
--   être maintenable.
+- te protéger contre les régressions ;
+- être résistant au refactoring ;
+- te donner un feedback rapide ;
+- être maintenable.
 
 <AnchoredP id='tips-to-start'>
 	Et, sinon... T'as des conseils pour se lancer dans le testing unitaire?
@@ -327,8 +330,8 @@ Si le test est écrit après l'implémentation, c'est pas vraiment objectif car 
 Pour cela, vous n'êtes pas seul. Il existe des tonnes de resources disponibles pour vous aider.
 Voici plusieurs livres que j'aurais aimé avoir lus au début de ma carrière:
 
--   "Test Driven Development - By Example" par Kent Beck.
--   "Unit Testing - Principles, Practices and Patterns" par Vladimir Khorikov.
+- "Test Driven Development - By Example" par Kent Beck.
+- "Unit Testing - Principles, Practices and Patterns" par Vladimir Khorikov.
 
 Également, voici un site rempli de conseils et astuces sur TDD avec un grand nombre de katas pour progresser: [TDD Buddy](http://www.tddbuddy.com/).
 
@@ -347,9 +350,9 @@ Un dernier conseil pour démarrer le testing, on peut se référer à ce qu'on a
 
 🔹 J'en vois quelques-uns...
 
--   une partie _arrange_ qui fait 15 lignes... C'est trop compliqué. On voit clairement que la méthode testée fait trop de choses car le scénario est trop compliqué à mettre en place!
--   On dit qu'**un test ne doit avoir qu'une et une seule raison d'échouer**. Un test ne devrait contenir qu'un seul _assert_.
--   Le fait que tu aies du mal à écrire des tests unitaires, non pas à cause du fait que tu n'aies pas la connaissance nécessaire mais plutôt en rapport au code à tester... c'est qu'il y a un soucis au niveau de ton composant. Alors, prends du recul et penses aux responsabilités.
+- une partie _arrange_ qui fait 15 lignes... C'est trop compliqué. On voit clairement que la méthode testée fait trop de choses car le scénario est trop compliqué à mettre en place!
+- On dit qu'**un test ne doit avoir qu'une et une seule raison d'échouer**. Un test ne devrait contenir qu'un seul _assert_.
+- Le fait que tu aies du mal à écrire des tests unitaires, non pas à cause du fait que tu n'aies pas la connaissance nécessaire mais plutôt en rapport au code à tester... c'est qu'il y a un soucis au niveau de ton composant. Alors, prends du recul et penses aux responsabilités.
 
 <AnchoredH2 id='more-stuff'>Pour aller plus loin</AnchoredH2>
 
@@ -375,8 +378,8 @@ Pour ma part:
 _back-end_. On citera notamment [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), [Cypress](https://www.npmjs.com/package/cypress) et [Jasmine](https://www.npmjs.com/package/jasmine) comme librairies fortement liées au testing dans des applications JavaScript.
 
 <AnchoredP id='what-is-tdd'>
-	🔸 Du coup, tu n'arrêtes pas d'en parler. C'est quoi le{' '}
-	<span style={{ fontStyle: 'italic' }}>Test Driven Development</span> (TDD)?
+	🔸 Du coup, tu n'arrêtes pas d'en parler. C'est quoi le{" "}
+	<span style={{ fontStyle: "italic" }}>Test Driven Development</span> (TDD)?
 </AnchoredP>
 
 🔹 Je suis content que tu poses enfin la question! C'est pas comme si je t'avais tendu la perche plus d'une fois... C'est la joie, le bonheur, la réponse ultime au sens de la vie, c'est tout ça!
@@ -389,11 +392,12 @@ J'ajouterais que contrairement aux idées reçues, TDD ne rend pas la durée de 
 
 <Figure
 	data={{
-		src: '/img/test-driven-development.png',
-		alt: 'Cycle du TDD',
-		type: 'image',
-		style: { border: '.5em solid black' },
-	}}>
+		src: "/img/test-driven-development.png",
+		alt: "Cycle du TDD",
+		type: "image",
+		style: { border: ".5em solid black" },
+	}}
+>
 	Le cycle de développement sous TDD
 </Figure>
 
@@ -403,7 +407,7 @@ L'étape suivante, c'est le refactoring. On a fait un code horrible, il faut mai
 Ensuite, on atteint la fin du cycle. Cela veut dire une chose: on recommence.
 
 🔸 Je vais fournir un petit exemple pour que tout le monde se situe! Je vais faire ça avec un calculateur de longueur de chaîne de caractères tiens, c'est simple à réaliser.
-Donc, on commence par écrire le test unitaire:
+Donc, je commence par écrire le test unitaire:
 
 ```csharp title='tests/StringCalculatorTests.cs'
 [TestClass]
@@ -414,14 +418,14 @@ public class StringCalculatorTests
 	{
 		StringCalculator calculator = new();
 
-		int result = calculator.Length("string")
+		int result = calculator.Length("string"); // "string" fait 6 caractères de long, non?
 
 		Assert.AreEqual(expected: 6, actual: result);
 	}
 }
 ```
 
-Le test échoue parce que nous n'avons pas encore créé la classe `StringCalculator`. Prochaine étape!
+Le test échoue parce que je n'ai pas encore créé la classe `StringCalculator`. Prochaine étape!
 
 ```csharp title='src/StringCalculator.cs'
 public class StringCalculator
@@ -444,7 +448,7 @@ public class StringCalculator
 {
 	public int Length (string str)
 	{
-		return str.Length;
+		return str.Length; // la manière la plus propre de renvoyer la longueur d'une chaîne de caractères en C#
 	}
 }
 ```
@@ -454,13 +458,13 @@ Et voilà! Nous pouvons commencer l'écriture d'un nouveau test unitaire.
 🔹 C'est un exemple assez simple mais tu y es. Il faut bien noter qu'il y a tout de même des règles à respecter avec TDD mais je pourrais en parler pendant des heures alors on va s'arrêter ici!
 
 <AnchoredP id='what-is-tcr'>
-	🔸 D'accord! D'ailleurs, j'ai ouïe dire que t'as récemment appris le{' '}
-	<span style={{ fontStyle: 'italic' }}>Test && Commit || Revert</span> (TCR).
-	Tu sais expliquer en quoi ça consiste?
+	🔸 D'accord! D'ailleurs, j'ai ouïe dire que t'as récemment appris le{" "}
+	<span style={{ fontStyle: "italic" }}>Test &amp;&amp; Commit || Revert</span>{" "}
+	(TCR). Tu sais expliquer en quoi ça consiste?
 </AnchoredP>
 
 🔹 Exact, j'ai eu la chance de prendre connaissance de cette pratique via un _workshop_. Pour schématiser, disons que c'est une vision extrême de TDD. Le meilleur moyen de l'utiliser est avec un script séparé.
-Ce script va analyser ta solution à chaque sauvegarde et va ensuite exécuter tous tes tests. Si tous tes tests sont vert, il crée un commit qui représente un état stable de ta branche (Test && Commit).
+Ce script va analyser ta solution à chaque sauvegarde et va ensuite exécuter tous tes tests. Si tous tes tests sont vert, il crée un commit qui représente un état stable de ta branche (Test &amp;&amp; Commit).
 Si tu as un seul test qui ne passe plus, il fait un rollback pour revenir à l'état du dernier commit (Revert), qui lui est stable.
 Cela te force à avancer en _baby steps_ et une chose est mise en évidence: c'est ton dernier changement qui a cassé quelque chose.
 
@@ -473,14 +477,14 @@ Losque tu deviens relativement à l'aise avec tout ça, tu remarques que tu avan
 
 🔹 "Victoriae mundis et mundis lacrima", ca ne veut absolument rien dire mais je trouve que c'est assez dans le ton.
 Plus sérieusement, ça fait déjà un moment qu'on discute mais on a seulement gratté la surface. Il reste beaucoup de points à aborder sur le testing. Je conseillerais donc vivement aux lecteurs d'être curieux sur le sujet, de lire et surtout de pratiquer. N'hésitez pas à demander de l'aide autour de vous.
-Et sinon le testing, ça vous tente?
+Et sinon, le testing, ça vous tente?
 
 <Figure
 	data={{
-		src: '/img/developers-deliver-working-solutions.jpg',
-		alt: 'Developers deliver working solutions, not testable code',
-		type: 'image',
-		style: { width: '50%', border: '.1em grey solid' },
+		src: "/img/developers-deliver-working-solutions.jpg",
+		alt: "Developers deliver working solutions, not testable code",
+		type: "image",
+		style: { width: "50%", border: ".1em grey solid" },
 	}}
 />
 
@@ -488,54 +492,54 @@ Et sinon le testing, ça vous tente?
 
 export const toc = [
 	{
-		value: 'Présentation',
-		id: 'presentation',
+		value: "Présentation",
+		id: "presentation",
 		children: [],
 		level: 2,
 	},
 	{
-		value: 'Le sujet',
-		id: 'topic',
+		value: "Le sujet",
+		id: "topic",
 		children: [
 			{
-				value: 'Première rencontre',
-				id: 'first-encounter',
+				value: "Première rencontre",
+				id: "first-encounter",
 				children: [],
 				level: 3,
 			},
 			{
 				value: "Qu'est-ce que c'est",
-				id: 'what-is-it',
+				id: "what-is-it",
 				children: [],
 				level: 3,
 			},
 			{
 				value: 'Où ça se situe dans la "hiérarchie des tests"',
-				id: 'hierarchy-position',
+				id: "hierarchy-position",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'But du testing unitaire',
-				id: 'objective',
+				value: "But du testing unitaire",
+				id: "objective",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Avantages et inconvénients',
-				id: 'pros-and-cons',
+				value: "Avantages et inconvénients",
+				id: "pros-and-cons",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Test Coverage',
-				id: 'test-coverage',
+				value: "Test Coverage",
+				id: "test-coverage",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Le coût',
-				id: 'cost',
+				value: "Le coût",
+				id: "cost",
 				children: [],
 				level: 3,
 			},
@@ -543,30 +547,30 @@ export const toc = [
 		level: 2,
 	},
 	{
-		value: 'Plus en détails',
-		id: 'details',
+		value: "Plus en détails",
+		id: "details",
 		children: [
 			{
-				value: 'Black box & white box, késako',
-				id: 'black-and-white-boxes',
+				value: "Black box &amp; white box, késako",
+				id: "black-and-white-boxes",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Comment en écrire efficacement',
-				id: 'how-to-write',
+				value: "Comment en écrire efficacement",
+				id: "how-to-write",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Tips pour se lancer',
-				id: 'tips-to-start',
+				value: "Tips pour se lancer",
+				id: "tips-to-start",
 				children: [],
 				level: 3,
 			},
 			{
 				value: 'Les "Bad Smells"',
-				id: 'bad-smells',
+				id: "bad-smells",
 				children: [],
 				level: 3,
 			},
@@ -574,24 +578,24 @@ export const toc = [
 		level: 2,
 	},
 	{
-		value: 'Pour aller plus loin',
-		id: 'more-stuff',
+		value: "Pour aller plus loin",
+		id: "more-stuff",
 		children: [
 			{
 				value: "Librairies facilitant l'implémentation",
-				id: 'libraries',
+				id: "libraries",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Le Test Driven Development',
-				id: 'what-is-tdd',
+				value: "Le Test Driven Development",
+				id: "what-is-tdd",
 				children: [],
 				level: 3,
 			},
 			{
-				value: 'Le Test && Commit || Revert ',
-				id: 'what-is-tcr',
+				value: "Le Test &amp;&amp; Commit || Revert ",
+				id: "what-is-tcr",
 				children: [],
 				level: 3,
 			},
@@ -599,8 +603,8 @@ export const toc = [
 		level: 2,
 	},
 	{
-		value: 'Conclusion',
-		id: 'conclusion',
+		value: "Conclusion",
+		id: "conclusion",
 		children: [],
 		level: 2,
 	},

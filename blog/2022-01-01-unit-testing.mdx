@@ -268,12 +268,10 @@ _Ed: to learn more about the reasons that softwares have bugs, do not hesitate t
 <AnchoredH2 id='details'>In depth</AnchoredH2>
 
 <AnchoredP id='black-and-white-boxes'>
-	🔸 Ok! Et si on parlait maintenant de{' '}
-	<span style={{ fontStyle: 'italic' }}>black box</span> et{' '}
-	<span style={{ fontStyle: 'italic' }}>white box testing</span>?
+	🔸 Ok! What about we talk about black box and white box testing now?
 </AnchoredP>
 
-🔹 J'aime les schémas, tu aimes les schémas? C'est bien les schémas!
+🔹 I like diagrams, do you like diagrams? Diagrams are great!
 
 <Figure
 	data={{
@@ -282,14 +280,14 @@ _Ed: to learn more about the reasons that softwares have bugs, do not hesitate t
 		type: 'image',
 		style: { border: '.5em solid black' },
 	}}>
-	Les différences entre <span style={{ fontStyle: 'italic' }}>black box</span>{' '}
-	et <span style={{ fontStyle: 'italic' }}>white box testing</span>
+	The differences between black and white box testing
 </Figure>
 
-Le **black box testing**, c'est donner une information d'entrée au SUT et vérifier l'information de sortie. C'est aussi simple que ça: on ne prend pas en compte ce qu'il se passe à l'intérieur de la méthode.
-Il y a un cas précis où ce type de testing sera obligatoire: les méthodes pures. Ces méthodes n'ayant aucune dépendance ou variables partagées, elles n'ont donc aucun _side effect_. Le **black box testing** est donc une évidence mais cela rend aussi le test extrêmement robuste car rien ne vient impacter le résultat du test.
+**Black box testing** consists in giving an input to the SUT and check the output. It's that simple: we don't take into account things happening inside the method.
+There's an accurate case scenario where this type of testing is mandatory: pure methods. Those having no dependencies or shared variables have no side effect.
+It's therefore obvious to use black box testing. It makes the test extremely robust because nothing impacts its result.
 
-Prenons par exemple une méthode `Sum` d'une classe `Calculator`. On est exactement sur le scénario mentionné plus haut:
+Let's take a `Sum` method from a `Calculator` class as an example. We are exactly on the scenario mentioned above:
 
 ```csharp title='tests/CalculatorTests.cs'
 [TestClass]
@@ -307,45 +305,54 @@ public class CalculatorTests
 }
 ```
 
-On ne connaît pas l'implémentation de la méthode, mais on a écrit un test. On lui donne des valeurs en entrée, et on vérifie la valeur de sortie.
-Pour le reste des scénarios, je trouve dommage de s'arrêter là. C'est une préférence personnelle, je trouve le **white box testing** plus pertinent en tant que _Mockist_.
+We don't know the method's implementation, but we wrote a test. We give it input data, and check the output.
+For the other scenarios we haven't talked about yet, I find it a shame to stop there.
+It's a personal feeling, but I find **white box testing** more relevant as a _mockist_.
 
-De l'autre côté, on a donc ce **white box testing**. À première vue, c'est la même chose: on donne un _input_ et on vérifie l'_output_. Mais on va aussi vérifier ce qu'il se passe à l'intérieur du SUT.
-On peut donc vérifier que le SUT a bien fait appel à sa dépendance, que la valeur a bien été mise dans un cache, sauvegardée dans un repo, qu'un event a bien été émis, etc.
-Cela nous permet de vérifier chaque _behavior_ avec ses _side effects_.
+So yeah, on the other hand, we thus have **white box testing**. At first sight, it is the same process: we give an input and check the output.
+But we are also going to check what's going on _inside_ the SUT: check that it called its dependencies correctly, that the value has been correctly cached or saved in a repository, that an event has been emitted, etc.
+
+This allows us to check each **behavior** and their **side effects**.
 
 <AnchoredP id='how-to-write'>
-	🔸 La question que tous se posent... Comment écrire de bons tests unitaires?
+	🔸 The most awaited question ever... How do we write good unit tests?
 </AnchoredP>
 
-🔹 Je ne pense pas qu'il y ait de bons ou de mauvais tests unitaires... Evidemment que si!
-Il faut réfléchir avant sur ce que tu veux faire. Ça peut paraître bête dit comme ça mais _think before you do_. C'est que j'expliquais lorsque je parlais du fait que faire des tests te rend meilleur.
-Si tu veux faire des tests efficaces, il faut réfléchir sur la façon dont tes composants vont communiquer entre eux. En fait, tes tests seront efficaces à partir du moment où ils seront faciles à faire. Et si tu te rends compte qu'ils ne le sont pas, c'est qu'il y a un soucis dans ton code.
+🔹 I don't think there are good or bad unit tests... No, just joking!
+You need to think on what to do before actually doing it. That can sound silly but just think before you do.
+That's what I was explaining when I was talking about the fact that testing makes you better.
+If you want to write efficient tests, you need to think on the way your components are going to communicate with each other.
+Actually, your tests will be efficient once they are easy to do. And if you realize they are not, there is something wrong with your code.
 
-Exemple: j'ai un _service_ qui doit créer un utilisateur. **Avant d'écrire mon test**, je dois me poser quelques questions: quelles sont les responsabilités de mon service?
-Est-il responsable d'envoyer une requête HTTP à un fournisseur externe pour récupérer des informations? Est-il responsable de la persistence en base de données? Est-il responsable du _logging_?
-_Divide & Conquer_: une dépendance ici, une là, et une autre là... Au final, que reste-t-il dans mon service? L'orchestration d'un processus délégué à différentes dépendances (ex: client http, repository, logger, etc) et éventuellement une modification de l'état d'une entité. C'est tout.
+eg: I've got a service that has to create a user. **Before writing my test**, I have to ask myself a few questions:
+what is the responsability of my service? Is it responsible or sending an HTTP request to an external provider to get information?
+Is it responsibile for database persistence? Is it responsible of the logging?
 
-Au final, un "bon" test doit:
+**Divider and Conquer**: a dependency here, one there, another there... Finally, what's left in your service?
+The orchestration of a process delegated to different dependencies (eg: http client, repository, logger, etc.) and possibly a modification of the state of an entity. That's it.
 
--   te protéger contre les régressions ;
--   être résistant au refactoring ;
--   te donner un feedback rapide ;
--   être maintenable.
+In the end, a "good" test must:
+
+-   protect you against regressions ;
+-   be resistant to refactoring ;
+-   give you a quick feedback ;
+-   be maintainable.
 
 <AnchoredP id='tips-to-start'>
-	Et, sinon... T'as des conseils pour se lancer dans le testing unitaire?
+	What about you give us some tips to start our journey?
 </AnchoredP>
 
-🔹 Je recommande aux personnes qui veulent démarrer le testing de commencer directement avec le _Test Driven Development_.
-Si le test est écrit après l'implémentation, c'est pas vraiment objectif car tu connais déjà l'implémentation donc ton test est fortement lié à ton implémentation. De plus, le code fonctionne déjà donc le test sera perçu comme une perte de temps. Mais surtout: on a bénéficié d'aucun avantage du testing lors de la phase d'implémentation.
+🔹 I recommend people who want to start testing to start with the **Test Driven Development** approach.
+Writing the test of a method after its implementation is not really the goal because you already know the implementation so your test will be highly coupled to your implementation.
+In addition, your code already works so the test would probably be seen as a time loss. But above all: we don't benefit of any advantage of testing during the implementation phase.
 
-Pour cela, vous n'êtes pas seul. Il existe des tonnes de resources disponibles pour vous aider.
-Voici plusieurs livres que j'aurais aimé avoir lus au début de ma carrière:
+You are not alone. There are tons of resources available to help you out.
+Here are some books that I wish I have read early in my career:
 
--   "Test Driven Development - By Example" par Kent Beck.
--   "Unit Testing - Principles, Practices and Patterns" par Vladimir Khorikov.
-    Également, voici un site rempli de conseils et astuces sur TDD avec un grand nombre de katas pour progresser: [TDD Buddy](http://www.tddbuddy.com/).
+-   "Test Driven Development - By Example" by Kent Beck ;
+-   "Unit Testing - Principles, Practices and Patterns" by Vladimir Khorikov.
+
+Également, voici un site rempli de conseils et astuces sur TDD avec un grand nombre de katas pour progresser: [TDD Buddy](http://www.tddbuddy.com/).
 
 En parlant de katas, faites des katas. Faites pleins de katas et faites en à plusieurs (_pair_ et/ou _mob programming_) si vous en avez la possibilité. C'est fun et c'est très formatteur, notamment sur le fait de démarrer avec des exercices simples et progressivement augmenter la difficulté jusqu'à se retrouver avec des situations similaires à ce que l'on peut trouver dans des projets réels. En plus de [TDD Buddy](http://www.tddbuddy.com/), je pourrais recommander [Code Wars](https://www.codewars.com/) si vous êtes en manque d'inspiration.
 Sans forcément faire de l'auto-promotion, vous pouvez aussi trouver quelques katas sur mon [GitHub](https://github.com/Tr00d/).

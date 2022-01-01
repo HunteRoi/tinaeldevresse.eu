@@ -76,7 +76,7 @@ html[data-theme='dark'] {
 }
 
 hr {
-	margin-top: 30px;
+	margin: 30px 0;
 	border: none;
 	font-size: 28px;
 	text-align: center;
@@ -95,4 +95,8 @@ hr::before {
 
 .italic {
 	font-style: italic;
+}
+
+.center {
+	text-align: center;
 }

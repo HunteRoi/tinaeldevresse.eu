@@ -89,7 +89,7 @@ If you read it the other way and apply a reverse logic, it works too.
 We are on the "unit" part for this topic since there is technically nothing smaller than a unit. A unit test should be executed on a standalone basis in a sandboxed environment.
 That is, a unit test has no impact on the outside of its scope, and if you run several of them in parallel, they must not have any side effect between them.
 
-This finally means that in a unit test: we do not contact a database, we avoid making HTTP requests, access file system, etc. In the same way, we are not going to contact the other dependencies of the solution.
+This finally means that in a unit test: we avoid reaching a database, making HTTP requests, accessing file system, etc. In the same way, we are not going to contact other dependencies of the solution.
 We strictly stay "internal" to the unit.
 
 <Figure

@@ -45,7 +45,7 @@ _tldr; Do katas with the "Test Driven Development" methodology!_
 
 <AnchoredP>🔸 Hey Guillaume ! Can you introduce yourself please?</AnchoredP>
 
-🔹 Hello Tinaël! Thank you for inviting me to speak on your blog. My name is Guillaume Faas and I am a .NET expert / Software Craftsman, actually working at [Squaremiled S.A.](https://squaremiled.com/).
+🔹 Hello Tinaël! Thank you for inviting me to speak on your blog. My name is Guillaume Faas and I am a .NET expert / Software Craftsman, currently working at [Squaremiled S.A.](https://squaremiled.com/).
 I've been building softwares since 10 years or so, in various environments and business sectors.
 
 <AnchoredH2 id='topic'>The topic!</AnchoredH2>
@@ -59,7 +59,7 @@ I've been building softwares since 10 years or so, in various environments and b
 </AnchoredP>
 
 🔹 It was a long time ago in a galaxy far, far away... I barely had a few years of experience.
-I've been working in the same company for most of my career, and compared to my day-to-day, I thought I had seen it all.
+I've been working in the same company for most of my career and, compared to my day-to-day, I thought I had seen it all.
 I started looking online in guideliens, best practices, patterns and so on... I came across a lot of exciting and above all new topics.
 I seemed like I stepped in a new world that had nothing to do with my daily life in which I was stuck. The _testing_ was obviously one of those topics.
 However, I quickly realised that I had to progress in other subjets before I could introduce tests in my projects. It took me quite a long time before I was really fit to work in a test-driven approach.
@@ -69,9 +69,9 @@ However, I quickly realised that I had to progress in other subjets before I cou
 	test is please?
 </AnchoredP>
 
-🔹 Yes, of course! A unit test is a test that checks a _unit of code_. This concept of unit of code varies according to the testing schools.
+🔹 Yes, of course! A unit test is a test that verifies a _unit of code_. This concept of unit of code varies according to the testing schools.
 The London (or Mockist) School will see it as the smallest chunk of code so we are talking about a class or a method.
-On the other hand, the Detroit (or Classicist) School will see it as a group of classes or methods.
+On the other hand, the Detroit (or Classicist) School will see it as a behavior so a group of classes or methods.
 For the most curious of you, here's an [article](https://medium.com/@adrianbooth/test-driven-development-wars-detroit-vs-london-classicist-vs-mockist-9956c78ae95f) which gives details on the differences between both schools. I want to clarify that no school is better than the other, each one having its pros and cons.
 It's only a matter of preference and compromise.
 The main difference is mainly the size of your _System Under Test_ (SUT) and the relationship between the different collaborators.
@@ -102,9 +102,9 @@ We strictly stay "internal" to the unit.
 
 Here are a few points on the _functional testing_ part:
 
-- the unit testing is to check that a component works well. It is the fastest, we will talk about "fast feedback loop" ;
-- the integration testing is to check that several components work well together ;
-- the user acceptance testing consists of verifying the whole application while avoiding contact with external dependencies (eg: requests to external providers).
+- unit testing is to check that a component works well. It is the fastest, we will talk about "fast feedback loop" ;
+- integration testing is to check that several components work well together ;
+- user acceptance testing consists of verifying the whole application while avoiding contact with external dependencies (eg: requests to external providers).
   This is the most representative test, probably the one that has the most value on the product scale as it validates business requirements.
 
 Note that you don't have to implement them all. We could have a test suite only composed of tests from a single category.
@@ -164,7 +164,7 @@ As for the "when", it's even simpler: you need to apply unit testing whenever yo
 The refactoring stage systematically occurs in a projet. The problem is, when you start changing something, there is always **a risk of regression**.
 We talk about regression when something that used to work does not anymore due to some changes.
 It's precisely here that a unit test intervene: it guarantees that your components always work as expected. If anything does not work anymore after a refactoring, the test suite is going to display erroneous code with a beautiful red dot.
-And that, in the point of view of a developer, it's huge! It means you can be much more relaxed and spend less time checking that your changes did not have undesirable effect on the rest of the features.
+And that, from the point of view of a developer, it's huge! It means you can be much more relaxed and spend less time checking that your changes did not have undesirable effect on the rest of the features.
 
 2. Writing tests improves the **code quality** of your app.
 

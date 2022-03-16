@@ -13,13 +13,13 @@ import Newsletter from '../src/components/newsletter';
 import { MAILCHIMP_URL } from '../website_config.json';
 
 <a href='/blog/what-is-a-container'>
-	<Figure
-		data={{
-			src: '/img/what-is-a-container.jpg',
-			alt: 'What is a Container',
-			type: 'image',
-		}}
-	/>
+    <Figure
+        data={{
+            src: '/img/what-is-a-container.jpg',
+            alt: 'What is a Container',
+            type: 'image'
+        }}
+    />
 </a>
 
 Hello! Today, we are talking about two things:
@@ -30,9 +30,9 @@ Hello! Today, we are talking about two things:
 <!--truncate-->
 
 <SEO
-	uri='blog/what-is-a-container'
-	image='img/what-is-a-container.jpg'
-	type='article'
+    uri='blog/what-is-a-container'
+    image='img/what-is-a-container.jpg'
+    type='article'
 />
 
 ---
@@ -47,10 +47,10 @@ Hello! Today, we are talking about two things:
 
 [Docusaurus](https://docusaurus.io) is an open-source optimized website generator packaging several interesting features for online content creators:
 
-- documentation and blog posts in [Markdown](https://www.markdownguide.org/getting-started/) ;
-- internationalization ;
-- versioning ;
-- content search highly adapted (thanks to the integration of [Algolia](https://www.algolia.com/)).
+-   documentation and blog posts in [Markdown](https://www.markdownguide.org/getting-started/) ;
+-   internationalization ;
+-   versioning ;
+-   content search highly adapted (thanks to the integration of [Algolia](https://www.algolia.com/)).
 
 ### Why Docusaurus?
 
@@ -79,11 +79,11 @@ Whether it is for development or when it comes to deploy a web service for clien
 And the issue is that the systems and configurations are different..!
 
 <Figure
-	data={{
-		src: '/img/it-works-on-my-machine.jpg',
-		alt: 'It Works On My Machine - meme',
-		type: 'image',
-	}}
+    data={{
+        src: '/img/it-works-on-my-machine.jpg',
+        alt: 'It Works On My Machine - meme',
+        type: 'image'
+    }}
 />
 
 A container is a standard unit of software packaging code and its dependencies to quickly and reliably run an application from one isolated environnement to another.
@@ -96,17 +96,17 @@ The big difference between each is that a container makes use of the host machin
 
 In fact, a machine with Docker installed brings the following advantages:
 
-- lightweightness and speed,
-- portability and standardization, thus cross-platform (at some extent).
+-   lightweightness and speed,
+-   portability and standardization, thus cross-platform (at some extent).
 
 In reality, it is understandable. Let's take a look at this drawing:
 
 <Figure
-	data={{
-		src: '/img/container_against_VM.png',
-		alt: 'Container VS Virtual Machine',
-		type: 'image',
-	}}
+    data={{
+        src: '/img/container_against_VM.png',
+        alt: 'Container VS Virtual Machine',
+        type: 'image'
+    }}
 />
 
 It is a schema comparing a server with Docker installed to a server that handles VMs.
@@ -131,45 +131,44 @@ It is made up of 3 components:
 
 1. the software, called Docker daemon, is a process managing Docker containers and resulting objects (eg: Docker Engine, ...)
 2. the objects, themselves seperated in 3 categories, are entities which allow to build an application with Docker:
-   - a **container** is a standard environment running an application.
-   - an **image** is a read-only template used to build a container. We can then say that an instance of an image is a container.
-   - a **service** is a system which orchestrates the operations of several containers maanged by multiple daemons. It is also called a _swarm_ (a set of Docker daemons which communicate via Docker - eg: Docker Swarm, Kubernetes, ...).
+    - a **container** is a standard environment running an application.
+    - an **image** is a read-only template used to build a container. We can then say that an instance of an image is a container.
+    - a **service** is a system which orchestrates the operations of several containers maanged by multiple daemons. It is also called a _swarm_ (a set of Docker daemons which communicate via Docker - eg: Docker Swarm, Kubernetes, ...).
 3. the registries are repositories for Docker images (eg: Docker Hub, Google Cloud Platform, ...)
 
 To create a container, you must follow some principles:
 
-- a container only runs one process ;
-- a container is immutable (it means that with the same environment variables, the container will run the _same process_) ;
-- a container is disposable (it means that we can remove it, change it, ... as we like).
+-   a container only runs one process ;
+-   a container is immutable (it means that with the same environment variables, the container will run the _same process_) ;
+-   a container is disposable (it means that we can remove it, change it, ... as we like).
 
 These 3 principles are just the most important in my humble opinion, but you may find the complete methodology on ["The Twelve Factors"](https://12factor.net/) website.
 
 Once you have an image locally (whether you took it from a registry or built it locally), you can create a container. I could show it to you, but as I don't reinvent the wheel, you will find a small video which explains it very well!
 
 <Figure
-	data={{
-		align: 'center',
-		type: 'html',
-		width: '560',
-		height: '315',
-		src: 'https://www.youtube.com/embed/iqqDU2crIEQ',
-		title: 'YouTube video player of Docker tutorial',
-		allow:
-			'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
-		allowFullScreen: true,
-	}}
+    data={{
+        align: 'center',
+        type: 'html',
+        width: '560',
+        height: '315',
+        src: 'https://www.youtube.com/embed/iqqDU2crIEQ',
+        title: 'YouTube video player of Docker tutorial',
+        allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+        allowFullScreen: true
+    }}
 />
 
 ### Why would you use Docker or any of its competitors?
 
 The principle of containerisation brings significant benefits. Here's a non-exhaustive list:
 
-- faster & easier onboarding of new human resources ;
-- certitude that you and your colleagues work on the same environment (including the same version of tools) ;
-- enforcement of the "Do Not Reinvent The Wheel" principle since an access to open-source images is possible ;
-- faster building and destroying compared to VM ;
-- consistency environmenet and isolation ;
-- broad compatibility (the development machine OS does not matter, so everyone can work on their favorite station).
+-   faster & easier onboarding of new human resources ;
+-   certitude that you and your colleagues work on the same environment (including the same version of tools) ;
+-   enforcement of the "Do Not Reinvent The Wheel" principle since an access to open-source images is possible ;
+-   faster building and destroying compared to VM ;
+-   consistency environmenet and isolation ;
+-   broad compatibility (the development machine OS does not matter, so everyone can work on their favorite station).
 
 Containerizing applications is more and more common. We can even find a reason for this evolution in the growth undergone by the [DevOps](https://en.wikipedia.org/wiki/Devops) movement.
 

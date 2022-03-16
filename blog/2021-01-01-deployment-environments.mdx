@@ -2,13 +2,13 @@
 slug: deployment-environments
 title: Deployment Environments
 tags:
-  [
-    deployment,
-    environment,
-    application environment,
-    environment pipeline,
-    CI/CD,
-  ]
+    [
+        deployment,
+        environment,
+        application environment,
+        environment pipeline,
+        CI/CD
+    ]
 description: At school, teachers usually focus on languages, algorithmic & clean code. One of the things computer science students don't learn during their studies is deployment environments. In my opini...
 image: img/deployment-environments.png
 ---
@@ -20,13 +20,13 @@ import Newsletter from '../src/components/newsletter';
 import { MAILCHIMP_URL } from '../website_config.json';
 
 <a href='/blog/deployment-environments'>
-	<Figure
-		data={{
-			src: '/img/deployment-environments.png',
-			alt: 'Deployment Environments',
-			type: 'image',
-		}}
-	/>
+    <Figure
+        data={{
+            src: '/img/deployment-environments.png',
+            alt: 'Deployment Environments',
+            type: 'image'
+        }}
+    />
 </a>
 
 At school, teachers usually focus on languages, algorithmic & clean code. One of the things computer science students don't learn during their studies is deployment environments.
@@ -35,9 +35,9 @@ In my opinion, this is an important knowledge when starting to work for bigger c
 <!--truncate-->
 
 <SEO
-	uri='blog/deployment-environments'
-	image='/img/deployment-environments.png'
-	type='article'
+    uri='blog/deployment-environments'
+    image='/img/deployment-environments.png'
+    type='article'
 />
 
 ---
@@ -74,27 +74,27 @@ What is important to understand in this cycle is that we usually deploy differen
 When you start developing an application, you already know your process management (I hope so, aha!). And in a lot of cases, you go with the [Agile methodology](https://en.wikipedia.org/wiki/Agile_software_development).
 
 <Figure
-	data={{
-		src: 'https://www.marketing91.com/wp-content/uploads/2020/06/Introduction-to-Agile-Methodology.jpg',
-		alt: 'Agile process',
-		type: 'image',
-	}}
+    data={{
+        src: 'https://www.marketing91.com/wp-content/uploads/2020/06/Introduction-to-Agile-Methodology.jpg',
+        alt: 'Agile process',
+        type: 'image'
+    }}
 >
-	Made by{' '}
-	<a href='https://www.shutterstock.com/g/Tartila' target='_blank'>
-		Tartila
-	</a>
+    Made by{' '}
+    <a href='https://www.shutterstock.com/g/Tartila' target='_blank'>
+        Tartila
+    </a>
 </Figure>
 
 I would like to point out that the cycle hides another one when you're in the industry: you have to move the different versions of your application from environments to environments. But an environment is not only a machine where your application runs! It often also means different data, different limits, different goals, different processes, and much more things with the "different" adjective.
 Basically, while your application is growing at a certain step (let's call it the youngest version), you have a few older versions before that need to move. If your company don't have sysadmins or that you work with the Cloud, the developer usually has to manage this rollouts and possible rollbacks (not to remind you that you don't just move the app).
 
 <Figure
-	data={{
-		src: '/img/small-fix.jpg',
-		alt: 'Dont Deploy On Friday',
-		type: 'image',
-	}}
+    data={{
+        src: '/img/small-fix.jpg',
+        alt: 'Dont Deploy On Friday',
+        type: 'image'
+    }}
 />
 
 While I'm pretty sure you now know how much complex it can get, let me point out that automation tools exist to ease our work (and thanks God!).
@@ -119,9 +119,9 @@ This is _your computer_. The first place where all the work happens to be done. 
 
 #### Goals
 
-- Work on your own tasks
-- See the result and make your merry way
-- Run the first battery of tests before sending your code to your colleagues
+-   Work on your own tasks
+-   See the result and make your merry way
+-   Run the first battery of tests before sending your code to your colleagues
 
 ### The development environment
 
@@ -130,8 +130,8 @@ Nobody but the team engaged in building the product should ever access this envi
 
 #### Goals
 
-- Run and test with development data
-- Verify that your code works well with everyone else's
+-   Run and test with development data
+-   Verify that your code works well with everyone else's
 
 ### The testing environment
 
@@ -139,8 +139,8 @@ Also called QA (for Quality Assurance), this is where the rest of your company e
 
 #### Goals
 
-- Check for any issue that previous manual and automated tests did not catch
-- Prove that specific criteria are met (usually, validating the technical side of the feature)
+-   Check for any issue that previous manual and automated tests did not catch
+-   Prove that specific criteria are met (usually, validating the technical side of the feature)
 
 ### The staging environment
 
@@ -149,9 +149,9 @@ It is usually meant to simulate Production in as many ways as possible. It can b
 
 #### Goals
 
-- Prevent releasing bugs to production
-- Validate end to end business flow
-- Train high-touch clients on new changes
+-   Prevent releasing bugs to production
+-   Validate end to end business flow
+-   Train high-touch clients on new changes
 
 ### The production environment
 
@@ -159,9 +159,9 @@ This is the sacred environment which you should never break. Real customers are 
 
 #### Goals
 
-- Be the last depositary of all other environments.
-- Give the customers the solution to their problem(s) on a specific topic
-- Be reliable, bug free, always up and running
+-   Be the last depositary of all other environments.
+-   Give the customers the solution to their problem(s) on a specific topic
+-   Be reliable, bug free, always up and running
 
 ## How to choose your environments pipeline?
 
@@ -171,13 +171,13 @@ I have seen a few things here and there, and there are a lot of hosting companie
 The following figure shows a few pipelines I heard of, have been working with or am actually using. Let's say each pipeline is the default one for companies A, B & C.
 
 <Figure
-	data={{
-		src: '/img/deployment-environments.svg',
-		alt: 'Deployment Environments',
-		type: 'img',
-	}}
+    data={{
+        src: '/img/deployment-environments.svg',
+        alt: 'Deployment Environments',
+        type: 'img'
+    }}
 >
-	Schema of companies A, B & C 's deployment pipelines
+    Schema of companies A, B & C 's deployment pipelines
 </Figure>
 
 ### Company A
@@ -190,9 +190,9 @@ The schema shows that you can choose between having a single instance of your ap
 
 Obviously, choosing to host several instances at the same time costs more and has its cons but brings a few advantages :
 
-- You can deploy specific features on a specific instance.
-- It allows your development team to work in smaller groups (e.g.: team 1 works on list 1 of features in instance 1; team 2 on list 2 in instance 2; ...).
-- It's cool to see when your instance runs smoothly and the others are down because they fucked up (don't get blind though, you'll get by that damn road as well).
+-   You can deploy specific features on a specific instance.
+-   It allows your development team to work in smaller groups (e.g.: team 1 works on list 1 of features in instance 1; team 2 on list 2 in instance 2; ...).
+-   It's cool to see when your instance runs smoothly and the others are down because they fucked up (don't get blind though, you'll get by that damn road as well).
 
 ### Company B & Company C
 
@@ -202,9 +202,9 @@ The only difference between these two are the number of instances running at eac
 
 In my humble opinion, I like the schema C but I'd rather simplify it again. For example, when I work on a Discord bot ([if you don't know Discord, check it out](https://discord.com)), I use :
 
-- my local environment running locally and connecting to Cloud resources (such as a database and Discord's web service),
-- the dev/staging environment (_yep, it's a single env_) running the beta version of the bot, and
-- the production environment which hosts the final version of the bot available for Discord users.
+-   my local environment running locally and connecting to Cloud resources (such as a database and Discord's web service),
+-   the dev/staging environment (_yep, it's a single env_) running the beta version of the bot, and
+-   the production environment which hosts the final version of the bot available for Discord users.
 
 I cannot give you some sacred deployment approach dipped in magic sauce that will perfectly work for all your projects because it does not exist.
 You must come up with your own custom plan. But these defaults should at least guide you for a bit!

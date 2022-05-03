@@ -1,18 +1,8 @@
 ---
 slug: why-did-i-switch-to-clean-architecture
-title: Why Did I Switch to Clean Architecture?
-tags:
-    [
-        dotnet,
-        structure,
-        project structure,
-        clean architecture,
-        Uncle Bob,
-        SOLID,
-        development,
-        n-tier architecture
-    ]
-description: I decided to talk about my choices of project's structure when I build a .NET app so here we go!
+title: What architecture do I use for my projects?
+tags: [development, structure, architecture]
+description: I decided to talk about the architecture choice I take when developing my app!
 image: /img/why-did-i-switch-to-clean-architecture.png
 ---
 
@@ -25,20 +15,20 @@ import { MAILCHIMP_URL } from '../website_config.json';
 <a href='/blog/why-did-i-switch-to-clean-architecture'>
     <Figure
         data={{
-            src: '/img/why-did-i-switch-to-clean-architecture.png',
+            src: '/img/why-i-love-clean-architecture.png',
             alt: 'My Love for Clean Architecture',
             type: 'image'
         }}
     />
 </a>
 
-I decided to talk about my choices of project's structure when I build a .NET app so here we go!
+I decided to talk about the architecture choice I take when developing my apps!
 
 <!--truncate-->
 
 <SEO
     uri='blog/why-did-i-switch-to-clean-architecture'
-    image='img/why-did-i-switch-to-clean-architecture.png'
+    image='img/why-i-love-clean-architecture.png'
     type='article'
 />
 
@@ -48,24 +38,60 @@ I decided to talk about my choices of project's structure when I build a .NET ap
 
 ---
 
-As you may know, I am professionaly seen as a .NET developer which means I'm also included in the Microsoft's stack of people working with their technologies.
-While I am not only using Microsoft's technologies, I am more experienced with it thus this post will give examples in C# but nothing prevents you from applying the same structure in your JavaScript, Python or Java projects!
+Not long ago, I have been asked by fellow developers how I structure my projects because when they evolve, the basic n-tier architecture becomes more complex and they tend to create messy solutions.
+I don't have all the answers but what I actually said is that when it comes to my own projects, I make a simple choice:
 
-Not long ago, I have been asked by fellow developers how I structure my projects because when they evolve, the basic N-tier architecture becomes more complex and they tend to create messy solutions.
-I don't have all the answers but when it comes to my own projects, I use what Robert C. Martin called [the Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in 2012.
-Of course, my version is not strictly following what Uncle Bob describes in his blog as I have tailored it to my needs (actually, people did it for me) but let's talk about it.
+-   If I am working on a basic CRUD app, I will definitely go for a 3-Tier architecture.
+-   But if I need to build a more complex app requiring a strong business logic and which must scream its goal, I will definitely use what Robert C. Martin called [the Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in 2012.
+    Of course, my version is not strictly following what Uncle Bob describes in his blog as I have tailored it to my needs but let's talk about it.
 
-**What does the Clean Architecture bring me that I love and that N-tier does not give me?**
+Nowadays though, I tend to be more inclined to use the latter. But **what does the Clean Architecture bring me that I love and that n-tier does not?**
 
 ## The N-Tier architecture
 
 ### What is it?
 
-First of all, it would be a shame to talk about the Clean Architecture and not talk about what I have learnt during three years at school: the n-tier architecture.
+First of all, it would be a shame to talk about the Clean Architecture and not talk about what I have learnt during my years at school: the n-tier architecture.
+This type of architecture is usually presented as and mixed up with one of its specific version: the 3-tier architecture. The 3 layers are:
+
+1. the presentation layer, responsible of presenting the information to the outside ;
+2. the logic layer, responsible of the business logic that should be applied on the data ;
+3. the data layer, responsible of the data access.
+
+<Figure
+    data={{
+        src: '/img/3-tier-architecture.jpg',
+        alt: '3-tier schema',
+        type: 'image'
+    }}
+/>
+
+Of course, the "n" in the name means that you can actually have less or more than 3 tiers. The layers described above are just the common ground.
+There are other types of comparable structures like the 2-tier architecture, the single tier, the 4-tier ...
+When developing a project, you usually tailor the architecture to your needs. You could even subdivide the 3 common layers into sub-layers depending on your requirements.
 
 ### Pros & Cons
 
-Laborum sint occaecat excepteur aute Lorem incididunt. Tempor ea exercitation irure Lorem excepteur. Laboris pariatur labore sunt consequat do veniam. Aute amet do ex officia cillum laborum ut id aute anim commodo eu veniam non. Nulla sit duis deserunt cupidatat duis sunt anim proident sint.
+For the **advantages**, we can list the following:
+
+-   more secure — validations on the input are always done within each tier as they _should_ be independent.
+    Also, the presentation layer (usually the UI or such) is not "directly" wired to the database. All connections to it are shielded by the logic layer.
+-   easily maintainable — at the time of its "creation", this archi allowed the developers to maintain it much more easily than the previous architectures did.
+-   easy to reuse — it is easier to reuse the logic of each layer.
+
+For the **disadvantages**, let's have a quick look too:
+
+-   increase in effort — implementing new features takes time as you have to go through all tiers.
+    Changing a single thing in the database layer is reflected to the logic and presentation layers as they directly rely on it.
+-   increase in complexity — when it grows, it becomes more difficult to keep it clean, understandable and predict the impact of a change.
+-   harder to test — implementing tests is quite difficult as everything is highly coupled to the layer it points toward.
+
+### When to use it?
+
+In my humble opinion, using the n-tier architecture is a good start when you need to develop a prototype of an idea because you need to showcase something quickly.
+This will unfortunately tend to make things less great for the future though.
+You could also use this archi when you need to build an easy CRUD app.
+Speaking of such, I decided to build a quick API to query one of my employers' database once using this structure.
 
 ## Clean Architecture
 
@@ -79,25 +105,55 @@ Laborum sint occaecat excepteur aute Lorem incididunt. Tempor ea exercitation ir
     }}
 />
 
-Laborum sint occaecat excepteur aute Lorem incididunt. Tempor ea exercitation irure Lorem excepteur. Laboris pariatur labore sunt consequat do veniam. Aute amet do ex officia cillum laborum ut id aute anim commodo eu veniam non. Nulla sit duis deserunt cupidatat duis sunt anim proident sint.
+This architecture puts the Domain at the center, and in charge of everything. It also requires more intentional designs as you do not rely on your database directly.
+Built with the [CQRS pattern](https://martinfowler.com/bliki/CQRS.html), I consider it the best way to write a software with maintainability and simplicity in mind.
 
 ### Pros & Cons
 
--   code moins couplé,
--   testing facilité,
--   separation of concerns,
--   meilleure exposition des fonctionnalités,
--   application des principes SOLID,
--   meilleure évolutivité
+For the **advantages**, we can list the following:
 
-Laborum sint occaecat excepteur aute Lorem incididunt. Tempor ea exercitation irure Lorem excepteur. Laboris pariatur labore sunt consequat do veniam. Aute amet do ex officia cillum laborum ut id aute anim commodo eu veniam non. Nulla sit duis deserunt cupidatat duis sunt anim proident sint.
+-   less coupled code, better testability — as the code is less coupled due to using abstractions everywhere you can, you can easily mock dependencies and unit test your components.
+    It also facilitates the development in each layer as they are not highly coupled together, allowing teams to work in parallel on each layer.
+-   separation of concerns — the architecture kind of forces you to think about your use cases and dependencies.
+    The UI also does not care about how your database looks, nor does it care about the packages you use to generate a PDF for example...
+-   better features exposition
+-   better application of SOLID principles
+-   better evolutivity
+
+For the **disadvantages**, we can list the following:
+
+-   increase in time to build from scratch — you need to setup more things before starting to develop a valuable feature for the client.
+-   increase in code — you need more files (classes and interfaces) than in an n-tier architecture.
+-   possible loss of optimization — being closer to implementations might grant you better performances. You would lose this in profit of looser coupling which IMHO is a good trade-off.
+
+### When to use it?
+
+When you need to develop a complex software, that you want to test your features and want to deliver something valuable that will not increase the buglog once in production.
+It can also be mixed with methodologies that make it a strong reliability like [DDD](https://en.wikipedia.org/wiki/Domain-driven_design) and [TDD](https://en.wikipedia.org/wiki/Test-driven_development).
+
+## So why do I prefer CA over N-Tier?
+
+You might know now but I am tired of developing crappy things, I'm tired of working in a company where you get told to "develop fast and we will improve it later".
+Later never comes.
+
+I am so tired of such way of working that I fell in love with 3 things:
+
+1. Clean Architecture, and
+2. Test-Driven Development, and
+3. [Software Craftsmanship](https://en.wikipedia.org/wiki/Software_craftsmanship).
+
+I highly encourage you to learn more about these topics. They represent what I would love to call the best mindset for the next generation of developers.
 
 ## Conclusion
 
-Laborum sint occaecat excepteur aute Lorem incididunt. Tempor ea exercitation irure Lorem excepteur. Laboris pariatur labore sunt consequat do veniam. Aute amet do ex officia cillum laborum ut id aute anim commodo eu veniam non. Nulla sit duis deserunt cupidatat duis sunt anim proident sint.
+This time, I leave you with links to resources that helped me write this post.
+
+-   [Sean G. Wright comment](https://dev.to/seangwright/comment/ccfb) on "Clean architecture - Your approach";
+-   [Digital Ocean's explanations](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) of the SOLID principles;
+-   The meetup group of [Software Craftsmanship Luxembourg](https://www.meetup.com/fr-FR/software-craft-luxembourg/);
+-   [Valentina Cupać's slides](https://www.jug.ch/events/slides/220201_Optivem_TDD_and_Clean_Architecture_Driven_by_Behaviour.pdf) about TDD and Clean Architecture driven by behaviour;
+-   If you want to see an example of this structure, don't hesitate to take a look at [Cloud Filesystem](https://github.com/hunteroi/cloud-filesystem), one of my open-sourced project!
+
+And you, what architecture do you use for your projects?
 
 <Newsletter url={MAILCHIMP_URL} />
-
-https://stackify.com/n-tier-architecture/
-https://martinfowler.com/bliki/CQRS.html
-https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html

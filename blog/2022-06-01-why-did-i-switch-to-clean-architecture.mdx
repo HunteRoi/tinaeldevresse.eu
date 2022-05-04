@@ -52,7 +52,9 @@ Nowadays though, I tend to be more inclined to use the latter. But **what does t
 ### What is it?
 
 First of all, it would be a shame to talk about the Clean Architecture and not talk about what I have learnt during my years at school: the n-tier architecture.
-This type of architecture is usually presented as and mixed up with one of its specific version: the 3-tier architecture. The 3 layers are:
+This type of architecture is usually presented as and mixed up with one of its specific version: the 3-tier architecture.
+
+This architecture puts the data at the center. The 3 layers are:
 
 1. the presentation layer, responsible of presenting the information to the outside ;
 2. the logic layer, responsible of the business logic that should be applied on the data ;
@@ -74,8 +76,7 @@ When developing a project, you usually tailor the architecture to your needs. Yo
 
 For the **advantages**, we can list the following:
 
--   more secure — validations on the input are always done within each tier as they _should_ be independent.
-    Also, the presentation layer (usually the UI or such) is not "directly" wired to the database. All connections to it are shielded by the logic layer.
+-   more secure — The presentation layer (usually the UI or such) is not "directly" wired to the database. All connections to it are shielded by the logic layer.
 -   easily maintainable — at the time of its "creation", this archi allowed the developers to maintain it much more easily than the previous architectures did.
 -   easy to reuse — it is easier to reuse the logic of each layer.
 
@@ -107,6 +108,12 @@ Speaking of such, I decided to build a quick API to query one of my employers' d
 
 This architecture puts the Domain at the center, and in charge of everything. It also requires more intentional designs as you do not rely on your database directly.
 Built with the [CQRS pattern](https://martinfowler.com/bliki/CQRS.html), I consider it the best way to write a software with maintainability and simplicity in mind.
+
+Historical fact: the 3-Tiered architecture came in 1992 thanks to John J. Donovan and was followed by others afterwards:
+
+-   Hexagonal Architecture / Ports & Adapters (2005, Alistair Cockburn),
+-   Onion Architecture (2008, Jeffrey Palermo),
+-   Clean Architecture (2012, Robert C. Martin).
 
 ### Pros & Cons
 
@@ -146,10 +153,15 @@ I highly encourage you to learn more about these topics. They represent what I w
 
 ## Conclusion
 
-This time, I leave you with links to resources that helped me write this post.
+What finally makes the n-tier architecture obsolete is that it is actually _data-centric_ unlike the clean archi that is _centered around the logic_.
+It took us time to understand that what gives value to our clients is not the data, but the business logic that allows to process that data!
 
+I suggest that you check out these resources to have a more historical context, explanations and really accurate information on the topic:
+
+-   The presentation of Guillherme Ferreira on [The Grand Unified Theory of Clean Architecture and Test Pyramid](https://youtu.be/fPSrA-YcHag?t=6724) at NDC Porto;
+-   Mark Seemann's [article](https://blog.ploeh.dk/2013/12/03/layers-onions-ports-adapters-its-all-the-same/) on the topic of adapters;
 -   [Sean G. Wright comment](https://dev.to/seangwright/comment/ccfb) on "Clean architecture - Your approach";
--   [Digital Ocean's explanations](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) of the SOLID principles;
+-   [Samuel Oloruntoba's explanations](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) of the SOLID principles;
 -   The meetup group of [Software Craftsmanship Luxembourg](https://www.meetup.com/fr-FR/software-craft-luxembourg/);
 -   [Valentina Cupać's slides](https://www.jug.ch/events/slides/220201_Optivem_TDD_and_Clean_Architecture_Driven_by_Behaviour.pdf) about TDD and Clean Architecture driven by behaviour;
 -   A blog post relating an [introduction to CA](https://medium.com/codex/introduction-to-clean-architecture-2437c6987ec)

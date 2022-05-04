@@ -1,8 +1,8 @@
 ---
 slug: why-did-i-switch-to-clean-architecture
-title: What architecture do I use for my projects?
-tags: [development, structure, architecture]
-description: I decided to talk about the architecture choice I take when developing my app!
+title: Quelle architecture j'utilise pour mes projets?
+tags: [développement, structure, architecture]
+description: J'ai décidé de parler du choix d'architecture que je prends quand je développe mes apps!
 image: /img/why-did-i-switch-to-clean-architecture.png
 ---
 
@@ -16,13 +16,13 @@ import { MAILCHIMP_URL } from '../website_config.json';
     <Figure
         data={{
             src: '/img/why-i-love-clean-architecture.png',
-            alt: 'My Love for Clean Architecture',
+            alt: 'Mon Amour pour la Clean Architecture',
             type: 'image'
         }}
     />
 </a>
 
-I decided to talk about the architecture choice I take when developing my apps!
+J'ai décidé de parler du choix d'architecture que je prends quand je développe mes apps!
 
 <!--truncate-->
 
@@ -38,27 +38,31 @@ I decided to talk about the architecture choice I take when developing my apps!
 
 ---
 
-Not long ago, I have been asked by fellow developers how I structure my projects because when they evolve, the basic n-tier architecture becomes more complex and they tend to create messy solutions.
-I don't have all the answers but what I actually said is that when it comes to my own projects, I make a simple choice:
+Il n'y a pas si longtemps, des collègues m'ont posé la question suivante:
 
--   If I am working on a basic CRUD app, I will definitely go for a 3-Tier architecture.
--   But if I need to build a more complex app requiring a strong business logic and which must scream its goal, I will definitely use what Robert C. Martin called [the Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in 2012.
-    Of course, my version is not strictly following what Uncle Bob describes in his blog as I have tailored it to my needs but let's talk about it.
+> Comment est-ce que tu structures tes projets puisque lorsqu'ils évoluent, l'architecture "N-Tier" devient plus complexe et tend à créer des solutions en désordre.
 
-Nowadays though, I tend to be more inclined to use the latter. But **what does the Clean Architecture bring me that I love and that n-tier does not?**
+Je n'ai pas toutes les réponses mais ce que j'ai répondu est que si ça touche à mes projets, je fais un simple choix:
 
-## The N-Tier architecture
+-   Si je travaille sur une app CRUD basique, je choisis définitivement la 3-Tier architecture.
+-   Mais si j'ai besoin de construire une application plus complexe qui nécessite une logique business importante et qui doit "crier son but", je choisis alors directement ce que Robert C. Martin a appelé [la Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) en 2012.
+    Bien sûr, ma version ne suit pas strictement ce qu'Uncle Bob décrit dans son blog puisque je l'ai adapté à mes besoins mais parlons-en!
 
-### What is it?
+De nos jours cependant, j'ai plutôt tendance à faire pencher la balance en faveur du deuxième choix.
+Mais **qu'est-ce que j'aime dans ce que m'apporte la Clean Architecture et non la N-Tier?**
 
-First of all, it would be a shame to talk about the Clean Architecture and not talk about what I have learnt during my years at school: the n-tier architecture.
-This type of architecture is usually presented as and mixed up with one of its specific version: the 3-tier architecture.
+## La N-Tier architecture
 
-This architecture puts the data at the center. The 3 layers are:
+### Qu'est-ce que c'est?
 
-1. the presentation layer, responsible of presenting the information to the outside ;
-2. the logic layer, responsible of the business logic that should be applied on the data ;
-3. the data layer, responsible of the data access.
+Premièrement, ça serait une honte de vous parler de Clean Architecture et ne pas aborder l'enseignement que j'ai reçu à l'école : l'architecture n-tier.
+Ce type d'archi est courament présenté et confondu avec l'une de ses versions spécifiques: l'architecture 3-tiers.
+
+Cette archi met les données au centre. Elle est composée de 3 couches:
+
+1. la couche Présentation, responsable de présenter l'information à l'extérieur ;
+2. la couche Logique, responsable de la logique business qui doit être appliquée aux données ;
+3. la couche Données, responsable de l'accès aux données (ORM, base de données, etc.).
 
 <Figure
     data={{
@@ -68,35 +72,35 @@ This architecture puts the data at the center. The 3 layers are:
     }}
 />
 
-Of course, the "n" in the name means that you can actually have less or more than 3 tiers. The layers described above are just the common ground.
-There are other types of comparable structures like the 2-tier architecture, the single tier, the 4-tier ...
-When developing a project, you usually tailor the architecture to your needs. You could even subdivide the 3 common layers into sub-layers depending on your requirements.
+Bien sûr, le "n" signifie qu'il peut y avoir plus ou moins de couches. Les éléments décrits ci-dessus ne représente qu'un dénominateur commun.
+Il existe des structures identiques comme l'archi 2-tiers, la Couche Unique, la 4-tiers, ...
+Quand on développe un projet, on adapte l'architecture à ses besoins. Tu pourrais même sub-diviser les 3 couches ci-dessus en des sous-couches dépendamment de tes besoins.
 
-### Pros & Cons
+### Avantages & Inconvénients
 
-For the **advantages**, we can list the following:
+For the **avantages**, we can list the following:
 
 -   more secure — The presentation layer (usually the UI or such) is not "directly" wired to the database. All connections to it are shielded by the logic layer.
 -   easily maintainable — at the time of its "creation", this archi allowed the developers to maintain it much more easily than the previous architectures did.
 -   easy to reuse — it is easier to reuse the logic of each layer.
 
-For the **disadvantages**, let's have a quick look too:
+For the **inconvénients**, let's have a quick look too:
 
 -   increase in effort — implementing new features takes time as you have to go through all tiers.
     Changing a single thing in the database layer is reflected to the logic and presentation layers as they directly rely on it.
 -   increase in complexity — when it grows, it becomes more difficult to keep it clean, understandable and predict the impact of a change.
 -   harder to test — implementing tests is quite difficult as everything is highly coupled to the layer it points toward.
 
-### When to use it?
+### Quand l'utiliser, selon moi?
 
 In my humble opinion, using the n-tier architecture is a good start when you need to develop a prototype of an idea because you need to showcase something quickly.
 This will unfortunately tend to make things less great for the future though.
 You could also use this archi when you need to build an easy CRUD app.
 Speaking of such, I decided to build a quick API to query one of my employers' database once using this structure.
 
-## The Clean Architecture
+## La Clean Architecture
 
-### What is it?
+### Qu'est-ce que c'est?
 
 <Figure
     data={{
@@ -115,9 +119,9 @@ Historical fact: the 3-Tiered architecture came in 1992 thanks to John J. Donova
 -   Onion Architecture (2008, Jeffrey Palermo),
 -   Clean Architecture (2012, Robert C. Martin).
 
-### Pros & Cons
+### Avantages & Inconvénients
 
-For the **advantages**, we can list the following:
+For the **avantages**, we can list the following:
 
 -   less coupled code, better testability — as the code is less coupled due to using abstractions everywhere you can, you can easily mock dependencies and unit test your components.
     It also facilitates the development in each layer as they are not highly coupled together, allowing teams to work in parallel on each layer.
@@ -127,18 +131,18 @@ For the **advantages**, we can list the following:
 -   better application of SOLID principles
 -   better evolutivity
 
-For the **disadvantages**, we can list the following:
+For the **inconvénients**, we can list the following:
 
 -   increase in time to build from scratch — you need to setup more things before starting to develop a valuable feature for the client.
 -   increase in code — you need more files (classes and interfaces) than in an n-tier architecture.
 -   possible loss of optimization — being closer to implementations might grant you better performances. You would lose this in profit of looser coupling which IMHO is a good trade-off.
 
-### When to use it?
+### Quand l'utiliser, selon moi?
 
 When you need to develop a complex software, that you want to test your features and want to deliver something valuable that will not increase the buglog once in production.
 It can also be mixed with methodologies that make it a strong reliability like [DDD](https://en.wikipedia.org/wiki/Domain-driven_design) and [TDD](https://en.wikipedia.org/wiki/Test-driven_development).
 
-## So why do I prefer CA over N-Tier?
+## Du coup, pourquoi est-ce que je préfère cette dernière?
 
 You might know now but I am tired of developing crappy things, I'm tired of working in a company where you get told to "develop fast and we will improve it later".
 Later never comes.

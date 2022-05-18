@@ -38,11 +38,15 @@ I decided to talk about the architecture choice I take when developing my apps!
 
 ---
 
-Not long ago, I have been asked by fellow developers how I structure my projects because when they evolve, the basic n-tier architecture becomes more complex and they tend to create messy solutions.
+Not long ago, I have been asked the following by fellow developers:
+
+> How do you structure your projects because when they evolve, the basic n-tier architecture becomes more complex and they tend to create messy solutions.
+
 I don't have all the answers but what I actually said is that when it comes to my own projects, I make a simple choice:
 
 -   If I am working on a basic CRUD app, I will definitely go for a 3-Tier architecture.
--   But if I need to build a more complex app requiring a strong business logic and which must scream its goal, I will definitely use what Robert C. Martin called [the Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in 2012.
+-   But if I need to build a more complex app requiring a strong business logic and which must scream its goal,
+    I will definitely use what Robert C. MARTIN called [the Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in 2012.
     Of course, my version is not strictly following what Uncle Bob describes in his blog as I have tailored it to my needs but let's talk about it.
 
 Nowadays though, I tend to be more inclined to use the latter. But **what does the Clean Architecture bring me that I love and that n-tier does not?**
@@ -54,7 +58,7 @@ Nowadays though, I tend to be more inclined to use the latter. But **what does t
 First of all, it would be a shame to talk about the Clean Architecture and not talk about what I have learnt during my years at school: the n-tier architecture.
 This type of architecture is usually presented as and mixed up with one of its specific version: the 3-tier architecture.
 
-This architecture puts the data at the center. The 3 layers are:
+This architecture places the data as the core of the application. The 3 layers are:
 
 1. the presentation layer, responsible of presenting the information to the outside ;
 2. the logic layer, responsible of the business logic that should be applied on the data ;
@@ -89,10 +93,11 @@ For the **disadvantages**, let's have a quick look too:
 
 ### When to use it?
 
-In my humble opinion, using the n-tier architecture is a good start when you need to develop a prototype of an idea because you need to showcase something quickly.
+In my humble opinion, using the n-tier architecture is a good start when you need to develop the prototype of an idea because you need to showcase something quickly.
 This will unfortunately tend to make things less great for the future though.
+
 You could also use this archi when you need to build an easy CRUD app.
-Speaking of such, I decided to build a quick API to query one of my employers' database once using this structure.
+Speaking of such, it is often used when you simply want to query a database. I once did that for one of my employers.
 
 ## The Clean Architecture
 
@@ -109,11 +114,11 @@ Speaking of such, I decided to build a quick API to query one of my employers' d
 This architecture puts the Domain at the center, and in charge of everything. It also requires more intentional designs as you do not rely on your database directly.
 Built with the [CQRS pattern](https://martinfowler.com/bliki/CQRS.html), I consider it the best way to write a software with maintainability and simplicity in mind.
 
-Historical fact: the 3-Tiered architecture came in 1992 thanks to John J. Donovan and was followed by others afterwards:
+Historical fact: the 3-Tiered architecture came in 1992 thanks to John J. DONOVAN and was followed by others afterwards:
 
--   Hexagonal Architecture / Ports & Adapters (2005, Alistair Cockburn),
--   Onion Architecture (2008, Jeffrey Palermo),
--   Clean Architecture (2012, Robert C. Martin).
+-   Hexagonal Architecture / Ports & Adapters (2005, Alistair COCKBURN),
+-   Onion Architecture (2008, Jeffrey PALERMO),
+-   Clean Architecture (2012, Robert C. MARTIN).
 
 ### Pros & Cons
 
@@ -133,6 +138,9 @@ For the **disadvantages**, we can list the following:
 -   increase in code — you need more files (classes and interfaces) than in an n-tier architecture.
 -   possible loss of optimization — being closer to implementations might grant you better performances. You would lose this in profit of looser coupling which IMHO is a good trade-off.
 
+Editor's Note: Honnestly, reading this again... I don't feel like these are real disadvantages.
+They can be easily overcome with experience, and will make you gain time on the long run, especially if you decide to work with tests (which you should if you want to produce good code!).
+
 ### When to use it?
 
 When you need to develop a complex software, that you want to test your features and want to deliver something valuable that will not increase the buglog once in production.
@@ -149,7 +157,26 @@ I am so tired of such way of working that I fell in love with 3 things:
 2. Test-Driven Development, and
 3. [Software Craftsmanship](https://en.wikipedia.org/wiki/Software_craftsmanship).
 
-I highly encourage you to learn more about these topics. They represent what I would love to call the best mindset for the next generation of developers.
+But more seriously, I haven't explained _why_ I like it... In a few words, let me tell you.
+You need to know that developing an application without tests, it's like developing with your eyes closed: you do mistakes.
+I then started digging this part of my job I was neglecting at the time: testing. Thanks to my professional experience at Pwc Luxembourg, I met wonderful people who taught me a lot of new things.
+
+That was when I've been asked to write an application following a particular architecture... And everything got solved once I practiced.
+
+Developing with Clean Archi, for me, it is the real culmination of software development where the technical "parts" can finally be changed without having to rework something else.
+The true is, I learnt so much with Clean Architecture:
+
+-   I understood the real deal that Dependency Injection represents ;
+-   I succeeded in applying SOLID principles better than all the other times I tried, in vain ;
+-   I understod that I had to name my interfaces independantly of the implementation that could ensue from it since I could potentially have 3 different implementations of `IPdfGenerator` ;
+-   I understood that testing _is_ fun ;
+-   I understood that writing apps without bugs is possible and should be common.
+
+And I went to school! They explained what dependency injection, SOLID principles, clean code... are, they taught me how to prepare for a development and avoid the majority of bugs...
+But that doesn't mean I haven't written horrible code or buggy apps or patched a feature and broken something else in the process.
+
+So, I highly encourage you to learn more about these 3 topics I listed above. The rest should come...
+They represent what I would love to call _the best mindset_ for the next generation of developers.
 
 ## Conclusion
 
@@ -158,13 +185,13 @@ It took us time to understand that what gives value to our clients is not the da
 
 I suggest that you check out these resources to have a more historical context, explanations and really accurate information on the topic:
 
--   The presentation of Guillherme Ferreira on [The Grand Unified Theory of Clean Architecture and Test Pyramid](https://youtu.be/fPSrA-YcHag?t=6724) at NDC Porto;
--   Mark Seemann's [article](https://blog.ploeh.dk/2013/12/03/layers-onions-ports-adapters-its-all-the-same/) on the topic of adapters;
--   [Sean G. Wright comment](https://dev.to/seangwright/comment/ccfb) on "Clean architecture - Your approach";
--   [Samuel Oloruntoba's explanations](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) of the SOLID principles;
--   The meetup group of [Software Craftsmanship Luxembourg](https://www.meetup.com/fr-FR/software-craft-luxembourg/);
--   [Valentina Cupać's slides](https://www.jug.ch/events/slides/220201_Optivem_TDD_and_Clean_Architecture_Driven_by_Behaviour.pdf) about TDD and Clean Architecture driven by behaviour;
--   A blog post relating an [introduction to CA](https://medium.com/codex/introduction-to-clean-architecture-2437c6987ec)
+-   The presentation of Guillherme FERREIRA on [The Grand Unified Theory of Clean Architecture and Test Pyramid](https://youtu.be/fPSrA-YcHag?t=6724) at NDC Porto ;
+-   [Mark SEEMANN's article](https://blog.ploeh.dk/2013/12/03/layers-onions-ports-adapters-its-all-the-same/) on the topic of adapters ;
+-   [Sean G. WRIGHT comment](https://dev.to/seangwright/comment/ccfb) on "Clean architecture - Your approach" ;
+-   [Samuel OLORUNTOBA's explanations](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) of the SOLID principles ;
+-   The meetup group of [Software Craftsmanship Luxembourg](https://www.meetup.com/fr-FR/software-craft-luxembourg/) ;
+-   [Valentina CUPAĆ's slides](https://www.jug.ch/events/slides/220201_Optivem_TDD_and_Clean_Architecture_Driven_by_Behaviour.pdf) about TDD and Clean Architecture driven by behaviour ;
+-   A blog post relating an [introduction to CA](https://medium.com/codex/introduction-to-clean-architecture-2437c6987ec) ;
 -   If you want to see an example of this structure, don't hesitate to take a look at [Cloud Filesystem](https://github.com/hunteroi/cloud-filesystem), one of my open-sourced project!
 
 And you, what architecture do you use for your projects?

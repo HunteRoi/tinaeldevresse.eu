@@ -45,20 +45,21 @@ Il n'y a pas si longtemps, des collègues m'ont posé la question suivante:
 Je n'ai pas toutes les réponses mais ce que j'ai répondu est que si ça touche à mes projets, je fais un simple choix:
 
 -   Si je travaille sur une app CRUD basique, je choisis définitivement la 3-Tier architecture.
--   Mais si j'ai besoin de construire une application plus complexe qui nécessite une logique business importante et qui doit "crier son but", je choisis alors directement ce que Robert C. Martin a appelé [la Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) en 2012.
+-   Mais si j'ai besoin de construire une application plus complexe qui nécessite une logique business importante et qui doit "crier son but",
+    je choisis alors directement ce que Robert C. MARTIN a appelé [la Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) en 2012.
     Bien sûr, ma version ne suit pas strictement ce qu'Uncle Bob décrit dans son blog puisque je l'ai adapté à mes besoins mais parlons-en!
 
 De nos jours cependant, j'ai plutôt tendance à faire pencher la balance en faveur du deuxième choix.
-Mais **qu'est-ce que j'aime dans ce que m'apporte la Clean Architecture et non la N-Tier?**
+Mais **qu'est-ce que j'aime dans la Clean Architecture et pas dans la N-Tier?**
 
 ## La N-Tier architecture
 
 ### Qu'est-ce que c'est?
 
-Premièrement, ça serait une honte de vous parler de Clean Architecture et ne pas aborder l'enseignement que j'ai reçu à l'école : l'architecture n-tier.
+Premièrement, ça serait une honte de te parler de Clean Architecture et ne pas aborder l'enseignement que j'ai reçu à l'école : l'architecture n-tier.
 Ce type d'archi est courament présenté et confondu avec l'une de ses versions spécifiques: l'architecture 3-tiers.
 
-Cette archi met les données au centre. Elle est composée de 3 couches:
+Cette archi place les données comme étant le coeur de l'application. Elle est composée de 3 couches:
 
 1. la couche Présentation, responsable de présenter l'information à l'extérieur ;
 2. la couche Logique, responsable de la logique business qui doit être appliquée aux données ;
@@ -78,25 +79,26 @@ Quand on développe un projet, on adapte l'architecture à ses besoins. Tu pourr
 
 ### Avantages & Inconvénients
 
-For the **avantages**, we can list the following:
+En ce qui concerne les **avantages**, on peut lister les suivants:
 
--   more secure — The presentation layer (usually the UI or such) is not "directly" wired to the database. All connections to it are shielded by the logic layer.
--   easily maintainable — at the time of its "creation", this archi allowed the developers to maintain it much more easily than the previous architectures did.
--   easy to reuse — it is easier to reuse the logic of each layer.
+-   plus sécurisé — la couche Présentation (typiquement l'UI) n'est pas directement reliée à la base de données. Toutes les connexions sont donc protégées par la couche Logique.
+-   facilement maintenable — au moment de sa "création", cette archi permettait aux développeurs de maintenir leurs projets plus facilement que les précédentes.
+-   facilement à réutiliser — c'est bien plus facile de réutiliser la logique de chaque couche.
 
-For the **inconvénients**, let's have a quick look too:
+Voyons voir ce qu'il en est des **inconvénients**:
 
--   increase in effort — implementing new features takes time as you have to go through all tiers.
-    Changing a single thing in the database layer is reflected to the logic and presentation layers as they directly rely on it.
--   increase in complexity — when it grows, it becomes more difficult to keep it clean, understandable and predict the impact of a change.
--   harder to test — implementing tests is quite difficult as everything is highly coupled to the layer it points toward.
+-   augmentation de l'effort — implémenter de nouvelles fonctionnalités prend plus de temps puisque tu dois passer à travers toutes les couches.
+    Changer une chose dans la couche Database oblige également à réfléchir cette modification dans les couches Logique et Présentation puisqu'elles sont liées entre elles.
+-   augmentation de la complexité — quand la solution croît, elle devient plus difficile à garder propre, compréhensible et à prédire l'impact de changements dans le code.
+-   bien plus compliqué à tester — implémenter des tests est beaucoup plus compliqués parce que chaque couche est fortement couplée à la couche qui suit.
 
-### Quand l'utiliser, selon moi?
+### Quand l'utiliser?
 
-In my humble opinion, using the n-tier architecture is a good start when you need to develop a prototype of an idea because you need to showcase something quickly.
-This will unfortunately tend to make things less great for the future though.
-You could also use this archi when you need to build an easy CRUD app.
-Speaking of such, I decided to build a quick API to query one of my employers' database once using this structure.
+D'après moi, utiliser l'architecture n-tier est un bon début quand tu veux développer le prototype d'une idée parce que tu peux rapidement démontrer quelque chose.
+Cela va cependant tendre à rendre les choses moins bien dans le futur.
+
+Tu pourrais aussi utiliser cette archi si tu dois construire une simple application qui réalise du CRUD.
+D'ailleurs, c'est assez courant de faire ça quand tu veux simplement lire le contenu d'une base de données. Je l'ai fait chez l'un de mes employeurs un jour.
 
 ## La Clean Architecture
 
@@ -110,67 +112,89 @@ Speaking of such, I decided to build a quick API to query one of my employers' d
     }}
 />
 
-This architecture puts the Domain at the center, and in charge of everything. It also requires more intentional designs as you do not rely on your database directly.
-Built with the [CQRS pattern](https://martinfowler.com/bliki/CQRS.html), I consider it the best way to write a software with maintainability and simplicity in mind.
+Cette architecture place le Domaine au centre, et en charge de tout. Elle demande également plus de design intentionnel puisque tu ne te bases pas directement sur ta base de données.
+Construit sur base du [patron CQRS](https://martinfowler.com/bliki/CQRS.html), je la considère comme le meilleur moyen d'écrire une application avec la simplicité et maintenabilité en tête.
 
-Historical fact: the 3-Tiered architecture came in 1992 thanks to John J. Donovan and was followed by others afterwards:
+Historiquement, l'archi 3-tiers est arrivée en 1992 grâce à John J. DONOVAN et fut ensuite suivie par d'autres:
 
--   Hexagonal Architecture / Ports & Adapters (2005, Alistair Cockburn),
--   Onion Architecture (2008, Jeffrey Palermo),
--   Clean Architecture (2012, Robert C. Martin).
+-   Hexagonal Architecture / Ports & Adapters (2005, Alistair COCKBURN),
+-   Onion Architecture (2008, Jeffrey PALERMO),
+-   Clean Architecture (2012, Robert C. MARTIN).
 
 ### Avantages & Inconvénients
 
-For the **avantages**, we can list the following:
+Une seconde liste pour les **avantages**:
 
--   less coupled code, better testability — as the code is less coupled due to using abstractions everywhere you can, you can easily mock dependencies and unit test your components.
-    It also facilitates the development in each layer as they are not highly coupled together, allowing teams to work in parallel on each layer.
--   separation of concerns — the architecture kind of forces you to think about your use cases and dependencies.
-    The UI also does not care about how your database looks, nor does it care about the packages you use to generate a PDF for example...
--   better features exposition
--   better application of SOLID principles
--   better evolutivity
+-   code moins couplé, meilleure testabilité — comme le code est moins couplé (merci à l'utilisation d'abstractions partout où c'est possible), tu peux facilement "mocker" tes dépendances et tester unitairement tes composants.
+    Cela facilite aussi le développement de chaque couche puisqu'elles ne sont pas fortement couplées ensemble, permettant ainsi aux équipes de travailler en parallèle sur chaque couche si besoin est.
+-   séparation des responsabilités — l'archi te force un peu à penser à ta structure et aux dépendances de tes composants, remet potentiellement en cause de mauvaises décisions, etc.
+    L'interface utilisateur ne s'intéresse également pas à la structure de la base de données, ni quel package est utilisé pour générer un PDF par exemple...
+-   meilleure exposition des fonctionnalités (x10 si tu utilises l'Use-Case Driven Development en plus!)
+-   meilleure application des principes SOLID
+-   meilleure évolutivité
 
-For the **inconvénients**, we can list the following:
+Et une nouvelle liste pour les **inconvénients**:
 
--   increase in time to build from scratch — you need to setup more things before starting to develop a valuable feature for the client.
--   increase in code — you need more files (classes and interfaces) than in an n-tier architecture.
--   possible loss of optimization — being closer to implementations might grant you better performances. You would lose this in profit of looser coupling which IMHO is a good trade-off.
+-   augmentation du temps de développment à partir de rien — tu dois préparer plus de choses au début du projet avant de pouvoir commencer une fonctionnalité qui a de la valeur pour le client.
+-   augmentation du nombre de lignes de code — il te faut plus de fichiers (classes et interfaces) que dans une n-tier.
+-   possible perte d'optimisation — en n-tier, tu es forcément plus proche de l'implémentation de cela te permet de meilleures performances.
+    Cette archi te fait perdre cette optimisation à profit de moins de couplage de ton code, ce qui est un bon échange selon moi.
 
-### Quand l'utiliser, selon moi?
+NDLR: Honnêtement, en relisant ces inconvénients, je ne les considère pas réellement comme des problèmes.
+Ils sont facilement surmontables avec l'expérience, et te font gagner du temps sur le long terme, particulièrement si tu décides de travailler avec des tests (ce que tu devrais toujours faire si tu veux produire du bon code!).
 
-When you need to develop a complex software, that you want to test your features and want to deliver something valuable that will not increase the buglog once in production.
-It can also be mixed with methodologies that make it a strong reliability like [DDD](https://en.wikipedia.org/wiki/Domain-driven_design) and [TDD](https://en.wikipedia.org/wiki/Test-driven_development).
+### Quand l'utiliser?
+
+Quand tu dois développer des applications complexes, que tu veux tester tes fonctionnalité et délivrer quelque chose qui a de la valeur et qui ne va pas augmenter la taille du buglog une fois en production.
+Elle peut aussi être mixée avec des méthodologies qui en font une fiabilité comme [DDD](https://en.wikipedia.org/wiki/Domain-driven_design) et [TDD](https://en.wikipedia.org/wiki/Test-driven_development).
 
 ## Du coup, pourquoi est-ce que je préfère cette dernière?
 
-You might know now but I am tired of developing crappy things, I'm tired of working in a company where you get told to "develop fast and we will improve it later".
-Later never comes.
+Tu dois savoir maintenant que je suis fatigué de développer des choses moches, je suis fatigué de travailler pour des entreprises qui te disent "développe plus vite et on améliorera plis tard".
+Plus tard n'arrive jamais.
 
-I am so tired of such way of working that I fell in love with 3 things:
+Je suis si fatigué d'une telle manière de travailler que je suis tombé amoureux de 3 choses:
 
-1. Clean Architecture, and
-2. Test-Driven Development, and
-3. [Software Craftsmanship](https://en.wikipedia.org/wiki/Software_craftsmanship).
+1.  la Clean Architecture, et
+2.  le Test-Driven Development, et
+3.  le mouvement [Software Craftsmanship](https://fr.wikipedia.org/wiki/Software_craftsmanship).
 
-I highly encourage you to learn more about these topics. They represent what I would love to call the best mindset for the next generation of developers.
+Mais plus sérieusement, je n'explique pas forcément _pourquoi_ je la préfère... Alors, en quelques mots, laisse-moi te l'expliquer.
+Il faut savoir que développer une application sans tests, c'est comme développer les yeux fermés: tu fais des fautes.
+J'ai donc creusé cette partie de mon travail que je négligeais à l'époque: le testing. Grâce à mon expérience chez PwC Luxembourg, j'ai rencontré des gens formidables qui m'ont appris énormément de nouvelles choses.
+C'est à cette époque que l'on m'a demandé de créer une application en suivant une architecture particulière... Et tout est devenu claire une fois que j'ai pratiqué.
+
+Développer avec la Clean Archi, c'est pour moi le réel aboutissement du développement d'applications où les "parties" techniques peuvent enfin être changées sans pour autant devoir redévelopper autre chose.
+En réalité, j'ai appris beaucoup de choses avec la Clean Architecture:
+
+-   j'ai compris le réel atout qu'offrait l'Injection de dépendances ;
+-   j'ai réussi à mieux appliquer SOLID que toutes les autres fois où j'ai tenté, en vain ;
+-   j'ai compris que je devais nommer mes interfaces indépendamment de l'implémentation qui pouvait en découler puisque potentiellement, je pourrais avoir 3 implémentations différentes d'un `IPdfGenerator` ;
+-   j'ai compris que tester, c'était amusant ;
+-   j'ai compris que développer des applications sans bugs, c'était possible et que ça devrait être standard.
+
+Et je suis allé à l'école! On m'a expliqué l'injection de dépendances, les principes SOLID, le clean code, comment préparer le développement d'une application et éviter la majorité des bugs...
+Mais ce n'est pas pour autant que je n'ai jamais écrit de code horrible ou d'applications bugués ou patché une fonctionnalité et casser quelque chose d'autre en passant.
+
+Alors, je t'encourage grandement à en apprendre plus sur les 3 sujets que j'ai mentionné plus tôt. Le reste devrait venir...
+Ils représentent ce que j'adorerais appeler _le meilleur état d'esprit_ pour la génération suivante de développeurs.
 
 ## Conclusion
 
-What finally makes the n-tier architecture obsolete is that it is actually _data-centric_ unlike the clean archi that is _centered around the logic_.
-It took us time to understand that what gives value to our clients is not the data, but the business logic that allows to process that data!
+Ce qui fait finallement que l'architecture n-tier est obsolète, c'est le fait qu'elle est centrée _données_ a contrario de la clean archi qui est _centrée sur la logique_.
+Ça nous a pris du temps de comprendre que ce qui donne de la valeur à nos clients n'est pas les données mais bien la logique business qui permet de traiter ces données!
 
-I suggest that you check out these resources to have a more historical context, explanations and really accurate information on the topic:
+Je suggère donc que tu regardes à ces ressources pour avoir un context plus historique, des explications et informations précises sur le sujet:
 
--   The presentation of Guillherme Ferreira on [The Grand Unified Theory of Clean Architecture and Test Pyramid](https://youtu.be/fPSrA-YcHag?t=6724) at NDC Porto;
--   Mark Seemann's [article](https://blog.ploeh.dk/2013/12/03/layers-onions-ports-adapters-its-all-the-same/) on the topic of adapters;
--   [Sean G. Wright comment](https://dev.to/seangwright/comment/ccfb) on "Clean architecture - Your approach";
--   [Samuel Oloruntoba's explanations](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) of the SOLID principles;
--   The meetup group of [Software Craftsmanship Luxembourg](https://www.meetup.com/fr-FR/software-craft-luxembourg/);
--   [Valentina Cupać's slides](https://www.jug.ch/events/slides/220201_Optivem_TDD_and_Clean_Architecture_Driven_by_Behaviour.pdf) about TDD and Clean Architecture driven by behaviour;
--   A blog post relating an [introduction to CA](https://medium.com/codex/introduction-to-clean-architecture-2437c6987ec)
--   If you want to see an example of this structure, don't hesitate to take a look at [Cloud Filesystem](https://github.com/hunteroi/cloud-filesystem), one of my open-sourced project!
+-   La présentation de Guillherme FERREIRA sur [The Grand Unified Theory of Clean Architecture and Test Pyramid](https://youtu.be/fPSrA-YcHag?t=6724) à la NDC Porto ;
+-   L'[article de Mark SEEMANN](https://blog.ploeh.dk/2013/12/03/layers-onions-ports-adapters-its-all-the-same/) sur le sujet des adapteurs ;
+-   [Le commentaire de Sean G. WRIGHT](https://dev.to/seangwright/comment/ccfb) sur "Clean architecture - Your approach" ;
+-   [Les explications de Samuel OLORUNTOBA](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) sur les principes SOLID ;
+-   Le groupe MeetUp du [Software Craftsmanship Luxembourg](https://www.meetup.com/fr-FR/software-craft-luxembourg/) ;
+-   [Les slides de Valentina CUPAĆ](https://www.jug.ch/events/slides/220201_Optivem_TDD_and_Clean_Architecture_Driven_by_Behaviour.pdf) sur TDD et la Clean Architecture par comportement ;
+-   Un article de blog [introduisant à la CA](https://medium.com/codex/introduction-to-clean-architecture-2437c6987ec) ;
+-   Si tu veux voir un exemple de cette structure, n'hésite pas à regarder [Cloud Filesystem](https://github.com/hunteroi/cloud-filesystem), un de mes projets open-source!
 
-And you, what architecture do you use for your projects?
+Et toi, quelle archi tu utilises pour tes projets?
 
 <Newsletter url={MAILCHIMP_URL} />

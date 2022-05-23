@@ -1,27 +1,27 @@
 ---
 slug: unit-testing
-title: Unit testing
+title: Unit Testing
 tags: [test, unit test, programming]
 description: Today's article is done in joint effort with my former colleague and mentor <a href="https://www.linkedin.com/in/guillaumefaas/" target="_blank" rel="noreferrer noopener nofollow">Guillaume Faas</a> (🔹) in the form of an interview of a developer. Please join me to thank him for his incredible involvement in the writing of this post! We both hope you are gonna love it as much as we loved writing it.
 image: img/unit-testing.jpg
 ---
 
-import Figure from "../src/components/figure";
-import SEO from "../src/components/seo";
-import Reminder from "../src/components/reminder";
-import Newsletter from "../src/components/newsletter";
-import { MAILCHIMP_URL } from "../website_config.json";
-import { AnchoredH2, AnchoredP } from "../src/components/AnchoredHeading";
-import randomChoose from "../src/utils/randomChoose";
+import Figure from '../src/components/figure';
+import SEO from '../src/components/seo';
+import Reminder from '../src/components/reminder';
+import Newsletter from '../src/components/newsletter';
+import { MAILCHIMP_URL } from '../website_config.json';
+import { AnchoredH2, AnchoredP } from '../src/components/AnchoredHeading';
+import randomChoose from '../src/utils/randomChoose';
 
 <a href='/blog/unit-testing'>
-	<Figure
-		data={{
-			src: "/img/unit-testing.jpg",
-			alt: "Unit tests",
-			type: "image",
-		}}
-	/>
+    <Figure
+        data={{
+            src: '/img/unit-testing.jpg',
+            alt: 'Unit tests',
+            type: 'image'
+        }}
+    />
 </a>
 
 Today's article is done in joint effort with my former colleague and mentor <a href="https://www.linkedin.com/in/guillaumefaas/" target="_blank" rel="noreferrer noopener nofollow">Guillaume Faas</a>
@@ -55,7 +55,7 @@ I've been building softwares since 10 years or so, in various environments and b
 🔹 What do you think? It seems someone did not read the post's title. We are going to talk about **unit testing**!
 
 <AnchoredP id='first-encounter'>
-	🔸 When did you first encounter unit testing?
+    🔸 When did you first encounter unit testing?
 </AnchoredP>
 
 🔹 It was a long time ago in a galaxy far, far away... I barely had a few years of experience.
@@ -65,8 +65,8 @@ I seemed like I stepped in a new world that had nothing to do with my daily life
 However, I quickly realised that I had to progress in other subjets before I could introduce tests in my projects. It took me quite a long time before I was really fit to work in a test-driven approach.
 
 <AnchoredP id='what-is-it'>
-	🔸 Ok! However, just not to lose our readers... can you explain what a unit
-	test is please?
+    🔸 Ok! However, just not to lose our readers... can you explain what a unit
+    test is please?
 </AnchoredP>
 
 🔹 Yes, of course! A unit test is a test that verifies a _unit of code_. This concept of unit of code varies according to the testing schools.
@@ -79,7 +79,7 @@ The main difference is mainly the size of your _System Under Test_ (SUT) and the
 But in the end, a unit test is simply **a piece of code validating that another piece of code has the expected result and/or side effect against a given scenario**.
 
 <AnchoredP id='hierarchy-position'>
-	🔸 Alright. Where is it in this "test hierarchy"?
+    🔸 Alright. Where is it in this "test hierarchy"?
 </AnchoredP>
 
 🔹 It looks like the Agile Testing Pyramid but from left to right instead of bottom to top.
@@ -93,59 +93,58 @@ This finally means that in a unit test: we avoid reaching a database, making HTT
 We strictly stay "internal" to the unit.
 
 <Figure
-	data={{
-		src: "/img/software-testing-types.png",
-		alt: "Types of Software Testing",
-		type: "image",
-	}}
+    data={{
+        src: '/img/software-testing-types.png',
+        alt: 'Types of Software Testing',
+        type: 'image'
+    }}
 />
 
 Here are a few points on the _functional testing_ part:
 
-- unit testing is to check that a component works well. It is the fastest, we will talk about "fast feedback loop" ;
-- integration testing is to check that several components work well together ;
-- user acceptance testing consists of verifying the whole application while avoiding contact with external dependencies (eg: requests to external providers).
-  This is the most representative test, probably the one that has the most value on the product scale as it validates business requirements.
+-   unit testing is to check that a component works well. It is the fastest, we will talk about "fast feedback loop" ;
+-   integration testing is to check that several components work well together ;
+-   user acceptance testing consists of verifying the whole application while avoiding contact with external dependencies (eg: requests to external providers).
+    This is the most representative test, probably the one that has the most value on the product scale as it validates business requirements.
 
 Note that you don't have to implement them all. We could have a test suite only composed of tests from a single category.
 But it should be borne in mind that our test suite will not be the most effective.
 
 <AnchoredP>
-	🔸 Nice! But why is testing not used everywhere in the profesionnal world?
+    🔸 Nice! But why is testing not used everywhere in the profesionnal world?
 </AnchoredP>
 
 🔹 In reality, a large part of developers write little to no tests. In addition, integration tests are less common than unit tests because they are more complex to write.
 In the end, this task is often seen as a chore or an extra step that we will only do if we have time.
 
 <Figure
-	data={{
-		src: randomChoose(
-			"https://miro.medium.com/max/600/1*xHibbXdcePT0GtpeZRgxSA.gif",
-			"https://media4.giphy.com/media/hqq505vU9iHCOGySD5/giphy.gif",
-			"https://media1.giphy.com/media/VXmWbcDSj2yqnsXUrF/giphy.gif"
-		),
-		alt: "GIF on integration tests",
-		type: "image",
-	}}
+    data={{
+        src: randomChoose(
+            'https://miro.medium.com/max/600/1*xHibbXdcePT0GtpeZRgxSA.gif',
+            'https://media4.giphy.com/media/hqq505vU9iHCOGySD5/giphy.gif',
+            'https://media1.giphy.com/media/VXmWbcDSj2yqnsXUrF/giphy.gif'
+        ),
+        alt: 'GIF on integration tests',
+        type: 'image'
+    }}
 />
 
 Uncle Bob also spoke about it at a conference in London in 2018:
 
 <Figure
-	data={{
-		type: "html",
-		width: "560",
-		height: "315",
-		src: "https://www.youtube.com/embed/17vTLSkXTOo?start=552&end=720",
-		title: "YouTube video player of SC London Conference 2018",
-		allow:
-			"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-		allowFullScreen: true,
-	}}
+    data={{
+        type: 'html',
+        width: '560',
+        height: '315',
+        src: 'https://www.youtube.com/embed/17vTLSkXTOo?start=552&end=720',
+        title: 'YouTube video player of SC London Conference 2018',
+        allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+        allowFullScreen: true
+    }}
 />
 
 <AnchoredP id='objective'>
-	🔸 What is the objective of unit testing and when should it be applied?
+    🔸 What is the objective of unit testing and when should it be applied?
 </AnchoredP>
 
 🔹 The goal is quite simple: it's to show that a method works as expected. That is, you are going to have an expected behavior. For example, a method `getSomething` should return you something.
@@ -154,7 +153,7 @@ You are thus going to test different scenarios and check that the method always 
 As for the "when", it's even simpler: you need to apply unit testing whenever you have some logic somewhere.
 
 <AnchoredP id='pros-and-cons'>
-	🔸 Alrighty! What are the pros and cons of such thing?
+    🔸 Alrighty! What are the pros and cons of such thing?
 </AnchoredP>
 
 🔹 As previously said, you write code to test code. Seen like this, it surely looks like additional workload but there are realy interests behind!
@@ -219,17 +218,17 @@ I have already read articles about companies that have incorporated the value of
 
 The only way to check the quality of a test suite of a project is to ask yourself a few questions:
 
-- Does the general feature development time stay approximately the same over time?
-- Does the quantity of bugs found in production decrease over time?
-- Do you easily manage to welcome new resource within the development team?
-- Do the developers trust their test suite? Is it representative of the state of health of the solution? Does a green circle really guarantee that a component is working?
+-   Does the general feature development time stay approximately the same over time?
+-   Does the quantity of bugs found in production decrease over time?
+-   Do you easily manage to welcome new resource within the development team?
+-   Do the developers trust their test suite? Is it representative of the state of health of the solution? Does a green circle really guarantee that a component is working?
 
 If you are able to answer "yes" to all these questions, congrats! You can be proud of the test suite that you have put in place.
 The problem? It is really difficult to have an answer to all these questions when you have to report _day one_... You also notice that the first three refer to **time**.
 
 <AnchoredP id='cost'>
-	🔸 Well... Cost wise, where are we? Because ultimately, writing a test means
-	writing code. It costs!
+    🔸 Well... Cost wise, where are we? Because ultimately, writing a test means
+    writing code. It costs!
 </AnchoredP>
 
 🔹 I see where you are going with this. No, it does not cost more unless you charge to characters!
@@ -241,18 +240,18 @@ On the other hand, it will especially "save your life" a lot of times because yo
 But you wanted to talk about money! **The later a bug is discovered, the more it costs**:
 
 <Figure
-	data={{
-		src: "https://assets.deepsource.io/995f56d/images/blog/cost-of-fixing-bugs/chart.jpg",
-		alt: "Cost of bug fix",
-		type: "image",
-		url: "https://deepsource.io/blog/exponential-cost-of-fixing-bugs/",
-	}}
+    data={{
+        src: 'https://assets.deepsource.io/995f56d/images/blog/cost-of-fixing-bugs/chart.jpg',
+        alt: 'Cost of bug fix',
+        type: 'image',
+        url: 'https://deepsource.io/blog/exponential-cost-of-fixing-bugs/'
+    }}
 >
-	Cost of bug fix based on the moment it was detected, sourced from{" "}
-	<a href='https://deepsource.io/blog/exponential-cost-of-fixing-bugs/'>
-		DeepSource
-	</a>
-	!
+    Cost of bug fix based on the moment it was detected, sourced from{' '}
+    <a href='https://deepsource.io/blog/exponential-cost-of-fixing-bugs/'>
+        DeepSource
+    </a>
+    !
 </Figure>
 
 And is totally normal.
@@ -270,20 +269,20 @@ _Ed: to learn more about the reasons that softwares have bugs, do not hesitate t
 <AnchoredH2 id='details'>In depth</AnchoredH2>
 
 <AnchoredP id='black-and-white-boxes'>
-	🔸 Ok! What about we talk about black box and white box testing now?
+    🔸 Ok! What about we talk about black box and white box testing now?
 </AnchoredP>
 
 🔹 I like diagrams, do you like diagrams? Diagrams are great!
 
 <Figure
-	data={{
-		src: "/img/black-white-box-testing.png",
-		alt: "Black and white box testing",
-		type: "image",
-		style: { border: ".5em solid black" },
-	}}
+    data={{
+        src: '/img/black-white-box-testing.png',
+        alt: 'Black and white box testing',
+        type: 'image',
+        style: { border: '.5em solid black' }
+    }}
 >
-	The differences between black and white box testing
+    The differences between black and white box testing
 </Figure>
 
 **Black box testing** consists in giving an input to the SUT and check the output. It's that simple: we don't take into account things happening inside the method.
@@ -318,7 +317,7 @@ But we are also going to check what's going on _inside_ the SUT: check that it c
 This allows us to check each **behavior** and their **side effects**.
 
 <AnchoredP id='how-to-write'>
-	🔸 The most awaited question ever... How do we write good unit tests?
+    🔸 The most awaited question ever... How do we write good unit tests?
 </AnchoredP>
 
 🔹 I don't think there are good or bad unit tests... No, just joking!
@@ -336,13 +335,13 @@ The orchestration of a process delegated to different dependencies (eg: http cli
 
 In the end, a "good" test must:
 
-- protect you against regressions ;
-- be resistant to refactoring ;
-- give you a quick feedback ;
-- be maintainable.
+-   protect you against regressions ;
+-   be resistant to refactoring ;
+-   give you a quick feedback ;
+-   be maintainable.
 
 <AnchoredP id='tips-to-start'>
-	What about you give us some tips to start our journey?
+    What about you give us some tips to start our journey?
 </AnchoredP>
 
 🔹 I recommend people who want to start testing to start with the **Test Driven Development** approach.
@@ -352,8 +351,8 @@ In addition, your code already works so the test would probably be seen as a tim
 You are not alone. There are tons of resources available to help you out.
 Here are some books that I wish I have read early in my career:
 
-- "Test Driven Development - By Example" by Kent Beck ;
-- "Unit Testing - Principles, Practices and Patterns" by Vladimir Khorikov.
+-   "Test Driven Development - By Example" by Kent Beck ;
+-   "Unit Testing - Principles, Practices and Patterns" by Vladimir Khorikov.
 
 And here's a website filled with tips and tricks on TDD with a large number of katas to progress: [TDD Buddy](http://www.tddbuddy.com/).
 
@@ -370,20 +369,20 @@ The goal is to divide a unit test in 3 distinct parts:
 3. **assert**: this is the behavior check, the part where you check the output or the side effects.
 
 <AnchoredP id='bad-smells'>
-	🔸 What are the "bad smells" in unit testing?
+    🔸 What are the "bad smells" in unit testing?
 </AnchoredP>
 
 🔹 I see a few of them...
 
-- an "arrange" part that has like 15 lines... It is way too complicated. We clearly see that the tested method does too many things because the scenario is tough to prepare!
-- We say that **a test should have one and only one reason to fail**. A test should contain a single assertion.
-- The fact that you have trouble writing unit tests, not because you don't have the necessary knowledge but rather in relation to the code to be tested... this means there is a problem at the level of your component.
-  So take a step back and think about the responsibilities.
+-   an "arrange" part that has like 15 lines... It is way too complicated. We clearly see that the tested method does too many things because the scenario is tough to prepare!
+-   We say that **a test should have one and only one reason to fail**. A test should contain a single assertion.
+-   The fact that you have trouble writing unit tests, not because you don't have the necessary knowledge but rather in relation to the code to be tested... this means there is a problem at the level of your component.
+    So take a step back and think about the responsibilities.
 
 <AnchoredH2 id='to-go-further'>To go further</AnchoredH2>
 
 <AnchoredP id='libraries'>
-	🔸 Do you have interesting libraries in mind to ease our work?
+    🔸 Do you have interesting libraries in mind to ease our work?
 </AnchoredP>
 
 🔹 Yes. We can consider 3 groups of libraries:
@@ -404,8 +403,8 @@ For me:
 We'll mention [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), [Cypress](https://www.npmjs.com/package/cypress) and [Jasmine](https://www.npmjs.com/package/jasmine) as wellknown librairies for JavaScrit applications.
 
 <AnchoredP id='what-is-tdd'>
-	Well anyways! You can't stop mentioning it so here it is: what is Test Driven
-	Development (TDD)?
+    Well anyways! You can't stop mentioning it so here it is: what is Test
+    Driven Development (TDD)?
 </AnchoredP>
 
 🔹 Glad you finally asked! It's not like I gave you multiple openings... TDD is joy, happiness, the ultimate answer to the meaning of life, it's all of that!
@@ -419,14 +418,14 @@ I would add that contrary to popular belief, TDD does not make the development t
 For example, it is not necessary to run the whole solution to know that the code is working because it has been developed entirely on a tests basis.
 
 <Figure
-	data={{
-		src: "/img/test-driven-development.png",
-		alt: "Cycle du TDD",
-		type: "image",
-		style: { border: ".5em solid black" },
-	}}
+    data={{
+        src: '/img/test-driven-development.png',
+        alt: 'Cycle du TDD',
+        type: 'image',
+        style: { border: '.5em solid black' }
+    }}
 >
-	The TDD cycle
+    The TDD cycle
 </Figure>
 
 First thing first, you need to write **one** unit test. This test should normally _have to_ fail since no implementation has been written for it to pass.
@@ -487,8 +486,8 @@ Voilà! We can now start the writing of another unit test.
 🔹 It's a really simple example but you did it. It should be noted that there are some rules to respect with TDD but I could talk about it for hours so we will stop here!
 
 <AnchoredP id='what-is-tcr'>
-	🔸 Nice! By the way, I heard you recently learnt about "Test &amp;&amp; Commit
-	|| Revert" (TCR). What is it?
+    🔸 Nice! By the way, I heard you recently learnt about "Test &amp;&amp;
+    Commit || Revert" (TCR). What is it?
 </AnchoredP>
 
 🔹 Exact, I had the chance to get to know about this practice via a workshop. To schematize, let's say it is an extreme vision of TDD. The best way to apply it is with a separated script.
@@ -510,132 +509,132 @@ And do not hesitate to ask for help around you!
 And now, are you interested in testing?
 
 <Figure
-	data={{
-		src: "/img/developers-deliver-working-solutions.jpg",
-		alt: "Developers deliver working solutions, not testable code",
-		type: "image",
-		style: { width: "50%", border: ".1em grey solid" },
-	}}
+    data={{
+        src: '/img/developers-deliver-working-solutions.jpg',
+        alt: 'Developers deliver working solutions, not testable code',
+        type: 'image',
+        style: { width: '50%', border: '.1em grey solid' }
+    }}
 />
 
 <Newsletter url={MAILCHIMP_URL} />
 
 export const toc = [
-	{
-		value: "Presentation",
-		id: "presentation",
-		children: [],
-		level: 2,
-	},
-	{
-		value: "The topic",
-		id: "topic",
-		children: [
-			{
-				value: "First encounter",
-				id: "first-encounter",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "What is it",
-				id: "what-is-it",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "Where is it in the tests hierarchy",
-				id: "hierarchy-position",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "Objective of unit testing",
-				id: "objective",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "Pros and cons",
-				id: "pros-and-cons",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "Test Coverage",
-				id: "test-coverage",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "The cost",
-				id: "cost",
-				children: [],
-				level: 3,
-			},
-		],
-		level: 2,
-	},
-	{
-		value: "In depth",
-		id: "details",
-		children: [
-			{
-				value: "Black box &amp; white box, what is that",
-				id: "black-and-white-boxes",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "How to write them efficiently",
-				id: "how-to-write",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "Tips to start",
-				id: "tips-to-start",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "Bad Smells",
-				id: "bad-smells",
-				children: [],
-				level: 3,
-			},
-		],
-		level: 2,
-	},
-	{
-		value: "To go further",
-		id: "to-go-further",
-		children: [
-			{
-				value: "Librairies to simplify the work",
-				id: "libraries",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "Test Driven Development",
-				id: "what-is-tdd",
-				children: [],
-				level: 3,
-			},
-			{
-				value: "Test &amp;&amp; Commit || Revert ",
-				id: "what-is-tcr",
-				children: [],
-				level: 3,
-			},
-		],
-		level: 2,
-	},
-	{
-		value: "Conclusion",
-		id: "conclusion",
-		children: [],
-		level: 2,
-	},
+    {
+        value: 'Presentation',
+        id: 'presentation',
+        children: [],
+        level: 2
+    },
+    {
+        value: 'The topic',
+        id: 'topic',
+        children: [
+            {
+                value: 'First encounter',
+                id: 'first-encounter',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'What is it',
+                id: 'what-is-it',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'Where is it in the tests hierarchy',
+                id: 'hierarchy-position',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'Objective of unit testing',
+                id: 'objective',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'Pros and cons',
+                id: 'pros-and-cons',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'Test Coverage',
+                id: 'test-coverage',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'The cost',
+                id: 'cost',
+                children: [],
+                level: 3
+            }
+        ],
+        level: 2
+    },
+    {
+        value: 'In depth',
+        id: 'details',
+        children: [
+            {
+                value: 'Black box &amp; white box, what is that',
+                id: 'black-and-white-boxes',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'How to write them efficiently',
+                id: 'how-to-write',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'Tips to start',
+                id: 'tips-to-start',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'Bad Smells',
+                id: 'bad-smells',
+                children: [],
+                level: 3
+            }
+        ],
+        level: 2
+    },
+    {
+        value: 'To go further',
+        id: 'to-go-further',
+        children: [
+            {
+                value: 'Librairies to simplify the work',
+                id: 'libraries',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'Test Driven Development',
+                id: 'what-is-tdd',
+                children: [],
+                level: 3
+            },
+            {
+                value: 'Test &amp;&amp; Commit || Revert ',
+                id: 'what-is-tcr',
+                children: [],
+                level: 3
+            }
+        ],
+        level: 2
+    },
+    {
+        value: 'Conclusion',
+        id: 'conclusion',
+        children: [],
+        level: 2
+    }
 ];

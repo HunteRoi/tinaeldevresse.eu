@@ -1,10 +1,10 @@
 {
-  "MAILCHIMP_URL": "",
+  "MAILCHIMP_URL": "", // https://mailchimp.com/help/host-your-own-signup-forms/
   "TWITTER_NAME": "",
   "LINKEDIN_NAME": "",
   "GITHUB_USER": "",
   "OPEN_COLLECTIVE_USER": "",
   "REPOSITORY_NAME": "",
-  "TRACKING_ID": "",
+  "TRACKING_ID": "", // https://analytics.google.com/analytics/web/
   "ANONYMIZE_IP": false
 }

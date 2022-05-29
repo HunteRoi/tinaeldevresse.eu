@@ -15,7 +15,7 @@ import { MAILCHIMP_URL } from '../website_config.json';
 <a href='/blog/why-did-i-switch-to-clean-architecture'>
     <Figure
         data={{
-            src: '/img/why-i-love-clean-architecture.png',
+            src: '/img/why-did-i-switch-to-clean-architecture.png',
             alt: 'Mon Amour pour la Clean Architecture',
             type: 'image'
         }}
@@ -46,7 +46,7 @@ Je n'ai pas toutes les réponses mais ce que j'ai répondu est que si ça touche
 
 -   Si je travaille sur une app CRUD basique, je choisis définitivement la 3-Tier architecture.
 -   Mais si j'ai besoin de construire une application plus complexe qui nécessite une logique business importante et qui doit "crier son but",
-    je choisis alors directement ce que Robert C. MARTIN a appelé [la Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) en 2012.
+    je choisis alors directement ce que Robert C. Martin a appelé [la Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) en 2012.
     Bien sûr, ma version ne suit pas strictement ce qu'Uncle Bob décrit dans son blog puisque je l'ai adapté à mes besoins mais parlons-en!
 
 De nos jours cependant, j'ai plutôt tendance à faire pencher la balance en faveur du deuxième choix.
@@ -115,11 +115,11 @@ D'ailleurs, c'est assez courant de faire ça quand tu veux simplement lire le co
 Cette architecture place le Domaine au centre, et en charge de tout. Elle demande également plus de design intentionnel puisque tu ne te bases pas directement sur ta base de données.
 Construit sur base du [patron CQRS](https://martinfowler.com/bliki/CQRS.html), je la considère comme le meilleur moyen d'écrire une application avec la simplicité et maintenabilité en tête.
 
-Historiquement, l'archi 3-tiers est arrivée en 1992 grâce à John J. DONOVAN et fut ensuite suivie par d'autres:
+Historiquement, l'archi 3-tiers est arrivée en 1992 grâce à John J. Donovan et fut ensuite suivie par d'autres:
 
--   Hexagonal Architecture / Ports & Adapters (2005, Alistair COCKBURN),
--   Onion Architecture (2008, Jeffrey PALERMO),
--   Clean Architecture (2012, Robert C. MARTIN).
+-   Hexagonal Architecture / Ports & Adapters (2005, Alistair Cockburn),
+-   Onion Architecture (2008, Jeffrey Palermo),
+-   Clean Architecture (2012, Robert C. Martin).
 
 ### Avantages & Inconvénients
 
@@ -161,7 +161,8 @@ Je suis si fatigué d'une telle manière de travailler que je suis tombé amoure
 
 Mais plus sérieusement, je n'explique pas forcément _pourquoi_ je la préfère... Alors, en quelques mots, laisse-moi te l'expliquer.
 Il faut savoir que développer une application sans tests, c'est comme développer les yeux fermés: tu fais des fautes.
-J'ai donc creusé cette partie de mon travail que je négligeais à l'époque: le testing. Grâce à mon expérience chez PwC Luxembourg, j'ai rencontré des gens formidables qui m'ont appris énormément de nouvelles choses.
+J'ai donc creusé cette partie de mon travail que je négligeais à l'époque: le testing.
+Grâce à mon expérience chez PwC Luxembourg, j'ai rencontré des gens formidables qui m'ont appris énormément de nouvelles choses.
 C'est à cette époque que l'on m'a demandé de créer une application en suivant une architecture particulière... Et tout est devenu claire une fois que j'ai pratiqué.
 
 Développer avec la Clean Archi, c'est pour moi le réel aboutissement du développement d'applications où les "parties" techniques peuvent enfin être changées sans pour autant devoir redévelopper autre chose.
@@ -181,8 +182,8 @@ Ils représentent ce que j'adorerais appeler _le meilleur état d'esprit_ pour l
 
 Je recommenderais aussi d'en apprendre plus en regardant aux ressources suivantes:
 
--   La présentation de Guillherme FERREIRA sur [The Grand Unified Theory of Clean Architecture and Test Pyramid](https://youtu.be/fPSrA-YcHag?t=6724) à la NDC Porto ;
--   [Les slides de Valentina CUPAĆ](https://www.jug.ch/events/slides/220201_Optivem_TDD_and_Clean_Architecture_Driven_by_Behaviour.pdf) sur TDD et la Clean Architecture par comportement ;
+-   La présentation de Guillherme Ferreira sur [The Grand Unified Theory of Clean Architecture and Test Pyramid](https://youtu.be/fPSrA-YcHag?t=6724) à la NDC Porto ;
+-   [Les slides de Valentina Cupać](https://www.jug.ch/events/slides/220201_Optivem_TDD_and_Clean_Architecture_Driven_by_Behaviour.pdf) sur TDD et la Clean Architecture par comportement ;
 -   Un article de blog [introduisant à la CA](https://medium.com/codex/introduction-to-clean-architecture-2437c6987ec) ;
 -   L'exemple d'une telle structure qu'est [la template Clean Architecture de Jason Taylor](https://github.com/jasontaylordev/CleanArchitecture)!
 
@@ -193,9 +194,9 @@ Ce qui fait finallement que l'architecture n-tier est obsolète, c'est le fait q
 
 Si tu es toujours intéressé pour en apprendre plus sur ce sujet, je suis tombé sur ces quelques ressources en ligne:
 
--   [Les explications de Samuel OLORUNTOBA](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) sur les principes SOLID ;
--   L'[article de Mark SEEMANN](https://blog.ploeh.dk/2013/12/03/layers-onions-ports-adapters-its-all-the-same/) sur le sujet des adapteurs ;
--   [Le commentaire de Sean G. WRIGHT](https://dev.to/seangwright/comment/ccfb) sur "Clean architecture - Your approach" ;
+-   [Les explications de Samuel Oloruntoba](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) sur les principes SOLID ;
+-   L'[article de Mark Seemann](https://blog.ploeh.dk/2013/12/03/layers-onions-ports-adapters-its-all-the-same/) sur le sujet des adapteurs ;
+-   [Le commentaire de Sean G. Wright](https://dev.to/seangwright/comment/ccfb) sur "Clean architecture - Your approach" ;
 -   Le groupe MeetUp du [Software Craftsmanship Luxembourg](https://www.meetup.com/fr-FR/software-craft-luxembourg/) ;
 -   Le groupe MeetUp de la [Tech Excellence](https://www.meetup.com/fr-FR/techexcellence/).
 

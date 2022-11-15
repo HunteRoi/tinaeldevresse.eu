@@ -320,7 +320,7 @@ Au final, un "bon" test doit:
 -   être maintenable.
 
 <AnchoredP id='tips-to-start'>
-	Et, sinon... T'as des conseils pour se lancer dans le testing unitaire?
+	🔸 Et, sinon... T'as des conseils pour se lancer dans le testing unitaire?
 </AnchoredP>
 
 🔹 Je recommande aux personnes qui veulent démarrer le testing de commencer directement avec le _Test Driven Development_.
@@ -377,7 +377,7 @@ Pour ma part:
 _back-end_. On citera notamment [Jest](https://www.npmjs.com/package/jest), [Mocha](https://www.npmjs.com/package/mocha), [Cypress](https://www.npmjs.com/package/cypress) et [Jasmine](https://www.npmjs.com/package/jasmine) comme librairies fortement liées au testing dans des applications JavaScript.
 
 <AnchoredP id='what-is-tdd'>
-	🔸 Du coup, tu n'arrêtes pas d'en parler. C'est quoi le{' '}
+	Du coup, tu n'arrêtes pas d'en parler. C'est quoi le{' '}
 	<span style={{ fontStyle: 'italic' }}>Test Driven Development</span> (TDD)?
 </AnchoredP>
 
@@ -491,121 +491,23 @@ Et sinon, le testing, ça vous tente?
 <Newsletter url={MAILCHIMP_URL} />
 
 export const toc = [
-	{
-		value: 'Présentation',
-		id: 'presentation',
-		children: [],
-		level: 2,
-	},
-	{
-		value: 'Le sujet',
-		id: 'topic',
-		children: [
-			{
-				value: 'Première rencontre',
-				id: 'first-encounter',
-				children: [],
-				level: 3,
-			},
-			{
-				value: "Qu'est-ce que c'est",
-				id: 'what-is-it',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Où ça se situe dans la "hiérarchie des tests"',
-				id: 'hierarchy-position',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'But du testing unitaire',
-				id: 'objective',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Avantages et inconvénients',
-				id: 'pros-and-cons',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Test Coverage',
-				id: 'test-coverage',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Le coût',
-				id: 'cost',
-				children: [],
-				level: 3,
-			},
-		],
-		level: 2,
-	},
-	{
-		value: 'Plus en détails',
-		id: 'details',
-		children: [
-			{
-				value: 'Black box &amp; white box, késako',
-				id: 'black-and-white-boxes',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Comment en écrire efficacement',
-				id: 'how-to-write',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Tips pour se lancer',
-				id: 'tips-to-start',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Les "Bad Smells"',
-				id: 'bad-smells',
-				children: [],
-				level: 3,
-			},
-		],
-		level: 2,
-	},
-	{
-		value: 'Pour aller plus loin',
-		id: 'more-stuff',
-		children: [
-			{
-				value: "Librairies facilitant l'implémentation",
-				id: 'libraries',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Le Test Driven Development',
-				id: 'what-is-tdd',
-				children: [],
-				level: 3,
-			},
-			{
-				value: 'Le Test &amp;&amp; Commit || Revert ',
-				id: 'what-is-tcr',
-				children: [],
-				level: 3,
-			},
-		],
-		level: 2,
-	},
-	{
-		value: 'Conclusion',
-		id: 'conclusion',
-		children: [],
-		level: 2,
-	},
+	{ value: 'Présentation', id: 'presentation', level: 2 },
+	{ value: 'Le sujet', id: 'topic', level: 2 },
+		{ value: 'Première rencontre', id: 'first-encounter', level: 3 },
+		{ value: "Qu'est-ce que c'est", id: 'what-is-it', level: 3 },
+		{ value: 'Où ça se situe dans la "hiérarchie des tests"', id: 'hierarchy-position', level: 3 },
+		{ value: 'But du testing unitaire', id: 'objective', level: 3 },
+		{ value: 'Avantages et inconvénients', id: 'pros-and-cons', level: 3 },
+		{ value: 'Test Coverage', id: 'test-coverage', level: 3 },
+		{ value: 'Le coût', id: 'cost', level: 3 },
+	{ value: 'Plus en détails', id: 'details', level: 2 },
+		{ value: 'Black box &amp; white box, késako', id: 'black-and-white-boxes', level: 3 },
+		{ value: 'Comment en écrire efficacement', id: 'how-to-write', level: 3 },
+		{ value: 'Tips pour se lancer', id: 'tips-to-start', level: 3 },
+		{ value: 'Les "Bad Smells"', id: 'bad-smells', level: 3 },
+	{ value: 'Pour aller plus loin', id: 'more-stuff', level: 2 },
+		{ value: "Librairies facilitant l'implémentation", id: 'libraries', level: 3 },
+		{ value: 'Le Test Driven Development', id: 'what-is-tdd', level: 3 },
+		{ value: 'Le Test &amp;&amp; Commit || Revert ', id: 'what-is-tcr', level: 3 }
+	{ value: 'Conclusion', id: 'conclusion', level: 2 }
 ];

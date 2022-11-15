@@ -74,15 +74,6 @@ module.exports = {
         prism: {
             additionalLanguages: ['csharp']
         },
-
-        googleAnalytics: {
-            trackingID: config.TRACKING_ID,
-            anonymizeIP: config.ANONYMIZE_IP
-        },
-        gtag: {
-            trackingID: config.TRACKING_ID,
-            anonymizeIP: config.ANONYMIZE_IP
-        },
         sitemap: {
             cacheTime: 600 * 1000, // 600 sec - cache purge period
             changefreq: 'weekly',
@@ -105,7 +96,15 @@ module.exports = {
                 theme: {
                     customCss: require.resolve('./src/css/custom.css')
                 },
-                docs: false
+                docs: false,
+                googleAnalytics: {
+                    trackingID: config.TRACKING_ID,
+                    anonymizeIP: config.ANONYMIZE_IP
+                },
+                gtag: {
+                    trackingID: config.TRACKING_ID,
+                    anonymizeIP: config.ANONYMIZE_IP
+                }
             }
         ]
     ],

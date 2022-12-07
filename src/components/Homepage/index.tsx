@@ -1,16 +1,16 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
-import styles from './homepage.module.css';
-import Newsletter from './newsletter';
-import config from '../../website_config.json';
+import styles from './styles.module.css';
+import Newsletter from '../Newsletter';
+import config from '../../../website_config.json';
 
 export default function HomePage({ title, tagline, descriptionLines }) {
     return (
         <section className={styles.hero}>
             <Link
-                className={classnames('footer__link-item', styles.title)}
+                className={clsx('footer__link-item', styles.title)}
                 to='/blog'
             >
                 <img src={require('@site/static/img/me.jpg').default} />

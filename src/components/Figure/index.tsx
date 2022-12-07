@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './figure.module.css';
+
+import styles from './styles.module.css';
 
 function getTagAccordingToDataType(data) {
 	if (typeof data !== 'object' || !data.type) return <></>;
@@ -28,7 +29,7 @@ function getTagAccordingToDataType(data) {
 
 		case 'audio':
 			return (
-				<audio controls width={data.width}>
+				<audio controls>
 					{data.sources && Array.isArray(data.sources) ? (
 						data.sources.map((s) => <source src={s.src} type={s.type} />)
 					) : (
@@ -39,7 +40,7 @@ function getTagAccordingToDataType(data) {
 
 		case 'html':
 			return (
-				<div className={styles.container} align={data.align}>
+				<div className={styles.container}>
 					<iframe {...data}></iframe>
 				</div>
 			);

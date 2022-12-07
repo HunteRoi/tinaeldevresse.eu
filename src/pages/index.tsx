@@ -3,12 +3,12 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 
-import styles from './styles.module.css';
-import HomePage from '../components/homepage';
+import styles from './index.module.css';
+import HomePage from '../components/Homepage';
 
 function Home() {
 	const context = useDocusaurusContext();
-	let { siteConfig = {} } = context;
+	let { siteConfig } = context;
 
 	siteConfig.title = translate({
 		id: 'global.title',
@@ -22,7 +22,7 @@ function Home() {
 	});
 	siteConfig.customFields.description = translate({
 		id: 'global.description',
-		message: siteConfig.customFields.description,
+		message: siteConfig.customFields.description as string,
 		description: 'The website description',
 	});
 	const lines = [
@@ -51,8 +51,7 @@ function Home() {
 	return (
 		<Layout
 			title={siteConfig.title}
-			description={siteConfig.customFields.description}
-			permalink='/'
+			description={siteConfig.customFields.description as string}
 		>
 			<main className={styles.heroContainer}>
 				<HomePage {...siteConfig} descriptionLines={lines} />

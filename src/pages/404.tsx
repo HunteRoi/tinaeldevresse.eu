@@ -3,11 +3,11 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate, { translate } from '@docusaurus/Translate';
 
-import styles from './styles.module.css';
+import styles from './index.module.css';
 
 function NotFound() {
 	const context = useDocusaurusContext();
-	let { siteConfig = {} } = context;
+	let { siteConfig } = context;
 
 	siteConfig.title = translate({
 		id: 'global.title',
@@ -26,8 +26,7 @@ function NotFound() {
 	return (
 		<Layout
 			title={siteConfig.title}
-			description={siteConfig.customFields.description}
-			permalink='/'
+			description={siteConfig.customFields.description as string}
 		>
 			<main className={styles.heroContainer}>
 				<h1>

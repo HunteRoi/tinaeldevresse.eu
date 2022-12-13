@@ -3,7 +3,7 @@ import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import isEmail from 'validator/lib/isEmail';
 import Translate, { translate } from '@docusaurus/Translate';
 
-import styles from './newsletter.module.css';
+import styles from './styles.module.css';
 
 const CustomForm = ({ status, message, onValidated }) => {
     let email;

@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useFullUrl from '../hooks/useFullUrl';
+
+import useFullUrl from '../../hooks/useFullUrl';
 
 export default function SEO({uri, image, type}) {
   const { siteConfig } = useDocusaurusContext();

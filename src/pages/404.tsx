@@ -14,10 +14,10 @@ function NotFound() {
 		message: siteConfig.title,
 		description: 'The website title',
 	});
-	siteConfig.tagline = translate({
-		id: 'global.tagline',
-		message: siteConfig.tagline,
-		description: 'The website tagline',
+	siteConfig.customFields.description = translate({
+		id: 'global.description',
+		message: siteConfig.customFields.description as string,
+		description: 'The website description',
 	});
 
 	const goBack = () => window.history.back();

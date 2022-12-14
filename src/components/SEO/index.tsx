@@ -23,8 +23,8 @@ export default function SEO({uri, image, type}) {
         {projectName && <meta property='og:site_name' content={projectName} />}
 
         {twitterName && <meta property='twitter:site' content={`@${twitterName}`} /> }
-        {metaImage && <meta name="twitter:image" content={metaImage} />}
-        {metaImage && <meta name="twitter:image:alt" content="Banner image" />}
+        {metaImage && <meta name='twitter:image' content={metaImage} />}
+        {metaImage && <meta name='twitter:image:alt' content='Banner image' />}
       </Head>
     </>
   );

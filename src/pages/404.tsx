@@ -1,23 +1,19 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate, { translate } from '@docusaurus/Translate';
 
 import styles from './index.module.css';
 
 function NotFound() {
-	const context = useDocusaurusContext();
-	let { siteConfig } = context;
-
-	siteConfig.title = translate({
-		id: 'global.title',
-		message: siteConfig.title,
-		description: 'The website title',
+	const title = translate({
+		id: 'notfound.title',
+		message: 'Oops! Page Not Found.',
+		description: 'The title of the Not Found page',
 	});
-	siteConfig.customFields.description = translate({
-		id: 'global.description',
-		message: siteConfig.customFields.description as string,
-		description: 'The website description',
+	const description = translate({
+		id: 'notfound.description',
+		message: 'Sorry, we lost ourselves on the path. Maybe we should...',
+		description: 'The description of the Not Found page',
 	});
 
 	const goBack = () => window.history.back();
@@ -25,25 +21,13 @@ function NotFound() {
 
 	return (
 		<Layout
-			title={siteConfig.title}
-			description={siteConfig.customFields.description as string}
+			title={title}
+			description={description}
 		>
 			<main className={styles.heroContainer}>
-				<h1>
-					<Translate
-						id='notfound.title'
-						description='The title of the Not Found page'
-					>
-						Oops! Page Not Found.
-					</Translate>
-				</h1>
+				<h1>{title}</h1>
 				<p>
-					<Translate
-						id='notfound.description'
-						description='The description of the Not Found page'
-					>
-						Sorry, we lost ourselves on the path. Maybe we should...
-					</Translate>
+					{description}
 					<button onClick={goBack}>
 						<Translate
 							id='notfound.buttons.goback'

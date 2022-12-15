@@ -12,6 +12,15 @@
 		"description": "The website title"
 	},
 
+	"portfolio.title": {
+		"message": "Mes projets open-source",
+		"description": "The author's portfolio"
+	},
+	"portfolio.description": {
+		"message": "Mes {maxPerPage} projets open-source les plus à jour!",
+		"description": "A description for the portfolio page"
+	},
+
 	"newsletter.title": {
 		"message": "Reste à jour, inscris-toi à ma newsletter!",
 		"description": "The newsletter title"

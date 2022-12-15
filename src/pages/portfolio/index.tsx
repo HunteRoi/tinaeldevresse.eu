@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css';
@@ -8,27 +7,25 @@ import useGithubRepositories, { Repository } from '../../hooks/useGithubReposito
 import RepositoryCard from '../../components/RepositoryCard';
 
 function Portfolio() {
-	const context = useDocusaurusContext();
 	const maxPerPage = 24;
 	const { repositories } = useGithubRepositories('hunteroi', { type: 'owner', sort: 'pushed', direction: 'desc', per_page: maxPerPage, page: 0 });
 
-	let { siteConfig } = context;
-	siteConfig.title = translate({
-		id: 'global.title',
-		message: siteConfig.title,
-		description: 'The website title',
+	const title = translate({
+		id: 'portfolio.title',
+		message: 'My open-source projects',
+		description: "The author's portfolio",
 	});
-	siteConfig.customFields.description = translate({
-		id: 'global.description',
-		message: siteConfig.customFields.description as string,
-		description: 'The website description',
+	const description = translate({
+		id: 'portfolio.description',
+		message: "My {maxPerPage} most up-to-date open-source projects!",
+		description: 'A description for the portfolio page'
 	});
 
 	return (
-		<Layout title={siteConfig.title} description={siteConfig.customFields.description as string}>
+		<Layout title={title} description={description}>
 			<div className={styles.projects_container}>
-				<h2>My open-source projects</h2>
-				<h3>The {maxPerPage} most up-to-date</h3>
+				<h2>{title}</h2>
+				<h3>{description.replace("{maxPerPage}", maxPerPage.toString())}</h3>
 				<section>
 					<div role='projects'>
 						{repositories.length > 0 ? repositories.map((repo: Repository, i: number) => <RepositoryCard key={i} repository={repo} />) : <p>Loading...</p>}

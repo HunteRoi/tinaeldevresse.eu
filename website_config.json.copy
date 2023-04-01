@@ -1,10 +1,10 @@
 {
 	"TRACKING_ID": "TRACKING_ID_VALUE",
 	"ANONYMIZE_IP": false,
-    "GITHUB_USER": "hunteroi",
-    "OPEN_COLLECTIVE_USER": "hunteroi",
-    "REPOSITORY_NAME": "tinaeldevresse.eu",
-    "TWITTER_NAME": "tinaeldvs",
-    "LINKEDIN_NAME": "tinael-devresse",
+	"GITHUB_USER": "hunteroi",
+	"OPEN_COLLECTIVE_USER": "hunteroi",
+	"REPOSITORY_NAME": "tinaeldevresse.eu",
+	"TWITTER_NAME": "tinaeldvs",
+	"LINKEDIN_NAME": "tinael-devresse",
 	"MAILCHIMP_URL": "MAILCHIMP_URL_VALUE"
 }

@@ -20,7 +20,7 @@
 }
 
 img {
-  border-radius: 2%;
+  border-radius: 15px;
   display:flex;
   justify-self: center;
   margin: auto;

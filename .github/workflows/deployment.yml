@@ -25,7 +25,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
     - run: yarn install --frozen-lockfile
-    - run: echo "${{ secrets.WEBSITE_CONFIG_KEY }}" > website_config.json
+    - run: cp website_config.json.copy website_config.json
+    - run: sed -i "s/TRACKING_ID_VALUE/${{ secrets.TRACKING_ID }}/g" website_config.json
+    - run: sed -i "s/MAILCHIMP_URL_VALUE/${{ secrets.MAILCHIMP_URL }}/g" website_config.json
     - run: yarn build
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4

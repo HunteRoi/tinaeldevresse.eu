@@ -24,5 +24,5 @@ jobs:
         cache: 'yarn'
     - run: yarn install --frozen-lockfile
     - run: cp website_config.json.copy website_config.json
-    - run: sed -e "s/TRACKING_ID_VALUE/${{ secrets.TRACKING_ID }}/g" -e "s/MAILCHIMP_URL_VALUE/${{ secrets.MAILCHIMP_URL }}/g" -i website_config.json
+    - run: sed -e "s%TRACKING_ID_VALUE%${{ secrets.TRACKING_ID }}%g" -e "s%MAILCHIMP_URL_VALUE%${{ secrets.MAILCHIMP_URL }}%g" -i website_config.json
     - run: yarn build

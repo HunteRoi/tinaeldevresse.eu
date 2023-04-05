@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[250],{2167:function(e){e.exports=JSON.parse('{"permalink":"/blog/tags/craft","page":1,"postsPerPage":3,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

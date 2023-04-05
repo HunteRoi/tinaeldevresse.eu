@@ -21,6 +21,8 @@
     min-width: 15%;
     max-width: 30%;
     border: 3px solid;
+    object-fit: fill;
+    object-position: 50% 8%;
 }
 
 .title > span {

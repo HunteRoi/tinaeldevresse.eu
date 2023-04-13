@@ -89,7 +89,7 @@ hr::before {
     line-height: 2.4;
     text-indent: 0.6em;
     letter-spacing: 0.6em;
-    content: '...';
+    content: ' ';
     display: block;
 }
 

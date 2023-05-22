@@ -8,10 +8,17 @@ const websiteConfig = require('./website_config.json');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+
     title: 'Tinaël Devresse',
     tagline: 'Young Developer from Belgium',
-    url: 'https://tinaeldevresse.eu',
-    baseUrl: '/',
+    url: 'https://hunteroi.github.io',
+    baseUrl: '/tinaeldevresse.eu',
+
+    deploymentBranch: websiteConfig.DEPLOYMENT_BRANCH,
+    organizationName: websiteConfig.GITHUB_USER,
+    projectName: websiteConfig.REPOSITORY_NAME,
+    trailingSlash: false,
+
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
@@ -23,9 +30,6 @@ const config = {
         linkedIn: websiteConfig.LINKEDIN_NAME,
         github: websiteConfig.GITHUB_USER
     },
-
-    organizationName: websiteConfig.GITHUB_USER,
-    projectName: websiteConfig.REPOSITORY_NAME,
 
     i18n: {
         defaultLocale: 'en',

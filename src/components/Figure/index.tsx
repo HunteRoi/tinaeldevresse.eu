@@ -1,5 +1,6 @@
 import React from 'react';
 
+import useFullUrl from '@site/src/hooks/useFullUrl';
 import styles from './styles.module.css';
 
 function getTagAccordingToDataType(data) {
@@ -58,6 +59,13 @@ function getTagAccordingToDataType(data) {
 
 export default function Figure({ data, children }) {
 	if (!data && !children) return <></>;
+
+	if (data.src) {
+		data.src = useFullUrl(data.src);
+	}
+	if (data.sources && data.sources.length > 0) {
+		data.sources = data.sources.map(s => ({ ...s, src: useFullUrl(s.src)}));
+	}
 
 	return (
 		<figure>

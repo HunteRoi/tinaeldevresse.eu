@@ -6,5 +6,6 @@
 	"REPOSITORY_NAME": "tinaeldevresse.eu",
 	"TWITTER_NAME": "tinaeldvs",
 	"LINKEDIN_NAME": "tinael-devresse",
-	"MAILCHIMP_URL": "MAILCHIMP_URL_VALUE"
+	"MAILCHIMP_URL": "MAILCHIMP_URL_VALUE",
+	"DEPLOYMENT_BRANCH": "gh-pages"
 }

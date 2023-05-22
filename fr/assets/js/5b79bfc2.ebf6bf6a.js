@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[5391],{9401:function(e){e.exports=JSON.parse('{"label":"architecture","permalink":"/tinaeldevresse.eu/fr/blog/tags/architecture","allTagsPath":"/tinaeldevresse.eu/fr/blog/tags","count":1}')}}]);

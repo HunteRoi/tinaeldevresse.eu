@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[3840],{6296:function(e){e.exports=JSON.parse('{"label":"agility","permalink":"/tinaeldevresse.eu/blog/tags/agility","allTagsPath":"/tinaeldevresse.eu/blog/tags","count":1}')}}]);

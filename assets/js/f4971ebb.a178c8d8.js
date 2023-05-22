@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[4650],{1760:function(e){e.exports=JSON.parse('{"label":"container","permalink":"/tinaeldevresse.eu/blog/tags/container","allTagsPath":"/tinaeldevresse.eu/blog/tags","count":1}')}}]);

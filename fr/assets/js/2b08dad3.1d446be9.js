@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[3300],{5675:function(e){e.exports=JSON.parse('{"label":"i18n","permalink":"/tinaeldevresse.eu/fr/blog/tags/i-18-n","allTagsPath":"/tinaeldevresse.eu/fr/blog/tags","count":1}')}}]);

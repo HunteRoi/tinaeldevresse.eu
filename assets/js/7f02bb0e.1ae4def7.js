@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[9970],{5335:function(e){e.exports=JSON.parse('{"label":"environment","permalink":"/tinaeldevresse.eu/blog/tags/environment","allTagsPath":"/tinaeldevresse.eu/blog/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[7237],{2467:function(e){e.exports=JSON.parse('{"permalink":"/tinaeldevresse.eu/fr/blog/tags/conteneur","page":1,"postsPerPage":3,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

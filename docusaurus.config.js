@@ -11,8 +11,8 @@ const config = {
 
     title: 'Tinaël Devresse',
     tagline: 'Young Developer from Belgium',
-    url: 'https://hunteroi.github.io',
-    baseUrl: '/tinaeldevresse.eu',
+    url: 'https://tinaeldevresse.eu',
+    baseUrl: '/',
 
     deploymentBranch: websiteConfig.DEPLOYMENT_BRANCH,
     organizationName: websiteConfig.GITHUB_USER,

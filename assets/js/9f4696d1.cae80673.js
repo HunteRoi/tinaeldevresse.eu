@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[3778],{6136:function(e){e.exports=JSON.parse('{"label":"container","permalink":"/blog/tags/container","allTagsPath":"/blog/tags","count":1}')}}]);

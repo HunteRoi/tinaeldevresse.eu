@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[2222],{2591:function(e){e.exports=JSON.parse('{"label":"docker","permalink":"/tinaeldevresse.eu/blog/tags/docker","allTagsPath":"/tinaeldevresse.eu/blog/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[7397],{1431:function(e){e.exports=JSON.parse('{"label":"artisan d\xe9veloppeur","permalink":"/fr/blog/tags/artisan-developpeur","allTagsPath":"/fr/blog/tags","count":1}')}}]);

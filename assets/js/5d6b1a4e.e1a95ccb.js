@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[3238],{4182:function(e){e.exports=JSON.parse('{"permalink":"/tinaeldevresse.eu/blog/page/2","page":2,"postsPerPage":3,"totalPages":2,"totalCount":6,"previousPage":"/tinaeldevresse.eu/blog","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

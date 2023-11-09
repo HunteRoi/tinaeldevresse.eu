@@ -17,7 +17,7 @@ import Figure from '../../../src/components/Figure';
 import SEO from '../../../src/components/SEO';
 import Reminder from '../../../src/components/Reminder';
 import Newsletter from '../../../src/components/Newsletter';
-import { MAILCHIMP_URL } from '../../../website_config.json';
+import * as websiteConfig from '../../../website_config.json';
 
 <a href='/blog/deployment-environments'>
 	<Figure
@@ -216,4 +216,4 @@ Comme le mouvement "DevOps" devient de plus en plus intriguant aux yeux des orga
 
 J'espère que j'ai réussi à éveiller votre curiosité et que vous vous avancez sur ces chemins. D'ici là, on se voit plus tard!
 
-<Newsletter url={MAILCHIMP_URL} />
+<Newsletter url={websiteConfig.MAILCHIMP_URL} />

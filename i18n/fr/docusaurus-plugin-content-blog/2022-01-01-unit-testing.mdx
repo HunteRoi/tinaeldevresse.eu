@@ -10,8 +10,9 @@ import Figure from '../../../src/components/Figure';
 import SEO from '../../../src/components/SEO';
 import Reminder from '../../../src/components/Reminder';
 import Newsletter from '../../../src/components/Newsletter';
-import { MAILCHIMP_URL } from '../../../website_config.json';
-import { AnchoredH2, AnchoredP } from '../../../src/components/AnchoredHeading';
+import * as websiteConfig from '../../../website_config.json';
+import AnchoredP from '../../../src/components/AnchoredHeading/AnchoredP';
+import AnchoredH2 from '../../../src/components/AnchoredHeading/AnchoredH2';
 import randomChoose from '../../../src/utils/randomChoose';
 
 <a href='/blog/unit-testing'>
@@ -483,7 +484,7 @@ Et sinon, le testing, ça vous tente?
 	}}
 />
 
-<Newsletter url={MAILCHIMP_URL} />
+<Newsletter url={websiteConfig.MAILCHIMP_URL} />
 
 export const toc = [
 	{ value: 'Présentation', id: 'presentation', level: 2 },

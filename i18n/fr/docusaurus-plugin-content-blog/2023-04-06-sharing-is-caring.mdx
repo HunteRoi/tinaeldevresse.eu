@@ -10,7 +10,7 @@ import Figure from '../../../src/components/Figure';
 import SEO from '../../../src/components/SEO';
 import Reminder from '../../../src/components/Reminder';
 import Newsletter from '../../../src/components/Newsletter';
-import { MAILCHIMP_URL } from '../../../website_config.json';
+import * as websiteConfig from '../../../website_config.json';
 
 <a href='/blog/sharing-is-caring'>
     <Figure
@@ -188,4 +188,4 @@ va en apprendre plus à travers ce voyage!
 
 D'ailleurs, si tu cherches un Coach Agile Technique, contacte-moi sur [LinkedIn](https://linkedin.com/in/tinael-devresse).
 
-<Newsletter url={MAILCHIMP_URL} />
+<Newsletter url={websiteConfig.MAILCHIMP_URL} />

@@ -10,7 +10,7 @@ import Figure from '../../../src/components/Figure';
 import SEO from '../../../src/components/SEO';
 import Reminder from '../../../src/components/Reminder';
 import Newsletter from '../../../src/components/Newsletter';
-import { MAILCHIMP_URL } from '../../../website_config.json';
+import * as websiteConfig from '../../../website_config.json';
 
 <a href='/blog/what-is-a-container'>
 	<Figure
@@ -179,4 +179,4 @@ Cela dit, je t'avoue que nous n'avons que gratter la surface des possibilités q
 
 Et si tu cherches à générer de la documentation en ligne ou à écrire un blog, tu peux aussi essayer Docusaurus! 😁
 
-<Newsletter url={MAILCHIMP_URL} />
+<Newsletter url={websiteConfig.MAILCHIMP_URL} />

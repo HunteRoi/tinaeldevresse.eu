@@ -10,7 +10,7 @@ import Figure from '../src/components/Figure';
 import SEO from '../src/components/SEO';
 import Reminder from '../src/components/Reminder';
 import Newsletter from '../src/components/Newsletter';
-import { MAILCHIMP_URL } from '../website_config.json';
+import * as websiteConfig from '../website_config.json';
 
 <a href='/blog/what-makes-a-good-developer'>
     <Figure
@@ -167,4 +167,4 @@ Developers are not common resources. Good developer are even more rare. Stay inv
 
 **What about you? What do you think makes a good developer?**
 
-<Newsletter url={MAILCHIMP_URL} />
+<Newsletter url={websiteConfig.MAILCHIMP_URL} />

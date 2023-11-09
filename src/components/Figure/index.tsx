@@ -1,4 +1,5 @@
 import useFullUrl from '@site/src/hooks/useFullUrl';
+
 import styles from './styles.module.css';
 
 function getTagAccordingToDataType(data) {

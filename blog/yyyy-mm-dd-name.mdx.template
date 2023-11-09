@@ -14,7 +14,7 @@ import Figure from '../src/components/Figure';
 import SEO from '../src/components/SEO';
 import Reminder from '../src/components/Reminder';
 import Newsletter from '../src/components/Newsletter';
-import { MAILCHIMP_URL } from '../website_config.json';
+import * as websiteConfig from '../website_config.json';
 
 <a href="/blog/name">
   <Figure data={{src:'/img/name.jpg', alt: 'name', type:'image'}} />

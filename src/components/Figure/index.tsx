@@ -59,11 +59,11 @@ function getTagAccordingToDataType(data) {
 export default function Figure({ data, children }) {
 	if (!data && !children) return <></>;
 
-	if (data.src) {
+	if (data.src && !data.src.startsWith('http')) {
 		data.src = useFullUrl(data.src);
 	}
 	if (data.sources && data.sources.length > 0) {
-		data.sources = data.sources.map(s => ({ ...s, src: useFullUrl(s.src)}));
+		data.sources = data.sources.map(s => ({ ...s, src: s.src.startsWith('http') ? s.src : useFullUrl(s.src)}));
 	}
 
 	return (

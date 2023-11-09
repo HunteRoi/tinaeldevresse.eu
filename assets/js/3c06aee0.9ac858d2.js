@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[3462],{5506:function(e){e.exports=JSON.parse('{"label":"software craftsman","permalink":"/blog/tags/software-craftsman","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[7424],{4889:function(e){e.exports=JSON.parse('{"label":"coach","permalink":"/blog/tags/coach","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

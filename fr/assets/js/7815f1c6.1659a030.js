@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[6850],{8202:function(e){e.exports=JSON.parse('{"label":"i18n","permalink":"/fr/blog/tags/i-18-n","allTagsPath":"/fr/blog/tags","count":1,"unlisted":false}')}}]);

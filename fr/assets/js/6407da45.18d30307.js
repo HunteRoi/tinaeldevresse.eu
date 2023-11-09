@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[236],{6255:function(e){e.exports=JSON.parse('{"label":"art","permalink":"/fr/blog/tags/art","allTagsPath":"/fr/blog/tags","count":1}')}}]);

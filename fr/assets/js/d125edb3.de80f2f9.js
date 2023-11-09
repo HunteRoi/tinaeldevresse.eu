@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[2032],{9737:function(e){e.exports=JSON.parse('{"label":"IT","permalink":"/fr/blog/tags/it","allTagsPath":"/fr/blog/tags","count":1,"unlisted":false}')}}]);

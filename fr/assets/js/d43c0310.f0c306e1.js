@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinaeldevresse=self.webpackChunktinaeldevresse||[]).push([[8209],{7299:function(e){e.exports=JSON.parse('{"label":"architecture","permalink":"/fr/blog/tags/architecture","allTagsPath":"/fr/blog/tags","count":1,"unlisted":false}')}}]);

@@ -1,13 +1,13 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+import type { Config } from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
+import { themes } from 'prism-react-renderer';
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import * as websiteConfig from './website_config.json';
 
-const websiteConfig = require('./website_config.json');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+const config: Config = {
 
     title: 'Tinaël Devresse',
     tagline: 'Young Developer from Belgium',
@@ -43,7 +43,6 @@ const config = {
     presets: [
         [
             'classic',
-            /** @type {import('@docusaurus/preset-classic').Options} */
             ({
                 docs: false,
                 blog: {
@@ -56,7 +55,7 @@ const config = {
                     postsPerPage: 3
                 },
                 theme: {
-                    customCss: require.resolve('./src/css/custom.css')
+                    customCss: ['./src/css/custom.css']
                 },
                 googleAnalytics: {
                     trackingID: websiteConfig.TRACKING_ID,
@@ -66,12 +65,11 @@ const config = {
                     trackingID: websiteConfig.TRACKING_ID,
                     anonymizeIP: websiteConfig.ANONYMIZE_IP
                 }
-            })
+            }) satisfies Preset.Options
         ]
     ],
 
     themeConfig:
-        /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
             announcementBar: {
                 id: 'shareme',
@@ -132,14 +130,13 @@ const config = {
             prism: {
                 theme: lightCodeTheme,
                 darkTheme: darkCodeTheme,
-                additionalLanguages: ['csharp']
+                additionalLanguages: ['css', 'csharp', 'diff', 'javascript', 'json', 'python', 'sass', 'scss', 'sql', 'typescript']
             },
             sitemap: {
                 cacheTime: 600 * 1000, // 600 sec - cache purge period
                 changefreq: 'weekly',
                 priority: 0.5
             }
-        })
+        }) satisfies Preset.ThemeConfig
 };
-
-module.exports = config;
+export default config;

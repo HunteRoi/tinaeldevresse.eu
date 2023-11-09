@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Repository } from '../../hooks/useGithubRepositories';
 import * as emojis from '../../utils/emojis.json';
 import * as colors from '../../utils/colors.json';

@@ -1,4 +1,3 @@
-import React from 'react';
 import Heading from '@theme/Heading';
 export const AnchoredH2 = ({ children, ...props }) => <Heading as='h2' {...props}>{children}</Heading>;
 /* @ts-ignore */

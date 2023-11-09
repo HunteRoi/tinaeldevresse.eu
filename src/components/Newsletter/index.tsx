@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import isEmail from 'validator/lib/isEmail';
 import Translate, { translate } from '@docusaurus/Translate';

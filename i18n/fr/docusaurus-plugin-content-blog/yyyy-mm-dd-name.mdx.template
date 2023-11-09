@@ -22,7 +22,7 @@ import { MAILCHIMP_URL } from '../../../website_config.json';
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
 
-<!--truncate-->
+{/* truncate */}
 
 <SEO 
   uri='blog/name' 

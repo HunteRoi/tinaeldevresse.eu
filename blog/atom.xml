@@ -334,7 +334,7 @@ But it should be borne in mind that our test suite will not be the most effectiv
 <p></p><p>🔸 Nice! But why is testing not used everywhere in the profesionnal world?</p><p></p>
 <p>🔹 In reality, a large part of developers write little to no tests. In addition, integration tests are less common than unit tests because they are more complex to write.
 In the end, this task is often seen as a chore or an extra step that we will only do if we have time.</p>
-<figure><img src="https://tinaeldevresse.eu/img/integration-tests.gif" alt="GIF on integration tests" type="image"><figcaption class="legend_Ecw3"></figcaption></figure>
+<figure><img src="https://tinaeldevresse.eu/img/unit_vs_integration_tests.gif" alt="GIF on integration tests" type="image"><figcaption class="legend_Ecw3"></figcaption></figure>
 <p>Uncle Bob also spoke about it at a conference in London in 2018:</p>
 <figure><div class="container_KXSz"><iframe type="html" width="560" height="315" src="https://www.youtube.com/embed/17vTLSkXTOo?start=552&amp;end=720" title="YouTube video player of SC London Conference 2018" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><figcaption class="legend_Ecw3"></figcaption></figure>
 <p class="anchor anchorWithHideOnScrollNavbar_WYt5" id="objective"></p><p>🔸 What is the objective of unit testing and when should it be applied?</p><a href="https://tinaeldevresse.eu/blog/unit-testing#objective" class="hash-link" aria-label="Direct link to objective" title="Direct link to objective">​</a><p></p>

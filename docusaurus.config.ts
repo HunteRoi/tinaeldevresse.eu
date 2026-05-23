@@ -1,5 +1,7 @@
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import { themes } from 'prism-react-renderer';
 
 import * as websiteConfig from './website_config.json';
@@ -52,7 +54,9 @@ const config: Config = {
                         type: 'all',
                         copyright: `Copyright ©2020-present Tinaël Devresse. Built with Docusaurus.`
                     },
-                    postsPerPage: 3
+                    postsPerPage: 3,
+                    remarkPlugins: [remarkMath],
+                    rehypePlugins: [rehypeKatex],
                 },
                 theme: {
                     customCss: ['./src/css/custom.css']
@@ -137,6 +141,15 @@ const config: Config = {
                 changefreq: 'weekly',
                 priority: 0.5
             }
-        }) satisfies Preset.ThemeConfig
+        }) satisfies Preset.ThemeConfig,
+
+    stylesheets: [
+        {
+            href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+            type: 'text/css',
+            integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+            crossorigin: 'anonymous',
+        },
+    ]
 };
 export default config;

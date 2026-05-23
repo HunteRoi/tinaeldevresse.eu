@@ -1,0 +1,286 @@
+---
+slug: what-is-artificial-intelligence
+title: What is Artificial Intelligence?
+tags: [development, IT, craft, software craftsman, artificial intelligence, ai, career, future]
+description: There's a lot of talk about Artificial Intelligence (AI) and how it currently is changing the world as we know it. It is true that AI is shaping a new future for us, but it is also true that AI is not as much of a threat as the car was back in the day, or as the industrial revolutio...
+image: /img/pillars-of-ai.jpg
+---
+
+import Figure from '../src/components/Figure';
+import SEO from '../src/components/SEO';
+import Reminder from '../src/components/Reminder';
+import Newsletter from '../src/components/Newsletter';
+import * as websiteConfig from '../website_config.json';
+
+<a href='/blog/what-is-artificial-intelligence'>
+    <Figure
+        data={{
+            src: '/img/pillars-of-ai.jpg',
+            alt: 'Pillars of Artificial Intelligence',
+            type: 'image'
+        }}
+    >
+        Pillars of Artificial Intelligence, by <a target='_blank' href='https://x.com/kartikkukreja92' rel='noreferrer noopener nofollow'>Kartik Kukreja</a>, from <a target='_blank' href='https://kartikkukreja.wordpress.com/2015/05/17/what-is-ai-and-what-can-we-do-with-it-today/' rel='noreferrer noopener nofollow'>their blog post</a>
+    </Figure>
+</a>
+
+There's a lot of talk about Artificial Intelligence (AI) and how it *currently* is changing the world as we know it.
+It is true that AI is shaping a new future for us, but it is also true that AI is not as much of a threat as the car was back in the day, or as the industrial revolution was.
+
+I feel like it is mandatory to talk about AI through different lenses, and not just through the lens of software development, which is the field I am most familiar with.
+
+{/* truncate */}
+
+<SEO
+    uri='blog/what-is-artificial-intelligence'
+    image='img/pillars-of-ai.jpg'
+    type='article'
+/>
+
+---
+
+<Reminder />
+
+---
+
+To grasp its full impact and to have a more holistic view of the AI technology and what it represents, we need to talk about it from different perspectives, such as:
+- what is AI? Definitions through etymology, social representation, research studies and mathematical concepts
+- what are LLMs, and how do they work? What are their limitations, their evolution and their future through model iterations?
+- the current AI models and their comparison
+- what is vibe coding, and how does it relate to AI?
+- intelligence, bias, trust, sustainability, accountability
+- the impact of AI (in our political landscapes, in our economic landscapes, in our education systems, in our social lives, in our careers - and especially in software development, on our mental health, on our creativity, on our future, ...)
+
+In this blog post series, I want to talk about how AI is changing the way we work and live, its impact on our social lives and career choices, and how we can adapt to this new reality.
+It is not meant to be an exhaustive analysis of all these topics, but rather an attempt to reflect and have a debate about the future we are heading to.
+
+To understand what is Artificial Intelligence, I believe it is important to understand what we mean by "intelligence", and why "artificial intelligence" means much more than buzzwords.
+
+## Intelligence
+The term *intelligence* comes from the Latin word *intelligere*, which means "to comprehend, perceive".
+
+The concept of intelligence has been studied for a long time, and did undergo some sort of evolution from a unitary concept to a more complex multidimensional one (meaning we had one definition because we thought there was only one "intelligence" but there are actually plenty so we enlarged our scope and gave more definitions).
+
+Some remarkably important definitions and their authors:
+- A. Binet would define intelligence as "the ability to judge, understand and reason effectively".
+- R. Cattell distinguishes between fluid intelligence (problem-solving ability) and crystallized intelligence (acquired knowledge).
+- H. Gardner talks about it being "the capacity to solve problems or create products valued in a culture".
+- R. Sternberg defines it as "the ability to achieve success by adapting to, shaping, and selecting environments; includes analytical, creative and practical intelligence".
+- There are also some studies that highlights the definition of *emotional intelligence* as "the ability to recognize, understand, and manage emotions in oneself and others" (D. Goleman) or "\[...\] involves perceiving, using, understanding, and regulating emotions" (P. Salovey and J.D. Mayer).
+- D. Wechsler defines intelligence as "the global capacity to act purposefully, think rationally, and deal effectively with the environment".
+
+All their studies and definitions collectively show the shift from a single conception toward broader adaptive and socio-emotional views of intelligence.
+
+Among these intelligences, we can talk about linguistic intelligence, logical-mathematical intelligence, spatial intelligence, musical intelligence, emotional intelligence, social intelligence, interpersonal and intrapersonal intelligence, and even domain-specific intelligences (e.g. creative, digital, verbal, mathematical, leadership, collaborative, etc.).
+
+## Artificial
+The term *artificial* comes from the Latin word *artificialis*, which mean "made with art".
+This Latin term was formed by the contraction of two roots, *ars* which means "art", and *facere* which means "to do, make".
+
+Originally, it refers to anything made, produced, or done by human beings as opposed to what is naturally occurring.
+It nowadays broadly spans to everyday manufactured goods, synthetic materials and modern technology.
+
+## Artificial Intelligence
+In regards to what these buzzwords trigger in every human's mind, well... this is complex as it means different things contextually and dependently of the person's culture and background.
+
+**In the 1960s and 70s**, Non-Playable Characters (NPCs) emerged in video games and evolved to become rich lifelike companions found in modern gaming. These were referred to as "AI", back then.
+
+**In the 1990s**, search/query engines and apps like google.com were referred to as "AI". The same fact goes with automated machine translations, or route planning (GPS) at some point.
+
+**Later on**, voice assistants like Apple's Siri (2011), Window's Cortana (2014), Amazon's Alexa (2014), Google's Assistant (2016), ... were labelled as such.
+
+**In 2022 and later**, ChatGPT, Gemini, Claude, Grok, DeepSeek, Perplexity and others are now considered "AI".
+
+In this 21st century, any kind of algorithm performing deemed-complex actions might actually be defined as AI (chess player, robots behaviour, self-driving vehicules, ...).
+That is what it means, to become a buzzword...
+
+## Measuring Intelligence
+The first way of measuring intelligence was the **Turing test**: "if the interrogator cannot distinguish the human from the machine, solely on the basis of their answers to questions, then the machine can be assumed intelligent".
+It basically measures a machine's ability to exhibit intelligent human-like behaviour to the point where a human evaluator cannot distinguish the machine from the human.
+
+Apart from the fact that the Turing test also assesses the judge and promotes imitators, the main problem with it is that it focuses too much on *human behaviour*.
+It evaluates "acting like a human".
+This is one of the four foundational pillars of artificial intelligence and cognitive modelling outlined in S. Russell and P. Norvig's book named "Artificial Intelligence: A Modern Approach".
+
+## Schools of Thought
+<Figure
+    data={{
+        src: '/img/pillars-of-ai.jpg',
+        alt: 'Pillars of Artificial Intelligence',
+        type: 'image'
+    }}
+>
+    Pillars of Artificial Intelligence, by <a target='_blank' href='https://x.com/kartikkukreja92' rel='noreferrer noopener nofollow'>Kartik Kukreja</a>, from <a target='_blank' href='https://kartikkukreja.wordpress.com/2015/05/17/what-is-ai-and-what-can-we-do-with-it-today/' rel='noreferrer noopener nofollow'>their blog post</a>
+</Figure>
+
+### 1. Thinking as a Human - Cognitive Modelling
+> \[The automation of\] activities that we associate with human thinking, activities such as decision-making, problem solving, learning... (Bellman, 1978)
+
+The goal is to build machines that mimic the inner working of human mind.
+It requires using cognitive science and introspection to figure out how human solve problems, learn and perceive the world, to build a computational model of human reasoning so the machine's thought process mirrors human psychology.
+
+### 2. Thinking Rationally - The Laws Of Thoughts
+> The study of the computations that make it possible to perceive, reason, and act (Winston, 1992).
+
+The goal is to build systems based strictly on irrefutable logic and formal mathematical laws.
+It traces back to Aristotle's syllogisms (if A=B and B=C, then A=C).
+The built machines use formal notation and logic to make foolproof inferences.
+
+However, this is hardly applicable into the real world: human beings are far from perfect flawless maths, they are messy contradictory beings.
+
+### 3. Acting as a Human - The Turing Test
+> The study of how to make computers do things at which, at the moment, people are better (Rich and Knight, 1991).
+
+The goal is to build machines that behave exactly as a person would, to the point where it is indistinguishable (as mentioned [earlier](#measuring-intelligence)).
+It focuses on entirely observable interactions.
+
+### 4. Acting Rationally - The Rational Agent
+> The study of the design of intelligent agents (Poole et al., 1998).
+
+The goal is to "do the right thing" to achieve a specific goal.
+It uses computational intelligence to design software agents that operate autonomously to maximize their chances of success in achieving their set goal.
+
+An agent (from Latin term *agere* which means "to do, act, drive") is just an algorithm that acts.
+Beware that all computer programs are designed to do something, but agents are expected to operate autonomously, perceiving their environment, adapting to changes, pursuing their set goal.
+
+Instead of trying to mimic every nuance of a human brain or figure out every logical law, the agent simply takes actions designed to optimize its performance (using probability, by learning when doing trial-and-errors then adapting itself to maximize their gain and get closer to their goal).
+
+## AI as Rational Agents
+While the ideal system would be one that fluidly combines all four, modern AI systems generally prioritize acting rationally, a decision made unanimously across industries for several core reasons:
+1. **goal-oriented efficiency**: rational agents are designed to maximize performance measures - by quantifying outcomes, they consistently choose the path that yields the best results with the lowest cost.
+2. **adaptability and robustness**: rather than following rigid rules, they learn from their environment, adjust their behaviours to adapt to changing conditions and new data.
+3. **predictability and consistency**: because their actions are guided by logical reasoning rather than emotion or bias, their decision-making is predictable and reliable.
+
+It is deemed the best approach among the four, because it has the capacity to balance between perfectly mimicking human flaws and using strict, rigid logical paths.
+
+## Rational Agent?
+**Rational** (from Latin *rationalis*, which means "reasonable, logical" derived from *ratio*, "reckoning, calculation, reason") refers to anything that is logically sound, sane or based on objective thought rather than impulse.
+In this context, it means achieving the best possible outcome, which assumes the outcome is **measurable**.
+
+An agent (from Latin *agentem*, the present participle of *agere*, translated to "the one doing") can perform any intellectual activity that a human does (win a game of chess, play games, etc.).
+
+## Fundamental Issues
+The main problem of AI is **not doing the task** (e.g. unloading a dishwasher in a lab) but it is **to adapt to an environment change** in which it has to perform the task itself (unloading a dishwasher in a new home setting).
+
+As humans, we are able to adapt to our environment thanks to our senses (vision through the eyes, hearing through the ears, smell through the nose, taste through the mouth, touch through the skin).
+
+Thanks to our brain, we are also given some really interesting abilities that represent complex issues for AI:
+- **representation**: store knowledge systematically, find/define relationships
+- **search**: many tasks can be viewed as searching a very large problem space for a solution
+- **inference**: facts can be inferred from other facts
+- **learning**: it is essential in an intelligent system
+- **planning**: starting with general facts about the world, about the effects of basic actions on the world, etc.
+
+An agent, on the contrary, perceives its environment through **sensors** and acts upon that environment through **effectors**.
+$\alpha(t) = f[x(t), x(t-1),...,x(0)]$ where $\alpha$ is the action and $x$ the percept (= an observation of the current environment settings perceived by the agent's sensors).
+
+A rational agent does "the right thing", which means that for every possible percept sequence, the rational agent should select the action that is *expected to maximize its performance measure* (given the evidence provided by the percept sequence and whatever built-in knowledge the agent has).
+
+What is interesting when building a rational agent is that we, as system designers, *design that performance measure* which ultimately represents its goal.
+
+⚠ Rationality is **not** optimality.
+Taking rational decisions depends on the agent's percepts history (up to now) and the *expected* experiences in the future, not on future percepts nor experiences of others.
+**Optimality is rationality *with* omniscience!**
+Rationality is about optimizing the expected performance.
+
+## How to evaluate outcomes and objectives?
+There are actually three closely related concepts involved here, but they operate at different levels.
+Let me break them down for you.
+
+> **Remark**
+>
+> Just a quick note - and I won't go in much details because we could talk about it for hours - but there are several classes of rational agents depending on their level of intelligence: simple reflex agents, model-based agents, goal-based agents, utility-based agents and learning agents.
+>
+> The two last (utility-based and learning) agents are particularly interesting because they are able to estimate how desirable a state of the environment is, and use that estimation to make decisions under uncertainty.
+
+### Utility Function
+The utility function $U$ calculates a value from a state $\theta$ at time $t$: $U(\theta(t))$.
+This value represents the benefit the agent has from being in state $\theta(t)$.
+
+Consider a cleaning robot:
+- one possible state could be *all rooms cleaned with 80% battery remaining*,
+- another could be *only half the rooms cleaned with low battery*.
+
+The agent evaluates which future states are preferable and chooses actions that are expected to maximize utility.
+
+The focus of the utility function is therefore the **expected long-term desirability** of outcomes.
+It is an internal concept used directly by the agent to make decisions.
+
+### Reward Function
+The reward function $R(s,a,s')$ assigns a reward to a transition from state $s$ to state $s'$ after taking action $a$.
+
+In the cleaning robot example:
+- cleaning a room may give a reward of `+10`,
+- bumping into furniture may give `-20`,
+- consuming too much energy may give `-5`.
+
+Rewards provide immediate feedback during execution.
+They help the agent learn which actions tend to produce better outcomes over time.
+
+The focus of the reward function is therefore **local or short-term progress**.
+It is typically defined by the environment or the system designer and observed by the agent while it acts.
+
+### Performance Measure
+The performance measure is the overall criterion used to evaluate whether the agent successfully accomplished its objective.
+
+For our cleaning robot, the performance measure could include:
+- total cleaning time,
+- energy consumption,
+- percentage of rooms cleaned,
+- number of collisions with furniture.
+
+Unlike the utility function, the performance measure is an **external evaluation criterion**.
+It is usually defined by the designer rather than by the agent itself.
+
+Its focus is the **final real-world objective**.
+By defining a performance measure, we specify what "success" actually means for the agent.
+
+### Utility Function vs Performance Measure
+Both the performance measure and the utility function quantify how well an agent is doing.
+However, they are different concepts and do not necessarily optimize the exact same thing.
+
+Suppose:
+- the **performance measure** is *the total time required to clean all rooms*,
+- while the robot's **utility function** is *the estimated time remaining until every room is clean*.
+
+These are different:
+- The **performance measure** is something **external**. It is used to judge the robot's final behavior.
+- The **utility function** is something **internal**. It helps the robot decide what to do next based on the information available to it at that moment.
+
+In other words:
+- the performance measure tells us how the agent is ultimately evaluated,
+- while the utility function helps the agent choose actions expected to achieve good outcomes.
+
+Both are needed because a rational agent must not only be evaluated according to some objective, but must also have an internal mechanism for selecting actions that are likely to satisfy that objective.
+
+### Relationship Between Reward and Utility
+The reward function and the utility function are also closely related, but they are not identical:
+- The **reward function** provides immediate feedback signals.
+- The **utility function** evaluates the long-term desirability of outcomes.
+
+In many learning systems, the utility can be viewed as the expected accumulation of future rewards.
+
+For example:
+- receiving `+10` for cleaning one room is a short-term reward,
+- but finishing the entire house efficiently without exhausting the battery corresponds to high overall utility.
+
+A rational agent therefore learns to choose actions that may maximize short-term rewards while still leading to the best long-term outcomes.
+
+## Conclusion
+To summarize everything we discussed, Artificial Intelligence is not a single unified concept but rather a collection of approaches aimed at building systems capable of performing tasks that we associate with intelligence.
+
+Modern AI system predominantly follow the rational agent approach: they are designed to perceive their environment, evaluate possible actions, and choose the ones most likely to achieve a given objective.
+To do so, these systems rely on mathematical models, probabilities, utility functions, reward mechanisms and performance measures in order to estimate which actions are expected to produce the best outcomes.
+
+However, AI is not simply about "thinking like humans" or perfectly reproducing human intelligence.
+In practice, most modern systems are optimized to act efficiently toward measurable goals under uncertainty.
+
+Understanding these foundations is essential if we want to discuss AI seriously, not as a buzzword but as a technological, social, economic and philosophical transformation that is already reshaping the world around us.
+
+And perhaps the most important question is not whether machines can become intelligent, but rather how humans choose to design, use, and coexist with them.
+
+<Newsletter url={websiteConfig.MAILCHIMP_URL} />
+
+## Sources
+- Lozano-Blasco, R. _et al._ (2022) _Types of intelligence and academic performance: A systematic review and meta-analysis_, _MDPI_. Available at: https://www.mdpi.com/2079-3200/10/4/123
+- Russel, S., Norvig, P. (2009) _Artificial intelligence a modern approach third edition_. Available at: https://people.engr.tamu.edu/guni/csce625/slides/AI.pdf

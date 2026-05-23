@@ -4,11 +4,232 @@
         <title>Tinaël Devresse Blog</title>
         <link>https://tinaeldevresse.eu/blog</link>
         <description>Tinaël Devresse Blog</description>
-        <lastBuildDate>Thu, 06 Apr 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 24 May 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>Copyright ©2020-present Tinaël Devresse. Built with Docusaurus.</copyright>
+        <item>
+            <title><![CDATA[What is Artificial Intelligence?]]></title>
+            <link>https://tinaeldevresse.eu/blog/what-is-artificial-intelligence</link>
+            <guid>https://tinaeldevresse.eu/blog/what-is-artificial-intelligence</guid>
+            <pubDate>Sun, 24 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[There's a lot of talk about Artificial Intelligence (AI) and how it currently is changing the world as we know it. It is true that AI is shaping a new future for us, but it is also true that AI is not as much of a threat as the car was back in the day, or as the industrial revolutio...]]></description>
+            <content:encoded><![CDATA[<a href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence"></a><figure><a href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence"><img src="https://tinaeldevresse.eu/img/pillars-of-ai.jpg" alt="Pillars of Artificial Intelligence" type="image"></a><figcaption class="legend_Ecw3"><a href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence"></a><p><a href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence">Pillars of Artificial Intelligence, by </a><a target="_blank" href="https://x.com/kartikkukreja92" rel="noreferrer noopener nofollow">Kartik Kukreja</a>, from <a target="_blank" href="https://kartikkukreja.wordpress.com/2015/05/17/what-is-ai-and-what-can-we-do-with-it-today/" rel="noreferrer noopener nofollow">their blog post</a></p></figcaption></figure>
+<p>There's a lot of talk about Artificial Intelligence (AI) and how it <em>currently</em> is changing the world as we know it.
+It is true that AI is shaping a new future for us, but it is also true that AI is not as much of a threat as the car was back in the day, or as the industrial revolution was.</p>
+<p>I feel like it is mandatory to talk about AI through different lenses, and not just through the lens of software development, which is the field I am most familiar with.</p>
+<!-- -->
+<!-- -->
+<hr>
+<div class="center"><span class="italic">Just a quick reminder: the opinions expressed here are stricly my own. They do not represent the opinions or views of my current employer nor any of my previous ones.</span></div>
+<hr>
+<p>To grasp its full impact and to have a more holistic view of the AI technology and what it represents, we need to talk about it from different perspectives, such as:</p>
+<ul>
+<li>what is AI? Definitions through etymology, social representation, research studies and mathematical concepts</li>
+<li>what are LLMs, and how do they work? What are their limitations, their evolution and their future through model iterations?</li>
+<li>the current AI models and their comparison</li>
+<li>what is vibe coding, and how does it relate to AI?</li>
+<li>intelligence, bias, trust, sustainability, accountability</li>
+<li>the impact of AI (in our political landscapes, in our economic landscapes, in our education systems, in our social lives, in our careers - and especially in software development, on our mental health, on our creativity, on our future, ...)</li>
+</ul>
+<p>In this blog post series, I want to talk about how AI is changing the way we work and live, its impact on our social lives and career choices, and how we can adapt to this new reality.
+It is not meant to be an exhaustive analysis of all these topics, but rather an attempt to reflect and have a debate about the future we are heading to.</p>
+<p>To understand what is Artificial Intelligence, I believe it is important to understand what we mean by "intelligence", and why "artificial intelligence" means much more than buzzwords.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="intelligence">Intelligence<a class="hash-link" aria-label="Direct link to Intelligence" title="Direct link to Intelligence" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#intelligence">​</a></h2>
+<p>The term <em>intelligence</em> comes from the Latin word <em>intelligere</em>, which means "to comprehend, perceive".</p>
+<p>The concept of intelligence has been studied for a long time, and did undergo some sort of evolution from a unitary concept to a more complex multidimensional one (meaning we had one definition because we thought there was only one "intelligence" but there are actually plenty so we enlarged our scope and gave more definitions).</p>
+<p>Some remarkably important definitions and their authors:</p>
+<ul>
+<li>A. Binet would define intelligence as "the ability to judge, understand and reason effectively".</li>
+<li>R. Cattell distinguishes between fluid intelligence (problem-solving ability) and crystallized intelligence (acquired knowledge).</li>
+<li>H. Gardner talks about it being "the capacity to solve problems or create products valued in a culture".</li>
+<li>R. Sternberg defines it as "the ability to achieve success by adapting to, shaping, and selecting environments; includes analytical, creative and practical intelligence".</li>
+<li>There are also some studies that highlights the definition of <em>emotional intelligence</em> as "the ability to recognize, understand, and manage emotions in oneself and others" (D. Goleman) or "[...] involves perceiving, using, understanding, and regulating emotions" (P. Salovey and J.D. Mayer).</li>
+<li>D. Wechsler defines intelligence as "the global capacity to act purposefully, think rationally, and deal effectively with the environment".</li>
+</ul>
+<p>All their studies and definitions collectively show the shift from a single conception toward broader adaptive and socio-emotional views of intelligence.</p>
+<p>Among these intelligences, we can talk about linguistic intelligence, logical-mathematical intelligence, spatial intelligence, musical intelligence, emotional intelligence, social intelligence, interpersonal and intrapersonal intelligence, and even domain-specific intelligences (e.g. creative, digital, verbal, mathematical, leadership, collaborative, etc.).</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="artificial">Artificial<a class="hash-link" aria-label="Direct link to Artificial" title="Direct link to Artificial" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#artificial">​</a></h2>
+<p>The term <em>artificial</em> comes from the Latin word <em>artificialis</em>, which mean "made with art".
+This Latin term was formed by the contraction of two roots, <em>ars</em> which means "art", and <em>facere</em> which means "to do, make".</p>
+<p>Originally, it refers to anything made, produced, or done by human beings as opposed to what is naturally occurring.
+It nowadays broadly spans to everyday manufactured goods, synthetic materials and modern technology.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="artificial-intelligence">Artificial Intelligence<a class="hash-link" aria-label="Direct link to Artificial Intelligence" title="Direct link to Artificial Intelligence" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#artificial-intelligence">​</a></h2>
+<p>In regards to what these buzzwords trigger in every human's mind, well... this is complex as it means different things contextually and dependently of the person's culture and background.</p>
+<p><strong>In the 1960s and 70s</strong>, Non-Playable Characters (NPCs) emerged in video games and evolved to become rich lifelike companions found in modern gaming. These were referred to as "AI", back then.</p>
+<p><strong>In the 1990s</strong>, search/query engines and apps like google.com were referred to as "AI". The same fact goes with automated machine translations, or route planning (GPS) at some point.</p>
+<p><strong>Later on</strong>, voice assistants like Apple's Siri (2011), Window's Cortana (2014), Amazon's Alexa (2014), Google's Assistant (2016), ... were labelled as such.</p>
+<p><strong>In 2022 and later</strong>, ChatGPT, Gemini, Claude, Grok, DeepSeek, Perplexity and others are now considered "AI".</p>
+<p>In this 21st century, any kind of algorithm performing deemed-complex actions might actually be defined as AI (chess player, robots behaviour, self-driving vehicules, ...).
+That is what it means, to become a buzzword...</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="measuring-intelligence">Measuring Intelligence<a class="hash-link" aria-label="Direct link to Measuring Intelligence" title="Direct link to Measuring Intelligence" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#measuring-intelligence">​</a></h2>
+<p>The first way of measuring intelligence was the <strong>Turing test</strong>: "if the interrogator cannot distinguish the human from the machine, solely on the basis of their answers to questions, then the machine can be assumed intelligent".
+It basically measures a machine's ability to exhibit intelligent human-like behaviour to the point where a human evaluator cannot distinguish the machine from the human.</p>
+<p>Apart from the fact that the Turing test also assesses the judge and promotes imitators, the main problem with it is that it focuses too much on <em>human behaviour</em>.
+It evaluates "acting like a human".
+This is one of the four foundational pillars of artificial intelligence and cognitive modelling outlined in S. Russell and P. Norvig's book named "Artificial Intelligence: A Modern Approach".</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="schools-of-thought">Schools of Thought<a class="hash-link" aria-label="Direct link to Schools of Thought" title="Direct link to Schools of Thought" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#schools-of-thought">​</a></h2>
+<figure><img src="https://tinaeldevresse.eu/img/pillars-of-ai.jpg" alt="Pillars of Artificial Intelligence" type="image"><figcaption class="legend_Ecw3"><p>Pillars of Artificial Intelligence, by <a target="_blank" href="https://x.com/kartikkukreja92" rel="noreferrer noopener nofollow">Kartik Kukreja</a>, from <a target="_blank" href="https://kartikkukreja.wordpress.com/2015/05/17/what-is-ai-and-what-can-we-do-with-it-today/" rel="noreferrer noopener nofollow">their blog post</a></p></figcaption></figure>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-thinking-as-a-human---cognitive-modelling">1. Thinking as a Human - Cognitive Modelling<a class="hash-link" aria-label="Direct link to 1. Thinking as a Human - Cognitive Modelling" title="Direct link to 1. Thinking as a Human - Cognitive Modelling" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#1-thinking-as-a-human---cognitive-modelling">​</a></h3>
+<blockquote>
+<p>[The automation of] activities that we associate with human thinking, activities such as decision-making, problem solving, learning... (Bellman, 1978)</p>
+</blockquote>
+<p>The goal is to build machines that mimic the inner working of human mind.
+It requires using cognitive science and introspection to figure out how human solve problems, learn and perceive the world, to build a computational model of human reasoning so the machine's thought process mirrors human psychology.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-thinking-rationally---the-laws-of-thoughts">2. Thinking Rationally - The Laws Of Thoughts<a class="hash-link" aria-label="Direct link to 2. Thinking Rationally - The Laws Of Thoughts" title="Direct link to 2. Thinking Rationally - The Laws Of Thoughts" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#2-thinking-rationally---the-laws-of-thoughts">​</a></h3>
+<blockquote>
+<p>The study of the computations that make it possible to perceive, reason, and act (Winston, 1992).</p>
+</blockquote>
+<p>The goal is to build systems based strictly on irrefutable logic and formal mathematical laws.
+It traces back to Aristotle's syllogisms (if A=B and B=C, then A=C).
+The built machines use formal notation and logic to make foolproof inferences.</p>
+<p>However, this is hardly applicable into the real world: human beings are far from perfect flawless maths, they are messy contradictory beings.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-acting-as-a-human---the-turing-test">3. Acting as a Human - The Turing Test<a class="hash-link" aria-label="Direct link to 3. Acting as a Human - The Turing Test" title="Direct link to 3. Acting as a Human - The Turing Test" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#3-acting-as-a-human---the-turing-test">​</a></h3>
+<blockquote>
+<p>The study of how to make computers do things at which, at the moment, people are better (Rich and Knight, 1991).</p>
+</blockquote>
+<p>The goal is to build machines that behave exactly as a person would, to the point where it is indistinguishable (as mentioned <a href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#measuring-intelligence">earlier</a>).
+It focuses on entirely observable interactions.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-acting-rationally---the-rational-agent">4. Acting Rationally - The Rational Agent<a class="hash-link" aria-label="Direct link to 4. Acting Rationally - The Rational Agent" title="Direct link to 4. Acting Rationally - The Rational Agent" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#4-acting-rationally---the-rational-agent">​</a></h3>
+<blockquote>
+<p>The study of the design of intelligent agents (Poole et al., 1998).</p>
+</blockquote>
+<p>The goal is to "do the right thing" to achieve a specific goal.
+It uses computational intelligence to design software agents that operate autonomously to maximize their chances of success in achieving their set goal.</p>
+<p>An agent (from Latin term <em>agere</em> which means "to do, act, drive") is just an algorithm that acts.
+Beware that all computer programs are designed to do something, but agents are expected to operate autonomously, perceiving their environment, adapting to changes, pursuing their set goal.</p>
+<p>Instead of trying to mimic every nuance of a human brain or figure out every logical law, the agent simply takes actions designed to optimize its performance (using probability, by learning when doing trial-and-errors then adapting itself to maximize their gain and get closer to their goal).</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ai-as-rational-agents">AI as Rational Agents<a class="hash-link" aria-label="Direct link to AI as Rational Agents" title="Direct link to AI as Rational Agents" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#ai-as-rational-agents">​</a></h2>
+<p>While the ideal system would be one that fluidly combines all four, modern AI systems generally prioritize acting rationally, a decision made unanimously across industries for several core reasons:</p>
+<ol>
+<li><strong>goal-oriented efficiency</strong>: rational agents are designed to maximize performance measures - by quantifying outcomes, they consistently choose the path that yields the best results with the lowest cost.</li>
+<li><strong>adaptability and robustness</strong>: rather than following rigid rules, they learn from their environment, adjust their behaviours to adapt to changing conditions and new data.</li>
+<li><strong>predictability and consistency</strong>: because their actions are guided by logical reasoning rather than emotion or bias, their decision-making is predictable and reliable.</li>
+</ol>
+<p>It is deemed the best approach among the four, because it has the capacity to balance between perfectly mimicking human flaws and using strict, rigid logical paths.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="rational-agent">Rational Agent?<a class="hash-link" aria-label="Direct link to Rational Agent?" title="Direct link to Rational Agent?" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#rational-agent">​</a></h2>
+<p><strong>Rational</strong> (from Latin <em>rationalis</em>, which means "reasonable, logical" derived from <em>ratio</em>, "reckoning, calculation, reason") refers to anything that is logically sound, sane or based on objective thought rather than impulse.
+In this context, it means achieving the best possible outcome, which assumes the outcome is <strong>measurable</strong>.</p>
+<p>An agent (from Latin <em>agentem</em>, the present participle of <em>agere</em>, translated to "the one doing") can perform any intellectual activity that a human does (win a game of chess, play games, etc.).</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="fundamental-issues">Fundamental Issues<a class="hash-link" aria-label="Direct link to Fundamental Issues" title="Direct link to Fundamental Issues" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#fundamental-issues">​</a></h2>
+<p>The main problem of AI is <strong>not doing the task</strong> (e.g. unloading a dishwasher in a lab) but it is <strong>to adapt to an environment change</strong> in which it has to perform the task itself (unloading a dishwasher in a new home setting).</p>
+<p>As humans, we are able to adapt to our environment thanks to our senses (vision through the eyes, hearing through the ears, smell through the nose, taste through the mouth, touch through the skin).</p>
+<p>Thanks to our brain, we are also given some really interesting abilities that represent complex issues for AI:</p>
+<ul>
+<li><strong>representation</strong>: store knowledge systematically, find/define relationships</li>
+<li><strong>search</strong>: many tasks can be viewed as searching a very large problem space for a solution</li>
+<li><strong>inference</strong>: facts can be inferred from other facts</li>
+<li><strong>learning</strong>: it is essential in an intelligent system</li>
+<li><strong>planning</strong>: starting with general facts about the world, about the effects of basic actions on the world, etc.</li>
+</ul>
+<p>An agent, on the contrary, perceives its environment through <strong>sensors</strong> and acts upon that environment through <strong>effectors</strong>.
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>x</mi><mo stretchy="false">(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mi>x</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">\alpha(t) = f[x(t), x(t-1),...,x(0)]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord mathnormal" style="margin-right:0.0037em">α</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mopen">[</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em"></span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord">1</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em"></span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)]</span></span></span></span> where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em"></span><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span> is the action and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em"></span><span class="mord mathnormal">x</span></span></span></span> the percept (= an observation of the current environment settings perceived by the agent's sensors).</p>
+<p>A rational agent does "the right thing", which means that for every possible percept sequence, the rational agent should select the action that is <em>expected to maximize its performance measure</em> (given the evidence provided by the percept sequence and whatever built-in knowledge the agent has).</p>
+<p>What is interesting when building a rational agent is that we, as system designers, <em>design that performance measure</em> which ultimately represents its goal.</p>
+<p>⚠ Rationality is <strong>not</strong> optimality.
+Taking rational decisions depends on the agent's percepts history (up to now) and the <em>expected</em> experiences in the future, not on future percepts nor experiences of others.
+<strong>Optimality is rationality <em>with</em> omniscience!</strong>
+Rationality is about optimizing the expected performance.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-to-evaluate-outcomes-and-objectives">How to evaluate outcomes and objectives?<a class="hash-link" aria-label="Direct link to How to evaluate outcomes and objectives?" title="Direct link to How to evaluate outcomes and objectives?" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#how-to-evaluate-outcomes-and-objectives">​</a></h2>
+<p>There are actually three closely related concepts involved here, but they operate at different levels.
+Let me break them down for you.</p>
+<blockquote>
+<p><strong>Remark</strong></p>
+<p>Just a quick note - and I won't go in much details because we could talk about it for hours - but there are several classes of rational agents depending on their level of intelligence: simple reflex agents, model-based agents, goal-based agents, utility-based agents and learning agents.</p>
+<p>The two last (utility-based and learning) agents are particularly interesting because they are able to estimate how desirable a state of the environment is, and use that estimation to make decisions under uncertainty.</p>
+</blockquote>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="utility-function">Utility Function<a class="hash-link" aria-label="Direct link to Utility Function" title="Direct link to Utility Function" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#utility-function">​</a></h3>
+<p>The utility function <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord mathnormal" style="margin-right:0.109em">U</span></span></span></span> calculates a value from a state <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em"></span><span class="mord mathnormal" style="margin-right:0.0278em">θ</span></span></span></span> at time <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em"></span><span class="mord mathnormal">t</span></span></span></span>: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">U(\theta(t))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord mathnormal" style="margin-right:0.109em">U</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0278em">θ</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">))</span></span></span></span>.
+This value represents the benefit the agent has from being in state <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\theta(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord mathnormal" style="margin-right:0.0278em">θ</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span>.</p>
+<p>Consider a cleaning robot:</p>
+<ul>
+<li>one possible state could be <em>all rooms cleaned with 80% battery remaining</em>,</li>
+<li>another could be <em>only half the rooms cleaned with low battery</em>.</li>
+</ul>
+<p>The agent evaluates which future states are preferable and chooses actions that are expected to maximize utility.</p>
+<p>The focus of the utility function is therefore the <strong>expected long-term desirability</strong> of outcomes.
+It is an internal concept used directly by the agent to make decisions.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="reward-function">Reward Function<a class="hash-link" aria-label="Direct link to Reward Function" title="Direct link to Reward Function" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#reward-function">​</a></h3>
+<p>The reward function <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo separator="true">,</mo><msup><mi>s</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">R(s,a,s')</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em"></span><span class="mord mathnormal" style="margin-right:0.0077em">R</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em"></span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em"><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> assigns a reward to a transition from state <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em"></span><span class="mord mathnormal">s</span></span></span></span> to state <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow><annotation encoding="application/x-tex">s'</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7519em"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em"><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> after taking action <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em"></span><span class="mord mathnormal">a</span></span></span></span>.</p>
+<p>In the cleaning robot example:</p>
+<ul>
+<li>cleaning a room may give a reward of <code>+10</code>,</li>
+<li>bumping into furniture may give <code>-20</code>,</li>
+<li>consuming too much energy may give <code>-5</code>.</li>
+</ul>
+<p>Rewards provide immediate feedback during execution.
+They help the agent learn which actions tend to produce better outcomes over time.</p>
+<p>The focus of the reward function is therefore <strong>local or short-term progress</strong>.
+It is typically defined by the environment or the system designer and observed by the agent while it acts.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="performance-measure">Performance Measure<a class="hash-link" aria-label="Direct link to Performance Measure" title="Direct link to Performance Measure" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#performance-measure">​</a></h3>
+<p>The performance measure is the overall criterion used to evaluate whether the agent successfully accomplished its objective.</p>
+<p>For our cleaning robot, the performance measure could include:</p>
+<ul>
+<li>total cleaning time,</li>
+<li>energy consumption,</li>
+<li>percentage of rooms cleaned,</li>
+<li>number of collisions with furniture.</li>
+</ul>
+<p>Unlike the utility function, the performance measure is an <strong>external evaluation criterion</strong>.
+It is usually defined by the designer rather than by the agent itself.</p>
+<p>Its focus is the <strong>final real-world objective</strong>.
+By defining a performance measure, we specify what "success" actually means for the agent.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="utility-function-vs-performance-measure">Utility Function vs Performance Measure<a class="hash-link" aria-label="Direct link to Utility Function vs Performance Measure" title="Direct link to Utility Function vs Performance Measure" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#utility-function-vs-performance-measure">​</a></h3>
+<p>Both the performance measure and the utility function quantify how well an agent is doing.
+However, they are different concepts and do not necessarily optimize the exact same thing.</p>
+<p>Suppose:</p>
+<ul>
+<li>the <strong>performance measure</strong> is <em>the total time required to clean all rooms</em>,</li>
+<li>while the robot's <strong>utility function</strong> is <em>the estimated time remaining until every room is clean</em>.</li>
+</ul>
+<p>These are different:</p>
+<ul>
+<li>The <strong>performance measure</strong> is something <strong>external</strong>. It is used to judge the robot's final behavior.</li>
+<li>The <strong>utility function</strong> is something <strong>internal</strong>. It helps the robot decide what to do next based on the information available to it at that moment.</li>
+</ul>
+<p>In other words:</p>
+<ul>
+<li>the performance measure tells us how the agent is ultimately evaluated,</li>
+<li>while the utility function helps the agent choose actions expected to achieve good outcomes.</li>
+</ul>
+<p>Both are needed because a rational agent must not only be evaluated according to some objective, but must also have an internal mechanism for selecting actions that are likely to satisfy that objective.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="relationship-between-reward-and-utility">Relationship Between Reward and Utility<a class="hash-link" aria-label="Direct link to Relationship Between Reward and Utility" title="Direct link to Relationship Between Reward and Utility" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#relationship-between-reward-and-utility">​</a></h3>
+<p>The reward function and the utility function are also closely related, but they are not identical:</p>
+<ul>
+<li>The <strong>reward function</strong> provides immediate feedback signals.</li>
+<li>The <strong>utility function</strong> evaluates the long-term desirability of outcomes.</li>
+</ul>
+<p>In many learning systems, the utility can be viewed as the expected accumulation of future rewards.</p>
+<p>For example:</p>
+<ul>
+<li>receiving <code>+10</code> for cleaning one room is a short-term reward,</li>
+<li>but finishing the entire house efficiently without exhausting the battery corresponds to high overall utility.</li>
+</ul>
+<p>A rational agent therefore learns to choose actions that may maximize short-term rewards while still leading to the best long-term outcomes.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusion">Conclusion<a class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#conclusion">​</a></h2>
+<p>To summarize everything we discussed, Artificial Intelligence is not a single unified concept but rather a collection of approaches aimed at building systems capable of performing tasks that we associate with intelligence.</p>
+<p>Modern AI system predominantly follow the rational agent approach: they are designed to perceive their environment, evaluate possible actions, and choose the ones most likely to achieve a given objective.
+To do so, these systems rely on mathematical models, probabilities, utility functions, reward mechanisms and performance measures in order to estimate which actions are expected to produce the best outcomes.</p>
+<p>However, AI is not simply about "thinking like humans" or perfectly reproducing human intelligence.
+In practice, most modern systems are optimized to act efficiently toward measurable goals under uncertainty.</p>
+<p>Understanding these foundations is essential if we want to discuss AI seriously, not as a buzzword but as a technological, social, economic and philosophical transformation that is already reshaping the world around us.</p>
+<p>And perhaps the most important question is not whether machines can become intelligent, but rather how humans choose to design, use, and coexist with them.</p>
+<div class="formContainer_ssZr"><h3>Stay up to date, subscribe to my newsletter!</h3><div class="inputContainer_rIzC"><input class="input_xw7i" type="email" placeholder="Enter your email address" required="" autocomplete="email"><a class="submit_jbGj tooltip" rel="noopener" type="submit"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="paper-plane" class="svg-inline--fa fa-paper-plane fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"></path></svg><span class="tooltipText">Submit!</span></a></div></div>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="sources">Sources<a class="hash-link" aria-label="Direct link to Sources" title="Direct link to Sources" href="https://tinaeldevresse.eu/blog/what-is-artificial-intelligence#sources">​</a></h2>
+<ul>
+<li>Lozano-Blasco, R. <em>et al.</em> (2022) <em>Types of intelligence and academic performance: A systematic review and meta-analysis</em>, <em>MDPI</em>. Available at: <a href="https://www.mdpi.com/2079-3200/10/4/123" target="_blank" rel="noopener noreferrer">https://www.mdpi.com/2079-3200/10/4/123</a></li>
+<li>Russel, S., Norvig, P. (2009) <em>Artificial intelligence a modern approach third edition</em>. Available at: <a href="https://people.engr.tamu.edu/guni/csce625/slides/AI.pdf" target="_blank" rel="noopener noreferrer">https://people.engr.tamu.edu/guni/csce625/slides/AI.pdf</a></li>
+</ul>]]></content:encoded>
+            <category>development</category>
+            <category>IT</category>
+            <category>craft</category>
+            <category>software craftsman</category>
+            <category>artificial intelligence</category>
+            <category>ai</category>
+            <category>career</category>
+            <category>future</category>
+        </item>
         <item>
             <title><![CDATA[Sharing is caring]]></title>
             <link>https://tinaeldevresse.eu/blog/sharing-is-caring</link>
@@ -335,7 +556,7 @@ But it should be borne in mind that our test suite will not be the most effectiv
 <p></p><p>🔸 Nice! But why is testing not used everywhere in the profesionnal world?</p><p></p>
 <p>🔹 In reality, a large part of developers write little to no tests. In addition, integration tests are less common than unit tests because they are more complex to write.
 In the end, this task is often seen as a chore or an extra step that we will only do if we have time.</p>
-<figure><img src="https://tinaeldevresse.eu/img/more-unit-tests-no-integration-tests.gif" alt="GIF on integration tests" type="image"><figcaption class="legend_Ecw3"></figcaption></figure>
+<figure><img src="https://tinaeldevresse.eu/img/integration-tests.gif" alt="GIF on integration tests" type="image"><figcaption class="legend_Ecw3"></figcaption></figure>
 <p>Uncle Bob also spoke about it at a conference in London in 2018:</p>
 <figure><div class="container_KXSz"><iframe type="html" width="560" height="315" src="https://www.youtube.com/embed/17vTLSkXTOo?start=552&amp;end=720" title="YouTube video player of SC London Conference 2018" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><figcaption class="legend_Ecw3"></figcaption></figure>
 <p class="anchor anchorWithHideOnScrollNavbar_WYt5" id="objective"></p><p>🔸 What is the objective of unit testing and when should it be applied?</p><a class="hash-link" aria-label="Direct link to objective" title="Direct link to objective" href="https://tinaeldevresse.eu/blog/unit-testing#objective">​</a><p></p>

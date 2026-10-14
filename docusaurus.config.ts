@@ -22,8 +22,13 @@ const config: Config = {
     trailingSlash: false,
 
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
+
+    markdown: {
+        hooks: {
+            onBrokenMarkdownLinks: 'warn'
+        }
+    },
 
     customFields: {
         description: "Personal website of Tinaël Devresse, a blog about anything that crosses my mind which I think could interest y'all.",

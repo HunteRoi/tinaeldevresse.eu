@@ -1,0 +1,282 @@
+---
+slug: what-are-llms
+title: What are Large Language Models (LLMs)?
+tags: [development, IT, craft, software craftsman, artificial intelligence, ai, career, future]
+description: There's a lot of talk about Artificial Intelligence (AI) and how it currently is changing the world as we know it. It is true that AI is shaping a new future for us, but it is also true that AI is not as much of a threat as the car was back in the day, or as the industrial revolutio...
+image: /img/pillars-of-ai.jpg
+---
+
+import Figure from '../src/components/Figure';
+import SEO from '../src/components/SEO';
+import Reminder from '../src/components/Reminder';
+import Newsletter from '../src/components/Newsletter';
+import StudentExamPredictor from '../src/components/StudentExamPredictor';
+import LLMHistory from '../src/components/LLMHistory';
+import * as websiteConfig from '../website_config.json';
+
+<a href='/blog/what-are-llms'>
+    <Figure
+        data={{
+            src: '/img/ai_taxonomy.png',
+            alt: 'AI Taxonomy',
+            type: 'image'
+        }}
+    >
+        AI Taxonomy
+    </Figure>
+</a>
+
+On [my last blog post](/blog/what-is-artificial-intelligence), I talked about AI as a broad term, what it represents in everybody's mind and what it really is in the inside.
+
+Today, I want to correlate AI, Large Language Models (LLM), Machine Learning (ML), Deep Learning (DL), Neural Networks (NN) and other big words to give you all a better understanding of each concept and how they relate to each other.
+
+{/* truncate */}
+
+<SEO
+    uri='blog/what-are-llms'
+    image='img/ai_taxonomy.png'
+    type='article'
+/>
+
+---
+
+<Reminder />
+
+---
+
+## Context Is Key
+In 2019, lots of people came together and wrote [Artificial Intelligence in the Management of Glioma: Era of Personalized Medicine](https://www.researchgate.net/publication/335168768_Artificial_Intelligence_in_the_Management_of_Glioma_Era_of_Personalized_Medicine) in which they described "the relationship between the most common AI methods in medicine". Later, in 2023, Pan Singh Dhoni described "the relationship between AI, Machine Learning and Deep Learning" in his research titled [Exploring the Synergy between Generative AI, Data and Analytics in the Modern Age](https://www.researchgate.net/publication/373505167_Exploring_the_Synergy_between_Generative_AI_Data_and_Analytics_in_the_Modern_Age).
+
+Both described Artificial Intelligence as a set containing all kind of other subsets (in the mathematical sense of it), like Machine Learning, Deep Learning and Neural Network.
+
+Thanks to complementary studies like [Large language models: a primer and gastroenterology applications](https://www.researchgate.net/publication/378394229_Large_language_models_a_primer_and_gastroenterology_applications?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ) (2024) and [Artificial Intelligence in Emergency Medicine: A Primer for the Nonexpert](https://www.researchgate.net/publication/389089475_Artificial_Intelligence_in_Emergency_Medicine_A_Primer_for_the_Nonexpert) (2025), more terminology terms could be added to similar schemas, such as Generative AI (GenAI) and Large Language Models (LLM).
+
+Taking into account all their work, we can draw the following AI Taxonomy which pretty much explains the relationship between each. I will use it as a base in this article.
+
+<Figure
+    data={{
+        src: '/img/ai_taxonomy.png',
+        alt: 'AI Taxonomy',
+        type: 'image'
+    }}
+>
+    AI Taxonomy
+</Figure>
+
+## Artificial Intelligence
+AI is not new, as stated in [my previous blog post](2026-05-24-what-is-artificial-intelligence).
+At its core, AI really is just about enabling machines to perform tasks requiring a certain level of intelligence.
+
+## Machine Learning
+Zooming in, there is this big subset called Machine Learning.
+
+In the late 80s, general belief was that building an "intelligent behaviour" could be achieved by explicitly writing down logical rules and knowledge (bunch of if-else stating how to act in certain conditions). One programming language that perfectly fits that conviction is Prolog : a declarative programming language based on a set of facts, rules and relations and where a computation takes the form of a query.
+
+However, the limitations became increasingly evident : encoding knowledge by hand is labor-intensive and an ever-ending task. This is where Machine Learning came in.
+
+As knowledge-based systems disappointed by their lack of generalization of knowledge beyond narrow domains, studies on more automated learning techniques started to emerge, especially thanks to new algorithms development like Bayesian inference and Iterative Dichotomiser 3.
+Instead of experts providing domain rules, we provide labeled data and let the algorithm infer the rules (training phase). This inverted the knowledge acquisition problem! **Data-driven AI was born.**
+
+Machine Learning systems are thus systems fed with data that use algorithms to recognize patterns and infer rules from it. Its most important phase is the "learning" part, where the algorithms would improve their performance on a task through data : the more data, the better output accuracy in the end.
+
+## Neural Networks
+While studies on ML systems were going great, other forms of AI computation were researched to fulfill gaps in many domains like vision or natural language understanding, as those tasks were proved hard to define or infer rules from dataset.
+Indeed, to train an ML system, you'd have to go through the dataset to label the information. In the end, you still depend on humans selecting useful features to train the system (e.g. to recognize a cat in an image, you might require manually designed features representing paws, whiskers, ears and so on...).
+
+### Artificial Neural Network
+Researchers tried to teach the systems pattern recognition from the training data. They mimicked the brain's model for information processing and created Artificial Neural Networks (ANNs).
+
+<Figure
+    data={{
+        src: '/img/biological_vs_artificial_neurons.png',
+        alt: 'Biological vs Artificial Neurons',
+        type: 'image'
+    }}
+>
+    A biological and an artificial neuron (source: https://www.quora.com/What-is-the-differences-between-artificial-neural-network-computer-science-and-biological-neural-network)
+</Figure>
+
+
+An artificial neural network is an computational model composed of interconnected artificial neurons (typically organized in layers) that transforms inputs into outputs using learned weights, biases, and activation functions.
+An artificial neuron is actually a highly simplified mathematical abstraction that combines several input values with adjustable weights, adds a bias and applies an activation function.
+
+<Figure
+    data={{
+        src: '/img/ann.svg',
+        alt: 'Artificial Neural Network',
+        type: 'image'
+    }}
+>
+    Artificial Neural Network
+</Figure>
+
+If you read that out loud, it does not even help to understand it, right? Well, let me give you an example to simplify it : imagine that we want to predict whether a student will pass an exam based on three factors :
+- hours studied (how long the student prepared the exam)
+- hours slept (how much sleep did they get the night before)
+- attendance (the percentage of classes attended)
+
+Instead of manually defining rules, we train an ANN to learn the relationships between these factors and the exam results. To achieve this, we would give it historical data as training dataset:
+
+| Studied | Slept | Attendance | Actual result |
+| :------ | :---- | :--------- | :------------ |
+| 8h      | 7h    | 90%        | Pass          |
+| 2h      | 5h    | 40%        | Fail          |
+| 6h      | 8h    | 85%        | Pass          |
+| 1h      | 7h    | 30%        | Fail          |
+
+To represent the structure, here's a little schematics:
+
+<Figure
+    data={{
+        src: '/img/ann_example.svg',
+        alt: 'ANN Example',
+        type: 'image'
+    }}
+>
+    ANN Example
+</Figure>
+
+In order to train the system to learn the patterns and to predict the output value, the ANN will repeatedly :
+- predict whether a student will pass based on actual input values
+- compares its prediction with the actual result
+- calculates the error between them
+- adjusts its weights using backpropagation and an optimization algorithm
+- repeats the process across many examples
+
+Over time, it learns useful relationships between study habits, attendance, sleep, and obviously the exam results.
+
+<StudentExamPredictor />
+
+What's impressive is not simply predicting the outcome (especially in this context where the formula is quite simple), it's more about how the prediction is learned!
+An ANN learns numerical weights and combinations of inputs from examples.
+Using backpropagation, the hidden neurons unlock much richer learning behaviours and thus could discover useful features and encodings of the input domain rather than relying on manually written human-designed rules.
+
+At the time they got developed, however, neural networks were not that fabulous... mainly due to the limits of computational power and the size of available data.
+Early neural networks established a general principle though: interconnected mathematical units can learn from data. And different tasks required different structures!
+- Images benefit from networks that recognize local spatial patterns.
+- Complex abstractions benefit from networks with many processing layers.
+- Sequences benefit from networks that maintain information across time.
+
+These requirements led to Convolutional Neural Networks (CNNs), Deep Neural Networks (DNNs), and Recurrent Neural Networks (RNNs) :
+
+| Architecture | Main distinguishing feature                | Typical strength             |
+| ------------ | ------------------------------------------ | ---------------------------- |
+| CNN          | Local filters and weight sharing           | Spatial patterns             |
+| DNN          | Multiple hidden layers of learned patterns | Hierarchical representations |
+| RNN          | Recurrent state across steps               | Sequential dependencies      |
+
+## Deep Learning
+DNN and Deep Learning are closely related terms : the first is a model architecture for neural networks based on multiple layers of learned representations to model complex patterns in data ; the second refers to a broader approach of training and using such models.
+
+The power of neural networks comes from scaling them up in depth, width and data, making deep neural networks a go-to approach in AI research : it was setting new records in different tasks such as "image classification, object detection, machine translation, language modelling" (R. Mundlamuri, G. R. Gunnam, N. K. Mysari and J. Pujuri, 2025).
+
+## Transformers
+Deep learning significantly improved perception and language processing, but recurrent architectures (RNNs) had important limitations : they process sequences through recurrent steps, making large-scale parallel training difficult. They can also struggle with very long-range dependencies.
+
+For example, imagine a deep RNN reads a story and stumbles across this sentence : `The dog chase the ball because it was red.` What does the "it" means? The dog? The ball?
+As a human, you immediately understand that "it" refers to the ball, because balls can be red and the sentence makes sense that way. But how does the computer do that?
+
+To fix this kind of issues, researchers developed attention mechanisms so models could focus selectively on relevant parts of an input. This led to the Transformer architecture.
+
+<Figure
+    data={{
+        src: '/img/drnn_example.svg',
+        alt: 'Deep RNN Example',
+        type: 'image'
+    }}
+>
+    Deep RNN Example
+</Figure>
+
+Older neural networks, like RNNs, process words one after another, passing information along as they go.
+A Transformer does something different: it allows every word to look at other words and decide which ones matter most. This process is called "self-attention" : it helps the transformer calculates how strongly different words should influence one another.
+
+Transformers are thus deep neural network architectures built around attention mechanisms, especially self-attention.
+They replace recurrent processing with attention-based computation, making training more parallelizable.
+
+## Generative AI
+Up to now, we talked about a lot of systems that are able to predict an output value based on input values. These are what we call classifiers, they are used to predict a category based on the values received as input.
+
+GenAI refers to AI systems that also learn patterns or distributions from data but they use them to generate new content such as text, image, audio, video, code and structured information.
+Unlike classifiers, **a generative model produces an output resembling or satisfying patterns learned during training**.
+
+A few years ago, when you asked a random number between 1 and 20, AI systems used to answer 17. How is that random if you ask Claude, ChatGPT, Gemini or DeepSeek and they all give you the same number? (J. Agrawal, 2025). As generative models predicts what the next word will be based on their training data, it only needs to be trained on data where more representations of "generate a random number between 1 and 20" gives "17", to lead to a biased generative model.
+This is a part of the explanation as to why some AI systems generated contents that were deemed incorrect or inappropriate at times: bias.
+
+However, GenAI are not the only systems that are biased : anything that infers patterns from data will perpetuate reality biases through the learned representations (e.g. classifiers like Microsoft facial recognition services, which had issues identifying women and dark-skinned individuals (Buolamwini & Gebru, 2018)).
+This is inherent to model training and cannot be avoided. However, it can be mitigated. And mitigation is also a tough job!
+
+Did you know that when Google first released Gemini, they said they designed it as an attempt to avoid perpetuating pre-existing societal prejudices. But in fact, they actually overcompensated the bias, leaning toward another issue of misrepresentation of "mainstream culture" (Shamim, 2024).
+
+## Large Language Models
+But in the end, what are Large Language Models (LLMs) ? Well, it's rather simple : LLMs are a subset of GenAI that are specialized in text generation.
+Just like [MidJourney](https://www.midjourney.com) is a generative AI specialized in image generation, and [MusicGen](https://www.musicgen.com) is a generative AI specialized in audio generation, LLMs such as GPT, Gemini, Claude, Mistral or DeepSeek are generative AI specialized in text.
+
+Why is it called like that though?
+- Large : it has a very large number of learned parameters, sometimes billions or more. These numerical values help encode patterns learned during training.
+- Language : it is trained to process language: words, sentences, conversations, and other text-based information, including programming languages.
+- Model : it is a mathematical system that learns statistical patterns and uses them to make predictions.
+
+Thus, an LLM is a deep-learning system built on the Transformer Architecture, trained on massive text datasets to understand, generate, and reason about human language.
+It learns by predicting the next token in a sequence repeated trillions of times across terabytes of data.
+
+I have yet to talk about what tokens are, so stay tuned... *this will be for the next article!*
+
+## What are LLMs' limitations, evolution and future through model iterations ?
+In the past years, LLMs have evolved from relatively simple text-prediction systems into models capable of writing softwares, analyzing documents, solving mathematical problems, processing images and interacting with external tools (via "connectors").
+
+However, being able to generate convincing answers is **not the same as being accurate, reliable and capable of independently understanding every situation**.
+
+### Evolution
+LLMs will undoubtedly continue to grow and become more performant. What drives their evolution is:
+- Scale : by increasing the amount of training data, parameters and computational power
+- Capabilities : by creating more connectors to move beyond text generation (multimodality, extensive reasoning, etc.)
+- Reliability : by improving factual accuracy, verification and efficiency (especially in code generation)
+
+<LLMHistory />
+
+### Limitations
+You might already have used AI and you already found out about a few of its limitations.
+You can find a non-exhaustive list in the table below.
+
+| Limitation                       | Explanation                                                                                                | Example                                                        |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Hallucinations                   | Models can generate plausible but incorrect information                                                    | Inventing a scientific citation or a nonexistent API method    |
+| Limited knowledge freshness      | Training knowledge can become outdated                                                                     | Describing an obsolete software API as current                 |
+| Context limitations              | Models can miss, forget, or misinterpret information in long conversations or documents                    | Overlooking a requirement in a 200-page specification          |
+| Bias                             | Models can reproduce biases present in training data or introduced by optimization                         | Producing different recommendations based on demographic cues  |
+| Non-determinism                  | Responses can vary across runs, even with similar inputs                                                   | Generating different solutions to the same programming problem |
+| Weak factual grounding           | Models do not inherently verify every statement against reliable evidence                                  | Giving a confident but unsupported historical explanation      |
+| Computational cost               | Training and serving large models require substantial hardware, electricity, and infrastructure            | Expensive inference for millions of requests                   |
+| Limited real-world understanding | Text-based learning does not automatically provide reliable physical, causal, or situational understanding | Suggesting an impractical mechanical solution                  |
+
+### Future
+The future of LLMs and the frontier models in a generic point of view may be the transition from models that generate answers to systems that can plan, act, check their work and collaborate with people.
+
+This includes :
+- **native multimodal handling** (integrate text, images, audio, video and potentially sensor information at some point to enrich the LLMs representations of the world - part of this is already the case)
+- **more deliberate reasoning** (extract computation allocated for difficult tasks, exploring alternative solutions, checking intermediate results, etc.)
+- **more capable agents** (instead of explaining how to perform a task, it could carry out multi-step workflows using tools, with checkpoints, permissions and human supervisions - we already see that in the IT sphere where developers are now becoming AI-produced code reviewers but this will be for another article!)
+- **better factual verification** (rather than producing a plausible answer, they can fact-check it)
+- **better long-term context and memory** (persist information more effectively, maintain coherence across lengthy conversations, etc.)
+
+## Conclusion
+In the end, we talked about the whole history behind LLMs and what they really are. We also mentioned their limits, their evolution and what we can see coming for the future.
+
+Next up for this series is what exactly tokens are! Hopefully a short article, for once 😉
+
+<Newsletter url={websiteConfig.MAILCHIMP_URL} />
+
+## Sources
+- Sotoudeh, Houman & Shafaat, Omid & Bernstock, Joshua & Brooks, Michael & Elsayed, Galal & Chen, Jason & Szerip, Paul & Chagoya, Gustavo & Gessler, Florian & Sotoudeh, Ehsan & Shafaat, Amir & Friedman, Gregory. (2019). Artificial Intelligence in the Management of Glioma: Era of Personalized Medicine. Frontiers in Oncology. 768. https://www.researchgate.net/publication/335168768_Artificial_Intelligence_in_the_Management_of_Glioma_Era_of_Personalized_Medicine
+- Dhoni, Pan. (2023). Exploring the Synergy between Generative AI, Data and Analytics in the Modern Age. 10.36227/techrxiv.24045792.v1. https://www.researchgate.net/publication/373505167_Exploring_the_Synergy_between_Generative_AI_Data_and_Analytics_in_the_Modern_Age
+- Shahab, Omer & El Kurdi, Bara & Shaukat, Aasma & Nadkarni, Girish & Soroush, Ali. (2024). Large language models: a primer and gastroenterology applications. Therapeutic Advances in Gastroenterology. 17. 10.1177/17562848241227031. https://www.researchgate.net/publication/378394229_Large_language_models_a_primer_and_gastroenterology_applications?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ
+- Smith, Moira & Zalesky, C & Lee, Sangil & Gottlieb, Michael & Adhikari, Srikar & Wegman, Martin & Garg, Nidhi & Lam, Samuel & Health, Northwell & Zucker, Barbara. (2025). Artificial Intelligence in Emergency Medicine: A Primer for the Nonexpert. Journal of the American College of Emergency Physicians. 6. 10.1016/j.acepjo.2025.100051. https://www.researchgate.net/publication/389089475_Artificial_Intelligence_in_Emergency_Medicine_A_Primer_for_the_Nonexpert
+- Abdulqader, Marwah & Alsaqabi, Abdulrhman & Mohammed, Afrah E. & Alghamdi, Sahar. (2026). Artificial Intelligence in Selected Domains of Drug Discovery: A Critical Narrative Review. Drug Design, Development and Therapy. 20. 1-20. 10.2147/DDDT.S607228. https://www.researchgate.net/publication/407295296_Artificial_Intelligence_in_Selected_Domains_of_Drug_Discovery_A_Critical_Narrative_Review
+- Wang, Lin & Xu, Yanyan & Wang, Weiqian & Lu, Yuanyuan. (2025). Application of machine learning in dentistry: insights, prospects and challenges. Acta Odontologica Scandinavica. 84. 145-154. 10.2340/aos.v84.43345. https://www.researchgate.net/publication/390249200_Application_of_machine_learning_in_dentistry_insights_prospects_and_challenges
+- R. Mundlamuri, G. R. Gunnam, N. K. Mysari and J. Pujuri, "The Evolution of AI: From Classical Machine Learning to Modern Large Language Models" in IEEE Access, vol. 13, pp. 178302-178341, 2025, doi: 10.1109/ACCESS.2025.3621344. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11202920
+- Agrawal, Jalaj. (2025). I Asked 5 AI Models for a Random Number. They All Said the Same Thing. Medium. Published June 6, 2025. [https://medium.com/@jalajagr/i-asked-5-ai-models-for-a-random-number-they-all-said-the-same-thing-7642c6544f53](https://medium.com/@jalajagr/i-asked-5-ai-models-for-a-random-number-they-all-said-the-same-thing-7642c6544f53)
+- "Onion Curry". (2025). Machine Learning, Deep Learning, Foundation Model, and Generative AI. YouTube. Published November 27, 2025. [https://www.youtube.com/watch?v=af6XNGd5AGo](https://www.youtube.com/watch?v=af6XNGd5AGo)
+- Buolamwini, Joy & Gebru, Timnit. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. Proceedings of the 1st Conference on Fairness, Accountability and Transparency. Proceedings of Machine Learning Research. 81. 77-91. [https://proceedings.mlr.press/v81/buolamwini18a.html](https://proceedings.mlr.press/v81/buolamwini18a.html)
+- Buolamwini, Joy. (n.d.). Gender Shades. MIT Media Lab. [https://www.media.mit.edu/projects/gender-shades/overview/](https://www.media.mit.edu/projects/gender-shades/overview/)
+- Shamim, Sarah. (2024). Why Google's AI tool was slammed for showing images of people of colour. Al Jazeera. Published March 9, 2024. [https://www.aljazeera.com/news/2024/3/9/why-google-gemini-wont-show-you-white-people](https://www.aljazeera.com/news/2024/3/9/why-google-gemini-wont-show-you-white-people)

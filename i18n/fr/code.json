@@ -33,6 +33,14 @@
 		"message": "En cours d'envoi...",
 		"description": "The text stating the email is being registered in the newsletter list"
 	},
+	"newsletter.error": {
+		"message": "Entre une adresse email valide et réessaie.",
+		"description": "The text stating the subscription failed"
+	},
+	"newsletter.success": {
+		"message": "Merci pour ton inscription! Tu recevras un email à chaque nouvel article.",
+		"description": "The text stating the subscription succeeded"
+	},
 	"reminder": {
 		"message": "Un simple petit rappel: les opinions exprimées ici sont strictement les miennes. Elles ne représentent pas les opinions ou vues de mon employeur actuel ni aucun des précédents.",
 		"description": "The text stating that what is written in this website is my own opinions and only mine"

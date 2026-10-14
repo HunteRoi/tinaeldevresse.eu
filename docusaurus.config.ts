@@ -4,7 +4,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import { themes } from 'prism-react-renderer';
 
-import * as websiteConfig from './website_config.json';
+import websiteConfig from './website_config.json';
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;

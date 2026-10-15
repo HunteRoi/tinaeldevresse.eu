@@ -1,8 +1,8 @@
 ---
 slug: what-are-llms
-title: Que sont les grands modèles de langage (LLM) ?
+title: Un LLM, c'est quoi ?
 tags: [développement, informatique, craft, software craftsman, intelligence artificielle, ia, carrière, avenir]
-description: On parle beaucoup de l'Intelligence Artificielle (IA) et de la façon dont elle change actuellement le monde tel que nous le connaissons. Il est vrai que l'IA façonne un nouvel avenir pour nous, mais il est tout aussi vrai qu'elle ne représente pas autant une menace que ne l'était la voiture à l'époque, ou que ne l'était la révolution industri...
+description: Dans mon dernier article de blog, j'ai parlé de l'IA comme d'un terme général, de ce qu'elle représente dans l'esprit de chacun et de ce qu'elle est réellement au fond. Aujourd'hui, je veux mettre en relation l'IA, les grands modèles de langage (LLM), le Machine Learning (ML), le De...
 image: /img/pillars-of-ai.jpg
 ---
 
@@ -10,9 +10,35 @@ import Figure from '../../../src/components/Figure';
 import SEO from '../../../src/components/SEO';
 import Reminder from '../../../src/components/Reminder';
 import Newsletter from '../../../src/components/Newsletter';
-import StudentExamPredictor from '../../../src/components/StudentExamPredictor';
-import LLMHistory from '../../../src/components/LLMHistory';
+import Predictor from '../../../src/components/Predictor';
+import Timeline from '../../../src/components/Timeline';
 import websiteConfig from '../../../website_config.json';
+
+export const examPredictor = {
+  title: "Prédicteur de réussite à l'examen",
+  badge: "Simulation interactive",
+  resultLabel: "Probabilité simulée de réussite",
+  predictionLabel: "Prédiction",
+  positiveLabel: "Réussite",
+  negativeLabel: "Échec",
+  disclaimer: "Cette démonstration interactive utilise une formule mathématique fixe, et non un réseau neuronal entraîné. Elle illustre comment la modification des entrées peut changer la sortie d'un modèle.",
+  bias: -4.5,
+  inputs: [
+    { id: "study-hours", label: "Heures d'étude", unit: " h", min: 0, max: 12, step: 1, defaultValue: 8, weight: 0.52 },
+    { id: "sleep-hours", label: "Heures de sommeil", unit: " h", min: 0, max: 12, step: 1, defaultValue: 7, weight: 0.13 },
+    { id: "attendance", label: "Assiduité", unit: " %", min: 0, max: 100, step: 5, defaultValue: 90, weight: 0.035 },
+  ],
+};
+
+export const llmEvents = [
+  { id: "transformers", year: "2017", title: "Transformers", description: "L'architecture basée sur l'attention pose les fondations des LLM modernes.", examples: ["Attention Is All You Need"] },
+  { id: "pretraining", year: "2018-2019", title: "Modèles de langage pré-entraînés", description: "Les modèles apprennent des patterns généraux du langage sur de grands jeux de données et peuvent être adaptés à différentes tâches.", examples: ["GPT", "BERT", "GPT-2"] },
+  { id: "scaling", year: "2020-2021", title: "Passage à l'échelle", description: "Des modèles plus grands démontrent un meilleur apprentissage few-shot et des capacités linguistiques plus étendues.", examples: ["GPT-3"] },
+  { id: "instruction-following", year: "2022-2023", title: "Suivi d'instructions et chat", description: "Le post-entraînement rend les modèles plus utiles pour les conversations, les instructions et l'assistance.", examples: ["InstructGPT", "ChatGPT", "GPT-4", "Llama 2"] },
+  { id: "multimodal", year: "2023-2024", title: "Multimodalité et contexte étendu", description: "Les modèles traitent de plus en plus d'images, d'audio et d'entrées plus longues en plus du texte.", examples: ["GPT-4o", "Gemini 1.5", "Claude 3"] },
+  { id: "reasoning", year: "2024-2025", title: "Raisonnement et usage d'outils", description: "Les modèles utilisent de plus en plus de calcul supplémentaire pour les problèmes difficiles et interagissent avec des outils externes.", examples: ["o1", "o3", "DeepSeek-R1"] },
+  { id: "agents", year: "2025-2026", title: "Des systèmes d'IA plus capables", description: "Les progrès combinent un raisonnement renforcé, une inférence efficace, l'interaction multimodale et des workflows agentiques.", examples: ["GPT", "Claude", "Gemini", "Qwen"] },
+];
 
 <a href='/blog/what-are-llms'>
     <Figure
@@ -45,8 +71,10 @@ Aujourd'hui, je veux mettre en relation l'IA, les grands modèles de langage (LL
 ---
 
 ## Le contexte est la clé
-En 2019, plusieurs personnes se sont réunies pour écrire [Artificial Intelligence in the Management of Glioma: Era of Personalized Medicine](https://www.researchgate.net/publication/335168768_Artificial_Intelligence_in_the_Management_of_Glioma_Era_of_Personalized_Medicine), dans lequel elles décrivaient « la relation entre les méthodes d'IA les plus courantes en médecine ». Plus tard, en 2023, Pan Singh Dhoni a décrit « la relation entre l'IA, le Machine Learning et le Deep Learning » dans ses recherches intitulées [Exploring the Synergy between Generative AI, Data and Analytics in the Modern Age](https://www.researchgate.net/publication/373505167_Exploring_the_Synergy_between_Generative_AI_Data_and_Analytics_in_the_Modern_Age).
+En 2019, plusieurs personnes se sont réunies pour écrire [Artificial Intelligence in the Management of Glioma: Era of Personalized Medicine](https://www.researchgate.net/publication/335168768_Artificial_Intelligence_in_the_Management_of_Glioma_Era_of_Personalized_Medicine), dans lequel elles décrivaient "la relation entre les méthodes d'IA les plus courantes en médecine". Plus tard, en 2023, Pan Singh Dhoni a décrit "la relation entre l'IA, le Machine Learning et le Deep Learning" dans ses recherches intitulées [Exploring the Synergy between Generative AI, Data and Analytics in the Modern Age](https://www.researchgate.net/publication/373505167_Exploring_the_Synergy_between_Generative_AI_Data_and_Analytics_in_the_Modern_Age).
+
 Tous deux décrivaient l'Intelligence Artificielle comme un ensemble contenant toutes sortes de sous-ensembles (au sens mathématique du terme), comme le Machine Learning, le Deep Learning et les Neural Networks.
+
 Grâce à des études complémentaires comme [Large language models: a primer and gastroenterology applications](https://www.researchgate.net/publication/378394229_Large_language_models_a_primer_and_gastroenterology_applications?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ) (2024) et [Artificial Intelligence in Emergency Medicine: A Primer for the Nonexpert](https://www.researchgate.net/publication/389089475_Artificial_Intelligence_in_Emergency_Medicine_A_Primer_for_the_Nonexpert) (2025), d'autres termes de terminologie peuvent être ajoutés à des schémas similaires, comme l'IA générative (GenAI) et les grands modèles de langage (LLM).
 
 En tenant compte de tous ces travaux, nous pouvons établir la taxonomie de l'IA ci-dessous, qui explique assez bien les relations entre ces concepts. Je m'en servirai comme base dans cet article.
@@ -61,28 +89,30 @@ En tenant compte de tous ces travaux, nous pouvons établir la taxonomie de l'IA
     Taxonomie de l'IA
 </Figure>
 
-## Intelligence Artificielle
+## Intelligence Artificielle (AI)
 L'IA n'est pas nouvelle, comme indiqué dans [mon précédent article de blog](2026-05-24-what-is-artificial-intelligence).
 À la base, l'IA consiste simplement à permettre aux machines d'effectuer des tâches nécessitant un certain niveau d'intelligence.
 
-## Machine Learning
+## Machine Learning (ML)
 En zoomant, on trouve ce grand sous-ensemble appelé Machine Learning.
 
-À la fin des années 80, l'opinion générale était que l'on pouvait créer un « comportement intelligent » en écrivant explicitement des règles logiques et des connaissances (un ensemble de conditions if-else indiquant comment agir dans certaines situations). Prolog est un langage de programmation qui correspond parfaitement à cette conviction : c'est un langage déclaratif basé sur un ensemble de faits, de règles et de relations, dans lequel un calcul prend la forme d'une requête.
+À la fin des années 80, l'opinion générale était que l'on pouvait créer un "comportement intelligent" en écrivant explicitement des règles logiques et des connaissances (un ensemble de conditions if-else indiquant comment agir dans certaines situations). Prolog est un langage de programmation qui correspond parfaitement à cette conviction : c'est un langage déclaratif basé sur un ensemble de faits, de règles et de relations, dans lequel un calcul prend la forme d'une requête.
 
 Cependant, les limites sont devenues de plus en plus évidentes : encoder les connaissances à la main demande beaucoup de travail et constitue une tâche sans fin. C'est là qu'est intervenu le Machine Learning.
-
-Les systèmes à base de connaissances décevaient par leur incapacité à généraliser les connaissances au-delà de domaines restreints. Des recherches sur des techniques d'apprentissage plus automatisées ont alors commencé à émerger, notamment grâce au développement de nouveaux algorithmes comme l'inférence bayésienne et Iterative Dichotomiser 3.
+Comme les systèmes à base de connaissances décevaient par leur manque de généralisation des connaissances, des recherches sur des techniques d'apprentissage plus automatisées ont commencé à émerger, notamment grâce au développement de nouveaux algorithmes comme l'inférence bayésienne et Iterative Dichotomiser 3.
 Au lieu de demander aux experts de fournir les règles du domaine, nous fournissons des données étiquetées et laissons l'algorithme en déduire les règles (phase d'entraînement). Le problème de l'acquisition des connaissances s'en est trouvé inversé ! **L'IA fondée sur les données était née.**
 
-Les systèmes de Machine Learning sont donc des systèmes alimentés par des données qui utilisent des algorithmes pour reconnaître des motifs et en déduire des règles. Leur phase la plus importante est celle de l'« apprentissage », pendant laquelle les algorithmes améliorent leurs performances sur une tâche grâce aux données : plus il y a de données, meilleure est la précision des résultats finaux.
+Les systèmes de Machine Learning sont donc des systèmes alimentés par des données qui utilisent des algorithmes pour reconnaître des patterns et en déduire des règles.
+Leur phase la plus importante est celle de l'*apprentissage*, pendant laquelle les algorithmes améliorent leurs performances sur une tâche grâce aux données : plus il y a de données, meilleure est la précision des résultats finaux.
 
-## Neural Networks
+## Neural Networks (NN)
 Alors que les recherches sur les systèmes de ML progressaient bien, d'autres formes de calcul en IA ont été étudiées pour combler des lacunes dans de nombreux domaines, comme la vision ou la compréhension du langage naturel, car il s'est avéré difficile de définir ces tâches ou d'en déduire des règles à partir des jeux de données.
+
 En effet, pour entraîner un système de ML, il faut parcourir le jeu de données afin d'en étiqueter les informations. Au final, on dépend toujours des humains pour sélectionner les caractéristiques utiles à l'entraînement du système (par exemple, pour reconnaître un chat dans une image, il peut être nécessaire de concevoir manuellement des caractéristiques représentant les pattes, les moustaches, les oreilles, etc.).
 
-### Artificial Neural Network
-Les chercheurs ont essayé d'apprendre aux systèmes à reconnaître des motifs à partir des données d'entraînement. Ils ont imité le modèle de traitement de l'information du cerveau et créé des Artificial Neural Networks (ANN).
+### Artificial Neural Network (ANN)
+Les chercheurs ont essayé d'apprendre aux systèmes à reconnaître des patterns à partir des données d'entraînement.
+Ils ont imité le modèle de traitement de l'information du cerveau humain, et créé des Artificial Neural Networks (ANN).
 
 <Figure
     data={{
@@ -94,7 +124,7 @@ Les chercheurs ont essayé d'apprendre aux systèmes à reconnaître des motifs 
     Un neurone biologique et un neurone artificiel (source : https://www.quora.com/What-is-the-differences-between-artificial-neural-network-computer-science-and-biological-neural-network)
 </Figure>
 
-Un Artificial Neural Network est un modèle computationnel composé de neurones artificiels interconnectés (généralement organisés en couches) qui transforme des entrées en sorties à l'aide de poids appris, de biais et de fonctions d'activation.
+Un Artificial Neural Network est un modèle computationnel composé de neurones artificiels interconnectés (généralement organisés en couches) qui transforme des entrées en sorties.
 Un neurone artificiel est en réalité une abstraction mathématique fortement simplifiée qui combine plusieurs valeurs d'entrée avec des poids ajustables, ajoute un biais et applique une fonction d'activation.
 
 <Figure
@@ -107,10 +137,11 @@ Un neurone artificiel est en réalité une abstraction mathématique fortement s
     Artificial Neural Network
 </Figure>
 
-Si vous lisez cela à voix haute, ça n'aide même pas à comprendre, n'est-ce pas ? Eh bien, laissez-moi vous donner un exemple pour simplifier : imaginons que nous voulions prédire si un étudiant réussira un examen en fonction de trois facteurs :
-- les heures d'étude (combien de temps l'étudiant a préparé l'examen)
-- les heures de sommeil (combien de temps il a dormi la veille)
-- l'assiduité (le pourcentage de cours suivis)
+Si vous lisez cela à voix haute, ça n'aide même pas à comprendre, n'est-ce pas ? Eh bien, laissez-moi vous donner un exemple pour simplifier.
+Imaginons que nous voulions prédire si un étudiant réussira un examen en fonction de trois facteurs :
+1. les heures d'étude (combien de temps l'étudiant a préparé l'examen)
+2. les heures de sommeil (combien de temps il a dormi la veille)
+3. l'assiduité (le pourcentage de cours suivis)
 
 Au lieu de définir manuellement des règles, nous entraînons un ANN à apprendre les relations entre ces facteurs et les résultats de l'examen. Pour ce faire, nous lui fournirions des données historiques comme jeu de données d'entraînement :
 
@@ -126,49 +157,53 @@ Pour représenter cette structure, voici un petit schéma :
 <Figure
     data={{
         src: '/img/ann_example.svg',
-        alt: 'Artificial Neural Network Example',
+        alt: 'ANN Example',
         type: 'image'
     }}
 >
-    Artificial Neural Network Example
+    ANN Example
 </Figure>
 
-Afin d'entraîner le système à apprendre les motifs et à prédire la valeur de sortie, l'ANN va répéter les étapes suivantes :
+Afin d'entraîner le système à apprendre les patterns et à prédire la valeur de sortie, l'ANN va répéter les étapes suivantes :
 - prédire si un étudiant réussira en fonction des valeurs d'entrée réelles
 - comparer sa prédiction au résultat réel
 - calculer l'erreur entre les deux
-- ajuster ses poids à l'aide de la rétropropagation et d'un algorithme d'optimisation
+- ajuster ses poids à l'aide de la "backpropagation" (rétropropagation) et d'un algorithme d'optimisation
 - répéter le processus sur de nombreux exemples
 
 Au fil du temps, il apprend des relations utiles entre les habitudes d'étude, l'assiduité, le sommeil et, bien sûr, les résultats aux examens.
 
-<StudentExamPredictor />
+<Predictor {...examPredictor} />
 
-Ce qui est impressionnant, ce n'est pas simplement de prédire le résultat (surtout dans ce contexte où la formule est assez simple), mais plutôt la façon dont la prédiction est apprise ! Un ANN apprend des poids numériques et des combinaisons d'entrées à partir d'exemples. Grâce à la rétropropagation, les neurones cachés permettent des comportements d'apprentissage bien plus riches et peuvent ainsi découvrir des caractéristiques et des encodages utiles du domaine d'entrée, au lieu de s'appuyer sur des règles écrites manuellement et conçues par des humains.
+Ce qui est impressionnant, ce n'est pas simplement de prédire le résultat (surtout dans ce contexte où la formule est assez simple), mais plutôt la façon dont la prédiction est apprise !
+Un ANN apprend des poids numériques et des combinaisons d'entrées à partir d'exemples.
+Grâce à la backpropagation, les neurones cachés permettent des comportements d'apprentissage bien plus riches et peuvent ainsi découvrir des caractéristiques et des encodages utiles du domaine d'entrée, au lieu de s'appuyer sur des règles écrites manuellement et conçues par des humains.
 
-Cependant, les réseaux neuronaux n'étaient pas si remarquables en raison des limites de la puissance de calcul et de la taille des données disponibles à l'époque. Les premiers réseaux neuronaux ont néanmoins établi un principe général : des unités mathématiques interconnectées peuvent apprendre à partir de données. Et différentes tâches nécessitaient différentes structures :
-- Les images tirent parti de réseaux qui reconnaissent des motifs spatiaux locaux.
-- Les abstractions complexes tirent parti de réseaux comportant de nombreuses couches de traitement.
-- Les séquences tirent parti de réseaux qui conservent des informations au fil du temps.
+À l'époque de leur développement, cependant, les réseaux neuronaux n'étaient pas si fabuleux... principalement en raison des limites de la puissance de calcul et de la taille des données disponibles.
+Les premiers réseaux neuronaux ont néanmoins établi un principe général : des unités mathématiques interconnectées peuvent apprendre à partir de données. Et différentes tâches nécessitaient différentes structures !
+- Les **images** tirent parti de réseaux qui reconnaissent des **patterns spatiaux locaux**.
+- Les **abstractions complexes** tirent parti de réseaux comportant de **nombreuses couches de traitement**.
+- Les **séquences** tirent parti de réseaux qui **conservent des informations au fil du temps**.
 
-Ces exigences ont conduit aux Convolutional Neural Networks (CNN), aux Deep Neural Networks (DNN) et aux Recurrent Neural Networks (RNN) :
+Ces exigences ont conduit aux Convolutional Neural Networks (CNN), aux Deep Neural Networks (DNN) et aux Recurrent Neural Networks (RNN).
 
 | Architecture | Caractéristique principale                  | Atout typique                   |
 | ------------ | ------------------------------------------- | ------------------------------- |
-| CNN          | Filtres locaux et partage des poids          | Motifs spatiaux                 |
-| DNN          | Plusieurs couches cachées de motifs appris  | Représentations hiérarchiques   |
+| CNN          | Filtres locaux et partage des poids          | Patterns spatiaux                 |
+| DNN          | Plusieurs couches cachées de patterns appris  | Représentations hiérarchiques   |
 | RNN          | État récurrent entre les étapes              | Dépendances séquentielles       |
 
-## Deep Learning
-DNN et Deep Learning sont des termes étroitement liés : le premier désigne une architecture de modèle pour les réseaux neuronaux, fondée sur plusieurs couches de représentations apprises pour modéliser des motifs complexes dans les données ; le second désigne une approche plus large de l'entraînement et de l'utilisation de tels modèles.
+## Deep Learning (DL)
+DNN et Deep Learning sont des termes étroitement liés : le premier désigne une architecture de modèle pour les réseaux neuronaux, fondée sur plusieurs couches de représentations apprises pour modéliser des patterns complexes dans les données ; le second désigne une approche plus large de l'entraînement et de l'utilisation de tels modèles.
 
-La puissance des Neural Networks vient de leur mise à l'échelle en profondeur, en largeur et en volume de données, ce qui fait des Deep Neural Networks une approche de référence dans la recherche en IA : ils ont établi de nouveaux records dans différentes tâches telles que « la classification d'images, la détection d'objets, la traduction automatique, la modélisation du langage » (R. Mundlamuri, G. R. Gunnam, N. K. Mysari and J. Pujuri, 2025).
+La puissance des Neural Networks vient de leur mise à l'échelle en profondeur, en largeur et en volume de données, ce qui fait des Deep Neural Networks une approche de référence dans la recherche en IA : ils ont établi de nouveaux records dans différentes tâches telles que "la classification d'images, la détection d'objets, la traduction automatique, la modélisation du langage" (R. Mundlamuri, G. R. Gunnam, N. K. Mysari and J. Pujuri, 2025).
 
 ## Transformers
 Le Deep Learning a considérablement amélioré la perception et le traitement du langage, mais les architectures récurrentes (RNN) avaient d'importantes limites : elles traitent les séquences au fil d'étapes récurrentes, ce qui rend difficile l'entraînement parallèle à grande échelle. Elles peuvent aussi avoir du mal avec les dépendances à très longue portée.
 
-Par exemple, imaginez qu'un RNN profond lise une histoire et tombe sur cette phrase : `Le chien poursuit le ballon parce qu'il est rouge.` À quoi renvoie « il » ? Au chien ? Au ballon ?
-En tant qu'humain, vous comprenez immédiatement que « il » désigne le ballon, parce que les ballons peuvent être rouges et que la phrase a ainsi du sens. Mais comment l'ordinateur fait-il cela ?
+Par exemple, imaginez qu'un RNN profond lise une histoire et tombe sur cette phrase : `Le chien poursuit le ballon parce qu'il est rouge.` À quoi renvoie "il" ? Au chien ? Au ballon ?
+En tant qu'humain, vous comprenez immédiatement que "il" désigne le ballon, parce que les ballons peuvent être rouges et que la phrase a du sens ainsi.
+Mais comment l'ordinateur fait-il cela ?
 
 Pour résoudre ce type de problème, les chercheurs ont développé des mécanismes d'attention afin que les modèles puissent se concentrer sélectivement sur les parties pertinentes d'une entrée. Cela a conduit à l'architecture Transformer.
 
@@ -183,51 +218,62 @@ Pour résoudre ce type de problème, les chercheurs ont développé des mécanis
 </Figure>
 
 Les anciens Neural Networks, comme les RNN, traitent les mots les uns après les autres, en transmettant les informations au fur et à mesure.
-Un Transformer fait quelque chose de différent : il permet à chaque mot de consulter les autres mots et de déterminer lesquels comptent le plus. Ce processus s'appelle l'« auto-attention » : il aide le Transformer à calculer dans quelle mesure les différents mots doivent s'influencer les uns les autres.
+Un Transformer fait quelque chose de différent : il permet à chaque mot de consulter les autres mots et de déterminer lesquels comptent le plus. Ce processus s'appelle l'_auto-attention_ : il aide le Transformer à calculer dans quelle mesure les différents mots doivent s'influencer les uns les autres.
 
 Les Transformers sont donc des architectures de Deep Neural Networks fondées sur des mécanismes d'attention, en particulier l'auto-attention.
 Ils remplacent le traitement récurrent par un calcul fondé sur l'attention, ce qui permet de paralléliser davantage l'entraînement.
 
-## IA générative
+## IA générative (GenAI)
 Jusqu'à présent, nous avons parlé de nombreux systèmes capables de prédire une valeur de sortie à partir de valeurs d'entrée. Ce sont ce que nous appelons des classifieurs ; ils servent à prédire une catégorie à partir des valeurs reçues en entrée.
 
-GenAI désigne les systèmes d'IA qui apprennent eux aussi des motifs ou des distributions à partir de données, mais qui les utilisent pour générer de nouveaux contenus, comme du texte, des images, de l'audio, de la vidéo, du code et des informations structurées.
-Contrairement aux classifieurs, **un modèle génératif produit une sortie qui ressemble aux motifs appris pendant l'entraînement ou qui les respecte**.
+L'IA générative (GenAI) désigne les systèmes d'IA qui apprennent eux aussi des patterns ou des distributions à partir de données, mais qui les utilisent pour générer de nouveaux contenus, comme du texte, des images, de l'audio, de la vidéo, du code et des informations structurées.
+Contrairement aux classifieurs, **un modèle génératif produit une sortie qui ressemble aux patterns appris pendant l'entraînement ou qui les respecte**.
 
-Il y a quelques années, quand on demandait un nombre aléatoire entre 1 et 20, les systèmes d'IA répondaient souvent 17. En quoi est-ce aléatoire si Claude, ChatGPT, Gemini ou DeepSeek donnent tous le même nombre ? (J. Agrawal, 2025). Comme les modèles génératifs prédisent le mot suivant à partir de leurs données d'entraînement, il suffit qu'ils soient entraînés sur des données où plusieurs exemples de « générer un nombre aléatoire entre 1 et 20 » donnent « 17 » pour aboutir à un modèle génératif biaisé.
+Il y a quelques années, quand vous demandiez à Claude, ChatGPT, Gemini ou DeepSeek un nombre aléatoire entre 1 et 20, ils répondaient 17. En quoi est-ce aléatoire si vous interrogez des systèmes d'IA et qu'ils vous donnent tous le même nombre ? (J. Agrawal, 2025).
+
+Comme les modèles génératifs prédisent le mot suivant à partir de leurs données d'entraînement, il suffit de données où davantage de représentations de "générer un nombre aléatoire entre 1 et 20" donnent "17" pour aboutir à un modèle génératif biaisé.
 C'est en partie ce qui explique pourquoi certains systèmes d'IA ont parfois généré des contenus jugés incorrects ou inappropriés : les biais.
 
-Cependant, GenAI n'est pas le seul type de système biaisé : tout système qui déduit des motifs à partir de données perpétuera les biais présents dans la réalité à travers les représentations apprises (par exemple, les classifieurs comme les services de reconnaissance faciale de Microsoft, qui ont eu des difficultés à identifier les femmes et les personnes à la peau foncée (Buolamwini & Gebru, 2018)).
+Cependant, GenAI n'est pas le seul type de système biaisé : tout système qui déduit des patterns à partir de données perpétuera les biais présents dans la réalité (dans le jeu de données) à travers les représentations apprises (par exemple, les classifieurs comme les services de reconnaissance faciale de Microsoft, qui ont eu des difficultés à identifier les femmes et les personnes à la peau foncée (Buolamwini & Gebru, 2018)).
 Cela est inhérent à l'entraînement des modèles et ne peut être évité. Cependant, les biais peuvent être atténués. Et leur atténuation est elle aussi une tâche difficile !
 
-Saviez-vous que lorsque Google a lancé Gemini pour la première fois, l'entreprise a déclaré l'avoir conçu dans le but d'éviter de perpétuer les préjugés sociaux préexistants ? En réalité, elle a toutefois surcompensé les biais, entraînant un autre problème : la représentation erronée de la « culture dominante » (Shamim, 2024).
+Saviez-vous que lorsque Google a lancé Gemini pour la première fois, l'entreprise a déclaré l'avoir conçu dans le but d'éviter de perpétuer les préjugés sociaux préexistants ?
+Mais en réalité, elle a surcompensé les biais et a fini par pencher vers un autre problème : la représentation erronée d'une "culture dominante" (Shamim, 2024).
 
-## Grands modèles de langage
+## Grands modèles de langage (LLM)
 Mais au final, que sont les grands modèles de langage (LLM) ? C'est assez simple : les LLM sont un sous-ensemble de GenAI spécialisé dans la génération de texte.
 Tout comme [MidJourney](https://www.midjourney.com) est une IA générative spécialisée dans la génération d'images, et [MusicGen](https://www.musicgen.com) une IA générative spécialisée dans la génération audio, les LLM comme GPT, Gemini, Claude, Mistral ou DeepSeek sont des IA génératives spécialisées dans le texte.
 
 Mais pourquoi les appelle-t-on ainsi ?
-- Grands : ils possèdent un très grand nombre de paramètres appris, parfois des milliards ou plus. Ces valeurs numériques contribuent à encoder les motifs appris pendant l'entraînement.
-- Modèles de langage : ils sont entraînés à traiter le langage : les mots, les phrases, les conversations et d'autres informations textuelles, y compris les langages de programmation.
-- Modèles : ce sont des systèmes mathématiques qui apprennent des motifs statistiques et les utilisent pour faire des prédictions.
+- Grands : ils possèdent un très grand nombre de paramètres appris, parfois des milliards ou plus. Ces valeurs numériques contribuent à encoder les patterns appris pendant l'entraînement.
+- Modèle : c'est un système mathématique qui apprend des patterns statistiques et les utilise pour faire des prédictions.
+- Langage : ils sont entraînés à traiter le langage : les mots, les phrases, les conversations et d'autres informations textuelles, y compris les langages de programmation.
 
 Ainsi, un LLM est un système de Deep Learning fondé sur l'architecture Transformer et entraîné sur d'immenses jeux de données textuelles pour comprendre, générer et raisonner sur le langage humain.
 Il apprend en prédisant le token suivant dans une séquence, répétée des milliers de milliards de fois sur plusieurs téraoctets de données.
 
-Je n'ai pas encore parlé de ce que sont les tokens, alors restez à l'écoute... *ce sera pour le prochain article !*
+Je n'ai pas encore parlé de ce que sont les tokens, alors restez à l'écoute... *ce sera pour le prochain article!*
 
 ## Quelles sont les limites, l'évolution et l'avenir des LLM au fil des itérations des modèles ?
-Au cours des dernières années, les LLM ont évolué : de systèmes relativement simples de prédiction de texte, ils sont devenus des modèles capables d'écrire des logiciels, d'analyser des documents, de résoudre des problèmes mathématiques, de traiter des images et d'interagir avec des outils externes (via des « connecteurs »).
+Au cours des dernières années, les LLM ont évolué : de systèmes relativement simples de prédiction de texte, ils sont devenus des modèles capables d'écrire des logiciels, d'analyser des documents, de résoudre des problèmes mathématiques, de traiter des images et d'interagir avec des outils externes (via des "connecteurs").
 
-Cependant, être capable de générer des réponses convaincantes **n'est pas la même chose qu'être précis, fiable et capable de comprendre chaque situation de manière autonome**.
+Cependant, être capable de générer des réponses convaincantes **n'est pas la même chose** qu'être :
+1. **précis**,
+2. **fiable**, et
+3. **capable de comprendre** chaque situation.
 
 ### Évolution
-Les LLM continueront sans aucun doute à se développer et à devenir plus performants. Leur évolution est portée par :
-- L'échelle : en augmentant la quantité de données d'entraînement, le nombre de paramètres et la puissance de calcul
-- Les capacités : en créant davantage de connecteurs pour aller au-delà de la génération de texte (multimodalité, raisonnement approfondi, etc.)
-- La fiabilité : en améliorant la précision factuelle, la vérification et l'efficacité (en particulier pour la génération de code)
+Les LLM continueront sans aucun doute à se développer et à devenir plus performants. Nous constatons déjà des améliorations significatives à chaque nouvelle itération de modèle, d'une meilleure compréhension du langage à des capacités de raisonnement renforcées.
 
-<LLMHistory />
+C'est pourquoi même des développeurs disent des choses comme "l'IA écrit du meilleur code que nous".
+
+Ce qui motive leur évolution :
+- **l'échelle** (en augmentant la quantité de données d'entraînement, le nombre de paramètres et la puissance de calcul) ;
+- **les capacités** (en créant davantage de connecteurs pour aller au-delà de la génération de texte, par ex. multimodalité, raisonnement approfondi, etc.) ;
+- **la fiabilité** (en améliorant la précision factuelle, la vérification et l'efficacité, en particulier pour la génération de code).
+
+
+<Timeline title="Évolution des grands modèles de langage" examplesLabel="Exemples notables" events={llmEvents} />
 
 ### Limites
 Vous avez peut-être déjà utilisé l'IA et découvert certaines de ses limites.
@@ -242,35 +288,40 @@ Vous trouverez une liste non exhaustive dans le tableau ci-dessous.
 | Non-déterminisme                | Les réponses peuvent varier d'une exécution à l'autre, même avec des entrées similaires                     | Générer différentes solutions au même problème de programmation    |
 | Faible ancrage factuel          | Les modèles ne vérifient pas intrinsèquement chaque affirmation à partir de preuves fiables                  | Donner une explication historique assurée mais non étayée           |
 | Coût de calcul                  | L'entraînement et le déploiement de grands modèles nécessitent beaucoup de matériel, d'électricité et d'infrastructures | Inférence coûteuse pour des millions de requêtes                    |
-| Compréhension limitée du monde réel | L'apprentissage fondé sur le texte ne fournit pas automatiquement une compréhension physique, causale ou situationnelle fiable | Proposer une solution mécanique impraticable |
+| Compréhension limitée du monde réel | L'apprentissage fondé sur le texte ne fournit pas automatiquement une compréhension physique ou situationnelle fiable | Proposer une solution mécanique impraticable |
 
 ### Avenir
 Dans une perspective générale, l'avenir des LLM et des modèles de pointe pourrait être le passage de modèles qui génèrent des réponses à des systèmes capables de planifier, d'agir, de vérifier leur travail et de collaborer avec les personnes.
 
 Cela comprend :
-- **une prise en charge multimodale native** (intégrer du texte, des images, de l'audio, de la vidéo et, potentiellement, des informations provenant de capteurs afin d'enrichir les représentations du monde des LLM — c'est déjà en partie le cas)
-- **un raisonnement plus délibéré** (allouer du calcul aux tâches difficiles, explorer des solutions alternatives, vérifier les résultats intermédiaires, etc.)
-- **des agents plus capables** (au lieu d'expliquer comment effectuer une tâche, ils pourraient réaliser des processus en plusieurs étapes à l'aide d'outils, avec des points de contrôle, des autorisations et une supervision humaine — nous le voyons déjà dans le domaine informatique, où les développeurs deviennent désormais des réviseurs de code produit par l'IA, mais ce sera le sujet d'un autre article !)
-- **une meilleure vérification factuelle** (plutôt que de produire une réponse plausible, ils peuvent la vérifier)
-- **un meilleur contexte et une meilleure mémoire à long terme** (conserver les informations plus efficacement, maintenir la cohérence au fil de longues conversations, etc.)
+- **une prise en charge multimodale native** (intégrer du texte, des images, de l'audio, de la vidéo et, potentiellement, des informations provenant de capteurs afin d'enrichir les représentations du monde des LLM — c'est déjà en partie le cas) ;
+- **un raisonnement plus délibéré** (allouer du calcul aux tâches difficiles, explorer des solutions alternatives, vérifier les résultats intermédiaires, etc.) ;
+- **des agents plus capables** (au lieu d'expliquer comment effectuer une tâche, ils pourraient réaliser des processus en plusieurs étapes à l'aide d'outils, avec des points de contrôle, des autorisations et une supervision humaine — nous le voyons déjà dans le domaine informatique, où les développeurs deviennent désormais des réviseurs de code produit par l'IA, mais ce sera le sujet d'un autre article !) ;
+- **une meilleure vérification factuelle** (plutôt que de produire une réponse plausible, ils peuvent la vérifier) ;
+- **un meilleur contexte et une meilleure mémoire à long terme** (conserver les informations plus efficacement, maintenir la cohérence au fil de longues conversations, etc.).
+
+Ce que vous voyez se profiler pour l'avenir des LLM, c'est un virage vers des systèmes plus intégrés, plus capables et plus fiables, qui peuvent interagir avec le monde de manière plus humaine, raisonner plus efficacement et conserver une mémoire à long terme de cas d'usage spécifiques.
 
 ## Conclusion
 Au final, nous avons parlé de toute l'histoire des LLM et de ce qu'ils sont réellement. Nous avons également évoqué leurs limites, leur évolution et ce que l'avenir pourrait nous réserver.
 
 La suite de cette série portera sur ce que sont exactement les tokens ! Espérons que, pour une fois, l'article sera court 😉
 
+Mais laissez-moi vous poser une question sincère : que pensez-vous de l'avenir des LLM ?
+
 <Newsletter url={websiteConfig.MAILCHIMP_URL} />
 
 ## Sources
-- Sotoudeh, Houman & Shafaat, Omid & Bernstock, Joshua & Brooks, Michael & Elsayed, Galal & Chen, Jason & Szerip, Paul & Chagoya, Gustavo & Gessler, Florian & Sotoudeh, Ehsan & Shafaat, Amir & Friedman, Gregory. (2019). Artificial Intelligence in the Management of Glioma: Era of Personalized Medicine. Frontiers in Oncology. 768. https://www.researchgate.net/publication/335168768_Artificial_Intelligence_in_the_Management_of_Glioma_Era_of_Personalized_Medicine
-- Dhoni, Pan. (2023). Exploring the Synergy between Generative AI, Data and Analytics in the Modern Age. 10.36227/techrxiv.24045792.v1. https://www.researchgate.net/publication/373505167_Exploring_the_Synergy_between_Generative_AI_Data_and_Analytics_in_the_Modern_Age
-- Shahab, Omer & El Kurdi, Bara & Shaukat, Aasma & Nadkarni, Girish & Soroush, Ali. (2024). Large language models: a primer and gastroenterology applications. Therapeutic Advances in Gastroenterology. 17. 10.1177/17562848241227031. https://www.researchgate.net/publication/378394229_Large_language_models_a_primer_and_gastroenterology_applications?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ
-- Smith, Moira & Zalesky, C & Lee, Sangil & Gottlieb, Michael & Adhikari, Srikar & Wegman, Martin & Garg, Nidhi & Lam, Samuel & Health, Northwell & Zucker, Barbara. (2025). Artificial Intelligence in Emergency Medicine: A Primer for the Nonexpert. Journal of the American College of Emergency Physicians. 6. 10.1016/j.acepjo.2025.100051. https://www.researchgate.net/publication/389089475_Artificial_Intelligence_in_Emergency_Medicine_A_Primer_for_the_Nonexpert
 - Abdulqader, Marwah & Alsaqabi, Abdulrhman & Mohammed, Afrah E. & Alghamdi, Sahar. (2026). Artificial Intelligence in Selected Domains of Drug Discovery: A Critical Narrative Review. Drug Design, Development and Therapy. 20. 1-20. 10.2147/DDDT.S607228. https://www.researchgate.net/publication/407295296_Artificial_Intelligence_in_Selected_Domains_of_Drug_Discovery_A_Critical_Narrative_Review
+- Agrawal, Jalaj. (2025). I Asked 5 AI Models for a Random Number. They All Said the Same Thing. Medium. Published June 6, 2025. https://medium.com/@jalajagr/i-asked-5-ai-models-for-a-random-number-they-all-said-the-same-thing-7642c6544f53
+- Buolamwini, Joy & Gebru, Timnit. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. Proceedings of the 1st Conference on Fairness, Accountability and Transparency. Proceedings of Machine Learning Research. 81. 77-91. https://proceedings.mlr.press/v81/buolamwini18a.html
+- Buolamwini, Joy. (n.d.). Gender Shades. MIT Media Lab. https://www.media.mit.edu/projects/gender-shades/overview/
+- Dhoni, Pan. (2023). Exploring the Synergy between Generative AI, Data and Analytics in the Modern Age. 10.36227/techrxiv.24045792.v1. https://www.researchgate.net/publication/373505167_Exploring_the_Synergy_between_Generative_AI_Data_and_Analytics_in_the_Modern_Age
+- Mundlamuri, R. & Gunnam, G. R. & Mysari, N. K. & Pujuri, J. (2025). The Evolution of AI: From Classical Machine Learning to Modern Large Language Models. IEEE Access. 13. 178302-178341. 10.1109/ACCESS.2025.3621344. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11202920
+- "Onion Curry". (2025). Machine Learning, Deep Learning, Foundation Model, and Generative AI. YouTube. Published November 27, 2025. https://www.youtube.com/watch?v=af6XNGd5AGo
+- Shahab, Omer & El Kurdi, Bara & Shaukat, Aasma & Nadkarni, Girish & Soroush, Ali. (2024). Large language models: a primer and gastroenterology applications. Therapeutic Advances in Gastroenterology. 17. 10.1177/17562848241227031. https://www.researchgate.net/publication/378394229_Large_language_models_a_primer_and_gastroenterology_applications?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ
+- Shamim, Sarah. (2024). Why Google's AI tool was slammed for showing images of people of colour. Al Jazeera. Published March 9, 2024. https://www.aljazeera.com/news/2024/3/9/why-google-gemini-wont-show-you-white-people
+- Smith, Moira & Zalesky, C & Lee, Sangil & Gottlieb, Michael & Adhikari, Srikar & Wegman, Martin & Garg, Nidhi & Lam, Samuel & Health, Northwell & Zucker, Barbara. (2025). Artificial Intelligence in Emergency Medicine: A Primer for the Nonexpert. Journal of the American College of Emergency Physicians. 6. 10.1016/j.acepjo.2025.100051. https://www.researchgate.net/publication/389089475_Artificial_Intelligence_in_Emergency_Medicine_A_Primer_for_the_Nonexpert
+- Sotoudeh, Houman & Shafaat, Omid & Bernstock, Joshua & Brooks, Michael & Elsayed, Galal & Chen, Jason & Szerip, Paul & Chagoya, Gustavo & Gessler, Florian & Sotoudeh, Ehsan & Shafaat, Amir & Friedman, Gregory. (2019). Artificial Intelligence in the Management of Glioma: Era of Personalized Medicine. Frontiers in Oncology. 768. https://www.researchgate.net/publication/335168768_Artificial_Intelligence_in_the_Management_of_Glioma_Era_of_Personalized_Medicine
+- Vaswani, Ashish & Shazeer, Noam & Parmar, Niki & Uszkoreit, Jakob & Jones, Llion & Gomez, Aidan N. & Kaiser, Łukasz & Polosukhin, Illia. (2017). Attention Is All You Need. Advances in Neural Information Processing Systems (NeurIPS). 30. https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf
 - Wang, Lin & Xu, Yanyan & Wang, Weiqian & Lu, Yuanyuan. (2025). Application of machine learning in dentistry: insights, prospects and challenges. Acta Odontologica Scandinavica. 84. 145-154. 10.2340/aos.v84.43345. https://www.researchgate.net/publication/390249200_Application_of_machine_learning_in_dentistry_insights_prospects_and_challenges
-- R. Mundlamuri, G. R. Gunnam, N. K. Mysari and J. Pujuri, "The Evolution of AI: From Classical Machine Learning to Modern Large Language Models" in IEEE Access, vol. 13, pp. 178302-178341, 2025, doi: 10.1109/ACCESS.2025.3621344. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11202920
-- Agrawal, Jalaj. (2025). I Asked 5 AI Models for a Random Number. They All Said the Same Thing. Medium. Published June 6, 2025. [https://medium.com/@jalajagr/i-asked-5-ai-models-for-a-random-number-they-all-said-the-same-thing-7642c6544f53](https://medium.com/@jalajagr/i-asked-5-ai-models-for-a-random-number-they-all-said-the-same-thing-7642c6544f53)
-- "Onion Curry". (2025). Machine Learning, Deep Learning, Foundation Model, and Generative AI. YouTube. Published November 27, 2025. [https://www.youtube.com/watch?v=af6XNGd5AGo](https://www.youtube.com/watch?v=af6XNGd5AGo)
-- Buolamwini, Joy & Gebru, Timnit. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. Proceedings of the 1st Conference on Fairness, Accountability and Transparency. Proceedings of Machine Learning Research. 81. 77-91. [https://proceedings.mlr.press/v81/buolamwini18a.html](https://proceedings.mlr.press/v81/buolamwini18a.html)
-- Buolamwini, Joy. (n.d.). Gender Shades. MIT Media Lab. [https://www.media.mit.edu/projects/gender-shades/overview/](https://www.media.mit.edu/projects/gender-shades/overview/)
-- Shamim, Sarah. (2024). Why Google's AI tool was slammed for showing images of people of colour. Al Jazeera. Published March 9, 2024. [https://www.aljazeera.com/news/2024/3/9/why-google-gemini-wont-show-you-white-people](https://www.aljazeera.com/news/2024/3/9/why-google-gemini-wont-show-you-white-people)

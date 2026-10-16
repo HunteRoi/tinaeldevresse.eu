@@ -1,21 +1,36 @@
-import { useEffect } from 'react';
-import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import { useState } from 'react';
 import isEmail from 'validator/lib/isEmail';
 import Translate, { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.css';
 
-const CustomForm = ({ status, message, onValidated }) => {
-    let email;
-    const submit = () =>
-        email &&
-        email.value.indexOf('@') > -1 &&
-        isEmail(email.value) &&
-        onValidated({ EMAIL: email.value });
+type Status = 'idle' | 'sending' | 'success' | 'error';
 
-    useEffect(() => {
-        if (status && status === 'success') email.text = '';
-    }, [status]);
+export default function Newsletter({ url }: { url: string }) {
+    const [email, setEmail] = useState('');
+    const [status, setStatus] = useState<Status>('idle');
+
+    const submit = async () => {
+        if (!isEmail(email)) {
+            setStatus('error');
+            return;
+        }
+
+        const params = new URL(url).searchParams;
+        const body = new URLSearchParams({ EMAIL: email });
+        // Honeypot field expected by Mailchimp embedded forms
+        body.append(`b_${params.get('u')}_${params.get('id')}`, '');
+
+        setStatus('sending');
+        try {
+            // Mailchimp sends no CORS headers: the response is opaque, success can't be verified
+            await fetch(url, { method: 'POST', mode: 'no-cors', body });
+            setEmail('');
+            setStatus('success');
+        } catch {
+            setStatus('error');
+        }
+    };
 
     return (
         <div className={styles.formContainer}>
@@ -31,7 +46,8 @@ const CustomForm = ({ status, message, onValidated }) => {
             <div className={styles.inputContainer}>
                 <input
                     className={styles.input}
-                    ref={(node) => (email = node)}
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
                     type='email'
                     placeholder={translate({
                         id: 'newsletter.placeholder',
@@ -80,32 +96,26 @@ const CustomForm = ({ status, message, onValidated }) => {
                 </div>
             )}
             {status === 'error' && (
-                <div
-                    className={`${styles.status} ${styles.error}`}
-                    dangerouslySetInnerHTML={{ __html: message }}
-                />
+                <div className={`${styles.status} ${styles.error}`}>
+                    <Translate
+                        id='newsletter.error'
+                        description='The text stating the subscription failed'
+                    >
+                        Please enter a valid email address and try again.
+                    </Translate>
+                </div>
             )}
             {status === 'success' && (
-                <div
-                    className={`${styles.status} ${styles.success}`}
-                    dangerouslySetInnerHTML={{ __html: message }}
-                />
+                <div className={`${styles.status} ${styles.success}`}>
+                    <Translate
+                        id='newsletter.success'
+                        description='The text stating the subscription succeeded'
+                    >
+                        Thanks for subscribing! You will receive an email
+                        when a new post is published.
+                    </Translate>
+                </div>
             )}
         </div>
-    );
-};
-
-export default function Newsletter({ url }) {
-    return (
-        <MailchimpSubscribe
-            url={url}
-            render={({ subscribe, status, message }) => (
-                <CustomForm
-                    status={status}
-                    message={message}
-                    onValidated={(formData) => subscribe(formData)}
-                />
-            )}
-        />
     );
 }

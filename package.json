@@ -15,26 +15,26 @@
         "typecheck": "tsc"
     },
     "dependencies": {
-        "@docusaurus/core": "^3.0.0",
-        "@docusaurus/lqip-loader": "^3.0.0",
-        "@docusaurus/plugin-ideal-image": "^3.0.0",
-        "@docusaurus/preset-classic": "^3.0.0",
-        "@mdx-js/react": "^3.0.0",
-        "clsx": "^2.0.0",
-        "octokit": "^3.1.1",
-        "prism-react-renderer": "^2.1.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
+        "@docusaurus/core": "^3.10.2",
+        "@docusaurus/lqip-loader": "^3.10.2",
+        "@docusaurus/plugin-ideal-image": "^3.10.2",
+        "@docusaurus/preset-classic": "^3.10.2",
+        "@mdx-js/react": "^3.1.1",
+        "clsx": "^2.1.1",
+        "octokit": "^5.0.5",
+        "prism-react-renderer": "^2.4.1",
+        "react": "^19.3.1",
+        "react-dom": "^19.3.1",
         "react-mailchimp-subscribe": "^2.1.3",
         "rehype-katex": "^7.0.1",
         "remark-math": "^6.0.0",
-        "validator": "^13.11.0"
+        "validator": "^13.15.35"
     },
     "devDependencies": {
-        "@docusaurus/module-type-aliases": "^3.0.0",
-        "@docusaurus/tsconfig": "^3.0.0",
-        "@types/react": "^18.2.37",
-        "typescript": "^5.2.2"
+        "@docusaurus/module-type-aliases": "^3.10.2",
+        "@docusaurus/tsconfig": "^3.10.2",
+        "@types/react": "^19.3.0",
+        "typescript": "^7.0.2"
     },
     "browserslist": {
         "production": [

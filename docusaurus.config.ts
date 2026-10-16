@@ -4,7 +4,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import { themes } from 'prism-react-renderer';
 
-import * as websiteConfig from './website_config.json';
+import websiteConfig from './website_config.json';
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -22,8 +22,13 @@ const config: Config = {
     trailingSlash: false,
 
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
+
+    markdown: {
+        hooks: {
+            onBrokenMarkdownLinks: 'warn'
+        }
+    },
 
     customFields: {
         description: "Personal website of Tinaël Devresse, a blog about anything that crosses my mind which I think could interest y'all.",

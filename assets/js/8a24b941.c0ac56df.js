@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktinaeldevresse||=[]).push([[7734],{1404(a){a.exports=JSON.parse('{"tag":{"label":"career","permalink":"/blog/tags/career","allTagsPath":"/blog/tags","count":2,"unlisted":false},"listMetadata":{"permalink":"/blog/tags/career","page":1,"postsPerPage":3,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktinaeldevresse||=[]).push([[819],{7640(t){t.exports=JSON.parse('{"tag":{"label":"IT","permalink":"/fr/blog/tags/it","allTagsPath":"/fr/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/fr/blog/tags/it","page":1,"postsPerPage":3,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

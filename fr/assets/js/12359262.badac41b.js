@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktinaeldevresse||=[]).push([[4719],{2846(a){a.exports=JSON.parse('{"tag":{"label":"avenir","permalink":"/fr/blog/tags/avenir","allTagsPath":"/fr/blog/tags","count":2,"unlisted":false},"listMetadata":{"permalink":"/fr/blog/tags/avenir","page":1,"postsPerPage":3,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

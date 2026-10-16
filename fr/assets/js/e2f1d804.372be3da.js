@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktinaeldevresse||=[]).push([[9753],{9244(a){a.exports=JSON.parse('{"tag":{"label":"craft","permalink":"/fr/blog/tags/craft","allTagsPath":"/fr/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/fr/blog/tags/craft","page":1,"postsPerPage":3,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

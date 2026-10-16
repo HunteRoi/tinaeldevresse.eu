@@ -8,12 +8,12 @@ on:
 jobs:
   build:
     concurrency: ci-${{ github.ref }}
-    
+
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [24.x]
 
     steps:
     - uses: actions/checkout@v3
